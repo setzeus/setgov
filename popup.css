@@ -1,0 +1,346 @@
+
+  body{
+    font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+    font-size: 100%;
+    width: 300px;
+    height: 123px;
+    display: flex;
+    flex-direction:column;
+    background-color: #EEEEEE;
+    margin: 0; 
+  }
+  .resultContainer{
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: center;
+
+  }
+  .ampersand_color {
+    color: #035ca0;
+  }
+  .ampersand_color_mini {
+    color: #035ca0;
+    margin-left: 27px;
+  }
+  .arrow_candidate {
+    width: 100px;
+  }
+  .button {
+    height: 35px;
+    width: 35px; 
+    border-radius: 50%; 
+    justify-content:flex-end;
+    display: flex;
+    margin: auto 6px auto auto;
+    background-image:url("arrow.png");
+    background-size: 100%;
+  }
+  .button:hover {
+    background-image:url("arrow2.png");
+  }
+  .display-bar-left {
+   /* background-image: linear-gradient(to right, #00A9E0, #00A9E0 50%, transparent 50%, transparent); */
+    height: 4px;
+    transition-duration: .75s;
+    position: absolute;
+    width: 150px;
+  }
+  .display-bar-right {
+    /* background-image: linear-gradient(to right, #00A9E0, #00A9E0 50%, transparent 50%, transparent); */
+    transition-duration: .75s;
+    height: 4px;
+    margin-left: 150px;
+    width: 150px;
+  }
+  #empty {
+    display: flex;
+    font-size: 1em;
+    color: #e4002b;
+    margin: 2px 0px 0px 0px;
+    padding: 0px 66px 0px 66px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  #empty:hover {
+    color: #00A9E0;
+  }
+  .header {
+    height: 100px; 
+    background-color: #FFF;
+    display: flex;
+    flex-direction:row;
+  }
+  .mini-button {
+    
+    height: 25px;
+    width: 25px; 
+    border-radius: 50%; 
+    justify-content:flex-end;
+    display: flex;
+    margin: auto 11px auto auto;
+    background-image:url("arrow2.png");
+    background-size: 100%;
+  }
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+  .primary {
+    background-color: #00A9E0;
+  }
+  .primary-dark {
+    background-color: #035ca0;
+  }
+  .sub-tag {
+    margin: auto 0 auto 0px;
+    font-size: 1em;
+    display: flex; 
+  }
+  .tag {
+    margin: auto 0 auto 5px;
+    font-size: 1.275em;
+    display: flex;
+  }
+  #status {
+    /* avoid an excessively wide status text */
+    white-space: pre;
+    text-overflow: ellipsis;
+    overflow: hidden;    
+    flex-shrink:1;    
+  }
+  #center {
+    margin: auto;
+    flex-wrap:wrap;
+    flex-grow:0;
+  }
+  .row {
+    width: 100%;
+    height: 66px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction:row;
+  }
+
+
+
+
+
+ .mini-row-hidden {
+    height: 49.5px;
+    width: 100%;
+    background-color:#FEFEFE;
+    margin-top: 1px;
+    display: flex;
+    color: #000;
+    flex-direction:row;
+  }
+
+  .mini-row-container {
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+  }
+
+  
+  
+  .row-line {
+    width: 100%;
+    height: 5px;
+    position: relative;
+    display: inline-block;
+    transition: color .5s;
+
+  }
+
+  .row-line:before{
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: #035ca0;
+    z-index: -1;
+    transform:scaleX(0);
+    transition:  transform .5s;
+  }
+
+
+
+  .row:hover + .row-line:before {
+    transform: scaleX(1);
+  }
+ 
+  .row:hover + .mini-row-hidden{
+    display: flex;
+  }
+ 
+
+
+
+
+
+
+
+  .row-bottom-display-container {
+    height: 4px;
+    display: flex;
+    flex-direction:row;
+  }
+
+  .row-bottom-padding {
+    height: 1px;
+    width: 100%; 
+    display: flex;
+  }
+
+  .row:hover {
+    cursor: pointer;
+    transition-duration: 5s;
+  }
+
+  .row:hover > .button {
+    background-image:url("arrow2-no-circle.png");
+    background-color: #FFF;
+   transition-duration: 1s;
+  }
+
+  .results_body{
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .top-mini-row {
+    margin-top: 0px;
+  }
+
+  .shirt_button {
+    display: flex;
+    font-size: 1em;
+    color: #FFF;
+    margin: 25px auto 0px auto;
+    padding: 12px 18px;
+    background-color: #00A9E0;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .shirt_button:hover {
+    background-color:#e4002b;
+  }
+
+  .shirt_image_container {
+    background-image:url("haramabe_image.png");
+    background-size: 100%;
+    margin-top: 2px;
+  }
+
+  
+  #EducationSubContainer{
+    max-height: 0;
+    transition: max-height 20s ease-out;
+  }
+
+  #EducationResults:hover  #EducationSubContainer{
+    ransition: max-height 5s ease-in;
+    max-height: 3000px;
+  }
+
+
+  #EnviromentSubContainer{
+    max-height: 0;
+    transition: max-height 20s ease-out;
+  }
+
+  #EnviromentResults:hover  #EnviromentSubContainer{
+    ransition: max-height 5s ease-in;
+    max-height: 3000px;
+  }
+
+  #EqualitySubContainer{
+    max-height: 0;
+    transition: max-height 20s ease-out;
+  }
+
+  #EqualityResults:hover  #EqualitySubContainer{
+    ransition: max-height 5s ease-in;
+    max-height: 3000px;
+  }
+
+  #HealthSubContainer{
+    max-height: 0;
+    transition: max-height 20s ease-out;
+  }
+
+  #HealthResults:hover  #HealthSubContainer{
+    ransition: max-height 5s ease-in;
+    max-height: 3000px;
+  }
+
+  #JobsSubContainer{
+    max-height: 0;
+    transition: max-height 20s ease-out;
+  }
+
+  #JobsResults:hover  #JobsSubContainer{
+    ransition: max-height 5s ease-in;
+    max-height: 3000px;
+  }
+
+  #SecuritySubContainer{
+    max-height: 0;
+    transition: max-height 20s ease-out;
+  }
+
+  #SecurityResults:hover  #SecuritySubContainer{
+    ransition: max-height 5s ease-in;
+    max-height: 3000px;
+  }
+
+  #EconomySubContainer{
+    max-height: 0;
+    transition: max-height 20s ease-out;
+  }
+
+  #EconomyResults:hover  #EconomySubContainer{
+    ransition: max-height 5s ease-in;
+    max-height: 3000px;
+  }
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
