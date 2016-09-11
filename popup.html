@@ -3,49 +3,102 @@
 <html>
   <head>
     <title>SetGov</title>
-    
+    <link rel="stylesheet" type="text/css" href="font-awesome-4.6.3/css/font-awesome.min.css">    
     <style type="text/css">
+
+
+    #left {
+      margin: auto auto auto 15px; 
+    }
+
+    #right {
+      margin: auto 15px auto auto;
+    }
+
       body {
         height: 1000px;
-        width: 350px;
+        width: 325px;
         flex-direction:row;
         margin: 0;
-        background-color: #fafafa;
+        background-color: #eee;
       }
 
       .header {
         display: flex;
-        height: 60px;
+        height: 50px;
         background-color: #fff;
+      }
+
+      .icon_container {
+        height: 32px;
+        width: 32px;
+        border-radius: 25px;
+        background-color: #FFF;
+        border: 1px solid #F44336;
+      }
+
+      .icon_container_row {
+        flex-grow:1;
+        display: flex;
       }
 
       .top_body {
-        height: 180px;
+        height: 150px;
         display: flex;
         background-color: #fff;
-        margin-top: 4px;
-        margin-bottom: 4px;
+        border-top: 2px solid #F44336;
+        flex-direction:column;
+      }
+
+      .segment {
+        height: 31px;
+        flex-grow:1;
+        display: flex;
+      }
+
+      #seg2 {
+        border-right: 1px solid #F44336;
+        border-left: 1px solid #F44336;
       }
 
       .segment_container {
-        height: 120px;
+        height: 75px;
         display: flex;
         background-color: #fff;
-        margin-top: 4px;
+        border-top: 2px solid #F44336;
+        flex-direction:row;
+        align-items:center;
+      }
+
+      .segment_controller {
+        height: 30px;
+        flex-grow: 1;
+        display: flex;
+        border-radius: 8px;
+        margin: 15px 30px;
+        border: 1px solid #F44336;
+        flex-direction:row;
       }
 
       .segment_title {
-        height: 60px;
+        height: 37.5px;
         display: flex;
         background-color: #fff;
-        margin-top: 4px;
+        border-top: 2px solid #F44336;
+        text-align: center;
+      }
+
+      .segment_title_text {
+        color: #F44336;
+        font-size: 1.5em;
+        margin: auto;  
       }
 
       .segment_body {
         height: 500px;
         display: flex;
         background-color: #fff;
-        margin-top: 4px;
+        border-top: 2px solid #F44336;
       }
 
 
@@ -58,9 +111,27 @@
   <!--Start of HTML-->
   <body>
     <div class="header"></div>
-    <div class="top_body"></div>
-    <div class="segment_container"></div>
-    <div class="segment_title"></div>
+    <div class="top_body">
+      <div class="icon_container_row" id="top">
+        <div class="icon_container" id="left"></div>
+        <div class="icon_container" id="right"></div>
+      </div>
+      <div class="icon_container_row" id="middle"></div>
+      <div class="icon_container_row" id="bottom">
+        <div class="icon_container" id="left"></div>
+        <div class="icon_container" id="right"></div>
+      </div>
+    </div>
+    <div class="segment_container">
+      <div class="segment_controller">
+        <div class="segment" id="seg1"></div>
+        <div class="segment" id="seg2"></div>
+        <div class="segment" id="seg3"></div>
+      </div>
+    </div>
+    <div class="segment_title">
+      <div class="segment_title_text">Election Platform</div>
+    </div>
     <div class="segment_body"></div>    
   </body>
 
