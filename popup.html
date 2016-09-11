@@ -54,6 +54,16 @@
         height: 31px;
         flex-grow:1;
         display: flex;
+        cursor: pointer;
+      }
+
+      .default.segment {
+        height: 31px;
+        flex-grow:1;
+        background-color: #F44336;
+        display: flex;
+        cursor: auto;
+        border: none; 
       }
 
       #seg2 {
@@ -78,6 +88,27 @@
         margin: 15px 30px;
         border: 1px solid #F44336;
         flex-direction:row;
+      }
+
+      .segment_icon.fa.fa-money.fa-lg {
+        font-size: 1.33em;
+        color: #F44336;
+        margin: auto;
+      }
+      .segment_icon.fa.fa-info.fa-lg {
+        font-size: 1.33em;
+        color: #F44336;
+        margin: auto;
+      }
+      
+      .segment_icon.fa.fa-list.fa-lg {
+        font-size: 1.33em;
+        color: #F44336;
+        margin: auto; 
+      }
+
+      #selected {
+        color: white;
       }
 
       .segment_title {
@@ -124,9 +155,15 @@
     </div>
     <div class="segment_container">
       <div class="segment_controller">
-        <div class="segment" id="seg1"></div>
-        <div class="segment" id="seg2"></div>
-        <div class="segment" id="seg3"></div>
+        <div class="segment" id="seg1">
+          <i class="segment_icon fa fa-money fa-lg" aria-hidden="true"></i>
+        </div>
+        <div class="segment" id="seg2">
+          <i class="segment_icon fa fa-info fa-lg" aria-hidden="true"></i>
+        </div>
+        <div class="default segment" id="seg3">
+          <i class="segment_icon fa fa-list fa-lg" aria-hidden="true" id="selected"></i>
+        </div>
       </div>
     </div>
     <div class="segment_title">
