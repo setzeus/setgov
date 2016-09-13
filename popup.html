@@ -33,11 +33,30 @@
         background-color: #fff;
       }
 
-      .icon_container {
+      .icon_container.left {
         height: 32px;
         width: 32px;
         border-radius: 25px;
         background-color: #FFF;
+        margin: auto auto auto 15px;
+      }
+       .icon_container.left.blue {
+        border: 1px solid #1E88E5;
+      }
+       .icon_container.left.red {
+        border: 1px solid #F44336;
+      }
+      .icon_container.right {
+        height: 32px;
+        width: 32px;
+        border-radius: 25px;
+        background-color: #FFF;
+        margin: auto 15px auto auto;
+      }
+       .icon_container.right.blue {
+        border: 1px solid #1E88E5;
+      }
+       .icon_container.right.red {
         border: 1px solid #F44336;
       }
 
@@ -50,8 +69,13 @@
         height: 150px;
         display: flex;
         background-color: #fff;
-        border-top: 2px solid #F44336;
         flex-direction:column;
+      }
+      .top_body.blue {
+        border-top: 2px solid #1E88E5;
+      }
+      .top_body.red {
+        border-top: 2px solid #F44336;
       }
 
       #selected {
@@ -65,30 +89,43 @@
         cursor: pointer;
         animation-duration:1s;
       }
+      .segment.blue {
+        border-right: 1px solid #1E88E5;
+        border-left: 1px solid #1E88E5;
+      }
+      .segment.red {
+        border-right: 1px solid #F44336;
+        border-left: 1px solid #F44336;
+      }
 
       .default.segment {
         height: 31px;
         flex-grow:1;
-        background-color: #F44336;
         display: flex;
         cursor: auto;
         border: none; 
         color: white;
         animation-duration:1s;
       }
-
-      #seg2 {
-        border-right: 1px solid #F44336;
-        border-left: 1px solid #F44336;
+      .default.segment.blue {
+        background-color: #1E88E5;
+      }
+      .default.segment.red {
+        background-color: #F44336;
       }
 
       .segment_container {
         height: 75px;
         display: flex;
         background-color: #fff;
-        border-top: 2px solid #F44336;
         flex-direction:row;
         align-items:center;
+      }
+      .segment_container.blue {
+        border-top: 2px solid #1E88E5;
+      }
+      .segment_container.red {
+        border-top: 2px solid #F44336;
       }
 
       .segment_controller {
@@ -97,24 +134,31 @@
         display: flex;
         border-radius: 8px;
         margin: 15px 30px;
-        border: 1px solid #F44336;
         flex-direction:row;
+      }
+      .segment_controller.blue {
+        border: 1px solid #1e88e5;
+        color: #1E88E5;
+      }
+      .segment_controller.red {
+        border: 1px solid #F44336;
+        color: #F44336;
       }
 
       .segment_icon.fa.fa-money.fa-lg {
         font-size: 1.33em;
-        color: #F44336;
+        color: inherit;
         margin: auto;
       }
       .segment_icon.fa.fa-info.fa-lg {
         font-size: 1.33em;
-        color: #F44336;
+        color: inherit;
         margin: auto;
       }
       
       .segment_icon.fa.fa-list.fa-lg {
         font-size: 1.33em;
-        color: #F44336;
+        color: inherit;
         margin: auto; 
       }
 
@@ -122,12 +166,20 @@
         height: 37.5px;
         display: flex;
         background-color: #fff;
-        border-top: 2px solid #F44336;
         text-align: center;
       }
 
-      .segment_title_text {
+       .segment_title.blue {
+        border-top: 2px solid #1e88e5;
+        color: #1e88e5;
+      }
+      .segment_title.red {
+        border-top: 2px solid #F44336;
         color: #F44336;
+      }
+
+      .segment_title_text {
+        color: inherit;
         font-size: 1.5em;
         margin: auto;  
       }
@@ -136,7 +188,16 @@
         height: 500px;
         display: flex;
         background-color: #fff;
+      }
+
+      .segment_body.blue {
+        border-top: 2px solid #1E88E5;
+      }
+      .segment_body.red {
         border-top: 2px solid #F44336;
+      }
+      #candidate_switch {
+        cursor: pointer;
       }
 
 
@@ -150,34 +211,34 @@
   <!--Start of HTML-->
   <body>
     <div class="header"></div>
-    <div class="top_body">
+    <div class="top_body red">
       <div class="icon_container_row" id="top">
-        <div class="icon_container" id="left"></div>
-        <div class="icon_container" id="right"></div>
+        <div class="icon_container left red" id="candidate_switch"></div>
+        <div class="icon_container right red"></div>
       </div>
       <div class="icon_container_row" id="middle"></div>
       <div class="icon_container_row" id="bottom">
-        <div class="icon_container" id="left"></div>
-        <div class="icon_container" id="right"></div>
+        <div class="icon_container left" style="color:white"></div>
+        <div class="icon_container right red"></div>
       </div>
     </div>
-    <div class="segment_container">
-      <div class="segment_controller">
+    <div class="segment_container red">
+      <div class="segment_controller red">
         <div class="segment" id="seg1">
           <i class="segment_icon fa fa-money fa-lg" aria-hidden="true"></i>
         </div>
-        <div class="segment" id="seg2">
+        <div class="segment red" id="seg2">
           <i class="segment_icon fa fa-info fa-lg" aria-hidden="true"></i>
         </div>
-        <div class="default segment" id="seg3">
+        <div class="segment red default" id="seg3">
           <i class="segment_icon fa fa-list fa-lg" aria-hidden="true" id="selected"></i>
         </div>
       </div>
     </div>
-    <div class="segment_title">
+    <div class="segment_title red">
       <div class="segment_title_text">Election Platform</div>
     </div>
-    <div class="segment_body"></div>    
+    <div class="segment_body red"></div>    
   </body>
 
   <footer>
