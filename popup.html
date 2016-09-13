@@ -18,6 +18,10 @@
     #right {
       margin: auto 15px auto auto;
     }
+    #seg2 {
+      border-right: 1px solid white;
+      border-left: 1px solid white; 
+    }
 
       body {
         height: 1000px;
@@ -88,14 +92,6 @@
         display: flex;
         cursor: pointer;
         animation-duration:1s;
-      }
-      .segment.blue {
-        border-right: 1px solid #1E88E5;
-        border-left: 1px solid #1E88E5;
-      }
-      .segment.red {
-        border-right: 1px solid #F44336;
-        border-left: 1px solid #F44336;
       }
 
       .default.segment {
@@ -227,10 +223,10 @@
         <div class="segment" id="seg1">
           <i class="segment_icon fa fa-money fa-lg" aria-hidden="true"></i>
         </div>
-        <div class="segment red" id="seg2">
+        <div class="segment" id="seg2">
           <i class="segment_icon fa fa-info fa-lg" aria-hidden="true"></i>
         </div>
-        <div class="segment red default" id="seg3">
+        <div class="segment default" id="seg3">
           <i class="segment_icon fa fa-list fa-lg" aria-hidden="true" id="selected"></i>
         </div>
       </div>
