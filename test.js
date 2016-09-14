@@ -1,5 +1,12 @@
 window.addEventListener('load', function () {
 
+		var ctx = document.getElementById('clients').getContext('2d');
+
+
+	var XAxisDates = [];
+	var rubioValue = [];
+	var murphyValue = [];
+	var undecidedValue = [];
 
 	var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange=function() {
@@ -7,13 +14,44 @@ window.addEventListener('load', function () {
 	   	  var data = this.responseText
 	   	  //console.log(data);
 		  var jsonResponse = JSON.parse(data);
-		  console.log(jsonResponse);
-		  console.log(jsonResponse.estimates_by_date);
-		  console.log(jsonResponse.estimates);
+		  
+		  for (var i = 99; i > 0; i--) {
+		  	XAxisDates[i] = jsonResponse.estimates_by_date[i].date;
+		  	rubioValue[i] = jsonResponse.estimates_by_date[i].estimates[0].value;
+		  	murphyValue[i] = jsonResponse.estimates_by_date[i].estimates[1].value;
+		  	undecidedValue[i] = jsonResponse.estimates_by_date[i].estimates[2].value;
+		  };
+
 	    }
 	  };
 	  xhttp.open("GET","http://elections.huffingtonpost.com/pollster/api/charts/2016-florida-senate-rubio-vs-murphy.json", true);
 	  xhttp.send();
+
+	console.log(XAxisDates);
+	var fixedAxis = XAxisDates.reverse;
+	console.log(XAxisDates.reverse().reverse());
+	console.log(rubioValue);
+	console.log(murphyValue);
+
+	var testArr = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
+	console.log(testArr);
+
+	var myChart = new Chart(ctx, {
+	  type: 'line',
+	  data: {
+	    labels: XAxisDates,
+	    datasets: [{
+	      label: 'Rubio',
+	      data: rubioValue
+	    }, {
+	      label: 'Murphy',
+	      data: murphyValue
+	    }, {
+	    	label: 'Undecided',
+	    	data: undecidedValue
+	    }]
+	  }
+	});
 
 	var switch_color = document.getElementById('candidate_switch').className;
 	var color;
@@ -39,6 +77,10 @@ window.addEventListener('load', function () {
 
 	var candidate_switch = document.getElementById('candidate_switch');
 	candidate_switch.onclick = candidateSwitchLogic;
+
+
+
+
 
 
 	function candidateSwitchLogic(element) {
@@ -77,6 +119,11 @@ window.addEventListener('load', function () {
 
 		console.log(candidate_switch.className);
 	};
+
+
+
+
+
 
 
 	function segmentedLogic(element) {
