@@ -192,6 +192,13 @@
       .segment_body.red {
         border-top: 2px solid #F44336;
       }
+      .subview {
+        display: none;
+      }
+      .subview.selected {
+        display: flex;
+        flex-grow:1;
+      }
       #candidate_switch {
         cursor: pointer;
         background-image: url('candidate_switch_red.png');
@@ -230,22 +237,27 @@
     </div>
     <div class="segment_container red">
       <div class="segment_controller red">
-        <div class="segment" id="seg1">
-          <i class="segment_icon fa fa-money fa-lg" aria-hidden="true"></i>
+        <div class="segment default" id="seg1">
+          <i class="segment_icon fa fa-money fa-lg" aria-hidden="true" id="selected"></i>
         </div>
         <div class="segment" id="seg2">
           <i class="segment_icon fa fa-info fa-lg" aria-hidden="true"></i>
         </div>
-        <div class="segment default" id="seg3">
-          <i class="segment_icon fa fa-list fa-lg" aria-hidden="true" id="selected"></i>
+        <div class="segment" id="seg3">
+          <i class="segment_icon fa fa-list fa-lg" aria-hidden="true"></i>
         </div>
       </div>
     </div>
     <div class="segment_title red">
-      <div class="segment_title_text">Election Platform</div>
+      <div class="segment_title_text">Latest Live Poll</div>
     </div>
+
     <div class="segment_body red">
-      <canvas id="clients" width="200" height="200"></canvas>
+      <div class="subview selected" id="electionGraph">
+        <canvas id="clients" width="325" height="325"></canvas>
+      </div>
+      <div class="subview" id="electionInfo"></div>
+      <div class="subview" id="electionPositions"></div>
     </div>    
   </body>
 

@@ -1,6 +1,6 @@
 window.addEventListener('load', function () {
 
-		var ctx = document.getElementById('clients').getContext('2d');
+	var ctx = document.getElementById('clients').getContext('2d');
 
 
 	var XAxisDates = [];
@@ -41,13 +41,19 @@ window.addEventListener('load', function () {
 	  data: {
 	    labels: XAxisDates,
 	    datasets: [{
+	      fillColor: 'rgba(0,0,0,0)',
+	      strokeColor: "rgba(220,180,0,1)",
 	      label: 'Rubio',
 	      data: rubioValue
 	    }, {
 	      label: 'Murphy',
+	       fillColor: 'rgba(0,0,0,0)',
+	      strokeColor: "rgba(151,187,205,1)",
 	      data: murphyValue
 	    }, {
-	    	label: 'Undecided',
+	    	label: 'Undecided', 
+	    	fillColor: 'rgba(0,0,0,0)',
+	    	strokeColor: "rgba(11,128,192,1)",
 	    	data: undecidedValue
 	    }]
 	  }
@@ -162,6 +168,9 @@ window.addEventListener('load', function () {
 
 			document.getElementsByClassName("segment_title_text")[0].innerHTML = "Election Platform"
 			document.getElementsByClassName('segment default')[0].style.backgroundColor = colorHex;
+			document.getElementById('electionPositions').className = "subview selected";
+			document.getElementById('electionGraph').className = "subview";
+			document.getElementById('electionInfo').className = "subview";
 		};
 
 		if (clickedId == "seg2") {
@@ -176,6 +185,9 @@ window.addEventListener('load', function () {
 
 			document.getElementsByClassName("segment_title_text")[0].innerHTML = "General Election Info."
 			document.getElementsByClassName('segment default')[0].style.backgroundColor = colorHex;
+			document.getElementById('electionInfo').className = "subview selected";
+			document.getElementById('electionPositions').className = "subview";
+			document.getElementById('electionGraph').className = "subview";
 		};
 
 		if (clickedId == "seg1") {
@@ -190,6 +202,11 @@ window.addEventListener('load', function () {
 
 			document.getElementsByClassName("segment_title_text")[0].innerHTML = "Latest Live Poll"
 			document.getElementsByClassName('segment default')[0].style.backgroundColor = colorHex;
+			document.getElementById('electionGraph').className = "selected subview";
+			document.getElementsByTagName("BODY")[0].style.width = "326px";
+			document.getElementsByTagName("BODY")[0].style.width = "325px";
+			document.getElementById('electionPositions').className = "subview";
+			document.getElementById('electionInfo').className = "subview";
 		}; 
   	}
 })
