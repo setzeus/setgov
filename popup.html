@@ -45,10 +45,10 @@
         margin: auto auto auto 15px;
       }
        .icon_container.left.blue {
-        border: 1px solid #1E88E5;
+        border: 2px solid #1E88E5;
       }
        .icon_container.left.red {
-        border: 1px solid #F44336;
+        border: 2px solid #F44336;
       }
       .icon_container.right {
         height: 32px;
@@ -58,10 +58,10 @@
         margin: auto 15px auto auto;
       }
        .icon_container.right.blue {
-        border: 1px solid #1E88E5;
+        border: 2px solid #1E88E5;
       }
        .icon_container.right.red {
-        border: 1px solid #F44336;
+        border: 2px solid #F44336;
       }
 
       .icon_container_row {
@@ -194,6 +194,16 @@
       }
       #candidate_switch {
         cursor: pointer;
+        background-image: url('candidate_switch_red.png');
+        background-size: 75%;
+        background-position: 50%;
+        background-repeat: no-repeat;
+      }
+      #reddit_icon {
+        cursor: pointer;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: 75%;
       }
 
 
@@ -210,7 +220,7 @@
     <div class="top_body red">
       <div class="icon_container_row" id="top">
         <div class="icon_container left red" id="candidate_switch"></div>
-        <div class="icon_container right red"></div>
+        <div class="icon_container right red" id="reddit_icon"></div>
       </div>
       <div class="icon_container_row" id="middle"></div>
       <div class="icon_container_row" id="bottom">

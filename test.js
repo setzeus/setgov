@@ -53,15 +53,22 @@ window.addEventListener('load', function () {
 	  }
 	});
 
+
+	var candidate_switch = document.getElementById('candidate_switch');
+
 	var switch_color = document.getElementById('candidate_switch').className;
 	var color;
 	var colorHex;
 	if (switch_color=="icon_container left red") {
 			color = "red";
 			colorHex = "#F44336";
+			candidate_switch.style.backgroundImage = "url('candidate_switch_red.png')";
+			document.getElementById('reddit_icon').style.backgroundImage = "url('reddit_icon_red.png')";
 	} else {
 			color = "blue";
 			colorHex = "#1E88E5";
+			candidate_switch.style.backgroundImage = "url('candidate_switch_blue.png')";
+			document.getElementById('reddit_icon').style.backgroundImage = "url('reddit_icon_blue.png')";
 	};
 
 	var seg2 = document.getElementById('seg2').style.borderColor = colorHex;
@@ -75,7 +82,6 @@ window.addEventListener('load', function () {
 		arr[i].onclick = segmentedLogic;
 	};
 
-	var candidate_switch = document.getElementById('candidate_switch');
 	candidate_switch.onclick = candidateSwitchLogic;
 
 
@@ -85,6 +91,7 @@ window.addEventListener('load', function () {
 
 	function candidateSwitchLogic(element) {
 		var currentColor = element.srcElement.className;
+		var candidate_switch = document.getElementById('candidate_switch');
 		console.log(currentColor);
 
 		var switch_color = document.getElementById('candidate_switch').className;
@@ -93,7 +100,9 @@ window.addEventListener('load', function () {
 		var colorHexRed = "#F44336";
 
 		if (currentColor == "icon_container left red") {
+			candidate_switch.style.backgroundImage = "url('candidate_switch_blue.png')";
 			candidate_switch.className = "icon_container left blue";
+			document.getElementById('reddit_icon').style.backgroundImage = "url('reddit_icon_blue.png')";
 			document.getElementsByClassName('segment default')[0].style.backgroundColor = colorHexBlue;
 			document.getElementById('seg2').style.borderColor = "#1E88E5";
 			document.getElementsByClassName('top_body red')[0].className = "top_body blue";
@@ -104,7 +113,9 @@ window.addEventListener('load', function () {
 			document.getElementsByClassName('segment_title red')[0].className = "segment_title blue";
 			document.getElementsByClassName('segment_body red')[0].className = "segment_body blue";
 		} else {
+			candidate_switch.style.backgroundImage = "url('candidate_switch_red.png')";
 			candidate_switch.className = "icon_container left red";
+			document.getElementById('reddit_icon').style.backgroundImage = "url('reddit_icon_red.png')";
 			document.getElementsByClassName('segment default')[0].style.backgroundColor = colorHexRed;
 			document.getElementById('seg2').style.borderColor = "#F44336";
 			document.getElementsByClassName('top_body blue')[0].className = "top_body red";
