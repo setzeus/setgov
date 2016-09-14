@@ -69,12 +69,16 @@ window.addEventListener('load', function () {
 			color = "red";
 			colorHex = "#F44336";
 			candidate_switch.style.backgroundImage = "url('candidate_switch_red.png')";
+			document.getElementById('candidate_icon').style.backgroundImage = "url('info_icon_red.png')";
 			document.getElementById('reddit_icon').style.backgroundImage = "url('reddit_icon_red.png')";
+			document.getElementById('top_background').style.backgroundImage = "url('repub_logo.png')";
 	} else {
 			color = "blue";
 			colorHex = "#1E88E5";
 			candidate_switch.style.backgroundImage = "url('candidate_switch_blue.png')";
+			document.getElementById('candidate_icon').style.backgroundImage = "url('info_icon_blue.png')";
 			document.getElementById('reddit_icon').style.backgroundImage = "url('reddit_icon_blue.png')";
+			document.getElementById('top_background').style.backgroundImage = "url('demo_logo.png')";
 	};
 
 	var seg2 = document.getElementById('seg2').style.borderColor = colorHex;
@@ -106,8 +110,10 @@ window.addEventListener('load', function () {
 		var colorHexRed = "#F44336";
 
 		if (currentColor == "icon_container left red") {
+			document.getElementById('top_background').style.backgroundImage = "url('demo_logo.png')";
 			candidate_switch.style.backgroundImage = "url('candidate_switch_blue.png')";
 			candidate_switch.className = "icon_container left blue";
+			document.getElementById('candidate_icon').style.backgroundImage = "url('info_icon_blue.png')";
 			document.getElementById('reddit_icon').style.backgroundImage = "url('reddit_icon_blue.png')";
 			document.getElementsByClassName('segment default')[0].style.backgroundColor = colorHexBlue;
 			document.getElementById('seg2').style.borderColor = "#1E88E5";
@@ -119,8 +125,10 @@ window.addEventListener('load', function () {
 			document.getElementsByClassName('segment_title red')[0].className = "segment_title blue";
 			document.getElementsByClassName('segment_body red')[0].className = "segment_body blue";
 		} else {
+			document.getElementById('top_background').style.backgroundImage = "url('repub_logo.png')";			
 			candidate_switch.style.backgroundImage = "url('candidate_switch_red.png')";
 			candidate_switch.className = "icon_container left red";
+			document.getElementById('candidate_icon').style.backgroundImage = "url('info_icon_red.png')";
 			document.getElementById('reddit_icon').style.backgroundImage = "url('reddit_icon_red.png')";
 			document.getElementsByClassName('segment default')[0].style.backgroundColor = colorHexRed;
 			document.getElementById('seg2').style.borderColor = "#F44336";

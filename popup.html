@@ -42,26 +42,26 @@
         width: 32px;
         border-radius: 25px;
         background-color: #FFF;
-        margin: auto auto auto 15px;
+        margin: auto auto auto 25px;
       }
        .icon_container.left.blue {
-        border: 2px solid #1E88E5;
+        border: 2px solid #1565c0;
       }
        .icon_container.left.red {
-        border: 2px solid #F44336;
+        border: 2px solid #C62828;
       }
       .icon_container.right {
         height: 32px;
         width: 32px;
         border-radius: 25px;
         background-color: #FFF;
-        margin: auto 15px auto auto;
+        margin: auto 25px auto auto;
       }
        .icon_container.right.blue {
-        border: 2px solid #1E88E5;
+        border: 2px solid #1565c0;
       }
        .icon_container.right.red {
-        border: 2px solid #F44336;
+        border: 2px solid #C62828;
       }
 
       .icon_container_row {
@@ -74,6 +74,9 @@
         display: flex;
         background-color: #fff;
         flex-direction:column;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: 50%;
       }
       .top_body.blue {
         border-top: 2px solid #1E88E5;
@@ -206,11 +209,22 @@
         background-position: 50%;
         background-repeat: no-repeat;
       }
+      #candidate_icon {
+        cursor: pointer;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: 75%;
+      }
       #reddit_icon {
         cursor: pointer;
         background-position: 50%;
         background-repeat: no-repeat;
         background-size: 75%;
+      }
+      #tempHeader {
+        font-size: 1.75em;
+        color: #212121;
+        margin: auto;
       }
 
 
@@ -223,16 +237,18 @@
 
   <!--Start of HTML-->
   <body>
-    <div class="header"></div>
-    <div class="top_body red">
+    <div class="header">
+      <div id="tempHeader">FL Senate: Rubio V Murphy</div>
+    </div>
+    <div class="top_body red" id="top_background">
       <div class="icon_container_row" id="top">
         <div class="icon_container left red" id="candidate_switch"></div>
         <div class="icon_container right red" id="reddit_icon"></div>
       </div>
       <div class="icon_container_row" id="middle"></div>
       <div class="icon_container_row" id="bottom">
-        <div class="icon_container left" style="color:white"></div>
-        <div class="icon_container right red"></div>
+        <div class="icon_container left" style="color:white;display:none"></div>
+        <div class="icon_container right red" id="candidate_icon"></div>
       </div>
     </div>
     <div class="segment_container red">
