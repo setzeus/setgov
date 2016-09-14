@@ -226,6 +226,22 @@
         color: #212121;
         margin: auto;
       }
+      #top_label_container {
+        height: 32px;
+        width: 100px;
+        border-radius: 0px;
+        background-color: #FFF;
+        margin: 17px auto 0 0px;
+        text-align: center;
+        color: #212121;
+        flex-direction: row;
+        border-left: 0px;
+      }
+      #top_container_text {
+        color: inherit;
+        font-size: 1.4em;
+        margin: 3px 0px 0px 0px
+      }
 
 
     </style>
@@ -247,7 +263,9 @@
       </div>
       <div class="icon_container_row" id="middle"></div>
       <div class="icon_container_row" id="bottom">
-        <div class="icon_container left" style="color:white;display:none"></div>
+        <div class="icon_container left" id="top_label_container">
+          <div id="top_container_text">M.Rubio</div>
+        </div>
         <div class="icon_container right red" id="candidate_icon"></div>
       </div>
     </div>
