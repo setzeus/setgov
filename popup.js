@@ -11,7 +11,9 @@ chrome.runtime.onMessage.addListener(function(request,sender,sendResponse){
 
   if( request.action == "getKeyWordsFromPage" ){
         console.log('get getKeyWordsFromPage sent msg')
-        var tagAmount =  request.source.length+" ";
+        console.log(request.source[0].length);
+
+        var tagAmount =  request.source[0].length+" ";
         chrome.browserAction.setBadgeText({
           text: tagAmount
         });

@@ -33,6 +33,22 @@ chrome.runtime.sendMessage({action: "editPop"},function(response){
 
 //handles the data from getKeyWordsFromPage
 function adjustPopUp(sortedMatched, color){
+
+  if(color == 'red'){
+    var buttonColor = 'button-red';
+    var ampersandColor = 'ampersand_color_red';
+    var rowLineColor = 'row_line_red'
+  }
+  if(color =='blue'){
+    var buttonColor = 'button-blue';
+    var ampersandColor = 'ampersand_color_blue';
+    var rowLineColor = 'row_line_blue'
+
+  }
+
+
+
+
   var clearDivv = document.getElementById('electionPositions').innerHTML = ' '
   console.log('adjust popup went off inside edit pop off');
   //Sort functions 
@@ -45,7 +61,7 @@ function adjustPopUp(sortedMatched, color){
         `<div class="resultContainer" id="`+sortedMatched[i].text+`Results">`+ 
           `<div class="row" id="row`+sortedMatched[i].text+`">` +
             `<div class="tag">` +
-                `<p class="ampersand_color">#</p>` +
+                `<p class="`+ampersandColor+`  ampersand_color">#</p>` +
                 `<p class="tagText`+i+` tagText">` +
                     sortedMatched[i].text +
                     `<i style='margin-left:5px;'>` +
@@ -53,11 +69,11 @@ function adjustPopUp(sortedMatched, color){
                     `</i>`+
                 `</p>`+
             `</div>` +
-            `<div class="button primary" id="link`+i+`">` +
+            `<div class=" ` + buttonColor +` button primary" id="link`+i+`">` +
                 `<a href="`+sortedMatched[i].link+`" target="_blank" style='width:35px;height:35px'></a>` +
             `</div>` +
           `</div>` +
-          `<div class="row-line"></div>`+
+          `<div class="`+rowLineColor+` row-line"></div>`+
           `<div class="mini-row-container" id="`+sortedMatched[i].text+`SubContainer">`+
           `</div>`+
         `</div>`;  
@@ -69,15 +85,7 @@ function adjustPopUp(sortedMatched, color){
       //resultsBody.append(resultsDiv);  
                      
   }
-  // console.log(color)
-  // if(color == 'red'){
-  //   console.log('color red should be now')
-  //   var ampersand = document.getElementsByClassName('ampersand_color').style.color = '#C62828'
-  // };
-  // if (color == 'blue'){
-  //     console.log('color blue should be displyaed')
-  //     var ampersand = document.getElementsByClassName('ampersand_color').style.color = '#1565c0'
-  // };
+   
   //Start same as function above ^^ going run for each tag in sortedMatched
   for(var x=0; x<sortedMatched.length;x++){
     console.log(x)
@@ -86,13 +94,15 @@ function adjustPopUp(sortedMatched, color){
       console.log('sortedMatched' + [x] + 'is being implemented')
      //div that going to be returned if the subtag is greater than 1 
       var subResultsDiv = `<div class="mini-row-hidden" id="subRow`+sortedMatched[x].subTags[y].text+`">` +
-                              `<p class="ampersand_color_mini">#</p>` +
-                              `<p class="sub-tag">`+sortedMatched[x].subTags[y].text+
-                                  `<i style='margin-left:5px;'>` +
-                                    `(`+sortedMatched[x].subTags[y].count+`)`  + 
-                                  `</i>`+
-                              `</p>` +
-                              `<div class="mini-button">`+
+                              `<div class="tag">` +
+                                `<p class="`+ampersandColor+` ampersand_color_mini">#</p>` +
+                                `<p class="sub-tag">`+sortedMatched[x].subTags[y].text+
+                                    `<i style='margin-left:5px;'>` +
+                                      `(`+sortedMatched[x].subTags[y].count+`)`  + 
+                                    `</i>`+
+                                `</p>` +
+                              `</div>`+   
+                              `<div class="`+buttonColor+` mini-button">`+
                                  `<a href="`+sortedMatched[x].subTags[y].link+`" target="_blank" style='width:35px;height:35px'></a>` + 
                               `</div>`+
                           `</div>`;
@@ -130,5 +140,6 @@ if (sortedMatched.length > 0) {
 //   document.getElementById("empty").style.display="none";
 //   document.getElementById("shirt_control").style.display="flex";
 // };
+
 
 }
