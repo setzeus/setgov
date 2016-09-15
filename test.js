@@ -74,6 +74,10 @@ window.addEventListener('load', function () {
 			document.getElementById('top_background').style.backgroundImage = "url('repub_logo.png')";
 			document.getElementById('top_label_container').className = "icon_container left red";
 			document.getElementById('top_container_text').innerHTML = "M.Rubio";
+			document.getElementById('primary_calendar_icon').style.color = "#ef5350";
+			document.getElementById('general_calendar_icon').style.color = "#ef5350";
+			document.getElementById('vote_booths_icon').style.color = "#ef5350";
+
 	} else {
 			color = "blue";
 			colorHex = "#1E88E5";
@@ -82,7 +86,10 @@ window.addEventListener('load', function () {
 			document.getElementById('reddit_icon').style.backgroundImage = "url('reddit_icon_blue.png')";
 			document.getElementById('top_background').style.backgroundImage = "url('demo_logo.png')";
 			document.getElementById('top_label_container').className = "icon_container left blue";
-			document.getElementById('top_container_text').innerHTML = "P.Murphy";			
+			document.getElementById('top_container_text').innerHTML = "P.Murphy";
+			document.getElementById('primary_calendar_icon').style.color = "#00a4e4";
+			document.getElementById('general_calendar_icon').style.color = "#00a4e4";
+			document.getElementById('vote_booths_icons').style.color = "#00a4e4";			
 	};
 
 	var seg2 = document.getElementById('seg2').style.borderColor = colorHex;
@@ -114,6 +121,9 @@ window.addEventListener('load', function () {
 		var colorHexRed = "#F44336";
 
 		if (currentColor == "icon_container left red") {
+			document.getElementById('primary_calendar_icon').style.color = "#00a4e4";
+			document.getElementById('general_calendar_icon').style.color = "#00a4e4";
+			document.getElementById('vote_booths_icon').style.color = "#00a4e4";
 			document.getElementById('top_background').style.backgroundImage = "url('demo_logo.png')";
 			candidate_switch.style.backgroundImage = "url('candidate_switch_blue.png')";
 			candidate_switch.className = "icon_container left blue";
@@ -131,6 +141,9 @@ window.addEventListener('load', function () {
 			document.getElementsByClassName('segment_title red')[0].className = "segment_title blue";
 			document.getElementsByClassName('segment_body red')[0].className = "segment_body blue";
 		} else {
+			document.getElementById('primary_calendar_icon').style.color = "#ef5350";
+			document.getElementById('general_calendar_icon').style.color = "#ef5350";
+			document.getElementById('vote_booths_icon').style.color = "#ef5350";
 			document.getElementById('top_background').style.backgroundImage = "url('repub_logo.png')";			
 			candidate_switch.style.backgroundImage = "url('candidate_switch_red.png')";
 			candidate_switch.className = "icon_container left red";
