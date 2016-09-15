@@ -184,7 +184,7 @@
       }
 
       .segment_body {
-        height: 500px;
+        height: 600px;
         display: flex;
         background-color: #fff;
       }
@@ -245,6 +245,36 @@
         margin: 3px 0px 0px 0px
       }
 
+      #electionInfo {
+        flex-direction:column;
+      }
+      .election_info_row_title {
+        display: flex;
+        color: #424242;
+        font-size: 1.5em;
+        margin-left: 10px;
+      }
+      .election_info_row {
+        display: flex;
+        flex-direction:row;
+        margin: 10px 0px;
+      }
+      .election_info_label {
+        margin: auto 10px auto auto;
+        font-size: 1.25em;
+        color: #424242;
+      }
+      .election_summary {
+        margin: 0px 14px;
+        font-size: 1.25em;
+        line-height: 1.5;
+      }
+      .election_full_title {}
+      .election_date_primary {}
+      .election_date_general {}
+      .election_voting_locations {}
+      .election_articles_container {}
+      .election_articles {}
 
     </style>
   <link rel='stylesheet' type="text/css" href="popup.css">
@@ -289,16 +319,45 @@
       <div class="segment_title_text">Latest Live Poll</div>
     </div>
 
+
+
     <div class="segment_body red">
       <div class="subview selected" id="electionGraph">
         <canvas id="clients" width="325" height="325"></canvas>
       </div>
-      <div class="subview" id="electionInfo"></div>
-      <!-- bernsternwhoearns playground -->
-      <div class="subview" id="electionPositions">
 
+
+      <div class="subview" id="electionInfo">
+        <div class="election_full_title"></div>
+
+        <div class="election_info_row">
+          <i class="fa fa-calendar-check-o fa-2x" id="primary_calendar_icon"aria-hidden="true" style="margin:auto 0 auto 10px"></i>
+          <div class="election_info_row_title" style="margin:auto 0 auto 6px">Primaries Date</div>
+          <div class="election_info_label">Aug. 30th, 2016</div>
+        </div>
+
+        <div class="election_info_row">
+          <i class="fa fa-calendar fa-2x" id="general_calendar_icon" aria-hidden="true" style="margin:auto 0 auto 10px"></i>
+          <div class="election_info_row_title">General Date</div>
+          <div class="election_info_label">Nov. 10th, 2016</div>
+        </div>
+
+        <div class="election_info_row">
+          <i class="fa fa-map-marker fa-2x"id="vote_booths_icon" aria-hidden="true" style="margin:auto 0 auto 10px"></i>
+          <div class="election_info_row_title"><u>Vote Booths</u></div>
+          <div class="election_info_label">(10)</div>
+        </div>
+        
+        <div class="election_summary">
+          Florida will elect <u>1</u> member to the U.S. Senate in the general election.
+          The race for Florida's U.S. Senate seat is 1 of 9 battleground races in 2016 that will determine which party controls the upper chamber. In what is expected to be one of the nation's most expensive Senate races, incumbent Sen. Marco Rubio (R) will face U.S. Rep. Patrick Murphy (D), Iraq war veteran Paul Stanton (L), and nine independent.
+        </div>
+        <div class="election_info_row_title"><u>Vote Booths</u></div>
+        <div class="election_articles_container">
+          <div class="election_articles"></div>
+        </div>
       </div>
-      <!-- end of where i should be fucking with -->
+      <div class="subview" id="electionPositions"></div>
     </div>    
   </body>
 
