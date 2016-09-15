@@ -1,20 +1,43 @@
-
-
+ var data ;
 
 chrome.runtime.sendMessage({action: "editPop"},function(response){
-  console.log(response);
-  console.log(response.length);
-  adjustPopUp(response);
-});
+  
+  data = response
+  adjustPopUp(response[0], 'red');
+});  
+
+
+
+ 
+  document.getElementById("candidate_switch").addEventListener('click', checkColor);
+  
+  function checkColor(){
+      var switch_color = document.getElementById("candidate_switch").className
+
+     
+      if (switch_color== "icon_container left red") {
+        adjustPopUp(data[1], 'blue')
+      } 
+      if(switch_color == 'icon_container left blue'){
+        adjustPopUp(data[0] , "red")
+      }
+  }
+
+
+
+
+
+
+
 
 
 //handles the data from getKeyWordsFromPage
-function adjustPopUp(sortedMatched){
-
+function adjustPopUp(sortedMatched, color){
+  var clearDivv = document.getElementById('electionPositions').innerHTML = ' '
   console.log('adjust popup went off inside edit pop off');
   //Sort functions 
-  
 
+  console.log(sortedMatched)
   for(var i =0;i < sortedMatched.length;i++){
     //document.getElementById('empty').style.display = 'none';
    
@@ -23,7 +46,7 @@ function adjustPopUp(sortedMatched){
           `<div class="row" id="row`+sortedMatched[i].text+`">` +
             `<div class="tag">` +
                 `<p class="ampersand_color">#</p>` +
-                `<p class="tagText`+i+`">` +
+                `<p class="tagText`+i+` tagText">` +
                     sortedMatched[i].text +
                     `<i style='margin-left:5px;'>` +
                          `(`+sortedMatched[i].count+`)`  + 
@@ -39,20 +62,28 @@ function adjustPopUp(sortedMatched){
           `</div>`+
         `</div>`;  
 
-    if(sortedMatched[i].subTags.length > 0){
+    
      
-      var resultsBody = document.getElementById("results_body");
+      var resultsBody = document.getElementById("electionPositions");
       resultsBody.insertAdjacentHTML("beforeend",resultsDiv);
       //resultsBody.append(resultsDiv);  
-    }                  
+                     
   }
-
+  // console.log(color)
+  // if(color == 'red'){
+  //   console.log('color red should be now')
+  //   var ampersand = document.getElementsByClassName('ampersand_color').style.color = '#C62828'
+  // };
+  // if (color == 'blue'){
+  //     console.log('color blue should be displyaed')
+  //     var ampersand = document.getElementsByClassName('ampersand_color').style.color = '#1565c0'
+  // };
   //Start same as function above ^^ going run for each tag in sortedMatched
   for(var x=0; x<sortedMatched.length;x++){
-
+    console.log(x)
     //going loop through each of the subtags in each tag
     for(var y=0; y<sortedMatched[x].subTags.length;y++){
-
+      console.log('sortedMatched' + [x] + 'is being implemented')
      //div that going to be returned if the subtag is greater than 1 
       var subResultsDiv = `<div class="mini-row-hidden" id="subRow`+sortedMatched[x].subTags[y].text+`">` +
                               `<p class="ampersand_color_mini">#</p>` +
@@ -66,15 +97,17 @@ function adjustPopUp(sortedMatched){
                               `</div>`+
                           `</div>`;
 
-      if(sortedMatched[x].subTags[y].count > 0 ){
+      
         document.getElementById(sortedMatched[x].text+`SubContainer`).insertAdjacentHTML("beforeend",subResultsDiv);
-      }                     
+                          
     }
   }
 
+console.log(sortedMatched)
 if (sortedMatched.length > 0) {
   var last = parseInt(sortedMatched.length);
   var lastTag = sortedMatched[last-1].text;
+  console.log(lastTag)
   document.getElementById(lastTag + "SubContainer").style.display = "none";
 
   document.getElementById(lastTag + "Results").onmouseover=function(){
@@ -93,9 +126,9 @@ if (sortedMatched.length > 0) {
   console.log(lastTag);
 };
 
-document.getElementById("empty").onclick=function(){
-  document.getElementById("empty").style.display="none";
-  document.getElementById("shirt_control").style.display="flex";
-};
+// document.getElementById("empty").onclick=function(){
+//   document.getElementById("empty").style.display="none";
+//   document.getElementById("shirt_control").style.display="flex";
+// };
 
 }

@@ -1,4 +1,15 @@
+function changeProfile(){
+	chrome.runtime.sendMessage({
+		action: 'Change',
+		test: 'hop out of my bed turn my swag on'
+	});
+}
+
+
+
 window.addEventListener('load', function () {
+	
+
 
 	var ctx = document.getElementById('clients').getContext('2d');
 
@@ -27,11 +38,11 @@ window.addEventListener('load', function () {
 	  xhttp.open("GET","http://elections.huffingtonpost.com/pollster/api/charts/2016-florida-senate-rubio-vs-murphy.json", true);
 	  xhttp.send();
 
-	console.log(XAxisDates);
+	//console.log(XAxisDates);
 	var fixedAxis = XAxisDates.reverse;
-	console.log(XAxisDates.reverse().reverse());
-	console.log(rubioValue);
-	console.log(murphyValue);
+	// console.log(XAxisDates.reverse().reverse());
+	// console.log(rubioValue);
+	// console.log(murphyValue);
 
 	var testArr = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 	console.log(testArr);
@@ -104,6 +115,7 @@ window.addEventListener('load', function () {
 
 
 	function candidateSwitchLogic(element) {
+
 		var currentColor = element.srcElement.className;
 		var candidate_switch = document.getElementById('candidate_switch');
 		console.log(currentColor);

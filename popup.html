@@ -200,6 +200,8 @@
       }
       .subview.selected {
         display: flex;
+        flex-direction: column;
+        
         flex-grow:1;
       }
       #candidate_switch {
@@ -245,9 +247,10 @@
 
 
     </style>
+  <link rel='stylesheet' type="text/css" href="popup.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js"></script>  
   <script src="test.js"></script>  
- 
+
   </head>
 
 
@@ -258,7 +261,7 @@
     </div>
     <div class="top_body red" id="top_background">
       <div class="icon_container_row" id="top">
-        <div class="icon_container left red" id="candidate_switch"></div>
+        <div onClick='checkColor' class="icon_container left red" id="candidate_switch"></div>
         <div class="icon_container right red" id="reddit_icon"></div>
       </div>
       <div class="icon_container_row" id="middle"></div>
@@ -291,12 +294,16 @@
         <canvas id="clients" width="325" height="325"></canvas>
       </div>
       <div class="subview" id="electionInfo"></div>
-      <div class="subview" id="electionPositions"></div>
+      <!-- bernsternwhoearns playground -->
+      <div class="subview" id="electionPositions">
+
+      </div>
+      <!-- end of where i should be fucking with -->
     </div>    
   </body>
 
   <footer>
-    <script src="editPop.js"></script>
+        <script src="editPop.js"></script>
   </footer>
 
 </html>
