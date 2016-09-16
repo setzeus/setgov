@@ -92,15 +92,19 @@ function adjustPopUp(sortedMatched, color){
         `</div>`;
       
       if(sortedMatched[x].subTags[y].count > 0 ){
+          console.log('check to see if any subs tags were attempted to be inputed')
           document.getElementById(sortedMatched[x].text+`SubContainer`).insertAdjacentHTML("beforeend",subResultsDiv);
       }                 
     }
   }
 
 
+console.log(sortedMatched)
 if (sortedMatched.length > 0) {
   var last = parseInt(sortedMatched.length);
+  console.log(last)
   var lastTag = sortedMatched[last-1].text;
+  console.log(lastTag)
   document.getElementById(lastTag + "SubContainer").style.display = "none";
 
   document.getElementById(lastTag + "Results").onmouseover=function(){
@@ -112,17 +116,14 @@ if (sortedMatched.length > 0) {
   };
 
   document.getElementById(lastTag + "SubContainer").onmouseleave=function(){
-    document.getElementById(lastTag + "SubContainer").style.display = "flex";
+    document.getElementById(lastTag + "SubContainer").style.display = "none";
   };
 
   console.log(last);
   console.log(lastTag);
 };
 
-// document.getElementById("empty").onclick=function(){
-//   document.getElementById("empty").style.display="none";
-//   document.getElementById("shirt_control").style.display="flex";
-// };
+
 
 
 }
