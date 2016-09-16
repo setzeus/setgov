@@ -73,15 +73,17 @@ function adjustPopUp(sortedMatched, color){
                 `<a href="`+sortedMatched[i].link+`" target="_blank" style='width:35px;height:35px'></a>` +
             `</div>` +
           `</div>` +
-          `<div class="`+rowLineColor+` row-line"></div>`+
+          `<div class="row-line"></div>`+
           `<div class="mini-row-container" id="`+sortedMatched[i].text+`SubContainer">`+
           `</div>`+
         `</div>`;  
 
     
-     
-      var resultsBody = document.getElementById("electionPositions");
+      if( sortedMatched[i].subTags.length > 0 ){
+        var resultsBody = document.getElementById("electionPositions");
       resultsBody.insertAdjacentHTML("beforeend",resultsDiv);
+      }
+      
       //resultsBody.append(resultsDiv);  
                      
   }
