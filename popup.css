@@ -36,6 +36,9 @@
     background-image:url("arrow2-no-circle-red.png");
   }
 
+  #electionPositions{
+    background-color: #E0E0E0;
+  }
   .mini-button {
     
     height: 25px;
@@ -91,6 +94,7 @@
     display: inline-block;
     transition: color .5s;
 
+
   }
   .row_line_red{
       background-color: #C62828;
@@ -116,7 +120,7 @@
     transform: scaleX(1);
   }
  
-  .row:hover + .mini-row-hidden{
+  .row:hover + .mini-row-container{
     display: flex;
   }
  
