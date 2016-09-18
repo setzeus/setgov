@@ -1,288 +1,482 @@
-  .ampersand_color {
-    
-    font-size: 20px;
-  }
-  .ampersand_color_mini {
-    margin-left: 27px;
-  }
-  .ampersand_color_red{
-      color: #f44336;
-  }
-  .ampersand_color_blue{
-     color:  #1e88e5;
-  }
-
-  .arrow_candidate {
-    width: 100px;
-  }
-
-  .button {
-    height: 35px;
-    width: 35px; 
-    border-radius: 50%; 
-    justify-content:flex-end;
-    display: flex;
-    background-size: 100%;
-  }
-
-  .button-red{
-      background-image:url("arrow-red.png");
-  }
-  .button-blue{
-    background-image:url("arrow.png");
-  }
-
-  .button:hover {
-    background-image:url("arrow2-no-circle-red.png");
-  }
-
-  #electionPositions{
-    background-color: #E0E0E0;
-  }
-  .mini-button {
-    
-    height: 25px;
-    width: 25px; 
-    border-radius: 50%; 
-    justify-content:flex-end;
-    display: flex;
-    background-size: 100%;
-  }
   
-  .mini-row-hidden {
-    height: 49.5px;
-    width: 100%;
-    background-color:#FEFEFE;
-    margin-top: 1px;
-    display: flex;
-    color: #000;
-    flex-direction:row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .mini-row-container {
-    flex-direction: column;
-    width: 100%;
-    display: none;
-  }
-  
-  .primary {
-    background-color: #00A9E0;
-  }
-  .resultContainer{
-    display: flex;
-    flex-direction:column;
-    justify-content: flex-start;
-    align-items: center;
-
-  }
-  .row {
-    width: 100%;
-    height: 66px;
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction:row;
-    align-items: center ;
-    justify-content: space-between;
-  }
-  
-  .row-line {
-    width: 100%;
-    height: 5px;
-    position: relative;
-    display: inline-block;
-    transition: color .5s;
 
 
-  }
-  .row_line_red{
-      background-color: #C62828;
-  }
-  .row_line_blue{
-      background-color: #1e88e5;
+/* Start of css */
+#blue {
+      color: #1e88e5;
+    }
+    #left {
+      margin: auto auto auto 15px; 
+    }
+    #red {
+      color: #f44336; 
+    }
+    #right {
+      margin: auto 15px auto auto;
+    }
+    #seg2 {
+      border-right: 1px solid white;
+      border-left: 1px solid white; 
+    }
+
+      body {
+        height: 1000px;
+        width: 325px;
+        flex-direction:row;
+        margin: 0;
+        background-color: #eee;
+      }
+
+      .header {
+        display: flex;
+        height: 50px;
+        background-color: #fff;
+      }
+
+      .icon_container.left {
+        height: 32px;
+        width: 32px;
+        border-radius: 25px;
+        background-color: #FFF;
+        margin: auto auto auto 25px;
+      }
+       .icon_container.left.blue {
+        border: 2px solid #1565c0;
+      }
+       .icon_container.left.red {
+        border: 2px solid #C62828;
+      }
+      .icon_container.right {
+        height: 32px;
+        width: 32px;
+        border-radius: 25px;
+        background-color: #FFF;
+        margin: auto 25px auto auto;
+      }
+       .icon_container.right.blue {
+        border: 2px solid #1565c0;
+      }
+       .icon_container.right.red {
+        border: 2px solid #C62828;
+      }
+
+      .icon_container_row {
+        flex-grow:1;
+        display: flex;
+      }
+
+      .top_body {
+        height: 150px;
+        display: flex;
+        background-color: #fff;
+        flex-direction:column;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: 50%;
+      }
+      .top_body.blue {
+        border-top: 2px solid #1E88E5;
+      }
+      .top_body.red {
+        border-top: 2px solid #F44336;
+      }
+
+      #selected {
+        color: white;
+      }
+
+      .segment {
+        height: 31px;
+        flex-grow:1;
+        display: flex;
+        cursor: pointer;
+        animation-duration:1s;
+      }
+
+      .default.segment {
+        height: 31px;
+        flex-grow:1;
+        display: flex;
+        cursor: auto;
+        border: none; 
+        color: white;
+        animation-duration:1s;
+      }
+      .default.segment.blue {
+        background-color: #1E88E5;
+      }
+      .default.segment.red {
+        background-color: #F44336;
+      }
+
+      .segment_container {
+        height: 75px;
+        display: flex;
+        background-color: #fff;
+        flex-direction:row;
+        align-items:center;
+      }
+      .segment_container.blue {
+        border-top: 2px solid #1E88E5;
+      }
+      .segment_container.red {
+        border-top: 2px solid #F44336;
+      }
+
+      .segment_controller {
+        height: 30px;
+        flex-grow: 1;
+        display: flex;
+        border-radius: 8px;
+        margin: 15px 30px;
+        flex-direction:row;
+      }
+      .segment_controller.blue {
+        border: 1px solid #1e88e5;
+        color: #1E88E5;
+      }
+      .segment_controller.red {
+        border: 1px solid #F44336;
+        color: #F44336;
+      }
+
+      .segment_icon.fa.fa-money.fa-lg {
+        font-size: 1.33em;
+        color: inherit;
+        margin: auto;
+      }
+      .segment_icon.fa.fa-info.fa-lg {
+        font-size: 1.33em;
+        color: inherit;
+        margin: auto;
+      }
+      
+      .segment_icon.fa.fa-list.fa-lg {
+        font-size: 1.33em;
+        color: inherit;
+        margin: auto; 
+      }
+
+      .segment_title {
+        height: 37.5px;
+        display: flex;
+        background-color: #fff;
+        text-align: center;
+      }
+
+       .segment_title.blue {
+        border-top: 2px solid #1e88e5;
+        color: #1e88e5;
+      }
+      .segment_title.red {
+        border-top: 2px solid #F44336;
+        color: #F44336;
+      }
+
+      .segment_title_text {
+        color: inherit;
+        font-size: 1.5em;
+        margin: auto;  
+      }
+
+      .segment_body {
+        height: 600px;
+        display: flex;
+        background-color: #fff;
+      }
+
+      .segment_body.blue {
+        border-top: 2px solid #1E88E5;
+      }
+      .segment_body.red {
+        border-top: 2px solid #F44336;
+      }
+      .subview {
+        display: none;
+      }
+      .subview.selected {
+        display: flex;
+        flex-direction: column;
+        
+        flex-grow:1;
+      }
+      #candidate_switch {
+        cursor: pointer;
+        background-image: url('candidate_switch_red.png');
+        background-size: 75%;
+        background-position: 50%;
+        background-repeat: no-repeat;
+      }
+      #candidate_icon {
+        cursor: pointer;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: 75%;
+      }
+      #reddit_icon {
+        cursor: pointer;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: 75%;
+      }
+      #tempHeader {
+        font-size: 1.75em;
+        color: #212121;
+        margin: auto;
+      }
+      #top_label_container {
+        height: 32px;
+        width: 100px;
+        border-radius: 0px;
+        background-color: #FFF;
+        margin: 17px auto 0 0px;
+        text-align: center;
+        color: #212121;
+        flex-direction: row;
+        border-left: 0px;
+      }
+      #top_container_text {
+        color: inherit;
+        font-size: 1.4em;
+        margin: 3px 0px 0px 0px
+      }
+
+      #electionInfo {
+        flex-direction:column;
+      }
+      .election_info_row_title {
+        display: flex;
+        color: #424242;
+        font-size: 1.5em;
+        margin-left: 10px;
+      }
+      .election_info_row {
+        display: flex;
+        flex-direction:row;
+        margin: 10px 0px;
+      }
+      .election_info_label {
+        margin: auto 10px auto auto;
+        font-size: 1.25em;
+        color: #424242;
+      }
+      .election_summary {
+        margin: 0px 14px;
+        font-size: 1.25em;
+        line-height: 1.5;
+      }
+      .election_full_title {}
+      .election_date_primary {}
+      .election_date_general {}
+      .election_voting_locations {}
+      .election_articles_container {}
+      .election_articles {}
+
+      #electionPositions{
+        background-color: #FAFAFA;
+      }
+
+      .results_container{
+        display: flex;
+        flex-direction: column;
+      }
+      .sub_row_container{
+        display: flex;
+        flex-direction: column;
+      }
+      .row{
+        height: 66px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+      }
+      .result_text{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+   
+
+
+
+
+      .sub_row{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
+
+      }
+      .result_container:hover  .sub_row{
+        opacity: 1;
+      }
+      
+      .ampersand{
+        font-size: 15px
+      }
+      .red_color{
+        color: #f44336;
+      }
+      .blue_color{
+        color: #1e88e5;
+      }
+      .issue{
+        font-size: 20px;
+        font-style: bold;
+      }
+      
+
+      .sub_result_text{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+
+    .row_status {
+      width: 100%;
+      height: 5px;
+      position: relative;
+      display: inline-block;
+      transition: background-color 2s;
+      background-color: #ffffff;
+    }
+
+ 
+     .button {
+        height: 35px;
+        width: 35px; 
+        border-radius: 50%; 
+        justify-content:flex-end;
+        display: flex;
+        background-size: 100%;   
+
+      }
+      .sub_button {
+        height: 25px;
+        width: 25px; 
+        border-radius: 50%; 
+        justify-content:flex-end;
+        display: flex;
+        margin: auto 11px auto auto;
+        background-size: 100%;
+      }
+
+      
+      .button_red{
+        background-image:url("arrow-red.png");
+        transition: background-image .5s ease-out;
+      }
+
+      .button_blue{
+        background-image:url("arrow.png");
+        transition: background-image .5s ease-out;
+
+      }
+
+
+      .button_red:hover {
+        background-image:url("arrow2-no-circle-red.png");
+      }
+
+      .button_blue:hover{
+        background-image:url("arrow2-no-circle.png");
+
+      }
+
+    .result_container:hover  #row_status_blue_color {
+      background-color: #035ca0;
+    }
+
+    .result_container:hover #row_status_red_color{
+      background-color: #f44336;
+    }
+
+
+
+    #Education_sub_container{
+    max-height: 0;
+    transition: max-height 3s ease-out;
   }
 
-  .row-line:before{
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background: #C62828;
-    z-index: -1;
-    transform:scaleX(0);
-    transition:  transform .5s;
+  #EducationResult:hover  #Education_sub_container{
+    transition: max-height 5s ease-in;
+    max-height: 3000px;
+
+  }
+
+
+  #Enviroment_sub_container{
+    max-height: 0;
+    transition: max-height 3s ease-out;
+  }
+
+  #EnviromentResult:hover  #Enviroment_sub_container{
+    transition: max-height 5s ease-in;
+    max-height: 3000px;
+  }
+
+  #Equality_sub_container{
+    max-height: 0;
+    transition: max-height 3s ease-out;
+  }
+
+  #EqualityResult:hover  #Equality_sub_container{
+    transition: max-height 5s ease-in;
+    max-height: 3000px;
+  }
+
+  #Health_sub_container{
+    max-height: 0;
+    transition: max-height 3s ease-out;
+  }
+
+  #HealthResult:hover  #Health_sub_container{
+    transition: max-height 5s ease-in;
+    max-height: 3000px;
+  }
+
+  #Jobs_sub_container{
+    max-height: 0;
+    transition: max-height 3s ease-out;
+  }
+
+  #JobsResult:hover  #Jobs_sub_container{
+    transition: max-height 5s ease-in;
+    max-height: 3000px;
+  }
+
+  #Security_sub_container{
+    max-height: 0;
+    transition: max-height 3s ease-out;
+  }
+
+  #SecurityResult:hover  #Security_sub_container{
+    transition: max-height 5s ease-in;
+    max-height: 3000px;
+  }
+
+
+
+
+
+  #Economy_sub_container{
+    max-height: 0;
+    transition: max-height 3s ease-out;
+  }
+
+  #EconomyResult:hover  #Economy_sub_container{
+    transition: max-height 5s ease-in;
+    max-height: 3000px;
   }
 
  
- .row:hover + .mini-row-container{
-    display: flex;
-  }
-  .row:hover + .row-line:before {
-    transform: scaleX(1);
-  }
- 
- 
- 
-  .row-bottom-display-container {
-    height: 4px;
-    display: flex;
-    flex-direction:row;
-  }
-
-  .row-bottom-padding {
-    height: 1px;
-    width: 100%; 
-    display: flex;
-  }
-
-  .row:hover {
-    cursor: pointer;
-    transition-duration: 5s;
-  }
-
-  .row:hover > .button {
-    background-image:url("arrow2-no-circle-red.png");
-    background-color: #FFF;
-   transition-duration: 1s;
-  }
-
-  .results_body{
-    display: flex;
-    flex-direction: column;
-
-  }
-
-  .tagText{
-    font-size: 20px;
-  }
-
-
- /* #empty {
-    display: flex;
-    font-size: 1em;
-    color: #e4002b;
-    margin: 2px 0px 0px 0px;
-    padding: 0px 66px 0px 66px;
-    background-color: #fff;
-    cursor: pointer;
-  }
-  #empty:hover {
-    color: #00A9E0;
-  }*/
-
-
-  .tag{
-    width:  auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .sub-tag {
-    width:  auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  
-  
-  .top-mini-row {
-    margin-top: 0px;
-  }
-
-  
-  #EducationSubContainer{
-    max-height: 0;
-    transition: max-height 20s ease-out;
-  }
-
-  #EducationResults:hover  #EducationSubContainer{
-    ransition: max-height 5s ease-in;
-    max-height: 3000px;
-  }
-
-
-  #EnviromentSubContainer{
-    max-height: 0;
-    transition: max-height 20s ease-out;
-  }
-
-  #EnviromentResults:hover  #EnviromentSubContainer{
-    ransition: max-height 5s ease-in;
-    max-height: 3000px;
-  }
-
-  #EqualitySubContainer{
-    max-height: 0;
-    transition: max-height 20s ease-out;
-  }
-
-  #EqualityResults:hover  #EqualitySubContainer{
-    ransition: max-height 5s ease-in;
-    max-height: 3000px;
-  }
-
-  #HealthSubContainer{
-    max-height: 0;
-    transition: max-height 20s ease-out;
-  }
-
-  #HealthResults:hover  #HealthSubContainer{
-    ransition: max-height 5s ease-in;
-    max-height: 3000px;
-  }
-
-  #JobsSubContainer{
-    max-height: 0;
-    transition: max-height 20s ease-out;
-  }
-
-  #JobsResults:hover  #JobsSubContainer{
-    ransition: max-height 5s ease-in;
-    max-height: 3000px;
-  }
-
-  #SecuritySubContainer{
-    max-height: 0;
-    transition: max-height 20s ease-out;
-  }
-
-  #SecurityResults:hover  #SecuritySubContainer{
-    ransition: max-height 5s ease-in;
-    max-height: 3000px;
-  }
-
-  #EconomySubContainer{
-    max-height: 0;
-    transition: max-height 20s ease-out;
-  }
-
-  #EconomyResults:hover  #EconomySubContainer{
-    ransition: max-height 5s ease-in;
-    max-height: 3000px;
-  }
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
