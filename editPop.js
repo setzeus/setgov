@@ -38,6 +38,17 @@ function adjustPopUp(sortedMatched, color){
     var button = 'button_blue'
   }
 
+
+  if (sortedMatched.length == 0) {
+    console.log('nada in dis bih')
+    var nada =  
+      `<div class='nada_container'>`+
+        `<p class='nada `+color+`'>Nothing to see here</p>`+
+      `</div> `; 
+    document.getElementById("electionPositions").insertAdjacentHTML("beforeend", nada);    
+
+  };
+
   console.log(color)
   function checkSubtag(value){
       if(value.subTags.length > 0){
@@ -92,6 +103,8 @@ function adjustPopUp(sortedMatched, color){
           console.log('this nigga goes in')
           document.getElementById("electionPositions").insertAdjacentHTML("beforeend", resultDiv);    
   }
+
+
 
   for( var x=0; x<filtered.length; x++){
     for(var y=0;y<filtered[x].subTags.length; y++){

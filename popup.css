@@ -197,7 +197,7 @@
       .subview.selected {
         display: flex;
         flex-direction: column;
-        
+
         flex-grow:1;
       }
       #candidate_switch {
@@ -301,8 +301,6 @@
    
 
 
-
-
       .sub_row{
         display: flex;
         flex-direction: row;
@@ -366,6 +364,17 @@
         display: flex;
         margin: auto 11px auto auto;
         background-size: 100%;
+      }
+
+      .nada_container{
+        width: 100%;
+        text-align: center;
+        margin-top: 30%;
+      }
+      .nada{
+        text-align: center;
+      
+        font-size: 20px;
       }
 
       
