@@ -24,6 +24,7 @@ function textNodes(){
 			economy_social_security_and_medicare:0,
 			economy_wall_street_reform:0,
 			economy_works_for_everyone:0,
+			economy_farmers_ranchers:0,
 
     	education:0,
 	    	education_campus_sexual_assault:0,
@@ -31,11 +32,14 @@ function textNodes(){
 	    	education_early_childhood:0,
 	    	education_k_12:0,
 	    	education_technology_and_innovation:0,
+	    	education_common_core:0,
+	    	improving_education:0,
 
     	environment: 0,
 	    	environment_climate_change:0,
 	    	environment_protecting_animals_and_wildlife:0,
 	    	environment_rural_communities:0,
+	    	environment_our_environment: 0,
 
     	equality: 0,
 	    	equality_campaign_finance_reform:0,
@@ -45,6 +49,7 @@ function textNodes(){
 	    	equality_racial_justice:0,
 	    	equality_voting_rights:0,
 	    	equality_womens_rights_and_opportunity:0,
+	    	equality_seniors:0,
 
     	health: 0,
 	    	health_addiction_and_substance_use:0,
@@ -53,6 +58,7 @@ function textNodes(){
 	    	health_disability_rights:0,
 	    	health_health_care:0,
 	    	health_hiv_and_aids:0,
+	    	healthcare: 0,
 
     	jobs: 0,
     	jobs_paid_family_and_medical_leave:0,
@@ -100,6 +106,10 @@ function textNodes(){
 			wordCount.economy++
 			wordCount.economy_works_for_everyone++
 		}
+		if(currentText.match(/^(food\sfarm|Foodl\swater|Water|rain|Rain)$/)){
+			wordCount.economy++
+			wordCount.economy_farmers_ranchers++
+		}
 
 		//start Education 
 		if(currentText.match(/^(campus|Campus|College|college\scampus|sexual\sassault)$/)){
@@ -122,6 +132,14 @@ function textNodes(){
 			wordCount.education++
 			wordCount.education_technology_and_innovation++
 		}
+		if(currentText.match(/^(state|parents|local|school|board|Education)$/)){
+			wordCount.education++
+			wordCount.education_common_core++
+		}
+		if(currentText.match(/^(state|parents|local|school|board|Education)$/)){
+			wordCount.education++
+			wordCount.education_improving_education
+		}
 
 		//start environment
 		if(currentText.match(/^(climate|Climate|climate\schange|Climate\sChange)$/)){
@@ -135,6 +153,10 @@ function textNodes(){
 		if(currentText.match(/^(rural|rural\scommunities|Rural|Rural\sCommunities)$/)){
 			wordCount.environment++
 			wordCount.environment_rural_communities++
+		}
+		if(currentText.match(/^(state|green|Everglades|Florida|climate)$/)){
+			wordCount.environment++
+			wordCount.environment_our_environment++
 		}
 
 		//start Equality
@@ -166,6 +188,10 @@ function textNodes(){
 			wordCount.equality++
 			wordCount.equality_womens_rights_and_opportunity++
 		}
+		if(currentText.match(/^(senior|citizens|Medicare|old|Obamcare|Social|Security)$/)){
+			wordCount.equality++
+			wordCount.equality_seniors++
+		}
 
 		//start Health
 		if(currentText.match(/^(addiction|substance\sabuse|Addiction|substance\suse|Substance\suse)$/)){
@@ -191,6 +217,10 @@ function textNodes(){
 		if(currentText.match(/^(hiv|HIV|aids|AIDS)$/)){
 			wordCount.health++
 			wordCount.health_hiv_and_aids++
+		}
+		if(currentText.match(/^(health|Healthcare|Obamacare|patients|)$/)){
+			wordCount.health++
+			wordCount.healthcare++
 		}
 
 		//start Jobs
@@ -249,14 +279,27 @@ function textNodes(){
         text:"Economy", 
         link:"https://marcorubio.com/2016/07/20/repeal-burdensome-regulations-on-farmers-and-ranchers/",
         count: wordCount.economy,
-        subTags:[ ]
-
+        subTags:[ 
+        	{
+	            text: 'Farmers and Ranchers',
+	            tag: 'Economy',
+	            link: 'https://marcorubio.com/2016/07/20/repeal-burdensome-regulations-on-farmers-and-ranchers/',
+	            count: 	wordCount.economy_farmers_ranchers
+        	}	
+        ]
       },
       {
         text:"Education",
         link:"https://marcorubio.com/2016/08/01/common-core/",
         count: wordCount.education,
-        subTags:[ ]
+        subTags:[ 
+			{
+	            text: 'Common Core',
+	            tag: 'Education',
+	            link: 'https://marcorubio.com/2016/08/01/common-core/',
+	            count: 	wordCount.education_common_core
+        	}	        	
+        ]
       }, 
       {
         text:"Enviroment",
@@ -281,7 +324,7 @@ function textNodes(){
             text: 'American Seniors',
             tag: 'Equality',
             link: 'https://marcorubio.com/2016/07/20/1487/',
-            count: wordCount.equality
+            count: wordCount.equality_seniors
 
           }
         ]
@@ -290,13 +333,28 @@ function textNodes(){
         text:"Health",
         link:"https://marcorubio.com/2016/08/01/healthcare/",
         count: wordCount.health,
-        subTags:[ ]
+        subTags:[ 
+        	{
+        		text: 'Healthcare',
+        		tag: 'Health',
+        		link:"https://marcorubio.com/2016/08/01/healthcare/",
+        		count: wordCount.healthcare
+
+        	}
+        ]
       },
       {
         text:"Jobs",
         link:"https://cdn.meme.am/instances/500x/55176660.jpg",
         count: wordCount.jobs,
-        subTags:[ ]
+        subTags:[
+        	{
+        		text:"Immigration",
+	            tag:"Jobs",
+	            link:"https://cdn.meme.am/instances/500x/55176660.jpg",
+	            count: wordCount.equality_immigration_reform
+        	}
+        ]
       },
       {
         text:"Security", 
@@ -337,11 +395,27 @@ function textNodes(){
         text:"Education",
         link:"https://www.murphyforflorida.com/vision/improving-education/",
         count: wordCount.education,
+        subTags:[
+        	{
+        		text: "Improving Education",
+        		tag: 'Education',
+        		link:"https://www.murphyforflorida.com/vision/improving-education/",
+        		count: wordCount.education_improving_education
+        	}
+        ]
       }, 
       {
         text:"Enviroment",
         link:"https://www.murphyforflorida.com/vision/our-environment/",
         count: wordCount.environment,
+        subTags:[
+        	{
+        		text: 'Our Enviroment',
+        		tag: 'Enviroment',
+        		link:"https://www.murphyforflorida.com/vision/our-environment/",
+        		count: wordCount.environment_our_environment
+        	}
+        ]
       },
       {
         text:"Equality",

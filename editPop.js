@@ -5,6 +5,7 @@
 //Send message to background waiting for reponse of words matched from current visted page
 chrome.runtime.sendMessage({action: "editPop"},function(response){
   data = response
+  console.log(response)
   adjustPopUp(response[0], 'red');
 });  
 
@@ -26,7 +27,8 @@ chrome.runtime.sendMessage({action: "editPop"},function(response){
 
 //handles the data from getKeyWordsFromPage and profile change
 function adjustPopUp(sortedMatched, color){
-  
+  var clearDivv = document.getElementById('electionPositions').innerHTML = ' ' 
+
   if(color == 'red'){
     var color = "red_color";
     var button = 'button_red';
@@ -38,17 +40,31 @@ function adjustPopUp(sortedMatched, color){
 
   console.log(color)
   function checkSubtag(value){
-    var clearDivv = document.getElementById('electionPositions').innerHTML = ' ' 
-
       if(value.subTags.length > 0){
         return value 
       }
   }
-  var filtered = sortedMatched.filter(checkSubtag)
+
+  function checkSubtagCount(value){
+    for(var q=0;q< value.subTags.length; q++){
+      console.log(value.subTags[q].count)
+      if( value.subTags[q].count !== 0){
+        return value
+      }
+    }
+  }
+
+  var result = sortedMatched.filter(checkSubtag);
+  var filtered = result.filter(checkSubtagCount);
+
   console.log(filtered)
+  console.log(filtered.length)
+
 
   for(var i=0; i < filtered.length; i++){
-    console.log(i)
+    console.log('test')
+    var subtagLength = filtered[i].subTags.length;
+    
     var resultDiv = 
       `<div class="result_container" id="`+filtered[i].text+`Result">`+
 
@@ -72,10 +88,9 @@ function adjustPopUp(sortedMatched, color){
         `<div class='sub_row_container' id='`+filtered[i].text+`_sub_container'>`+
         `</div>`+
       `</div>`;
-
-      var resultsBody = document.getElementById("electionPositions");
-      resultsBody.insertAdjacentHTML("beforeend",resultDiv);
-
+  
+          console.log('this nigga goes in')
+          document.getElementById("electionPositions").insertAdjacentHTML("beforeend", resultDiv);    
   }
 
   for( var x=0; x<filtered.length; x++){
@@ -96,8 +111,11 @@ function adjustPopUp(sortedMatched, color){
 
           `</div>`+
         `</div>`;
+        console.log(filtered[x].text+`_sub_container`)
 
+      if(filtered[x].subTags[y].count > 0){
         document.getElementById(filtered[x].text+`_sub_container`).insertAdjacentHTML("beforeend", subResultDiv);
+      }
     }
   }
 

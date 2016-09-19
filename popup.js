@@ -19,15 +19,12 @@ chrome.runtime.onMessage.addListener(function(request,sender,sendResponse){
         });
 
         data = request.source;
-       
-   
-       
   }
 
  if( request.action == "editPop"){
       console.log('edit pop up send msg')
+      console.log(data)
       sendResponse(data)
-       
   }  
   
 });
