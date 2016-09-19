@@ -27,7 +27,7 @@ chrome.runtime.sendMessage({action: "editPop"},function(response){
 
 //handles the data from getKeyWordsFromPage and profile change
 function adjustPopUp(sortedMatched, color){
-  var clearDivv = document.getElementById('electionPositions').innerHTML = ' ' 
+ document.getElementById('electionPositions').innerHTML = ' ' 
 
   if(color == 'red'){
     var color = "red_color";
@@ -39,15 +39,7 @@ function adjustPopUp(sortedMatched, color){
   }
 
 
-  if (sortedMatched.length == 0) {
-    console.log('nada in dis bih')
-    var nada =  
-      `<div class='nada_container'>`+
-        `<p class='nada `+color+`'>Nothing to see here</p>`+
-      `</div> `; 
-    document.getElementById("electionPositions").insertAdjacentHTML("beforeend", nada);    
-
-  };
+  
 
   console.log(color)
   function checkSubtag(value){
@@ -65,6 +57,7 @@ function adjustPopUp(sortedMatched, color){
     }
   }
 
+
   var result = sortedMatched.filter(checkSubtag);
   var filtered = result.filter(checkSubtagCount);
 
@@ -72,7 +65,16 @@ function adjustPopUp(sortedMatched, color){
   console.log(filtered.length)
 
 
-  for(var i=0; i < filtered.length; i++){
+  if (filtered.length == 0) {
+    console.log('nada in dis bih')
+    var nada =  
+      `<div class='nada_container'>`+
+        `<p class='nada `+color+`'>Nothing to see here</p>`+
+      `</div> `; 
+    document.getElementById("electionPositions").insertAdjacentHTML("beforeend", nada);    
+
+  }else{
+    for(var i=0; i < filtered.length; i++){
     console.log('test')
     var subtagLength = filtered[i].subTags.length;
     
@@ -130,6 +132,9 @@ function adjustPopUp(sortedMatched, color){
         document.getElementById(filtered[x].text+`_sub_container`).insertAdjacentHTML("beforeend", subResultDiv);
       }
     }
+  }
+
+  
   }
 
   // if (filtered.length > 0) {
