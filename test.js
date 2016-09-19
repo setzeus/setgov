@@ -10,10 +10,6 @@ function changeProfile(){
 window.addEventListener('load', function () {
 	
 
-
-	var ctx = document.getElementById('clients').getContext('2d');
-
-
 	var XAxisDates = [];
 	var rubioValue = [];
 	var murphyValue = [];
@@ -25,18 +21,149 @@ window.addEventListener('load', function () {
 	   	  var data = this.responseText
 	   	  //console.log(data);
 		  var jsonResponse = JSON.parse(data);
-		  
-		  for (var i = 99; i > 0; i--) {
-		  	XAxisDates[i] = jsonResponse.estimates_by_date[i].date;
+		  var j =0;
+		  for (var i = 60; i >= 0; i--) {
+		  	XAxisDates[i] = jsonResponse.estimates_by_date[j].date;
+		  	j++;
 		  	rubioValue[i] = jsonResponse.estimates_by_date[i].estimates[0].value;
 		  	murphyValue[i] = jsonResponse.estimates_by_date[i].estimates[1].value;
 		  	undecidedValue[i] = jsonResponse.estimates_by_date[i].estimates[2].value;
 		  };
+		  console.log(XAxisDates.length);
+		  console.log(XAxisDates);
+		  console.log(XAxisDates[0]);
+
+
+		  var ctx = document.getElementById("clients");
+
+			var labelsTest = XAxisDates;
+
+			var data = {
+					    labels: labelsTest,
+					    datasets: [
+					      {
+					         label: "M.Rubio",
+				            fill: false,
+				            lineTension: 0.1,
+				            backgroundColor: "rgba(239,83,80,.5)",
+				            borderColor: "rgba(244,67,54,1)",
+				            borderCapStyle: 'butt',
+				            borderDash: [],
+				            borderDashOffset: 0.0,
+				            borderJoinStyle: 'miter',
+				            pointBorderColor: "rgba(244,67,54,1)",
+				            pointBackgroundColor: "#fff",
+				            pointBorderWidth: 1,
+				            pointHoverRadius: 5,
+				            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+				            pointHoverBorderColor: "rgba(220,220,220,1)",
+				            pointHoverBorderWidth: 2,
+				            pointRadius: 1,
+				            pointHitRadius: 10,
+				            data: rubioValue,
+				            spanGaps: false,
+					      },
+					      {
+					         label: "P.Murphy",
+				            fill: false,
+				            lineTension: 0.1,
+				            backgroundColor: "rgba(0,164,228,0.5)",
+				            borderColor: "rgba(1,113,208,1)",
+				            borderCapStyle: 'butt',
+				            borderDash: [],
+				            borderDashOffset: 0.0,
+				            borderJoinStyle: 'miter',
+				            pointBorderColor: "rgba(1,113,208,1)",
+				            pointBackgroundColor: "#fff",
+				            pointBorderWidth: 1,
+				            pointHoverRadius: 5,
+				            pointHoverBackgroundColor: "rgba(57,129,129,1)",
+				            pointHoverBorderColor: "rgba(220,220,220,1)",
+				            pointHoverBorderWidth: 2,
+				            pointRadius: 1,
+				            pointHitRadius: 10,
+				            data: murphyValue  ,
+				            spanGaps: false,
+					      },
+					      {
+					        label: "Not Sure",
+				            fill: false,
+				            lineTension: 0.1,
+				            backgroundColor: "rgba(55,71,79,0.5)",
+				            borderColor: "rgba(49,53,66,1)",
+				            borderCapStyle: 'butt',
+				            borderDash: [],
+				            borderDashOffset: 0.0,
+				            borderJoinStyle: 'miter',
+				            pointBorderColor: "rgba(49,53,66,1)",
+				            pointBackgroundColor: "#fff",
+				            pointBorderWidth: 1,
+				            pointHoverRadius: 5,
+				            pointHoverBackgroundColor: "rgba(54,28,0,1)",
+				            pointHoverBorderColor: "rgba(220,220,220,1)",
+				            pointHoverBorderWidth: 2,
+				            pointRadius: 1,
+				            pointHitRadius: 10,
+				            data: undecidedValue,
+				            spanGaps: false,
+					      }
+					    ]
+			};
+
+			var options = {
+			    scales: {
+			        yAxes: [{
+			            display: true,
+			            ticks: {
+			                suggestedMin: 0,    			                
+			                beginAtZero: true,
+			                max: 70
+			            }
+			        }]
+			    },
+			    legend: {
+			    	display: true,
+			    	label: {
+			    		position:'bottom',
+			    		fullWidth:true
+			    	}
+			    }
+			};
+
+
+
+			var myLineChart = new Chart(ctx,{
+				type: "line",
+				data: data,
+				options: options
+			});
+
+
+
+
+
+
 
 	    }
 	  };
+	  
+
 	  xhttp.open("GET","http://elections.huffingtonpost.com/pollster/api/charts/2016-florida-senate-rubio-vs-murphy.json", true);
 	  xhttp.send();
+	  var test = ["9/17","9/16","9/15","9/14","9/13","9/12","9/11"]
+	  console.log(XAxisDates.length);
+	  console.log(XAxisDates);
+	  console.log(XAxisDates.length);
+	 console.log(rubioValue);
+	 console.log(rubioValue.length);
+
+	 console.log(murphyValue);
+
+
+	  //Begin of testing graph 
+	
+
+
 
 	//console.log(XAxisDates);
 	var fixedAxis = XAxisDates.reverse;
@@ -47,28 +174,28 @@ window.addEventListener('load', function () {
 	var testArr = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 	console.log(testArr);
 
-	var myChart = new Chart(ctx, {
-	  type: 'line',
-	  data: {
-	    labels: XAxisDates,
-	    datasets: [{
-	      fillColor: 'rgba(0,0,0,0)',
-	      strokeColor: "rgba(220,180,0,1)",
-	      label: 'Rubio',
-	      data: rubioValue
-	    }, {
-	      label: 'Murphy',
-	       fillColor: 'rgba(0,0,0,0)',
-	      strokeColor: "rgba(151,187,205,1)",
-	      data: murphyValue
-	    }, {
-	    	label: 'Undecided', 
-	    	fillColor: 'rgba(0,0,0,0)',
-	    	strokeColor: "rgba(11,128,192,1)",
-	    	data: undecidedValue
-	    }]
-	  }
-	});
+	// var myChart = new Chart(ctx, {
+	//   type: 'line',
+	//   data: {
+	//     labels: XAxisDates,
+	//     datasets: [{
+	//       fillColor: 'rgba(0,0,0,0)',
+	//       strokeColor: "rgba(220,180,0,1)",
+	//       label: 'Rubio',
+	//       data: rubioValue
+	//     }, {
+	//       label: 'Murphy',
+	//        fillColor: 'rgba(0,0,0,0)',
+	//       strokeColor: "rgba(151,187,205,1)",
+	//       data: murphyValue
+	//     }, {
+	//     	label: 'Undecided', 
+	//     	fillColor: 'rgba(0,0,0,0)',
+	//     	strokeColor: "rgba(11,128,192,1)",
+	//     	data: undecidedValue
+	//     }]
+	//   }
+	// });
 
 
 	var candidate_switch = document.getElementById('candidate_switch');

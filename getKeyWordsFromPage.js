@@ -337,16 +337,11 @@ function textNodes(){
         text:"Education",
         link:"https://www.murphyforflorida.com/vision/improving-education/",
         count: wordCount.education,
-        subTags:[
-        ]
       }, 
       {
         text:"Enviroment",
         link:"https://www.murphyforflorida.com/vision/our-environment/",
         count: wordCount.environment,
-        subTags:[
-     
-        ]
       },
       {
         text:"Equality",
