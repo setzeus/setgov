@@ -13,10 +13,8 @@ chrome.runtime.onMessage.addListener(function(request,sender,sendResponse){
         console.log('get getKeyWordsFromPage sent msg')
         console.log(request.source[0].length);
 
-        var tagAmount =  request.source[0].length+" ";
-        chrome.browserAction.setBadgeText({
-          text: tagAmount
-        });
+        
+       
 
         data = request.source;
   }

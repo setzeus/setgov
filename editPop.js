@@ -64,6 +64,11 @@ function adjustPopUp(sortedMatched, color){
   console.log(filtered)
   console.log(filtered.length)
 
+  var tagAmount =  filtered.length+" ";
+
+   chrome.browserAction.setBadgeText({
+        text: tagAmount
+  });
 
   if (filtered.length == 0) {
     console.log('nada in dis bih')
