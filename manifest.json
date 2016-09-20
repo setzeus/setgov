@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
 
-  "name": "SetGov - Beta",
-  "description": "A local election platform",
-  "version": "0.0.2",
+  "name": "SetGov - FL Beta",
+  "description": "A Google Chrome extension that keeps you up to date with the latest in local elections. Subscribe to a race, hear about candidate's platforms & get out to vote!",
+  "version": "0.0.3",
   "content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js; object-src 'self'",
 
   "browser_action": {
