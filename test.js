@@ -327,7 +327,7 @@ window.addEventListener('load', function () {
 		if (clickedId == "seg3") {
 			document.getElementsByClassName("segment_icon fa fa-info fa-lg")[0].id = " ";
 			document.getElementsByClassName("segment_icon fa fa-list fa-lg")[0].id = "selected";
-			document.getElementsByClassName("segment_icon fa fa-money fa-lg")[0].id = " ";
+			document.getElementsByClassName("segment_icon fa fa-line-chart fa-lg")[0].id = " ";
 			document.getElementById('seg1').className = "segment";
 			document.getElementById('seg2').className = "segment";
 			document.getElementById('seg1').style.backgroundColor = "initial";
@@ -344,7 +344,7 @@ window.addEventListener('load', function () {
 		if (clickedId == "seg2") {
 			document.getElementsByClassName("segment_icon fa fa-info fa-lg")[0].id = "selected";
 			document.getElementsByClassName("segment_icon fa fa-list fa-lg")[0].id = " ";
-			document.getElementsByClassName("segment_icon fa fa-money fa-lg")[0].id = " ";
+			document.getElementsByClassName("segment_icon fa fa-line-chart fa-lg")[0].id = " ";
 			document.getElementById('seg1').className = "segment";
 			document.getElementById('seg3').className = "segment";
 			document.getElementById('seg1').style.backgroundColor = "initial";
@@ -359,7 +359,7 @@ window.addEventListener('load', function () {
 		};
 
 		if (clickedId == "seg1") {
-			document.getElementsByClassName("segment_icon fa fa-money fa-lg")[0].id = "selected";
+			document.getElementsByClassName("segment_icon fa fa-line-chart fa-lg")[0].id = "selected";
 			document.getElementsByClassName("segment_icon fa fa-list fa-lg")[0].id = " ";
 			document.getElementsByClassName("segment_icon fa fa-info fa-lg")[0].id = " ";
 			document.getElementById('seg2').className = "segment";

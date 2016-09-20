@@ -1,7 +1,7 @@
 chrome.runtime.sendMessage({
 	action: 'getKeyWordsFromPage',
 	source: textNodes(),
-	test: 'hop out of my bed turn my swag on'
+	test: 'TEST'
 })
 
 
@@ -17,13 +17,7 @@ function textNodes(){
 	var wordCount = {
 
 		economy:0,
-			economy_a_fair_tax_system:0,
-			economy_fixing_americas_infrastructure:0,
-			economy_manufacturing:0,
-			economy_small_business:0,
-			economy_social_security_and_medicare:0,
 			economy_wall_street_reform:0,
-			economy_works_for_everyone:0,
 			economy_farmers_ranchers:0,
 
     	education:0,
@@ -78,33 +72,9 @@ function textNodes(){
 		var currentText = splitText[q]
 
 		//start Economy 
-		if(currentText.match(/^(tax|taxes|Tax|Taxes)$/)){
-			wordCount.economy++
-			wordCount.economy_a_fair_tax_system++
-		}
-		if(currentText.match(/^(infrastructure|Infrastructure|roads)$/)){
-			wordCount.economy++
-			wordCount.economy_fixing_americas_infrastructure++
-		}
-		if(currentText.match(/^(manufacturing|Manufacturing|factories)$/)){
-			wordCount.economy++
-			wordCount.economy_manufacturing++
-		}
-		if(currentText.match(/^(small\sbusiness|Small\sBusiness|entrepreneur|entrepreneurs|startup|startups)$/)){
-			wordCount.economy++
-			wordCount.economy_small_business++
-		}
-		if(currentText.match(/^(social\ssecurity|Social\sSecurity|medicare|Medicare)$/)){
-			wordCount.economy++
-			wordCount.economy_social_security_and_medicare++
-		}
-		if(currentText.match(/^(wall\sstreet|Wall\sStreet)$/)){
+		if(currentText.match(/^(campaign\sfinance|campaign\sfinancing|Campaign\sFinancing|Campaign\sFinance|donation|donations)$/)){
 			wordCount.economy++
 			wordCount.economy_wall_street_reform++
-		}
-		if(currentText.match(/^(economy|Economy)$/)){
-			wordCount.economy++
-			wordCount.economy_works_for_everyone++
 		}
 		if(currentText.match(/^(food\sfarm|Foodl\swater|Water|rain|Rain)$/)){
 			wordCount.economy++
@@ -380,7 +350,7 @@ function textNodes(){
   var  murphyData = [
       {
         text:"Economy", 
-        link:"https://www.murphyforflorida.com/vision/growing-middle-class/",
+        link:"https://www.murphyforflorida.com/vision/growing-middle-class/",  //Need to turn this into own subtag
         count: wordCount.economy,
         subTags:[
           {
