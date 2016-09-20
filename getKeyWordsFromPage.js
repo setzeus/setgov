@@ -34,6 +34,7 @@ function textNodes(){
 	    	education_technology_and_innovation:0,
 	    	education_common_core:0,
 	    	improving_education:0,
+	    	
 
     	environment: 0,
 	    	environment_climate_change:0,
@@ -400,7 +401,7 @@ function textNodes(){
         		text: "Improving Education",
         		tag: 'Education',
         		link:"https://www.murphyforflorida.com/vision/improving-education/",
-        		count: wordCount.education_improving_education
+        		count: wordCount.improving_education
         	}
         ]
       }, 
