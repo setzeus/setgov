@@ -187,7 +187,10 @@ window.addEventListener('load', function () {
 	for (var i = 0; i < segmentArray.length; i++) {
 		arr[i].onclick = segmentedLogic;
 	};
-
+	
+	arr[0].children[0].onclick = function(){ console.log("at least this is working"); };
+	arr[1].children[0].onclick = console.log("at least this is working");
+	arr[2].children[0].onclick = console.log("at least this is working");
 	// assign the 'candidateSwitchLogic' function to run con click for every segment
 	candidate_switch.onclick = candidateSwitchLogic;
 

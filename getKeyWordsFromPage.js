@@ -98,7 +98,7 @@ function textNodes(){
 		}
 
 		//start Health
-		if(currentText.match(/^(Healthcare|Obamacare|patients|)$/)){
+		if(currentText.match(/^(Obamacare)$/)){
 			wordCount.health++
 			wordCount.healthcare++
 		}
