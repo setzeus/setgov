@@ -187,10 +187,7 @@ window.addEventListener('load', function () {
 	for (var i = 0; i < segmentArray.length; i++) {
 		arr[i].onclick = segmentedLogic;
 	};
-	
-	arr[0].children[0].onclick = function(){ console.log("at least this is working"); };
-	arr[1].children[0].onclick = console.log("at least this is working");
-	arr[2].children[0].onclick = console.log("at least this is working");
+
 	// assign the 'candidateSwitchLogic' function to run con click for every segment
 	candidate_switch.onclick = candidateSwitchLogic;
 
@@ -200,6 +197,7 @@ window.addEventListener('load', function () {
 	function candidateSwitchLogic(element) {
 
 		var currentColor = element.srcElement.className;
+
 		var candidate_switch = document.getElementById('candidate_switch');
 		console.log(currentColor);
 
@@ -257,7 +255,18 @@ window.addEventListener('load', function () {
 
 	// Main function used to handle the logic of switchin between the three segmented controls
 	function segmentedLogic(element) {
-		var clickedId = element.srcElement.id;
+		var clickedId;
+		console.log(element.srcElement);
+		console.log(element.srcElement.id);
+		console.log(element.srcElement.parentElement);
+		if (element.srcElement.tagName === "I") {
+			clickedId = element.srcElement.parentElement.id;
+			console.log(clickedId);
+		} else {
+			clickedId = element.srcElement.id;
+			console.log(clickedId);
+		}
+
 		var switch_color = document.getElementById('candidate_switch').className;
 		var color;
 		var colorHex;
@@ -277,7 +286,7 @@ window.addEventListener('load', function () {
 			document.getElementById('seg2').className = "segment";
 			document.getElementById('seg1').style.backgroundColor = "initial";
 			document.getElementById('seg2').style.backgroundColor = "initial";
-			element.srcElement.className = "segment default";
+			document.getElementById('seg3').className = "segment default";
 
 			document.getElementsByClassName("segment_title_text")[0].innerHTML = "Election Platform"
 			document.getElementsByClassName('segment default')[0].style.backgroundColor = colorHex;
@@ -294,7 +303,7 @@ window.addEventListener('load', function () {
 			document.getElementById('seg3').className = "segment";
 			document.getElementById('seg1').style.backgroundColor = "initial";
 			document.getElementById('seg3').style.backgroundColor = "initial";
-			element.srcElement.className = "segment default";
+			document.getElementById('seg2').className = "segment default";
 
 			document.getElementsByClassName("segment_title_text")[0].innerHTML = "General Election Info."
 			document.getElementsByClassName('segment default')[0].style.backgroundColor = colorHex;
@@ -311,7 +320,7 @@ window.addEventListener('load', function () {
 			document.getElementById('seg3').className = "segment";
 			document.getElementById('seg2').style.backgroundColor = "initial";
 			document.getElementById('seg3').style.backgroundColor = "initial";
-			element.srcElement.className = "segment default";
+			document.getElementById('seg1').className = "segment default";
 
 			document.getElementsByClassName("segment_title_text")[0].innerHTML = "Latest Live Poll"
 			document.getElementsByClassName('segment default')[0].style.backgroundColor = colorHex;
