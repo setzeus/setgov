@@ -107,7 +107,7 @@ function adjustPopUp(sortedMatched, color){
         `</div>`+
       `</div>`;
   
-          console.log('this nigga goes in')
+          console.log('pass here')
           document.getElementById("electionPositions").insertAdjacentHTML("beforeend", resultDiv);    
   }
 

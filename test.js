@@ -9,12 +9,12 @@ function changeProfile(){
 
 window.addEventListener('load', function () {
 	
-
+	//Initialize all future graph arrays
 	var XAxisDates = [];
 	var rubioValue = [];
 	var murphyValue = [];
 	var undecidedValue = [];
-
+	
 	var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange=function() {
 	    if (this.readyState == 4 && this.status == 200) {
@@ -29,12 +29,9 @@ window.addEventListener('load', function () {
 		  	murphyValue[i] = jsonResponse.estimates_by_date[i].estimates[1].value;
 		  	undecidedValue[i] = jsonResponse.estimates_by_date[i].estimates[2].value;
 		  };
-		  console.log(XAxisDates.length);
-		  console.log(XAxisDates);
-		  console.log(XAxisDates[0]);
 
-
-		  var ctx = document.getElementById("clients");
+		    //Initialize chart
+   		    var ctx = document.getElementById("clients");
 
 			var labelsTest = XAxisDates;
 
@@ -131,18 +128,12 @@ window.addEventListener('load', function () {
 			};
 
 
-
+			// Create chart
 			var myLineChart = new Chart(ctx,{
 				type: "line",
 				data: data,
 				options: options
 			});
-
-
-
-
-
-
 
 	    }
 	  };
@@ -150,59 +141,14 @@ window.addEventListener('load', function () {
 
 	  xhttp.open("GET","http://elections.huffingtonpost.com/pollster/api/charts/2016-florida-senate-rubio-vs-murphy.json", true);
 	  xhttp.send();
-	  var test = ["9/17","9/16","9/15","9/14","9/13","9/12","9/11"]
-	  console.log(XAxisDates.length);
-	  console.log(XAxisDates);
-	  console.log(XAxisDates.length);
-	 console.log(rubioValue);
-	 console.log(rubioValue.length);
-
-	 console.log(murphyValue);
 
 
-	  //Begin of testing graph 
-	
-
-
-
-	//console.log(XAxisDates);
-	var fixedAxis = XAxisDates.reverse;
-	// console.log(XAxisDates.reverse().reverse());
-	// console.log(rubioValue);
-	// console.log(murphyValue);
-
-	var testArr = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
-	console.log(testArr);
-
-	// var myChart = new Chart(ctx, {
-	//   type: 'line',
-	//   data: {
-	//     labels: XAxisDates,
-	//     datasets: [{
-	//       fillColor: 'rgba(0,0,0,0)',
-	//       strokeColor: "rgba(220,180,0,1)",
-	//       label: 'Rubio',
-	//       data: rubioValue
-	//     }, {
-	//       label: 'Murphy',
-	//        fillColor: 'rgba(0,0,0,0)',
-	//       strokeColor: "rgba(151,187,205,1)",
-	//       data: murphyValue
-	//     }, {
-	//     	label: 'Undecided', 
-	//     	fillColor: 'rgba(0,0,0,0)',
-	//     	strokeColor: "rgba(11,128,192,1)",
-	//     	data: undecidedValue
-	//     }]
-	//   }
-	// });
-
-
+	// Main 'Candidate Switch' icon	  
 	var candidate_switch = document.getElementById('candidate_switch');
+	var switch_color = document.getElementById('candidate_switch').className; // 'Candidate Switch current color'
+	var color,colorHex;
 
-	var switch_color = document.getElementById('candidate_switch').className;
-	var color;
-	var colorHex;
+	// If/Then statement to set initial colors
 	if (switch_color=="icon_container left red") {
 			color = "red";
 			colorHex = "#F44336";
@@ -235,22 +181,23 @@ window.addEventListener('load', function () {
 
 
     var segmentArray = document.getElementsByClassName('segment');
-    var arr = [].slice.call(segmentArray);
+    var arr = [].slice.call(segmentArray); //convert from HTML node list to array
 	
+	// assign the 'segmentedLogic' function to run on click for every segment 
 	for (var i = 0; i < segmentArray.length; i++) {
 		arr[i].onclick = segmentedLogic;
 	};
 
+	// assign the 'candidateSwitchLogic' function to run con click for every segment
 	candidate_switch.onclick = candidateSwitchLogic;
 
+	// Beginning of big function definitions
 
-
-
-
-
+	// Main function used to handle the logic of switchin from one candidate to another
 	function candidateSwitchLogic(element) {
 
 		var currentColor = element.srcElement.className;
+
 		var candidate_switch = document.getElementById('candidate_switch');
 		console.log(currentColor);
 
@@ -306,13 +253,20 @@ window.addEventListener('load', function () {
 	};
 
 
-
-
-
-
-
+	// Main function used to handle the logic of switchin between the three segmented controls
 	function segmentedLogic(element) {
-		var clickedId = element.srcElement.id;
+		var clickedId;
+		console.log(element.srcElement);
+		console.log(element.srcElement.id);
+		console.log(element.srcElement.parentElement);
+		if (element.srcElement.tagName === "I") {
+			clickedId = element.srcElement.parentElement.id;
+			console.log(clickedId);
+		} else {
+			clickedId = element.srcElement.id;
+			console.log(clickedId);
+		}
+
 		var switch_color = document.getElementById('candidate_switch').className;
 		var color;
 		var colorHex;
@@ -327,12 +281,12 @@ window.addEventListener('load', function () {
 		if (clickedId == "seg3") {
 			document.getElementsByClassName("segment_icon fa fa-info fa-lg")[0].id = " ";
 			document.getElementsByClassName("segment_icon fa fa-list fa-lg")[0].id = "selected";
-			document.getElementsByClassName("segment_icon fa fa-money fa-lg")[0].id = " ";
+			document.getElementsByClassName("segment_icon fa fa-line-chart fa-lg")[0].id = " ";
 			document.getElementById('seg1').className = "segment";
 			document.getElementById('seg2').className = "segment";
 			document.getElementById('seg1').style.backgroundColor = "initial";
 			document.getElementById('seg2').style.backgroundColor = "initial";
-			element.srcElement.className = "segment default";
+			document.getElementById('seg3').className = "segment default";
 
 			document.getElementsByClassName("segment_title_text")[0].innerHTML = "Election Platform"
 			document.getElementsByClassName('segment default')[0].style.backgroundColor = colorHex;
@@ -344,12 +298,12 @@ window.addEventListener('load', function () {
 		if (clickedId == "seg2") {
 			document.getElementsByClassName("segment_icon fa fa-info fa-lg")[0].id = "selected";
 			document.getElementsByClassName("segment_icon fa fa-list fa-lg")[0].id = " ";
-			document.getElementsByClassName("segment_icon fa fa-money fa-lg")[0].id = " ";
+			document.getElementsByClassName("segment_icon fa fa-line-chart fa-lg")[0].id = " ";
 			document.getElementById('seg1').className = "segment";
 			document.getElementById('seg3').className = "segment";
 			document.getElementById('seg1').style.backgroundColor = "initial";
 			document.getElementById('seg3').style.backgroundColor = "initial";
-			element.srcElement.className = "segment default";
+			document.getElementById('seg2').className = "segment default";
 
 			document.getElementsByClassName("segment_title_text")[0].innerHTML = "General Election Info."
 			document.getElementsByClassName('segment default')[0].style.backgroundColor = colorHex;
@@ -359,14 +313,14 @@ window.addEventListener('load', function () {
 		};
 
 		if (clickedId == "seg1") {
-			document.getElementsByClassName("segment_icon fa fa-money fa-lg")[0].id = "selected";
+			document.getElementsByClassName("segment_icon fa fa-line-chart fa-lg")[0].id = "selected";
 			document.getElementsByClassName("segment_icon fa fa-list fa-lg")[0].id = " ";
 			document.getElementsByClassName("segment_icon fa fa-info fa-lg")[0].id = " ";
 			document.getElementById('seg2').className = "segment";
 			document.getElementById('seg3').className = "segment";
 			document.getElementById('seg2').style.backgroundColor = "initial";
 			document.getElementById('seg3').style.backgroundColor = "initial";
-			element.srcElement.className = "segment default";
+			document.getElementById('seg1').className = "segment default";
 
 			document.getElementsByClassName("segment_title_text")[0].innerHTML = "Latest Live Poll"
 			document.getElementsByClassName('segment default')[0].style.backgroundColor = colorHex;
