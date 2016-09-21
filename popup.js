@@ -20,6 +20,7 @@ chrome.runtime.onMessage.addListener(function(request,sender,sendResponse){
 	        text: tagAmount
 	  });
         
+        console.log(request)
         data = request.source;
   }
 

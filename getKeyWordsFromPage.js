@@ -143,9 +143,9 @@ function textNodes(){
         subTags:[
           {
             text: ' Water Problems Water Solutions',
-            tag: 'Equality',
+            tag: 'Enviroment',
             link: 'https://marcorubio.com/2016/07/27/water-problems-water-solutions/',
-            count: 	wordCount.environment_rural_communities
+            count: 	wordCount.environment_our_environment
           }
         
         ]
