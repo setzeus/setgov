@@ -5,6 +5,7 @@
 //Send message to background waiting for reponse of words matched from current visted page
 chrome.runtime.sendMessage({action: "editPop"},function(response){
   data = response
+  console.log(response)
   adjustPopUp(response[0], 'red');
 });  
 

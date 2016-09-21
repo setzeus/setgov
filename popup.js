@@ -1,6 +1,16 @@
 
 var data;
 
+chrome.tabs.o
+
+
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+  console.log('on updated listener went off')
+  chrome.tabs.executeScript(null, {file: "getKeyWordsFromPage.js"});
+
+}); 
+
+
 chrome.tabs.onActivated.addListener(function(tabId, changeInfo, tab) {
 	chrome.tabs.executeScript(null, {file: "getKeyWordsFromPage.js"});
 });
