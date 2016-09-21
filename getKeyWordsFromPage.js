@@ -30,13 +30,17 @@ function textNodes(){
 	    	equality_lgbt_rights_and_equality:0,
 	    	equality_voting_rights:0,
 	    	equality_seniors:0,
+	    	equality_womens_rights_and_opportunity: 0,
 
     	health: 0,
 	    	healthcare: 0,
 
+
     	jobs: 0,
 
     	security: 0,
+    		security_national_security:0
+
 	}	
 
 	for(var q = 0;q < splitText.length; q++){
@@ -102,6 +106,10 @@ function textNodes(){
 
 		//start Jobs
 		//start Security
+		if(currentText.match(/^(national\ssecurity|security|Security|secure|safe|Safe)$/)){
+			wordCount.security++
+			wordCount.security_national_security++
+		}
 		//tbd
 
 		if(currentText.match(/^(tech|startup|internet|online)$/)){
@@ -307,9 +315,6 @@ function textNodes(){
         link:"https://www.murphyforflorida.com/vision/protecting-our-nation/",
         count: wordCount.security,
         subTags:[
-          {
- 
-          }
          
         ]
       },
