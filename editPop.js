@@ -5,7 +5,6 @@
 //Send message to background waiting for reponse of words matched from current visted page
 chrome.runtime.sendMessage({action: "editPop"},function(response){
   data = response
-  console.log(response)
   adjustPopUp(response[0], 'red');
 });  
 
@@ -41,7 +40,6 @@ function adjustPopUp(sortedMatched, color){
 
   
 
-  console.log(color)
   function checkSubtag(value){
       if(value.subTags.length > 0){
         return value 
@@ -50,7 +48,6 @@ function adjustPopUp(sortedMatched, color){
 
   function checkSubtagCount(value){
     for(var q=0;q< value.subTags.length; q++){
-      console.log(value.subTags[q].count)
       if( value.subTags[q].count !== 0){
         return value
       }
@@ -61,17 +58,10 @@ function adjustPopUp(sortedMatched, color){
   var result = sortedMatched.filter(checkSubtag);
   var filtered = result.filter(checkSubtagCount);
 
-  console.log(filtered)
-  console.log(filtered.length)
 
-  var tagAmount =  filtered.length+" ";
-
-   chrome.browserAction.setBadgeText({
-        text: tagAmount
-  });
+ 
 
   if (filtered.length == 0) {
-    console.log('nada in dis bih')
     var nada =  
       `<div class='nada_container'>`+
         `<p class='nada `+color+`'>Nothing to see here</p>`+
@@ -80,7 +70,6 @@ function adjustPopUp(sortedMatched, color){
 
   }else{
     for(var i=0; i < filtered.length; i++){
-    console.log('test')
     var subtagLength = filtered[i].subTags.length;
     
     var resultDiv = 
@@ -107,7 +96,6 @@ function adjustPopUp(sortedMatched, color){
         `</div>`+
       `</div>`;
   
-          console.log('pass here')
           document.getElementById("electionPositions").insertAdjacentHTML("beforeend", resultDiv);    
   }
 
@@ -131,7 +119,6 @@ function adjustPopUp(sortedMatched, color){
 
           `</div>`+
         `</div>`;
-        console.log(filtered[x].text+`_sub_container`)
 
       if(filtered[x].subTags[y].count > 0){
         document.getElementById(filtered[x].text+`_sub_container`).insertAdjacentHTML("beforeend", subResultDiv);

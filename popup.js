@@ -1,6 +1,10 @@
 
 var data;
 
+chrome.tabs.onActivated.addListener(function(tabId, changeInfo, tab) {
+	chrome.tabs.executeScript(null, {file: "getKeyWordsFromPage.js"});
+});
+
 
 
 chrome.runtime.onMessage.addListener(function(request,sender,sendResponse){
@@ -10,18 +14,16 @@ chrome.runtime.onMessage.addListener(function(request,sender,sendResponse){
 //pop up manages the display of everything dynmically 
 
   if( request.action == "getKeyWordsFromPage" ){
-        console.log('get getKeyWordsFromPage sent msg')
-        console.log(request.source[0].length);
+         var tagAmount =  request.source[0].length+" ";
 
+	   chrome.browserAction.setBadgeText({
+	        text: tagAmount
+	  });
         
-       
-
         data = request.source;
   }
 
  if( request.action == "editPop"){
-      console.log('edit pop up send msg')
-      console.log(data)
       sendResponse(data)
   }  
   

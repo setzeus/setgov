@@ -14,13 +14,7 @@
     "default_title": "Click here!"
   },
   "background": { "scripts": ["popup.js"] },
-  "content_scripts":[
-    {
-      "matches":["<all_urls>"],
-      "js": ["getKeyWordsFromPage.js"],
-       "run_at": "document_end"
-    }
-  ],
+  
    "permissions": [
     "tabs","<all_urls>"
   ]

@@ -4,16 +4,13 @@ chrome.runtime.sendMessage({
 	test: 'TEST'
 })
 
-
 function textNodes(){
 	var textArray = [];
 
 	//get all the text of the body of the page currently on 
 	var textInHtml = document.body.innerText;
 	var splitText = textInHtml.split(' ');
-	console.log(splitText)
 	
-
 	var wordCount = {
 
 		economy:0,
@@ -23,7 +20,6 @@ function textNodes(){
     	education:0,
 	    	education_common_core:0,
 	    	improving_education:0,
-	    	
 
     	environment: 0,
 	    	environment_our_environment: 0,
@@ -105,21 +101,14 @@ function textNodes(){
 		}
 
 		//start Jobs
-
-
 		//start Security
-
-
 		//tbd
+
 		if(currentText.match(/^(tech|startup|internet|online)$/)){
 			wordCount.tech++
 		}
 	}
-	console.log(wordCount)
 
-	
-
-	
 	var rubioData = [
       {
         text:"Economy", 
@@ -332,7 +321,6 @@ function textNodes(){
       }
   ]
 
-
 	var unsortedMatchedRubio = rubioData.filter(function(map){
 	    if(map.count > 0){
 	      return map
@@ -345,7 +333,6 @@ function textNodes(){
 	    }
 	  });
 
-
 	function sortInt(a,b) {
 	  return  b.count - a.count;
 	}
@@ -353,12 +340,8 @@ function textNodes(){
 	  //End of the sort functions 
 	var rubio = unsortedMatchedRubio.sort(sortInt);
 	var murphy = unsortedMatchedMurphy.sort(sortInt);
-
-	
-	
-
-
 	var data = [rubio,murphy];
+
 	return data
 }
 
