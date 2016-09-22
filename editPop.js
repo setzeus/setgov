@@ -65,7 +65,7 @@ function adjustPopUp(sortedMatched, color){
   if (filtered.length == 0) {
     var nada =  
       `<div class='nada_container'>`+
-        `<p class='nada `+color+`'>Nothing to see here</p>`+
+        `<p class='nada `+color+`'>Nothing election-related here! <br> Check another page?</p>`+
       `</div> `; 
     document.getElementById("electionPositions").insertAdjacentHTML("beforeend", nada);    
 
