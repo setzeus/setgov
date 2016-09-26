@@ -75,7 +75,7 @@ for(var t=0;t<length ; t++){
    			console.log('<span style="background-color:#313542;color:white;">Finance</span>');
    			console.log(new RegExp(keyItems[z],'g'))
    			console.log(/donation/g)
-   			currentDiv = currentDiv.replace(new RegExp(keyItems[z],'g'), '<span style="background-color:#313542;color:white;">Finance</span>');
+   			currentDiv = currentDiv.replace(new RegExp(keyItems[z],'g'), `<span style="background-color:#313542; color: white" >`+keyItems[z]+`</span>`);
     	 body[t].innerHTML = currentDiv
     	}
 
