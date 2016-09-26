@@ -9,8 +9,23 @@ function textNodes(){
 
 	//get all the text of the body of the page currently on 
 	var textInHtml = document.body.innerText;
+  //console.log(textInHtml)
+
+
+  var body = document.body.getElementsByTagName('div');
+  var length = body.length;
+  console.log(length);
+
+  
+
+  
+  
 	var splitText = textInHtml.split(' ');
 	
+
+  //textInHtml = textInHtml.replace(/game/g, '<span style="color:red">game</span>');
+
+  //document.body.innerText = textInHtml
 	var wordCount = {
 
 		economy:0,
@@ -43,11 +58,16 @@ function textNodes(){
 
 	}	
 
+  var keyItems = [ "campaign", "finance","campaign","financing", "Campaign","donation","Finance","donation","donations","food"]
+   
+
+  
+
 	for(var q = 0;q < splitText.length; q++){
 		var currentText = splitText[q]
-
 		//start Economy 
 		if(currentText.match(/^(campaign\sfinance|campaign\sfinancing|Campaign\sFinancing|Campaign\sFinance|donation|donations)$/)){
+
 			wordCount.economy++
 			wordCount.economy_wall_street_reform++
 		}
@@ -55,7 +75,6 @@ function textNodes(){
 			wordCount.economy++
 			wordCount.economy_farmers_ranchers++
 		}
-
 		//start Education 
 		if(currentText.match(/^(state|parents|local|school|board|Education)$/)){
 			wordCount.education++
@@ -65,13 +84,11 @@ function textNodes(){
 			wordCount.education++
 			wordCount.education_improving_education
 		}
-
 		//start environment
 		if(currentText.match(/^(state|green|Everglades|Florida|climate)$/)){
 			wordCount.environment++
 			wordCount.environment_our_environment++
 		}
-
 		//start Equality
 		if(currentText.match(/^(criminal\sjustice|criminal\sjustice\ssystem|Criminal\sJustice|jail\stime)$/)){
 			wordCount.equality++
@@ -97,13 +114,11 @@ function textNodes(){
 			wordCount.equality++
 			wordCount.equality_seniors++
 		}
-
 		//start Health
 		if(currentText.match(/^(Obamacare)$/)){
 			wordCount.health++
 			wordCount.healthcare++
 		}
-
 		//start Jobs
 		//start Security
 		if(currentText.match(/^(national\ssecurity|security|Security|secure|safe|Safe)$/)){
@@ -111,7 +126,6 @@ function textNodes(){
 			wordCount.security_national_security++
 		}
 		//tbd
-
 		if(currentText.match(/^(tech|startup|internet|online)$/)){
 			wordCount.tech++
 		}

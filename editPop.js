@@ -2,11 +2,16 @@
 //Going to hold whats sent from the background page
  var data ;
 
+  function send(){
+      chrome.tabs.executeScript(null, {file: "highlight.js"});
+  }  
+
 //Send message to background waiting for reponse of words matched from current visted page
 chrome.runtime.sendMessage({action: "editPop"},function(response){
   data = response
   console.log(response)
   adjustPopUp(response[0], 'red');
+  send()
 });  
 
 
