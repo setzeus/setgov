@@ -13,7 +13,7 @@
     "default_popup": "popup.html",
     "default_title": "Click here!"
   },
-  "background": { "scripts": ["popup.js"] },
+  "background": { "scripts": [ "popup.js"] },
   
    "permissions": [
     "tabs","<all_urls>"
