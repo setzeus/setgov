@@ -32,33 +32,32 @@ function textNodes(){
 			economy_wall_street_reform:0,
 			economy_farmers_ranchers:0,
 
-    	education:0,
-	    	education_common_core:0,
-	    	improving_education:0,
+  	education:0,
+    	education_common_core:0,
+    	improving_education:0,
 
-    	environment: 0,
-	    	environment_our_environment: 0,
+  	environment: 0,
+    	environment_our_environment: 0,
 
-    	equality: 0,
-	    	equality_criminal_justice_reform:0,
-	    	equality_immigration_reform:0,
-	    	equality_lgbt_rights_and_equality:0,
-	    	equality_voting_rights:0,
-	    	equality_seniors:0,
-	    	equality_womens_rights_and_opportunity: 0,
+  	equality: 0,
+    	equality_criminal_justice_reform:0,
+    	equality_immigration_reform:0,
+    	equality_lgbt_rights_and_equality:0,
+    	equality_voting_rights:0,
+    	equality_seniors:0,
+    	equality_womens_rights_and_opportunity: 0,
 
-    	health: 0,
-	    	healthcare: 0,
+  	health: 0,
+    	healthcare: 0,
 
 
-    	jobs: 0,
+  	jobs: 0,
 
-    	security: 0,
-    		security_national_security:0
+  	security: 0,
+  		security_national_security:0
 
 	}	
 
-  var keyItems = [ "campaign", "finance","campaign","financing", "Campaign","donation","Finance","donation","donations","food"]
    
 
   
