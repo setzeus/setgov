@@ -1,4 +1,11 @@
 
+chrome.storage.local.set({ "Party": "Democrat" }, function(){
+  console.log('storage has been set')
+});
+chrome.storage.local.set({'Race': 'Florida'}, function(){
+  console.log('storage has been set to Presidential')
+})
+
 //Going to hold whats sent from the background page
  var data ;
 
@@ -11,8 +18,9 @@ function send(){
 //Send message to background waiting for reponse of words matched from current visted page
 chrome.runtime.sendMessage({action: "editPop"},function(response){
   data = response
-  adjustPopUp(response[0], 'red');
-  send()
+  console.log(response)
+  // adjustPopUp(response[0], 'red');
+  // send()
 });  
 
 
@@ -29,6 +37,15 @@ chrome.runtime.sendMessage({action: "editPop"},function(response){
       }
   }
 
+
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
 
 
 //handles the data from getKeyWordsFromPage and profile change
