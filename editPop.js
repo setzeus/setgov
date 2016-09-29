@@ -1,55 +1,75 @@
-
+///////////////////////////////////////
+//Set the Local Storage for the Party//
+///////////////////////////////////////
 chrome.storage.local.set({ "Party": "Democrat" }, function(){
   console.log('storage has been set')
 });
+
+
+//////////////////////////////////////////////
+//Set THe Local Storage for the Type of Race//
+//////////////////////////////////////////////
 chrome.storage.local.set({'Race': 'Florida'}, function(){
   console.log('storage has been set to Presidential')
 })
 
-//Going to hold whats sent from the background page
- var data ;
 
- 
+/////////////////////////////////////////////////////
+//Going to hold whats sent from the background page//
+/////////////////////////////////////////////////////
+var data ;
+
+
+///////////////////////////////////////////////////////////////////
+//Calls to highlight all the text in the currently focued webpage//
+///////////////////////////////////////////////////////////////////
 function send(){
-      chrome.tabs.executeScript(null, {file: "highlight.js"});
+  chrome.tabs.executeScript(null, {file: "highlight.js"});
 }  
 
 
-//Send message to background waiting for reponse of words matched from current visted page
+/////////////////////////////////////////////////////
+//Send Simple message to await a response with data//
+/////////////////////////////////////////////////////
 chrome.runtime.sendMessage({action: "editPop"},function(response){
   data = response
   console.log(response)
-  // adjustPopUp(response[0], 'red');
+  adjustPopUp(response[0].message[0], 'red','Florida');
   // send()
 });  
 
 
-//Event Listener to change profile when candiate_switch is clicked
-  document.getElementById("candidate_switch").addEventListener('click', checkColor);
-  function checkColor(){
-      var switch_color = document.getElementById("candidate_switch").className
-     
-      if (switch_color== "icon_container left red") {
-        adjustPopUp(data[1], 'blue')
-      } 
-      if(switch_color == 'icon_container left blue'){
-        adjustPopUp(data[0] , "red")
-      }
+////////////////////////////////////////////////////////////////////
+//Event Listener to change profile when candiate_switch is clicked//
+////////////////////////////////////////////////////////////////////
+document.getElementById("candidate_switch").addEventListener('click', checkColor);
+function checkColor(){
+  var switch_color = document.getElementById("candidate_switch").className
+ 
+  if (switch_color== "icon_container left red") {
+    adjustPopUp(data[1], 'blue')
+  } 
+  if(switch_color == 'icon_container left blue'){
+    adjustPopUp(data[0] , "red")
   }
+}
 
 
-function openNav() {
-    document.getElementById("myNav").style.width = "100%";
+function openNav(){
+  document.getElementById("myNav").style.width = "100%";
 }
 
 /* Close when someone clicks on the "x" symbol inside the overlay */
-function closeNav() {
-    document.getElementById("myNav").style.width = "0%";
+function closeNav(){
+  document.getElementById("myNav").style.width = "0%";
 }
-
-
-//handles the data from getKeyWordsFromPage and profile change
-function adjustPopUp(sortedMatched, color){
+/////////////////////////////////
+//Adjust popup.html accordingly//
+/////////////////////////////////
+function adjustPopUp(sortedMatched, color, race){
+  console.log(sortedMatched)
+  console.log(color)
+  console.log(race)
  document.getElementById('electionPositions').innerHTML = ' ' 
 
   if(color == 'red'){

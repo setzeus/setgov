@@ -130,6 +130,7 @@ function textNodes(race){
 
 
     var rubioData = [
+         "Marco Rubio", 
         {
           text:"Economy", 
           link:"https://marcorubio.com/2016/07/20/repeal-burdensome-regulations-on-farmers-and-ranchers/",
