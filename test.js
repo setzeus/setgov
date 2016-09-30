@@ -157,7 +157,6 @@ window.addEventListener('load', function () {
 			document.getElementById('reddit_icon').style.backgroundImage = "url('reddit_icon_red.png')";
 			document.getElementById('top_background').style.backgroundImage = "url('repub_logo.png')";
 			document.getElementById('top_label_container').className = "icon_container left red";
-			document.getElementById('top_container_text').innerHTML = "M.Rubio";
 			document.getElementById('primary_calendar_icon').style.color = "#ef5350";
 			document.getElementById('general_calendar_icon').style.color = "#ef5350";
 			document.getElementById('vote_booths_icon').style.color = "#ef5350";
@@ -170,7 +169,6 @@ window.addEventListener('load', function () {
 			document.getElementById('reddit_icon').style.backgroundImage = "url('reddit_icon_blue.png')";
 			document.getElementById('top_background').style.backgroundImage = "url('demo_logo.png')";
 			document.getElementById('top_label_container').className = "icon_container left blue";
-			document.getElementById('top_container_text').innerHTML = "P.Murphy";
 			document.getElementById('primary_calendar_icon').style.color = "#00a4e4";
 			document.getElementById('general_calendar_icon').style.color = "#00a4e4";
 			document.getElementById('vote_booths_icons').style.color = "#00a4e4";			
@@ -219,7 +217,6 @@ window.addEventListener('load', function () {
 			document.getElementById('seg2').style.borderColor = "#1E88E5";
 			document.getElementsByClassName('top_body red')[0].className = "top_body blue";
 			document.getElementById('top_label_container').className = "icon_container left blue";
-			document.getElementById('top_container_text').innerHTML = "P.Murphy";						
 			document.getElementsByClassName('icon_container right red')[0].className = "icon_container right blue";
 			document.getElementsByClassName('icon_container right red')[0].className = "icon_container right blue";
 			document.getElementsByClassName('segment_container red')[0].className = "segment_container blue";
@@ -239,7 +236,6 @@ window.addEventListener('load', function () {
 			document.getElementById('seg2').style.borderColor = "#F44336";
 			document.getElementsByClassName('top_body blue')[0].className = "top_body red";
 			document.getElementById('top_label_container').className = "icon_container left red"
-			document.getElementById('top_container_text').innerHTML = "M.Rubio";
 			document.getElementsByClassName('icon_container right blue')[0].className = "icon_container right red";
 			document.getElementsByClassName('icon_container right blue')[0].className = "icon_container right red";
 			document.getElementsByClassName('segment_container blue')[0].className = "segment_container red";
