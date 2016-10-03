@@ -1,11 +1,3 @@
-function changeProfile(){
-	chrome.runtime.sendMessage({
-		action: 'Change',
-		test: 'hop out of my bed turn my swag on'
-	});
-}
-
-
 
 window.addEventListener('load', function () {
 	

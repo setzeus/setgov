@@ -64,16 +64,27 @@
     ]
 
     var length = body.length;
+    var count = 0
 
     for(var t=0;t<length ; t++){
         var currentDiv = body[t].innerHTML;
         var currentText = body[t].innerText;
-
          for(var z=0;z<keyItems.length;z++){
 
-            if( currentText.search(keyItems[z]) > 0){
-                currentDiv = currentDiv.replace(new RegExp(keyItems[z],'g'), `<span style="background-color:#313542; color: white" >`+keyItems[z]+`</span>`);
-                body[t].innerHTML = currentDiv
+            if( currentText.search(keyItems[z]) > 0 ){
+                
+                if(Math.abs(count % 2) == 1){
+                    console.log(count + " is odd")
+                    currentDiv = currentDiv.replace(new RegExp(keyItems[z],'g'), `<span style="background-color:#1E88E5; color: white" >`+keyItems[z]+`</span>`);
+                    body[t].innerHTML = currentDiv 
+                          
+                }
+                if( count % 2 == 0){
+                    console.log(count + " is even")
+                    currentDiv = currentDiv.replace(new RegExp(keyItems[z],'g'), `<span style="background-color:#F44336; color: white" >`+keyItems[z]+`</span>`);
+                    body[t].innerHTML = currentDiv 
+                }   
+                count++
             }
         }
     }

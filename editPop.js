@@ -8,9 +8,6 @@ var floridaRep ;
 var presidentialDem ;
 var presidentialRep ;
 
-
-
-
 ///////////////////////////////////////
 //Set the Local Storage for the Party//
 ///////////////////////////////////////
@@ -18,7 +15,6 @@ chrome.storage.local.set({ "Party": "Democrat" }, function(){
   party = 'Democrat';
   console.log('storage has been set')
 });
-
 
 //////////////////////////////////////////////
 //Set THe Local Storage for the Type of Race//
@@ -28,20 +24,12 @@ chrome.storage.local.set({'Race': 'Presidential'}, function(){
   console.log('storage has been set to Presidential')
 })
 
-
-
 ///////////////////////////////////////////////////////////////////
 //Calls to highlight all the text in the currently focued webpage//
 ///////////////////////////////////////////////////////////////////
 function send(){
   chrome.tabs.executeScript(null, {file: "highlight.js"});
 }  
-
-
-
-
-
-
 
 ////////////////////////////////////////////////////////////////////
 //Event Listener to change profile when candiate_switch is clicked//
@@ -145,7 +133,6 @@ function adjustPopUp(data, color){
   document.getElementsByClassName('segment_container')[0].className = `segment_container `+base+` `;
   document.getElementsByClassName('segment_controller')[0].className = `segment_controller `+base+` `;
 
-
   var selectedsSegment = document.getElementsByClassName('segment default')[0].style.backgroundColor = colorHex;
 
   var top_body = document.getElementById('top_background');
@@ -156,13 +143,6 @@ function adjustPopUp(data, color){
   
   var candidate_icon = document.getElementById('candidate_icon');
   candidate_icon.className = `icon_container  right ` +base+` `;
-  
-
-  
-  //d.className += " otherclass";
-  //element.classList.add("otherclass");
-
-
 
   if (sortedMatched.length == 1) {
     var nada =  
@@ -225,19 +205,12 @@ function adjustPopUp(data, color){
       }
     }
   }
-  
-
 }
 
-
-
-
-  
   var port = chrome.runtime.connect({name: 'editPop'});
   port.onMessage.addListener(function(message,sender){
     
-    console.log(message)
-    console.log('we shit back from msg')
+    
     floridaDem = message.data[1][1];
     floridaRep = message.data[1][0];
     presidentialDem = message.data[0][1];
@@ -248,7 +221,7 @@ function adjustPopUp(data, color){
     if ( race == 'Floida'){
       adjustPopUp( floridaRep , 'red');  
     }
-    
+    send()
   });
 
 
@@ -257,7 +230,6 @@ function adjustPopUp(data, color){
   function headerClick(){
     
     var raceTitle = document.getElementById('tempHeader').innerText
-    console.log(raceTitle);
     if( raceTitle == 'USA: Hillary Vs Trump'){
       race = 'Floida';
       document.getElementById('tempHeader').innerText = 'Fl Senate: Rubio Vs Murphy';
@@ -267,11 +239,7 @@ function adjustPopUp(data, color){
       race = 'Presidential';
       document.getElementById('tempHeader').innerText = 'USA: Hillary Vs Trump';
       adjustPopUp(presidentialRep, 'red');   
-    }
-
-
-  
-      
+    }      
   }
 
       var headerClicked = document.querySelector('.header');
