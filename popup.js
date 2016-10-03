@@ -4,6 +4,11 @@
 var data;
 var race;
 var party;
+var floridaDem 
+var floridaRep
+var presidentialDem
+var presidentialRep
+
 
 ////////////////////////////////////////////
 //Inject content Script on each tab change//
@@ -21,51 +26,48 @@ chrome.tabs.onActivated.addListener(function(tabId, changeInfo, tab) {
   chrome.tabs.executeScript(null, {file: "getKeyWordsFromPage.js"});
 });
 
-/////////////////////////////////////////////////////
-//Getting local storage information regarding party//
-/////////////////////////////////////////////////////
-chrome.storage.local.get(["Party"], function(items){
-    if( items !== null){
-      party = items.Party
-    }else{
-      console.log("nothign is stored under Party")
-    }
-});
-
-////////////////////////////////////////////////////
-//Getting local storage information regarding Race//
-////////////////////////////////////////////////////
-chrome.storage.local.get(['Race'], function(items){
-  if( items !== null){
-    race = items.Race
-  }else{
-    console.log('nothing stored localy under race');
-  } 
-});
-
 
 //////////////////////////////////////////////////
 //Long lived connection with getKeyWordsFromPage//
 //also listens for msg from editpop to send data// 
 //////////////////////////////////////////////////
 chrome.runtime.onConnect.addListener(function(port){
+  console.log(port)
+
   port.postMessage({race:race});
+
+  if(port.name == 'editPop'){
+
+      console.log(port.name)
+      port.postMessage({data : [[presidentialRep, presidentialDem ],[ floridaRep, floridaDem ]]});
+  }
+
   port.onMessage.addListener(function(message,sender){
-    
-    data = [message, race, party];
-    var amount = data[0].message[0].length + data[0].message[1].length;
-    var tagAmount = amount+''
-
-    chrome.browserAction.setBadgeText({
-      text: tagAmount
-    });
+    console.log(sender)
+    console.log(message)
+    if( port.name == "getKeyWordsFromPage"){
+      console.log(message)
+      
+      floridaDem = message.data[1][1];
+      floridaRep = message.data[1][0];
+      presidentialRep = message.data[0][0];
+      presidentialDem = message.data[0][1];
+      console.log('shit should be updated on every page change or creation')
+      var amount = message.data[0][0].length -1 + message.data[0][1].length -1;
+      var tagAmount = amount+''
+      chrome.browserAction.setBadgeText({
+        text: tagAmount
+      });
+    }
+     
   });
 
-  chrome.runtime.onMessage.addListener(function(request,sender,sendResponse){
-    if( request.action == "editPop"){
-      sendResponse(data)
-    }  
-  });
+
+
+
+
+
+  
 });
 
 

@@ -4,15 +4,22 @@
 // 	test: 'TEST'
 // })
 
+
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+      console.log(sender);
+      console.log(request)
+      sendResponse(textNodes(request));
+  }
+);
+
 var port = chrome.runtime.connect({name: 'getKeyWordsFromPage'});
 port.onMessage.addListener(function(message,sender){
-  var race = message.race
-  port.postMessage({ message: textNodes(race)});
+  port.postMessage({ data: textNodes()});
 });
 
 
-function textNodes(race){
-  console.log(race)
+function textNodes(){
   var textArray = [];
 
   var textInHtml = document.body.innerText;
@@ -22,10 +29,9 @@ function textNodes(race){
 
   var splitText = textInHtml.split(' ');
   
-  var demName 
-  var repName 
+ 
 
-  if(race === "Presidential"){
+  function presidentialTags(splitText){
     console.log('Presidential went off')
     var wordCount = {
 
@@ -286,8 +292,8 @@ function textNodes(race){
         wordCount.tech++
       }
     }
-    demName = 'H Clinton'
-    var democratTags = [
+
+    var hillaryTags = [
       {
         text:"Economy", 
         link:"https://www.hillaryclinton.com/issues/an-economy-that-works-for-everyone/",
@@ -568,8 +574,7 @@ function textNodes(race){
         
       }
     ]
-    repName = 'D Trump'
-    var republicanTags = [
+    var trumpTags = [
       {
         text: 'Equality',
         link: 'https://www.donaldjtrump.com/policies/immigration/',
@@ -668,9 +673,10 @@ function textNodes(race){
         ]
       }
     ]
-
-    
-  }else if(race === 'Florida'){
+    return [trumpTags, hillaryTags]
+  }
+  
+  function floridaSenateTags(splitText){
     var wordCount = {
 
       economy:0,
@@ -771,8 +777,7 @@ function textNodes(race){
       }
     }
 
-    repName = "M Rubio";
-    var republicanTags = [
+    var rubioTags = [
 
       {
         text:"Economy", 
@@ -873,8 +878,7 @@ function textNodes(race){
         
       }
     ]
-    demName = 'P Murphy'
-    var  democratTags = [
+    var  murphyTags = [
         {
           text:"Economy", 
           link:"https://www.murphyforflorida.com/vision/growing-middle-class/",  //Need to turn this into own subtag
@@ -981,53 +985,59 @@ function textNodes(race){
           count: wordCount.tech,
           
         }
-    ]  
+    ]
+    return [rubioTags , murphyTags]   
   }
     
-    var unsortedRebulican = republicanTags.filter(function(map){
-      if(map.count > 0){
-        return map
-      }
-    });
-
-    var unsortedMatchedDemocrat = democratTags.filter(function(map){
-      if(map.count > 0){
-        return map
-      }
-    });
-
-    function sortInt(a,b) {
-      return  b.count - a.count;
+ function count (map){
+    if(map.count > 0){
+      return map
     }
+  }        
 
-    //End of the sort functions 
-    var rebulican = unsortedRebulican.sort(sortInt);
-    var democrat = unsortedMatchedDemocrat.sort(sortInt);
 
-    function checkSubtag(value){
-      if(value.subTags.length > 0){
-        return value 
-      }
+  var presidential = presidentialTags(splitText)
+  var senateFlorida = floridaSenateTags(splitText)
+
+  var presidentialOne = presidential[0].filter(count);
+  var presidentialTwo = presidential[1].filter(count);
+  var senateFloridaOne = senateFlorida[0].filter(count);
+  var senateFloridaTwo = senateFlorida[1].filter(count);
+
+
+  function sortInt(a,b) {
+    return  b.count - a.count;
+  }
+   
+  function checkSubtag(value){
+    if(value.subTags.length > 0){
+      return value 
     }
-
-    function checkSubtagCount(value){
-      for(var q=0;q< value.subTags.length; q++){
-        if( value.subTags[q].count !== 0){
-          return value
-        }
+  }
+  function checkSubtagCount(value){
+    for(var q=0;q< value.subTags.length; q++){
+      if( value.subTags[q].count !== 0){
+        return value
       }
     }
+  } 
 
-    var rebulicanResult = rebulican.filter(checkSubtag);
-    var rebulicanFiltered = rebulicanResult.filter(checkSubtagCount);
-    rebulicanFiltered.unshift({name : repName});
 
-    var democratResult = democrat.filter(checkSubtag);
-    var democratFiltered = democratResult.filter(checkSubtagCount);
-    democratFiltered.unshift({name : demName});
-    var data = [rebulicanFiltered,democratFiltered];
+  var presidentialOneSort = presidentialOne.sort(sortInt).filter(checkSubtag).filter(checkSubtagCount);
+  var presidentialTwoSort = presidentialTwo.sort(sortInt).filter(checkSubtag).filter(checkSubtagCount);
+  var senateFloridaOneSort = senateFloridaOne.sort(sortInt).filter(checkSubtag).filter(checkSubtagCount);
+  var senateFloridaTwoSort = senateFloridaTwo.sort(sortInt).filter(checkSubtag).filter(checkSubtagCount);
 
-    return data
+ 
+
+  presidentialOneSort.unshift({name: 'D.Trump'});
+  presidentialTwoSort.unshift({name: 'H.Clinton'});
+  senateFloridaOneSort.unshift({name: 'M.Rubio'});
+  senateFloridaTwoSort.unshift({name: 'P.Murphy'});
+
+  var data = [ [ presidentialOneSort, presidentialTwoSort], [senateFloridaOneSort, senateFloridaTwoSort]];
+  console.log(data)
+     return data
 }
 
 

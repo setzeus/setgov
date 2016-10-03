@@ -148,34 +148,7 @@ window.addEventListener('load', function () {
 	var switch_color = document.getElementById('candidate_switch').className; // 'Candidate Switch current color'
 	var color,colorHex;
 
-	// If/Then statement to set initial colors
-	if (switch_color=="icon_container left red") {
-			color = "red";
-			colorHex = "#F44336";
-			candidate_switch.style.backgroundImage = "url('candidate_switch_red.png')";
-			document.getElementById('candidate_icon').style.backgroundImage = "url('info_icon_red.png')";
-			document.getElementById('reddit_icon').style.backgroundImage = "url('reddit_icon_red.png')";
-			document.getElementById('top_background').style.backgroundImage = "url('repub_logo.png')";
-			document.getElementById('top_label_container').className = "icon_container left red";
-			document.getElementById('primary_calendar_icon').style.color = "#ef5350";
-			document.getElementById('general_calendar_icon').style.color = "#ef5350";
-			document.getElementById('vote_booths_icon').style.color = "#ef5350";
 
-	} else {
-			color = "blue";
-			colorHex = "#1E88E5";
-			candidate_switch.style.backgroundImage = "url('candidate_switch_blue.png')";
-			document.getElementById('candidate_icon').style.backgroundImage = "url('info_icon_blue.png')";
-			document.getElementById('reddit_icon').style.backgroundImage = "url('reddit_icon_blue.png')";
-			document.getElementById('top_background').style.backgroundImage = "url('demo_logo.png')";
-			document.getElementById('top_label_container').className = "icon_container left blue";
-			document.getElementById('primary_calendar_icon').style.color = "#00a4e4";
-			document.getElementById('general_calendar_icon').style.color = "#00a4e4";
-			document.getElementById('vote_booths_icons').style.color = "#00a4e4";			
-	};
-
-	var seg2 = document.getElementById('seg2').style.borderColor = colorHex;
-	var selectedsSegment = document.getElementsByClassName('segment default')[0].style.backgroundColor = colorHex;
 
 
     var segmentArray = document.getElementsByClassName('segment');
@@ -186,68 +159,7 @@ window.addEventListener('load', function () {
 		arr[i].onclick = segmentedLogic;
 	};
 
-	// assign the 'candidateSwitchLogic' function to run con click for every segment
-	candidate_switch.onclick = candidateSwitchLogic;
-
-	// Beginning of big function definitions
-
-	// Main function used to handle the logic of switchin from one candidate to another
-	function candidateSwitchLogic(element) {
-
-		var currentColor = element.srcElement.className;
-
-		var candidate_switch = document.getElementById('candidate_switch');
-		console.log(currentColor);
-
-		var switch_color = document.getElementById('candidate_switch').className;
-		var color;
-		var colorHexBlue = "#1E88E5";
-		var colorHexRed = "#F44336";
-
-		if (currentColor == "icon_container left red") {
-			document.getElementById('primary_calendar_icon').style.color = "#00a4e4";
-			document.getElementById('general_calendar_icon').style.color = "#00a4e4";
-			document.getElementById('vote_booths_icon').style.color = "#00a4e4";
-			document.getElementById('top_background').style.backgroundImage = "url('demo_logo.png')";
-			candidate_switch.style.backgroundImage = "url('candidate_switch_blue.png')";
-			candidate_switch.className = "icon_container left blue";
-			document.getElementById('candidate_icon').style.backgroundImage = "url('info_icon_blue.png')";
-			document.getElementById('reddit_icon').style.backgroundImage = "url('reddit_icon_blue.png')";
-			document.getElementsByClassName('segment default')[0].style.backgroundColor = colorHexBlue;
-			document.getElementById('seg2').style.borderColor = "#1E88E5";
-			document.getElementsByClassName('top_body red')[0].className = "top_body blue";
-			document.getElementById('top_label_container').className = "icon_container left blue";
-			document.getElementsByClassName('icon_container right red')[0].className = "icon_container right blue";
-			document.getElementsByClassName('icon_container right red')[0].className = "icon_container right blue";
-			document.getElementsByClassName('segment_container red')[0].className = "segment_container blue";
-			document.getElementsByClassName('segment_controller red')[0].className = "segment_controller blue";
-			document.getElementsByClassName('segment_title red')[0].className = "segment_title blue";
-			document.getElementsByClassName('segment_body red')[0].className = "segment_body blue";
-		} else {
-			document.getElementById('primary_calendar_icon').style.color = "#ef5350";
-			document.getElementById('general_calendar_icon').style.color = "#ef5350";
-			document.getElementById('vote_booths_icon').style.color = "#ef5350";
-			document.getElementById('top_background').style.backgroundImage = "url('repub_logo.png')";			
-			candidate_switch.style.backgroundImage = "url('candidate_switch_red.png')";
-			candidate_switch.className = "icon_container left red";
-			document.getElementById('candidate_icon').style.backgroundImage = "url('info_icon_red.png')";
-			document.getElementById('reddit_icon').style.backgroundImage = "url('reddit_icon_red.png')";
-			document.getElementsByClassName('segment default')[0].style.backgroundColor = colorHexRed;
-			document.getElementById('seg2').style.borderColor = "#F44336";
-			document.getElementsByClassName('top_body blue')[0].className = "top_body red";
-			document.getElementById('top_label_container').className = "icon_container left red"
-			document.getElementsByClassName('icon_container right blue')[0].className = "icon_container right red";
-			document.getElementsByClassName('icon_container right blue')[0].className = "icon_container right red";
-			document.getElementsByClassName('segment_container blue')[0].className = "segment_container red";
-			document.getElementsByClassName('segment_controller blue')[0].className = "segment_controller red";
-			document.getElementsByClassName('segment_title blue')[0].className = "segment_title red";
-			document.getElementsByClassName('segment_body blue')[0].className = "segment_body red";
-
-		}
-
-		console.log(candidate_switch.className);
-	};
-
+	
 
 	// Main function used to handle the logic of switchin between the three segmented controls
 	function segmentedLogic(element) {
@@ -264,9 +176,11 @@ window.addEventListener('load', function () {
 		}
 
 		var switch_color = document.getElementById('candidate_switch').className;
+		console.log(switch_color)
+
 		var color;
 		var colorHex;
-		if (switch_color=="icon_container left red") {
+		if (switch_color == " icon_container left red") {
 			color = "red";
 			colorHex = "#F44336";
 		} else {
@@ -328,11 +242,5 @@ window.addEventListener('load', function () {
 		}; 
   	}
 })
-
-
-
-
-
-
 
 

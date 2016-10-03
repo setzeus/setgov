@@ -84,6 +84,8 @@ body {
 .top_body.red {
   border-top: 2px solid #F44336;
 }
+.top_background{
+}
 
 #selected {
   color: white;
@@ -206,7 +208,6 @@ body {
   }
   #candidate_switch {
     cursor: pointer;
-    background-image: url('candidate_switch_red.png');
     background-size: 75%;
     background-position: 50%;
     background-repeat: no-repeat;

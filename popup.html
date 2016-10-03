@@ -7,7 +7,7 @@
     
     <link rel='stylesheet' type="text/css" href="popup.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js"></script>  
-  <script src="test.js"></script>  
+  <script src="test.js"></script>
 
   </head>
 
@@ -19,16 +19,16 @@
     
 
     <!-- Use any element to open/show the overlay navigation menu -->
-    <a id='headerClick'>
-      <div id='title' class="header">
-      <!-- Should show what race its displaying -->
-        <div id="tempHeader"></div>
-      </div>
-    </a>
-    <div class="top_body red" id="top_background">
+    <div  id='title' class="header">
+    <!-- Should show what race its displaying -->
+      <div id="tempHeader"></div>
+    </div>
+    
+    <div class="top_body " id="top_background">
       <div class="icon_container_row" id="top">
-        <div onClick='checkColor' class="icon_container left red" id="candidate_switch"></div>
-        <div class="icon_container right red" id="reddit_icon"></div>
+        <div onClick='checkColor' class="icon_container left " id="candidate_switch">
+        </div>
+        <div class="icon_container right " id="reddit_icon"></div>
       </div>
       <div class="icon_container_row" id="middle"></div>
       <div class="icon_container_row" id="bottom">
@@ -36,11 +36,11 @@
           <!-- name of the current candiate -->
           <div id="top_container_text"></div>
         </div>
-        <div class="icon_container right red" id="candidate_icon"></div>
+        <div class="icon_container right " id="candidate_icon"></div>
       </div>
     </div>
-    <div class="segment_container red">
-      <div class="segment_controller red">
+    <div class="segment_container " id='top_segement_container'>
+      <div class="segment_controller " id='sub_segement_container'>
         <div class="segment" id="seg1">
           <i class="segment_icon fa fa-line-chart fa-lg" aria-hidden="true"></i>
         </div>
@@ -52,13 +52,13 @@
         </div>
       </div>
     </div>
-    <div class="segment_title red">
+    <div class="segment_title " id="title_segment">
       <div class="segment_title_text">Election Platform</div>
     </div>
 
 
 
-    <div class="segment_body red">
+    <div class="segment_body " id='body_segment'>
       <div class="subview" id="electionGraph">
         <canvas id="clients" width="325" height="325"></canvas>
       </div>
