@@ -129,7 +129,6 @@ function adjustPopUp(data, color){
   document.getElementById('vote_booths_icon').style.color = lightPrim;
   document.getElementById('top_background').style.backgroundImage = topBackground;
 
-
   candidate_switch.style.backgroundImage = candidateLetter;
   candidate_switch.className = candidateSwitch;
   document.getElementById('candidate_icon').style.backgroundImage = candiateIcon;
@@ -152,6 +151,8 @@ function adjustPopUp(data, color){
   var top_body = document.getElementById('top_background');
   top_body.className = ` top_body` +base+` `;
 
+  var icon_container = document.getElementById('reddit_icon');
+  icon_container.className = `icon_container ` +base+` `;
   
 
   
