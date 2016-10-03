@@ -101,7 +101,7 @@ function adjustPopUp(data, color){
     var color = "red_color";
     var button = ' button_red';
     var colorHex = " #F44336";
-    var lightPrim = " #00a4e4";
+    var lightPrim = " #ef5350";
     var topBackground = " url('repub_logo.png')";
     var candidateLetter = " url('candidate_switch_red.png')";
     var candidateSwitch = " icon_container left red";
@@ -114,7 +114,7 @@ function adjustPopUp(data, color){
     var color = 'blue_color';
     var button = ' button_blue'
     var colorHex = " #1E88E5";
-    var lightPrim = " #ef5350";
+    var lightPrim = " #00a4e4"; 
     var topBackground = " url('demo_logo.png')";
     var candidateLetter = " url('candidate_switch_blue.png')";
     var candidateSwitch = " icon_container left blue";
@@ -152,9 +152,10 @@ function adjustPopUp(data, color){
   top_body.className = ` top_body` +base+` `;
 
   var icon_container = document.getElementById('reddit_icon');
-  icon_container.className = `icon_container ` +base+` `;
+  icon_container.className = `icon_container  right ` +base+` `;
   
-
+  var candidate_icon = document.getElementById('candidate_icon');
+  candidate_icon.className = `icon_container  right ` +base+` `;
   
 
   
