@@ -6,8 +6,8 @@ module.exports = {
 	entry: './src/index.js',
 
 	output: {
-		path: 'src',
-		filename: 'bundle.js'
+		path: 'bundles',
+		filename: 'app_bundle.js'
 	},
 
 	devServer: {
