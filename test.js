@@ -1,6 +1,8 @@
+//http://elections.huffingtonpost.com/pollster/api/charts/2016-general-election-trump-vs-clinton.json
+
 
 window.addEventListener('load', function () {
-	
+
 	//Initialize all future graph arrays
 	var XAxisDates = [];
 	var rubioValue = [];
@@ -8,95 +10,170 @@ window.addEventListener('load', function () {
 	var undecidedValue = [];
 	
 	var xhttp = new XMLHttpRequest();
-	  xhttp.onreadystatechange=function() {
-	    if (this.readyState == 4 && this.status == 200) {
-	   	  var data = this.responseText
+	  
+	xhttp.onreadystatechange=function(){
+    	if (this.readyState == 4 && this.status == 200) {
+   	  		var data = this.responseText
 	   	  //console.log(data);
-		  var jsonResponse = JSON.parse(data);
-		  var j =0;
-		  for (var i = 60; i >= 0; i--) {
-		  	XAxisDates[i] = jsonResponse.estimates_by_date[j].date;
-		  	j++;
-		  	rubioValue[i] = jsonResponse.estimates_by_date[i].estimates[0].value;
-		  	murphyValue[i] = jsonResponse.estimates_by_date[i].estimates[1].value;
-		  	undecidedValue[i] = jsonResponse.estimates_by_date[i].estimates[2].value;
-		  };
+		 	var jsonResponse = JSON.parse(data);
+		 	var j =0;
 
-		    //Initialize chart
-   		    var ctx = document.getElementById("clients");
+		  	for (var i = 60; i >= 0; i--) {
+		  		XAxisDates[i] = jsonResponse.estimates_by_date[j].date;
+		  		j++;
+		  		rubioValue[i] = jsonResponse.estimates_by_date[i].estimates[0].value;
+		  		murphyValue[i] = jsonResponse.estimates_by_date[i].estimates[1].value;
+		  		undecidedValue[i] = jsonResponse.estimates_by_date[i].estimates[2].value;
+		  	};
+
+	    	//Initialize chart
+			var ctx = document.getElementById("clients");
 
 			var labelsTest = XAxisDates;
 
+			// var data = {
+		 //    	labels: labelsTest,
+		 //    	datasets: [
+			//       	{
+			//          	label: "D.Trump",
+		 //            	fill: false,
+		 //            	lineTension: 0.1,
+			//             backgroundColor: "rgba(239,83,80,.5)",
+			//             borderColor: "rgba(244,67,54,1)",
+			//             borderCapStyle: 'butt',
+			//             borderDash: [],
+			//             borderDashOffset: 0.0,
+			//             borderJoinStyle: 'miter',
+			//             pointBorderColor: "rgba(244,67,54,1)",
+			//             pointBackgroundColor: "#fff",
+			//             pointBorderWidth: 1,
+			//             pointHoverRadius: 5,
+			//             pointHoverBackgroundColor: "rgba(75,192,192,1)",
+			//             pointHoverBorderColor: "rgba(220,220,220,1)",
+			//             pointHoverBorderWidth: 2,
+			//             pointRadius: 1,
+			//             pointHitRadius: 10,
+			//             data: rubioValue,
+			//             spanGaps: false,
+			// 	    },
+			//       	{	
+			// 	        label: "H.Clinton",
+			//             fill: false,
+			//             lineTension: 0.1,
+			//             backgroundColor: "rgba(0,164,228,0.5)",
+			//             borderColor: "rgba(1,113,208,1)",
+			//             borderCapStyle: 'butt',
+			//             borderDash: [],
+			//             borderDashOffset: 0.0,
+			//             borderJoinStyle: 'miter',
+			//             pointBorderColor: "rgba(1,113,208,1)",
+			//             pointBackgroundColor: "#fff",
+			//             pointBorderWidth: 1,
+			//             pointHoverRadius: 5,
+			//             pointHoverBackgroundColor: "rgba(57,129,129,1)",
+			//             pointHoverBorderColor: "rgba(220,220,220,1)",
+			//             pointHoverBorderWidth: 2,
+			//             pointRadius: 1,
+			//             pointHitRadius: 10,
+			//             data: murphyValue  ,
+			//             spanGaps: false,
+			// 	    },
+			// 	    {
+			// 	        label: "Not Sure",
+			//             fill: false,
+			//             lineTension: 0.1,
+			//             backgroundColor: "rgba(55,71,79,0.5)",
+			//             borderColor: "rgba(49,53,66,1)",
+			//             borderCapStyle: 'butt',
+			//             borderDash: [],
+			//             borderDashOffset: 0.0,
+			//             borderJoinStyle: 'miter',
+			//             pointBorderColor: "rgba(49,53,66,1)",
+			//             pointBackgroundColor: "#fff",
+			//             pointBorderWidth: 1,
+			//             pointHoverRadius: 5,
+			//             pointHoverBackgroundColor: "rgba(54,28,0,1)",
+			//             pointHoverBorderColor: "rgba(220,220,220,1)",
+			//             pointHoverBorderWidth: 2,
+			//             pointRadius: 1,
+			//             pointHitRadius: 10,
+			//             data: undecidedValue,
+			//             spanGaps: false,
+			// 	    }
+		 //    	]
+			// };
+
+
 			var data = {
-					    labels: labelsTest,
-					    datasets: [
-					      {
-					         label: "M.Rubio",
-				            fill: false,
-				            lineTension: 0.1,
-				            backgroundColor: "rgba(239,83,80,.5)",
-				            borderColor: "rgba(244,67,54,1)",
-				            borderCapStyle: 'butt',
-				            borderDash: [],
-				            borderDashOffset: 0.0,
-				            borderJoinStyle: 'miter',
-				            pointBorderColor: "rgba(244,67,54,1)",
-				            pointBackgroundColor: "#fff",
-				            pointBorderWidth: 1,
-				            pointHoverRadius: 5,
-				            pointHoverBackgroundColor: "rgba(75,192,192,1)",
-				            pointHoverBorderColor: "rgba(220,220,220,1)",
-				            pointHoverBorderWidth: 2,
-				            pointRadius: 1,
-				            pointHitRadius: 10,
-				            data: rubioValue,
-				            spanGaps: false,
-					      },
-					      {
-					         label: "P.Murphy",
-				            fill: false,
-				            lineTension: 0.1,
-				            backgroundColor: "rgba(0,164,228,0.5)",
-				            borderColor: "rgba(1,113,208,1)",
-				            borderCapStyle: 'butt',
-				            borderDash: [],
-				            borderDashOffset: 0.0,
-				            borderJoinStyle: 'miter',
-				            pointBorderColor: "rgba(1,113,208,1)",
-				            pointBackgroundColor: "#fff",
-				            pointBorderWidth: 1,
-				            pointHoverRadius: 5,
-				            pointHoverBackgroundColor: "rgba(57,129,129,1)",
-				            pointHoverBorderColor: "rgba(220,220,220,1)",
-				            pointHoverBorderWidth: 2,
-				            pointRadius: 1,
-				            pointHitRadius: 10,
-				            data: murphyValue  ,
-				            spanGaps: false,
-					      },
-					      {
-					        label: "Not Sure",
-				            fill: false,
-				            lineTension: 0.1,
-				            backgroundColor: "rgba(55,71,79,0.5)",
-				            borderColor: "rgba(49,53,66,1)",
-				            borderCapStyle: 'butt',
-				            borderDash: [],
-				            borderDashOffset: 0.0,
-				            borderJoinStyle: 'miter',
-				            pointBorderColor: "rgba(49,53,66,1)",
-				            pointBackgroundColor: "#fff",
-				            pointBorderWidth: 1,
-				            pointHoverRadius: 5,
-				            pointHoverBackgroundColor: "rgba(54,28,0,1)",
-				            pointHoverBorderColor: "rgba(220,220,220,1)",
-				            pointHoverBorderWidth: 2,
-				            pointRadius: 1,
-				            pointHitRadius: 10,
-				            data: undecidedValue,
-				            spanGaps: false,
-					      }
-					    ]
+		    	labels: labelsTest,
+		    	datasets: [
+			      	{
+			         	label: "M.Rubio",
+		            	fill: false,
+		            	lineTension: 0.1,
+			            backgroundColor: "rgba(239,83,80,.5)",
+			            borderColor: "rgba(244,67,54,1)",
+			            borderCapStyle: 'butt',
+			            borderDash: [],
+			            borderDashOffset: 0.0,
+			            borderJoinStyle: 'miter',
+			            pointBorderColor: "rgba(244,67,54,1)",
+			            pointBackgroundColor: "#fff",
+			            pointBorderWidth: 1,
+			            pointHoverRadius: 5,
+			            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+			            pointHoverBorderColor: "rgba(220,220,220,1)",
+			            pointHoverBorderWidth: 2,
+			            pointRadius: 1,
+			            pointHitRadius: 10,
+			            data: rubioValue,
+			            spanGaps: false,
+				    },
+			      	{	
+				        label: "P.Murphy",
+			            fill: false,
+			            lineTension: 0.1,
+			            backgroundColor: "rgba(0,164,228,0.5)",
+			            borderColor: "rgba(1,113,208,1)",
+			            borderCapStyle: 'butt',
+			            borderDash: [],
+			            borderDashOffset: 0.0,
+			            borderJoinStyle: 'miter',
+			            pointBorderColor: "rgba(1,113,208,1)",
+			            pointBackgroundColor: "#fff",
+			            pointBorderWidth: 1,
+			            pointHoverRadius: 5,
+			            pointHoverBackgroundColor: "rgba(57,129,129,1)",
+			            pointHoverBorderColor: "rgba(220,220,220,1)",
+			            pointHoverBorderWidth: 2,
+			            pointRadius: 1,
+			            pointHitRadius: 10,
+			            data: murphyValue  ,
+			            spanGaps: false,
+				    },
+				    {
+				        label: "Not Sure",
+			            fill: false,
+			            lineTension: 0.1,
+			            backgroundColor: "rgba(55,71,79,0.5)",
+			            borderColor: "rgba(49,53,66,1)",
+			            borderCapStyle: 'butt',
+			            borderDash: [],
+			            borderDashOffset: 0.0,
+			            borderJoinStyle: 'miter',
+			            pointBorderColor: "rgba(49,53,66,1)",
+			            pointBackgroundColor: "#fff",
+			            pointBorderWidth: 1,
+			            pointHoverRadius: 5,
+			            pointHoverBackgroundColor: "rgba(54,28,0,1)",
+			            pointHoverBorderColor: "rgba(220,220,220,1)",
+			            pointHoverBorderWidth: 2,
+			            pointRadius: 1,
+			            pointHitRadius: 10,
+			            data: undecidedValue,
+			            spanGaps: false,
+				    }
+		    	]
 			};
 
 			var options = {
@@ -127,20 +204,18 @@ window.addEventListener('load', function () {
 				options: options
 			});
 
-	    }
-	  };
+    	}
+	};
 	  
 
-	  xhttp.open("GET","http://elections.huffingtonpost.com/pollster/api/charts/2016-florida-senate-rubio-vs-murphy.json", true);
-	  xhttp.send();
+	xhttp.open("GET","http://elections.huffingtonpost.com/pollster/api/charts/2016-florida-senate-rubio-vs-murphy.json", true);
+	xhttp.send();
 
 
 	// Main 'Candidate Switch' icon	  
 	var candidate_switch = document.getElementById('candidate_switch');
 	var switch_color = document.getElementById('candidate_switch').className; // 'Candidate Switch current color'
 	var color,colorHex;
-
-
 
 
     var segmentArray = document.getElementsByClassName('segment');
