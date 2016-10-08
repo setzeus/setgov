@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack-dev-server --port 8000 --inline --progress --hot"
+    "start": "webpack-dev-server --port 8000 --inline --progress --hot",
+    "dev": " webpack-dev-server --progress --inline"
   },
   "author": "",
   "license": "ISC",

@@ -1,21 +1,40 @@
 var path = require('path');
+var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 //var buildPath = path.resolve(__dirname, 'src');
+var buildPath = path.resolve(__dirname, 'public');
+
 
 module.exports = {
 
-	entry: './src/index.js',
+	entry: [
+		'webpack-dev-server/client?http://localhost:8080',
+		'webpack/hot/only-dev-server',
+		'./src/index.js',
+	],
 
 	output: {
-		path: 'src/bundles',
-		filename: 'app_bundle.js'
+		path: buildPath,
+		filename: 'bundle.js'
 	},
 
 	devServer: {
-		contentBase: "./src",
+		contentBase: "./public",
+		historyApiFallback: true,
 		hot: true,
-		inline: true
+		pathinfo: true
 	},
-
+	resolve: {
+		extensions: ['', '.js', '.less'],
+		moduleDirectories: ['node_modules']
+	},
+	plugins: [
+		new HtmlWebpackPlugin({
+				template: 'src/index.html',
+				inject: 'body'
+			}),
+		new webpack.HotModuleReplacementPlugin()
+	],
 	module: {
 		loaders: [
 
