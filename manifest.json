@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "SetGov - FL Beta",
+  "description": "An extension that keeps you updated with local elections. Subscribe to a race, hear about candidate's platforms & get out to vote!",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "./public/icon.png",
+    "default_popup": "./src/index.html",
+    "default_title": "SetGov"
+
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ]
+}
