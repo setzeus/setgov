@@ -9,7 +9,7 @@ const App = React.createClass({
     return (
      <div className="scoreboard">
      	<div className="header">
-      		<h1>App</h1>
+      		<h1>i love webpack</h1>
     	</div>
      </div>
     );
