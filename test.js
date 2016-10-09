@@ -29,6 +29,7 @@ window.addEventListener('load', function () {
 
 	
 	var xhttpSenate = new XMLHttpRequest();
+	var xhttpPresident = new XMLHttpRequest();
 
 
 
@@ -202,6 +203,8 @@ window.addEventListener('load', function () {
 		    	]
 			};
 
+
+
 			var options = {
 			    scales: {
 			        yAxes: [{
@@ -223,6 +226,7 @@ window.addEventListener('load', function () {
 			};
 
 
+
 			// Create chart
 			var myLineChart = new Chart(ctx,{
 				type: "line",
@@ -236,6 +240,10 @@ window.addEventListener('load', function () {
 
 	xhttpSenate.open("GET","http://elections.huffingtonpost.com/pollster/api/charts/2016-florida-senate-rubio-vs-murphy.json", true);
 	xhttpSenate.send();
+
+	//xhttpPresident.open("GET","http://elections.huffingtonpost.com/pollster/api/charts/2016-general-election-trump-vs-clinton.json", true);
+	//xhttpPresident.send();
+
 
 
 	// Main 'Candidate Switch' icon	  
