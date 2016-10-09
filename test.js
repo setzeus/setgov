@@ -3,19 +3,45 @@
 
 window.addEventListener('load', function () {
 
+	function headerClick(){
+    
+	    var raceTitle = document.getElementById('tempHeader').innerText
+
+	    if( raceTitle == 'USA: Hillary Vs Trump'){
+	    	console.log('graph should change to presidental')
+	    }
+	    if( raceTitle == 'Fl Senate: Rubio Vs Murphy'){
+	    	console.log('graph should change to senate')  
+	    }      
+	  }
+
+      var headerClicked = document.querySelector('.header');
+      headerClicked.addEventListener('click', headerClick);
+
+
+
+
 	//Initialize all future graph arrays
 	var XAxisDates = [];
 	var rubioValue = [];
 	var murphyValue = [];
 	var undecidedValue = [];
+
 	
-	var xhttp = new XMLHttpRequest();
-	  
-	xhttp.onreadystatechange=function(){
+	var xhttpSenate = new XMLHttpRequest();
+
+
+
+
+
+	xhttpSenate.onreadystatechange=function(){
     	if (this.readyState == 4 && this.status == 200) {
    	  		var data = this.responseText
+
 	   	  //console.log(data);
 		 	var jsonResponse = JSON.parse(data);
+		 	console.log(jsonResponse)
+		 	
 		 	var j =0;
 
 		  	for (var i = 60; i >= 0; i--) {
@@ -208,8 +234,8 @@ window.addEventListener('load', function () {
 	};
 	  
 
-	xhttp.open("GET","http://elections.huffingtonpost.com/pollster/api/charts/2016-florida-senate-rubio-vs-murphy.json", true);
-	xhttp.send();
+	xhttpSenate.open("GET","http://elections.huffingtonpost.com/pollster/api/charts/2016-florida-senate-rubio-vs-murphy.json", true);
+	xhttpSenate.send();
 
 
 	// Main 'Candidate Switch' icon	  
