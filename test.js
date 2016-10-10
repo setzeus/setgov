@@ -11,11 +11,9 @@ window.addEventListener('load', function () {
 	    var raceTitle = document.getElementById('tempHeader').innerText
 
 	    if( raceTitle == 'USA: Hillary Vs Trump'){
-	    	console.log('graph should change to presidental')
 	    	addPresidentalGraph();
 	    }
 	    if( raceTitle == 'Fl Senate: Rubio Vs Murphy'){
-	    	console.log('graph should change to senate')
 	    	addSenateGraph();  
 	    }      
 	  }
@@ -41,9 +39,8 @@ window.addEventListener('load', function () {
 	    	if (this.readyState == 4 && this.status == 200) {
 	   	  		var data = this.responseText
 
-		   	  //console.log(data);
+		   	  
 			 	var jsonResponse = JSON.parse(data);
-			 	console.log(jsonResponse)
 			 	
 			 	var j =0;
 
@@ -183,9 +180,7 @@ window.addEventListener('load', function () {
 	    	if (this.readyState == 4 && this.status == 200) {
 	   	  		var data = this.responseText
 
-		   	  //console.log(data);
 			 	var jsonResponse = JSON.parse(data);
-			 	console.log(jsonResponse)
 			 	
 			 	var j =0;
 
@@ -334,19 +329,14 @@ window.addEventListener('load', function () {
 	// Main function used to handle the logic of switchin between the three segmented controls
 	function segmentedLogic(element) {
 		var clickedId;
-		console.log(element.srcElement);
-		console.log(element.srcElement.id);
-		console.log(element.srcElement.parentElement);
+		
 		if (element.srcElement.tagName === "I") {
 			clickedId = element.srcElement.parentElement.id;
-			console.log(clickedId);
 		} else {
 			clickedId = element.srcElement.id;
-			console.log(clickedId);
 		}
 
 		var switch_color = document.getElementById('candidate_switch').className;
-		console.log(switch_color)
 
 		var color;
 		var colorHex;

@@ -16,7 +16,6 @@ var generalInfo ;
 ///////////////////////////////////////
 chrome.storage.local.set({ "Party": "Democrat" }, function(){
   party = 'Democrat';
-  console.log('storage has been set')
 });
 
 //////////////////////////////////////////////
@@ -24,7 +23,6 @@ chrome.storage.local.set({ "Party": "Democrat" }, function(){
 //////////////////////////////////////////////
 chrome.storage.local.set({'Race': 'Presidential'}, function(){
   race = 'Presidential';
-  console.log('storage has been set to Presidential')
 })
 
 ///////////////////////////////////////////////////////////////////
@@ -40,26 +38,21 @@ function send(){
 document.getElementById("candidate_switch").addEventListener('click', checkColor);
   function checkColor(){
     var switch_color = document.getElementById("candidate_switch").className
-    console.log(switch_color)
-    console.log(race)
+   
     if(race == "Presidential"){
 
        if (switch_color == " icon_container left red") {
-        console.log('should switch to presidentialDem');
         adjustPopUp(presidentialDem, 'blue');
       } 
       if(switch_color == ' icon_container left blue'){
-          console.log('should swtich to presidentialRep');
           adjustPopUp(presidentialRep, 'red');
       }
     }
     if(race == 'Floida'){
       if (switch_color== " icon_container left red") {
-        console.log('should switch to floridaDem');
         adjustPopUp(floridaDem, 'blue');
       } 
       if(switch_color == ' icon_container left blue'){
-        console.log('should switch to floridaRep')
         adjustPopUp(floridaRep, 'red');
       }
     }
@@ -92,8 +85,7 @@ function closeNav(){
 //Adjust popup.html accordingly//
 /////////////////////////////////
 function adjustPopUp(data, color){
-  console.log(data)
-  console.log(color)
+ 
   var sortedMatched = data;
   document.getElementById('electionPositions').innerHTML = ' ' ;
   document.getElementById('top_container_text').innerText = data[0].name

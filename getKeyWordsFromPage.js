@@ -7,8 +7,7 @@
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-      console.log(sender);
-      console.log(request)
+      
       sendResponse(textNodes(request));
   }
 );
@@ -32,7 +31,6 @@ function textNodes(){
  
 
   function presidentialTags(splitText){
-    console.log('Presidential went off')
     var wordCount = {
 
       economy:0,
@@ -1036,7 +1034,6 @@ function textNodes(){
   senateFloridaTwoSort.unshift({name: 'P.Murphy'});
 
   var data = [ [ presidentialOneSort, presidentialTwoSort], [senateFloridaOneSort, senateFloridaTwoSort]];
-  console.log(data)
      return data
 }
 
