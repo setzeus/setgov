@@ -1,10 +1,14 @@
 module.exports = {
 
-	entry: './src/index.js',
+	entry: {
+		popup: './src/index.js',
+		background: './background/src/index.js'
+	},
+		 	
 	
 	output: {
 		path: 'bundles',
-		filename: 'app_bundle.js',
+		filename: "[name].js",
 		publicPath: '/bundles'
 	},
 

@@ -7,7 +7,7 @@ const App = React.createClass({
     return (
      <div className="scoreboard">
      	<div className="header">
-      		<Link to="/test">About</Link>
+      		<Link to="/test">test</Link>
     	</div>
      </div>
     );

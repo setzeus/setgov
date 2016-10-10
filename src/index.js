@@ -2,7 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App.js';
 import Test from './components/Test.js';
-import Routes from './components/Routes.js';
+import Routes from './Routes.js';
 import './css/style.css';
 
-ReactDOM.render(<Routes />, document.getElementById('container'));
+import {Provider} from 'react-redux';
+import {Store} from 'react-chrome-redux';
+import { Router, Route, Link, browserHistory } from 'react-router'
+
+const proxyStore = new Store({
+  portName: 'setgov'
+});
+
+
+
+ReactDOM.render( 
+	<Provider store={proxyStore}>
+		<Router history={browserHistory}>
+			{Routes}
+		</Router>
+	</Provider> , document.getElementById('container'));
