@@ -7,7 +7,10 @@ var floridaDem ;
 var floridaRep ;
 var presidentialDem ;
 var presidentialRep ;
-
+var primerieDates ;
+var generalDate ;
+var voteBooth ;
+var generalInfo ;
 ///////////////////////////////////////
 //Set the Local Storage for the Party//
 ///////////////////////////////////////
@@ -72,6 +75,19 @@ function openNav(){
 function closeNav(){
   document.getElementById("myNav").style.width = "0%";
 }
+
+
+
+
+
+
+
+
+//Florida will elect 1 member to the U.S. Senate in the general election. The race for Florida's U.S. Senate seat is 1 of 9 battleground races in 2016 that will determine which party controls the upper chamber. In what is expected to be one of the nation's most expensive Senate races, incumbent Sen. Marco Rubio (R) will face U.S. Rep. Patrick Murphy (D), Iraq war veteran Paul Stanton (L), and nine independent.
+
+
+
+
 /////////////////////////////////
 //Adjust popup.html accordingly//
 /////////////////////////////////
@@ -143,6 +159,17 @@ function adjustPopUp(data, color){
   
   var candidate_icon = document.getElementById('candidate_icon');
   candidate_icon.className = `icon_container  right ` +base+` `;
+
+  // var primaries = document.getElementById('');
+  // primaries.innerText = primerieDates;
+
+  var general_date = document.getElementById('general_date');
+  general_date.innerText = generalDate;
+
+  var info = document.getElementById('summary_election');
+  info.innerText = generalInfo ;
+
+  //var voteBooth ;
 
   if (sortedMatched.length == 1) {
     var nada =  
@@ -216,10 +243,17 @@ function adjustPopUp(data, color){
     presidentialDem = message.data[0][1];
     presidentialRep = message.data[0][0];
     if (race == 'Presidential' ) {
+      primerieDates = 'presidential Date';
+      generalDate = 'Nov. 10th, 2016';
+      generalInfo = 'presidential Info';
       adjustPopUp( presidentialRep , 'red');
     };
     if ( race == 'Floida'){
-      adjustPopUp( floridaRep , 'red');  
+      primerieDates = 'Aug. 30th, 2016'; 
+      generalDate = 'Nov. 10th, 2016';
+      voteBooth = 10;
+      generalInfo = "Florida will elect 1 member to the U.S. Senate in the general election. The race for Florida's U.S. Senate seat is 1 of 9 battleground races in 2016 that will determine which party controls the upper chamber. In what is expected to be one of the nation's most expensive Senate races, incumbent Sen. Marco Rubio (R) will face U.S. Rep. Patrick Murphy (D), Iraq war veteran Paul Stanton (L), and nine independent."
+       adjustPopUp( floridaRep , 'red'); 
     }
     send()
   });
@@ -233,11 +267,19 @@ function adjustPopUp(data, color){
     if( raceTitle == 'USA: Hillary Vs Trump'){
       race = 'Floida';
       document.getElementById('tempHeader').innerText = 'Fl Senate: Rubio Vs Murphy';
+      primerieDates = 'Aug. 30th, 2016'; 
+      generalDate = 'Nov. 10th, 2016';
+      voteBooth = 10;
+      generalInfo = "Florida will elect 1 member to the U.S. Senate in the general election. The race for Florida's U.S. Senate seat is 1 of 9 battleground races in 2016 that will determine which party controls the upper chamber. In what is expected to be one of the nation's most expensive Senate races, incumbent Sen. Marco Rubio (R) will face U.S. Rep. Patrick Murphy (D), Iraq war veteran Paul Stanton (L), and nine independent."
       adjustPopUp( floridaRep, 'red');
     }
     if( raceTitle == 'Fl Senate: Rubio Vs Murphy'){
       race = 'Presidential';
       document.getElementById('tempHeader').innerText = 'USA: Hillary Vs Trump';
+      primerieDates = 'presidential Date';
+      adjustPopUp( presidentialRep , 'red');
+      generalDate = 'Nov. 10th, 2016';
+      generalInfo = 'presidential Info';
       adjustPopUp(presidentialRep, 'red');   
     }      
   }
