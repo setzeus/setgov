@@ -162,6 +162,8 @@ export default (state = initalState, action) => {
 			return state.security_national_security ++;
 		case types.SECURITY_FOREGIN_POLICY:
 			return state.security_foreign_policy ++;
+		default :
+			return state;
 	}
 }
 

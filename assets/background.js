@@ -53,15 +53,15 @@
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
-	var _reduxLogger = __webpack_require__(19);
+	var _reduxLogger = __webpack_require__(22);
 
 	var _reduxLogger2 = _interopRequireDefault(_reduxLogger);
 
-	var _reduxThunk = __webpack_require__(25);
+	var _reduxThunk = __webpack_require__(28);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-	var _reactChromeRedux = __webpack_require__(26);
+	var _reactChromeRedux = __webpack_require__(29);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1212,15 +1212,24 @@
 
 	var _start2 = _interopRequireDefault(_start);
 
-	var _Race = __webpack_require__(323);
+	var _Race = __webpack_require__(19);
 
 	var _Race2 = _interopRequireDefault(_Race);
+
+	var _GeneralElection = __webpack_require__(21);
+
+	var _GeneralElection2 = _interopRequireDefault(_GeneralElection);
+
+	var _FloridaSenate = __webpack_require__(326);
+
+	var _FloridaSenate2 = _interopRequireDefault(_FloridaSenate);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var _default = (0, _redux.combineReducers)({
-	  race: _Race2.default
-
+	  race: _Race2.default,
+	  GeneralElection: _GeneralElection2.default,
+	  FloridaSenate: _FloridaSenate2.default
 	});
 
 	exports.default = _default;
@@ -1283,17 +1292,475 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _actionTypes = __webpack_require__(20);
+
+	var types = _interopRequireWildcard(_actionTypes);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	var initalState = 'GENERAL_ELECTION';
+
+	var _default = function _default() {
+		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initalState;
+		var action = arguments[1];
+
+		switch (action.type) {
+			case types.GENERAL_ELECTION:
+				return state = "GENERAL_ELECTION ";
+			case types.FLORIDA_SENATE:
+				return state = "FLORIDA_SENATE";
+			default:
+				return state;
+		}
+	};
+
+	exports.default = _default;
+	;
+
+	var _temp = function () {
+		if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+			return;
+		}
+
+		__REACT_HOT_LOADER__.register(initalState, 'initalState', '/Users/BernSternWhoEarns/Documents/setgov/background/reducers/Race.js');
+
+		__REACT_HOT_LOADER__.register(_default, 'default', '/Users/BernSternWhoEarns/Documents/setgov/background/reducers/Race.js');
+	}();
+
+	;
+
+/***/ },
+
+/***/ 20:
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var GENERAL_ELECTION = exports.GENERAL_ELECTION = 'GENERAL_ELECTION';
+	var FLORIDA_SENATE = exports.FLORIDA_SENATE = 'FLORIDA_SENATE';
+
+	// Election Keywords
+	var ECONOMY = exports.ECONOMY = 'ECONOMY';
+	var ECONOMY_A_FAIR_TAX_SYSTEM = exports.ECONOMY_A_FAIR_TAX_SYSTEM = 'ECONOMY_A_FAIR_TAX_SYSTEM';
+	var ECONOMY_FIXING_AMERICAS_INFRASTRUCTURE = exports.ECONOMY_FIXING_AMERICAS_INFRASTRUCTURE = 'ECONOMY_FIXING_AMERICAS_INFRASTRUCTURE';
+	var ECONOMY_MANUFACTURING = exports.ECONOMY_MANUFACTURING = 'ECONOMY_MANUFACTURING';
+	var ECONOMY_SMALL_BUSINESS = exports.ECONOMY_SMALL_BUSINESS = 'ECONOMY_SMALL_BUSINESS';
+	var ECONOMY_SOCIAL_SECURITY_AND_MEDICARE = exports.ECONOMY_SOCIAL_SECURITY_AND_MEDICARE = 'ECONOMY_SOCIAL_SECURITY_AND_MEDICARE';
+	var ECONOMY_WALL_STREET_REFORM = exports.ECONOMY_WALL_STREET_REFORM = 'ECONOMY_WALL_STREET_REFORM';
+	var ECONOMY_WORKS_FOR_EVERYONE = exports.ECONOMY_WORKS_FOR_EVERYONE = 'ECONOMY_WORKS_FOR_EVERYONE';
+	var ECONOMY_REGULATION = exports.ECONOMY_REGULATION = 'ECONOMY_REGULATION';
+	var ECONOMY_TAXPLAN = exports.ECONOMY_TAXPLAN = 'ECONOMY_TAXPLAN';
+	var ECONOMY_TRADE = exports.ECONOMY_TRADE = 'ECONOMY_TRADE';
+
+	var ECONOMY_FARMERS_RANCHERS = exports.ECONOMY_FARMERS_RANCHERS = 'ECONOMY_FARMERS_RANCHERS';
+	var IMPROVING_EDUCATION = exports.IMPROVING_EDUCATION = 'IMPROVING_EDUCATION';
+	var EDUCATION_COMMON_CORE = exports.EDUCATION_COMMON_CORE = 'EDUCATION_COMMON_CORE';
+
+	var EDUCATION = exports.EDUCATION = 'EDUCATION';
+	var EDUCATION_CAMPUS_SEXUAL_ASSULT = exports.EDUCATION_CAMPUS_SEXUAL_ASSULT = 'EDUCATION_CAMPUS_SEXUAL_ASSULT';
+	var EDUCATION_COLLEGE_DEBT = exports.EDUCATION_COLLEGE_DEBT = 'EDUCATION_COLLEGE_DEBT';
+	var EDUCATION_EARLY_CHILDHOOD = exports.EDUCATION_EARLY_CHILDHOOD = 'EDUCATION_EARLY_CHILDHOOD';
+	var EDUCATION_K_12 = exports.EDUCATION_K_12 = 'EDUCATION_K_12';
+	var EDUCATION_TECHNOLOGY_AND_INNOVATION = exports.EDUCATION_TECHNOLOGY_AND_INNOVATION = 'EDUCATION_TECHNOLOGY_AND_INNOVATION';
+
+	var ENVIRONMENT = exports.ENVIRONMENT = 'ENVIRONMENT';
+	var ENVIRONMENT_CLIMATE_CHANGE = exports.ENVIRONMENT_CLIMATE_CHANGE = 'ENVIRONMENT_CLIMATE_CHANGE';
+	var ENVIRONMENT_PROTECTING_ANIMALS_AND_WILDLIFE = exports.ENVIRONMENT_PROTECTING_ANIMALS_AND_WILDLIFE = 'ENVIRONMENT_PROTECTING_ANIMALS_AND_WILDLIFE';
+	var ENVIRONMENT_RURAL_COMMUNITIES = exports.ENVIRONMENT_RURAL_COMMUNITIES = 'ENVIRONMENT_RURAL_COMMUNITIES';
+	var ENVIRONMENT_ENERGY = exports.ENVIRONMENT_ENERGY = 'ENVIRONMENT_ENERGY';
+
+	var ENVIRONMENT_OUR_ENVIRONMENT = exports.ENVIRONMENT_OUR_ENVIRONMENT = 'ENVIRONMENT_OUR_ENVIRONMENT';
+
+	var EQUALITY = exports.EQUALITY = 'EQUALITY';
+	var EQUALITY_CAMPAIGN_FINANCE_REFORM = exports.EQUALITY_CAMPAIGN_FINANCE_REFORM = 'EQUALITY_CAMPAIGN_FINANCE_REFORM';
+	var EQUALITY_CRIMINAL_JUSTICE_REFORM = exports.EQUALITY_CRIMINAL_JUSTICE_REFORM = 'EQUALITY_CRIMINAL_JUSTICE_REFORM';
+	var EQUALITY_IMMIGRATION_REFORM = exports.EQUALITY_IMMIGRATION_REFORM = 'EQUALITY_IMMIGRATION_REFORM';
+	var EQUALITY_LFBT_RIGHTS_AND_EQULITY = exports.EQUALITY_LFBT_RIGHTS_AND_EQULITY = 'EQUALITY_LFBT_RIGHTS_AND_EQULITY';
+	var EQUALITY_RACIAL_JUSTICE = exports.EQUALITY_RACIAL_JUSTICE = 'EQUALITY_RACIAL_JUSTICE';
+	var EQUALITY_VOTING_RIGHTS = exports.EQUALITY_VOTING_RIGHTS = 'EQUALITY_VOTING_RIGHTS';
+	var EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY = exports.EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY = 'EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY';
+	var EQUALITY_GUN_CONTROL = exports.EQUALITY_GUN_CONTROL = 'EQUALITY_GUN_CONTROL';
+
+	var EQUALITY_SENIORS = exports.EQUALITY_SENIORS = 'EQUALITY_SENIORS';
+
+	var HEALTH = exports.HEALTH = 'HEALTH';
+	var HEALTH_ADDICATION_AND_SUBSTANCE_USE = exports.HEALTH_ADDICATION_AND_SUBSTANCE_USE = 'HEALTH_ADDICATION_AND_SUBSTANCE_USE';
+	var HEALTH_AN_END_T0_ALZHEIMERS = exports.HEALTH_AN_END_T0_ALZHEIMERS = 'HEALTH_AN_END_T0_ALZHEIMERS';
+	var HEALTH_AUTISM = exports.HEALTH_AUTISM = 'HEALTH_AUTISM';
+	var HEALTH_DISABILITY_RIGHTS = exports.HEALTH_DISABILITY_RIGHTS = 'HEALTH_DISABILITY_RIGHTS';
+	var HEALTH_HEALTH_CARE = exports.HEALTH_HEALTH_CARE = 'HEALTH_HEALTH_CARE';
+	var HEALTH_HIV_AND_AIDS = exports.HEALTH_HIV_AND_AIDS = 'HEALTH_HIV_AND_AIDS';
+	var HEALTH_CHILD_CARE = exports.HEALTH_CHILD_CARE = 'HEALTH_CHILD_CARE';
+
+	var HEALTHCARE = exports.HEALTHCARE = 'HEALTHCARE';
+	var JOBS = exports.JOBS = 'JOBS';
+	var JOBS_PAID_FAMILY_AND_MEDICAL_LEAVE = exports.JOBS_PAID_FAMILY_AND_MEDICAL_LEAVE = 'JOBS_PAID_FAMILY_AND_MEDICAL_LEAVE';
+	var JOBS_LABOR_AND_WORKERS_RIGHTS = exports.JOBS_LABOR_AND_WORKERS_RIGHTS = 'JOBS_LABOR_AND_WORKERS_RIGHTS';
+	var JOBS_VETERANS_THE_ARMED_FORCES_AND_THEIR_FAMILIES = exports.JOBS_VETERANS_THE_ARMED_FORCES_AND_THEIR_FAMILIES = 'JOBS_VETERANS_THE_ARMED_FORCES_AND_THEIR_FAMILIES';
+	var JOBS_WAGES = exports.JOBS_WAGES = 'JOBS_WAGES';
+	var JOBS_WORKFORCE_SKILLS_AND_JOBS_TRAINING = exports.JOBS_WORKFORCE_SKILLS_AND_JOBS_TRAINING = 'JOBS_WORKFORCE_SKILLS_AND_JOBS_TRAINING';
+
+	var SECURITY = exports.SECURITY = 'SECURITY';
+	var SECURITY_COMBATING_TERRORISM = exports.SECURITY_COMBATING_TERRORISM = 'SECURITY_COMBATING_TERRORISM';
+	var SECUTIRY_GUN_VIOLENCE = exports.SECUTIRY_GUN_VIOLENCE = 'SECUTIRY_GUN_VIOLENCE';
+	var SECURITY_MILITARY_AND_DEFENSE = exports.SECURITY_MILITARY_AND_DEFENSE = 'SECURITY_MILITARY_AND_DEFENSE';
+	var SECURITY_NATIONAL_SECURITY = exports.SECURITY_NATIONAL_SECURITY = 'SECURITY_NATIONAL_SECURITY';
+	var SECURITY_FOREGIN_POLICY = exports.SECURITY_FOREGIN_POLICY = 'SECURITY_FOREGIN_POLICY';
+	;
+
+	var _temp = function () {
+	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	    return;
+	  }
+
+	  __REACT_HOT_LOADER__.register(GENERAL_ELECTION, 'GENERAL_ELECTION', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(FLORIDA_SENATE, 'FLORIDA_SENATE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY, 'ECONOMY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_A_FAIR_TAX_SYSTEM, 'ECONOMY_A_FAIR_TAX_SYSTEM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_FIXING_AMERICAS_INFRASTRUCTURE, 'ECONOMY_FIXING_AMERICAS_INFRASTRUCTURE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_MANUFACTURING, 'ECONOMY_MANUFACTURING', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_SMALL_BUSINESS, 'ECONOMY_SMALL_BUSINESS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_SOCIAL_SECURITY_AND_MEDICARE, 'ECONOMY_SOCIAL_SECURITY_AND_MEDICARE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_WALL_STREET_REFORM, 'ECONOMY_WALL_STREET_REFORM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_WORKS_FOR_EVERYONE, 'ECONOMY_WORKS_FOR_EVERYONE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_REGULATION, 'ECONOMY_REGULATION', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_TAXPLAN, 'ECONOMY_TAXPLAN', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_TRADE, 'ECONOMY_TRADE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_FARMERS_RANCHERS, 'ECONOMY_FARMERS_RANCHERS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(IMPROVING_EDUCATION, 'IMPROVING_EDUCATION', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EDUCATION_COMMON_CORE, 'EDUCATION_COMMON_CORE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EDUCATION, 'EDUCATION', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EDUCATION_CAMPUS_SEXUAL_ASSULT, 'EDUCATION_CAMPUS_SEXUAL_ASSULT', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EDUCATION_COLLEGE_DEBT, 'EDUCATION_COLLEGE_DEBT', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EDUCATION_EARLY_CHILDHOOD, 'EDUCATION_EARLY_CHILDHOOD', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EDUCATION_K_12, 'EDUCATION_K_12', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EDUCATION_TECHNOLOGY_AND_INNOVATION, 'EDUCATION_TECHNOLOGY_AND_INNOVATION', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ENVIRONMENT, 'ENVIRONMENT', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ENVIRONMENT_CLIMATE_CHANGE, 'ENVIRONMENT_CLIMATE_CHANGE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ENVIRONMENT_PROTECTING_ANIMALS_AND_WILDLIFE, 'ENVIRONMENT_PROTECTING_ANIMALS_AND_WILDLIFE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ENVIRONMENT_RURAL_COMMUNITIES, 'ENVIRONMENT_RURAL_COMMUNITIES', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ENVIRONMENT_ENERGY, 'ENVIRONMENT_ENERGY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ENVIRONMENT_OUR_ENVIRONMENT, 'ENVIRONMENT_OUR_ENVIRONMENT', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY, 'EQUALITY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY_CAMPAIGN_FINANCE_REFORM, 'EQUALITY_CAMPAIGN_FINANCE_REFORM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY_CRIMINAL_JUSTICE_REFORM, 'EQUALITY_CRIMINAL_JUSTICE_REFORM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY_IMMIGRATION_REFORM, 'EQUALITY_IMMIGRATION_REFORM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY_LFBT_RIGHTS_AND_EQULITY, 'EQUALITY_LFBT_RIGHTS_AND_EQULITY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY_RACIAL_JUSTICE, 'EQUALITY_RACIAL_JUSTICE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY_VOTING_RIGHTS, 'EQUALITY_VOTING_RIGHTS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY, 'EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY_GUN_CONTROL, 'EQUALITY_GUN_CONTROL', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY_SENIORS, 'EQUALITY_SENIORS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(HEALTH, 'HEALTH', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(HEALTH_ADDICATION_AND_SUBSTANCE_USE, 'HEALTH_ADDICATION_AND_SUBSTANCE_USE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(HEALTH_AN_END_T0_ALZHEIMERS, 'HEALTH_AN_END_T0_ALZHEIMERS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(HEALTH_AUTISM, 'HEALTH_AUTISM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(HEALTH_DISABILITY_RIGHTS, 'HEALTH_DISABILITY_RIGHTS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(HEALTH_HEALTH_CARE, 'HEALTH_HEALTH_CARE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(HEALTH_HIV_AND_AIDS, 'HEALTH_HIV_AND_AIDS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(HEALTH_CHILD_CARE, 'HEALTH_CHILD_CARE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(HEALTHCARE, 'HEALTHCARE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(JOBS, 'JOBS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(JOBS_PAID_FAMILY_AND_MEDICAL_LEAVE, 'JOBS_PAID_FAMILY_AND_MEDICAL_LEAVE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(JOBS_LABOR_AND_WORKERS_RIGHTS, 'JOBS_LABOR_AND_WORKERS_RIGHTS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(JOBS_VETERANS_THE_ARMED_FORCES_AND_THEIR_FAMILIES, 'JOBS_VETERANS_THE_ARMED_FORCES_AND_THEIR_FAMILIES', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(JOBS_WAGES, 'JOBS_WAGES', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(JOBS_WORKFORCE_SKILLS_AND_JOBS_TRAINING, 'JOBS_WORKFORCE_SKILLS_AND_JOBS_TRAINING', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(SECURITY, 'SECURITY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(SECURITY_COMBATING_TERRORISM, 'SECURITY_COMBATING_TERRORISM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(SECUTIRY_GUN_VIOLENCE, 'SECUTIRY_GUN_VIOLENCE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(SECURITY_MILITARY_AND_DEFENSE, 'SECURITY_MILITARY_AND_DEFENSE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(SECURITY_NATIONAL_SECURITY, 'SECURITY_NATIONAL_SECURITY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(SECURITY_FOREGIN_POLICY, 'SECURITY_FOREGIN_POLICY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+	}();
+
+	;
+
+/***/ },
+
+/***/ 21:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _actionTypes = __webpack_require__(20);
+
+	var types = _interopRequireWildcard(_actionTypes);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	var initalState = {
+		economy: 0,
+		economy_a_fair_tax_system: 0,
+		economy_fixing_americas_infrastructure: 0,
+		economy_manufacturing: 0,
+		economy_small_business: 0,
+		economy_social_security_and_medicare: 0,
+		economy_wall_street_reform: 0,
+		economy_works_for_everyone: 0,
+		economy_regulation: 0,
+		economy_taxplan: 0,
+		economy_trade: 0,
+
+		education: 0,
+		education_campus_sexual_assault: 0,
+		education_college_debt: 0,
+		education_early_childhood: 0,
+		education_k_12: 0,
+		education_technology_and_innovation: 0,
+
+		environment: 0,
+		environment_climate_change: 0,
+		environment_protecting_animals_and_wildlife: 0,
+		environment_rural_communities: 0,
+		environment_energy: 0,
+
+		equality: 0,
+		equality_campaign_finance_reform: 0,
+		equality_criminal_justice_reform: 0,
+		equality_immigration_reform: 0,
+		equality_lgbt_rights_and_equality: 0,
+		equality_racial_justice: 0,
+		equality_voting_rights: 0,
+		equality_womens_rights_and_opportunity: 0,
+		equality_gun_control: 0,
+
+		health: 0,
+		health_addiction_and_substance_use: 0,
+		health_an_end_to_alzheimers: 0,
+		health_autism: 0,
+		health_disability_rights: 0,
+		health_health_care: 0,
+		health_hiv_and_aids: 0,
+		health_child_care: 0,
+
+		jobs: 0,
+		jobs_paid_family_and_medical_leave: 0,
+		jobs_labor_and_workers_rights: 0,
+		jobs_veterans_the_armed_forces_and_their_families: 0,
+		jobs_wages: 0,
+		jobs_workforce_skills_and_jobs_training: 0,
+
+		security: 0,
+		security_combating_terrorism: 0,
+		security_gun_violence: 0,
+		security_miliary_and_defense: 0,
+		security_national_security: 0,
+		security_foreign_policy: 0
+	};
+
+	var _default = function _default() {
+		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initalState;
+		var action = arguments[1];
+
+		switch (action.type) {
+			case types.ECONOMY:
+				return state.economy++;
+			case types.ECONOMY_A_FAIR_TAX_SYSTEM:
+				return state.economy_a_fair_tax_system++;
+			case types.ECONOMY_FIXING_AMERICAS_INFRASTRUCTURE:
+				return state.economy_fixing_americas_infrastructure++;
+			case types.ECONOMY_MANUFACTURING:
+				return state.economy_manufacturing++;
+			case types.ECONOMY_SMALL_BUSINESS:
+				return state.economy_small_business++;
+			case types.ECONOMY_SOCIAL_SECURITY_AND_MEDICARE:
+				return state.economy_social_security_and_medicare++;
+			case types.ECONOMY_WALL_STREET_REFORM:
+				return state.economy_wall_street_reform++;
+			case types.ECONOMY_WORKS_FOR_EVERYONE:
+				return state.economy_works_for_everyone++;
+			case types.ECONOMY_REGULATION:
+				return state.economy_regulation++;
+			case types.ECONOMY_TAXPLAN:
+				return state.economy_taxplan++;
+			case types.ECONOMY_TRADE:
+				return state.economy_trade++;
+			case types.EDUCATION:
+				return state.economy++;
+			case types.EDUCATION_CAMPUS_SEXUAL_ASSULT:
+				return state.education_campus_sexual_assault++;
+			case types.EDUCATION_COLLEGE_DEBT:
+				return education_college_debt++;
+			case types.EDUCATION_EARLY_CHILDHOOD:
+				return state.education_early_childhood++;
+			case types.EDUCATION_K_12:
+				return state.education_k_12++;
+			case types.EDUCATION_TECHNOLOGY_AND_INNOVATION:
+				return state.education_technology_and_innovation++;
+			case types.ENVIRONMENT:
+				return state.environment++;
+			case types.ENVIRONMENT_CLIMATE_CHANGE:
+				return state.environment_climate_change++;
+			case types.ENVIRONMENT_PROTECTING_ANIMALS_AND_WILDLIFE:
+				return state.environment_protecting_animals_and_wildlife++;
+			case types.ENVIRONMENT_RURAL_COMMUNITIES:
+				return state.environment_rural_communities++;
+			case types.ENVIRONMENT_ENERGY:
+				return state.environment_energy++;
+			case types.EQUALITY:
+				return state.equality++;
+			case types.EQUALITY_CAMPAIGN_FINANCE_REFORM:
+				return state.equality_campaign_finance_reform++;
+			case types.EQUALITY_CRIMINAL_JUSTICE_REFORM:
+				return state.equality_criminal_justice_reform++;
+			case types.EQUALITY_LFBT_RIGHTS_AND_EQULITY:
+				return state.equality_lgbt_rights_and_equality++;
+			case types.EQUALITY_RACIAL_JUSTICE:
+				return state.equality_racial_justice++;
+			case types.EQUALITY_VOTING_RIGHTS:
+				return state.equality_voting_rights++;
+			case types.EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY:
+				return state.equality_womens_rights_and_opportunity++;
+			case types.EQUALITY_GUN_CONTROL:
+				return state.equality_gun_control++;
+			case types.HEALTH:
+				return state.health++;
+			case types.HEALTH_ADDICATION_AND_SUBSTANCE_USE:
+				return state.health_addiction_and_substance_use++;
+			case types.HEALTH_AN_END_T0_ALZHEIMERS:
+				return state.health_an_end_to_alzheimers++;
+			case types.HEALTH_AUTISM:
+				return state.health_autism++;
+			case types.HEALTH_DISABILITY_RIGHTS:
+				return state.health_disability_rights++;
+			case types.HEALTH_HEALTH_CARE:
+				return state.health_health_care++;
+			case types.HEALTH_HIV_AND_AIDS:
+				return state.health_hiv_and_aids++;
+			case types.HEALTH_CHILD_CARE:
+				return state.health_child_care++;
+			case types.JOBS:
+				return state.jobs++;
+			case types.JOBS_PAID_FAMILY_AND_MEDICAL_LEAVE:
+				return state.jobs_paid_family_and_medical_leave++;
+			case types.JOBS_LABOR_AND_WORKERS_RIGHTS:
+				return state.jobs_labor_and_workers_rights++;
+			case types.JOBS_VETERANS_THE_ARMED_FORCES_AND_THEIR_FAMILIES:
+				return state.jobs_veterans_the_armed_forces_and_their_families++;
+			case types.JOBS_WAGES:
+				return state.jobs++;
+			case types.JOBS_WORKFORCE_SKILLS_AND_JOBS_TRAINING:
+				return state.jobs_workforce_skills_and_jobs_training++;
+			case types.SECUTIRY:
+				return state.security++;
+			case types.SECURITY_COMBATING_TERRORISM:
+				return state.security_combating_terrorism++;
+			case types.SECUTIRY_GUN_VIOLENCE:
+				return state.security_gun_violence++;
+			case types.SECURITY_MILITARY_AND_DEFENSE:
+				return state.security_miliary_and_defense++;
+			case types.SECURITY_NATIONAL_SECURITY:
+				return state.security_national_security++;
+			case types.SECURITY_FOREGIN_POLICY:
+				return state.security_foreign_policy++;
+			default:
+				return state;
+		}
+	};
+
+	exports.default = _default;
+	;
+
+	var _temp = function () {
+		if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+			return;
+		}
+
+		__REACT_HOT_LOADER__.register(initalState, 'initalState', '/Users/BernSternWhoEarns/Documents/setgov/background/reducers/GeneralElection.js');
+
+		__REACT_HOT_LOADER__.register(_default, 'default', '/Users/BernSternWhoEarns/Documents/setgov/background/reducers/GeneralElection.js');
+	}();
+
+	;
+
+/***/ },
+
+/***/ 22:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
-	var _core = __webpack_require__(20);
+	var _core = __webpack_require__(23);
 
-	var _helpers = __webpack_require__(21);
+	var _helpers = __webpack_require__(24);
 
-	var _defaults = __webpack_require__(24);
+	var _defaults = __webpack_require__(27);
 
 	var _defaults2 = _interopRequireDefault(_defaults);
 
@@ -1397,7 +1864,7 @@
 
 /***/ },
 
-/***/ 20:
+/***/ 23:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1407,9 +1874,9 @@
 	});
 	exports.printBuffer = printBuffer;
 
-	var _helpers = __webpack_require__(21);
+	var _helpers = __webpack_require__(24);
 
-	var _diff = __webpack_require__(22);
+	var _diff = __webpack_require__(25);
 
 	var _diff2 = _interopRequireDefault(_diff);
 
@@ -1531,7 +1998,7 @@
 
 /***/ },
 
-/***/ 21:
+/***/ 24:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1556,7 +2023,7 @@
 
 /***/ },
 
-/***/ 22:
+/***/ 25:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1566,7 +2033,7 @@
 	});
 	exports.default = diffLogger;
 
-	var _deepDiff = __webpack_require__(23);
+	var _deepDiff = __webpack_require__(26);
 
 	var _deepDiff2 = _interopRequireDefault(_deepDiff);
 
@@ -1653,7 +2120,7 @@
 
 /***/ },
 
-/***/ 23:
+/***/ 26:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -2083,7 +2550,7 @@
 
 /***/ },
 
-/***/ 24:
+/***/ 27:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2135,7 +2602,7 @@
 
 /***/ },
 
-/***/ 25:
+/***/ 28:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2164,7 +2631,7 @@
 
 /***/ },
 
-/***/ 26:
+/***/ 29:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2174,15 +2641,15 @@
 	});
 	exports.alias = exports.wrapStore = exports.Store = undefined;
 
-	var _Store = __webpack_require__(27);
+	var _Store = __webpack_require__(30);
 
 	var _Store2 = _interopRequireDefault(_Store);
 
-	var _wrapStore = __webpack_require__(73);
+	var _wrapStore = __webpack_require__(76);
 
 	var _wrapStore2 = _interopRequireDefault(_wrapStore);
 
-	var _alias = __webpack_require__(74);
+	var _alias = __webpack_require__(77);
 
 	var _alias2 = _interopRequireDefault(_alias);
 
@@ -2194,7 +2661,7 @@
 
 /***/ },
 
-/***/ 27:
+/***/ 30:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2205,11 +2672,11 @@
 	  value: true
 	});
 
-	var _assignIn = __webpack_require__(28);
+	var _assignIn = __webpack_require__(31);
 
 	var _assignIn2 = _interopRequireDefault(_assignIn);
 
-	var _constants = __webpack_require__(72);
+	var _constants = __webpack_require__(75);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2325,12 +2792,12 @@
 
 /***/ },
 
-/***/ 28:
+/***/ 31:
 /***/ function(module, exports, __webpack_require__) {
 
-	var copyObject = __webpack_require__(29),
-	    createAssigner = __webpack_require__(44),
-	    keysIn = __webpack_require__(57);
+	var copyObject = __webpack_require__(32),
+	    createAssigner = __webpack_require__(47),
+	    keysIn = __webpack_require__(60);
 
 	/**
 	 * This method is like `_.assign` except that it iterates over own and
@@ -2372,11 +2839,11 @@
 
 /***/ },
 
-/***/ 29:
+/***/ 32:
 /***/ function(module, exports, __webpack_require__) {
 
-	var assignValue = __webpack_require__(30),
-	    baseAssignValue = __webpack_require__(31);
+	var assignValue = __webpack_require__(33),
+	    baseAssignValue = __webpack_require__(34);
 
 	/**
 	 * Copies properties of `source` to `object`.
@@ -2419,11 +2886,11 @@
 
 /***/ },
 
-/***/ 30:
+/***/ 33:
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseAssignValue = __webpack_require__(31),
-	    eq = __webpack_require__(43);
+	var baseAssignValue = __webpack_require__(34),
+	    eq = __webpack_require__(46);
 
 	/** Used for built-in method references. */
 	var objectProto = Object.prototype;
@@ -2454,10 +2921,10 @@
 
 /***/ },
 
-/***/ 31:
+/***/ 34:
 /***/ function(module, exports, __webpack_require__) {
 
-	var defineProperty = __webpack_require__(32);
+	var defineProperty = __webpack_require__(35);
 
 	/**
 	 * The base implementation of `assignValue` and `assignMergeValue` without
@@ -2486,10 +2953,10 @@
 
 /***/ },
 
-/***/ 32:
+/***/ 35:
 /***/ function(module, exports, __webpack_require__) {
 
-	var getNative = __webpack_require__(33);
+	var getNative = __webpack_require__(36);
 
 	var defineProperty = (function() {
 	  try {
@@ -2504,11 +2971,11 @@
 
 /***/ },
 
-/***/ 33:
+/***/ 36:
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseIsNative = __webpack_require__(34),
-	    getValue = __webpack_require__(42);
+	var baseIsNative = __webpack_require__(37),
+	    getValue = __webpack_require__(45);
 
 	/**
 	 * Gets the native function at `key` of `object`.
@@ -2528,13 +2995,13 @@
 
 /***/ },
 
-/***/ 34:
+/***/ 37:
 /***/ function(module, exports, __webpack_require__) {
 
-	var isFunction = __webpack_require__(35),
-	    isMasked = __webpack_require__(37),
-	    isObject = __webpack_require__(36),
-	    toSource = __webpack_require__(41);
+	var isFunction = __webpack_require__(38),
+	    isMasked = __webpack_require__(40),
+	    isObject = __webpack_require__(39),
+	    toSource = __webpack_require__(44);
 
 	/**
 	 * Used to match `RegExp`
@@ -2582,10 +3049,10 @@
 
 /***/ },
 
-/***/ 35:
+/***/ 38:
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(36);
+	var isObject = __webpack_require__(39);
 
 	/** `Object#toString` result references. */
 	var funcTag = '[object Function]',
@@ -2631,7 +3098,7 @@
 
 /***/ },
 
-/***/ 36:
+/***/ 39:
 /***/ function(module, exports) {
 
 	/**
@@ -2669,10 +3136,10 @@
 
 /***/ },
 
-/***/ 37:
+/***/ 40:
 /***/ function(module, exports, __webpack_require__) {
 
-	var coreJsData = __webpack_require__(38);
+	var coreJsData = __webpack_require__(41);
 
 	/** Used to detect methods masquerading as native. */
 	var maskSrcKey = (function() {
@@ -2696,10 +3163,10 @@
 
 /***/ },
 
-/***/ 38:
+/***/ 41:
 /***/ function(module, exports, __webpack_require__) {
 
-	var root = __webpack_require__(39);
+	var root = __webpack_require__(42);
 
 	/** Used to detect overreaching core-js shims. */
 	var coreJsData = root['__core-js_shared__'];
@@ -2709,10 +3176,10 @@
 
 /***/ },
 
-/***/ 39:
+/***/ 42:
 /***/ function(module, exports, __webpack_require__) {
 
-	var freeGlobal = __webpack_require__(40);
+	var freeGlobal = __webpack_require__(43);
 
 	/** Detect free variable `self`. */
 	var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -2725,7 +3192,7 @@
 
 /***/ },
 
-/***/ 40:
+/***/ 43:
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
@@ -2737,7 +3204,7 @@
 
 /***/ },
 
-/***/ 41:
+/***/ 44:
 /***/ function(module, exports) {
 
 	/** Used for built-in method references. */
@@ -2770,7 +3237,7 @@
 
 /***/ },
 
-/***/ 42:
+/***/ 45:
 /***/ function(module, exports) {
 
 	/**
@@ -2790,7 +3257,7 @@
 
 /***/ },
 
-/***/ 43:
+/***/ 46:
 /***/ function(module, exports) {
 
 	/**
@@ -2834,11 +3301,11 @@
 
 /***/ },
 
-/***/ 44:
+/***/ 47:
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseRest = __webpack_require__(45),
-	    isIterateeCall = __webpack_require__(53);
+	var baseRest = __webpack_require__(48),
+	    isIterateeCall = __webpack_require__(56);
 
 	/**
 	 * Creates a function like `_.assign`.
@@ -2878,12 +3345,12 @@
 
 /***/ },
 
-/***/ 45:
+/***/ 48:
 /***/ function(module, exports, __webpack_require__) {
 
-	var identity = __webpack_require__(46),
-	    overRest = __webpack_require__(47),
-	    setToString = __webpack_require__(49);
+	var identity = __webpack_require__(49),
+	    overRest = __webpack_require__(50),
+	    setToString = __webpack_require__(52);
 
 	/**
 	 * The base implementation of `_.rest` which doesn't validate or coerce arguments.
@@ -2902,7 +3369,7 @@
 
 /***/ },
 
-/***/ 46:
+/***/ 49:
 /***/ function(module, exports) {
 
 	/**
@@ -2930,10 +3397,10 @@
 
 /***/ },
 
-/***/ 47:
+/***/ 50:
 /***/ function(module, exports, __webpack_require__) {
 
-	var apply = __webpack_require__(48);
+	var apply = __webpack_require__(51);
 
 	/* Built-in method references for those with the same name as other `lodash` methods. */
 	var nativeMax = Math.max;
@@ -2973,7 +3440,7 @@
 
 /***/ },
 
-/***/ 48:
+/***/ 51:
 /***/ function(module, exports) {
 
 	/**
@@ -3001,11 +3468,11 @@
 
 /***/ },
 
-/***/ 49:
+/***/ 52:
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseSetToString = __webpack_require__(50),
-	    shortOut = __webpack_require__(52);
+	var baseSetToString = __webpack_require__(53),
+	    shortOut = __webpack_require__(55);
 
 	/**
 	 * Sets the `toString` method of `func` to return `string`.
@@ -3022,12 +3489,12 @@
 
 /***/ },
 
-/***/ 50:
+/***/ 53:
 /***/ function(module, exports, __webpack_require__) {
 
-	var constant = __webpack_require__(51),
-	    defineProperty = __webpack_require__(32),
-	    identity = __webpack_require__(46);
+	var constant = __webpack_require__(54),
+	    defineProperty = __webpack_require__(35),
+	    identity = __webpack_require__(49);
 
 	/**
 	 * The base implementation of `setToString` without support for hot loop shorting.
@@ -3051,7 +3518,7 @@
 
 /***/ },
 
-/***/ 51:
+/***/ 54:
 /***/ function(module, exports) {
 
 	/**
@@ -3084,7 +3551,7 @@
 
 /***/ },
 
-/***/ 52:
+/***/ 55:
 /***/ function(module, exports) {
 
 	/** Used to detect hot functions by number of calls within a span of milliseconds. */
@@ -3128,13 +3595,13 @@
 
 /***/ },
 
-/***/ 53:
+/***/ 56:
 /***/ function(module, exports, __webpack_require__) {
 
-	var eq = __webpack_require__(43),
-	    isArrayLike = __webpack_require__(54),
-	    isIndex = __webpack_require__(56),
-	    isObject = __webpack_require__(36);
+	var eq = __webpack_require__(46),
+	    isArrayLike = __webpack_require__(57),
+	    isIndex = __webpack_require__(59),
+	    isObject = __webpack_require__(39);
 
 	/**
 	 * Checks if the given arguments are from an iteratee call.
@@ -3165,11 +3632,11 @@
 
 /***/ },
 
-/***/ 54:
+/***/ 57:
 /***/ function(module, exports, __webpack_require__) {
 
-	var isFunction = __webpack_require__(35),
-	    isLength = __webpack_require__(55);
+	var isFunction = __webpack_require__(38),
+	    isLength = __webpack_require__(58);
 
 	/**
 	 * Checks if `value` is array-like. A value is considered array-like if it's
@@ -3205,7 +3672,7 @@
 
 /***/ },
 
-/***/ 55:
+/***/ 58:
 /***/ function(module, exports) {
 
 	/** Used as references for various `Number` constants. */
@@ -3247,7 +3714,7 @@
 
 /***/ },
 
-/***/ 56:
+/***/ 59:
 /***/ function(module, exports) {
 
 	/** Used as references for various `Number` constants. */
@@ -3276,12 +3743,12 @@
 
 /***/ },
 
-/***/ 57:
+/***/ 60:
 /***/ function(module, exports, __webpack_require__) {
 
-	var arrayLikeKeys = __webpack_require__(58),
-	    baseKeysIn = __webpack_require__(69),
-	    isArrayLike = __webpack_require__(54);
+	var arrayLikeKeys = __webpack_require__(61),
+	    baseKeysIn = __webpack_require__(72),
+	    isArrayLike = __webpack_require__(57);
 
 	/**
 	 * Creates an array of the own and inherited enumerable property names of `object`.
@@ -3315,15 +3782,15 @@
 
 /***/ },
 
-/***/ 58:
+/***/ 61:
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseTimes = __webpack_require__(59),
-	    isArguments = __webpack_require__(60),
-	    isArray = __webpack_require__(62),
-	    isBuffer = __webpack_require__(63),
-	    isIndex = __webpack_require__(56),
-	    isTypedArray = __webpack_require__(65);
+	var baseTimes = __webpack_require__(62),
+	    isArguments = __webpack_require__(63),
+	    isArray = __webpack_require__(65),
+	    isBuffer = __webpack_require__(66),
+	    isIndex = __webpack_require__(59),
+	    isTypedArray = __webpack_require__(68);
 
 	/** Used for built-in method references. */
 	var objectProto = Object.prototype;
@@ -3371,7 +3838,7 @@
 
 /***/ },
 
-/***/ 59:
+/***/ 62:
 /***/ function(module, exports) {
 
 	/**
@@ -3398,10 +3865,10 @@
 
 /***/ },
 
-/***/ 60:
+/***/ 63:
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseIsArguments = __webpack_require__(61),
+	var baseIsArguments = __webpack_require__(64),
 	    isObjectLike = __webpack_require__(7);
 
 	/** Used for built-in method references. */
@@ -3441,7 +3908,7 @@
 
 /***/ },
 
-/***/ 61:
+/***/ 64:
 /***/ function(module, exports, __webpack_require__) {
 
 	var isObjectLike = __webpack_require__(7);
@@ -3475,7 +3942,7 @@
 
 /***/ },
 
-/***/ 62:
+/***/ 65:
 /***/ function(module, exports) {
 
 	/**
@@ -3508,11 +3975,11 @@
 
 /***/ },
 
-/***/ 63:
+/***/ 66:
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(39),
-	    stubFalse = __webpack_require__(64);
+	/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(42),
+	    stubFalse = __webpack_require__(67);
 
 	/** Detect free variable `exports`. */
 	var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
@@ -3554,7 +4021,7 @@
 
 /***/ },
 
-/***/ 64:
+/***/ 67:
 /***/ function(module, exports) {
 
 	/**
@@ -3579,12 +4046,12 @@
 
 /***/ },
 
-/***/ 65:
+/***/ 68:
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseIsTypedArray = __webpack_require__(66),
-	    baseUnary = __webpack_require__(67),
-	    nodeUtil = __webpack_require__(68);
+	var baseIsTypedArray = __webpack_require__(69),
+	    baseUnary = __webpack_require__(70),
+	    nodeUtil = __webpack_require__(71);
 
 	/* Node.js helper references. */
 	var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
@@ -3613,10 +4080,10 @@
 
 /***/ },
 
-/***/ 66:
+/***/ 69:
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(55),
+	var isLength = __webpack_require__(58),
 	    isObjectLike = __webpack_require__(7);
 
 	/** `Object#toString` result references. */
@@ -3689,7 +4156,7 @@
 
 /***/ },
 
-/***/ 67:
+/***/ 70:
 /***/ function(module, exports) {
 
 	/**
@@ -3710,10 +4177,10 @@
 
 /***/ },
 
-/***/ 68:
+/***/ 71:
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(40);
+	/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(43);
 
 	/** Detect free variable `exports`. */
 	var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
@@ -3740,12 +4207,12 @@
 
 /***/ },
 
-/***/ 69:
+/***/ 72:
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(36),
-	    isPrototype = __webpack_require__(70),
-	    nativeKeysIn = __webpack_require__(71);
+	var isObject = __webpack_require__(39),
+	    isPrototype = __webpack_require__(73),
+	    nativeKeysIn = __webpack_require__(74);
 
 	/** Used for built-in method references. */
 	var objectProto = Object.prototype;
@@ -3780,7 +4247,7 @@
 
 /***/ },
 
-/***/ 70:
+/***/ 73:
 /***/ function(module, exports) {
 
 	/** Used for built-in method references. */
@@ -3805,7 +4272,7 @@
 
 /***/ },
 
-/***/ 71:
+/***/ 74:
 /***/ function(module, exports) {
 
 	/**
@@ -3832,7 +4299,7 @@
 
 /***/ },
 
-/***/ 72:
+/***/ 75:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3850,7 +4317,7 @@
 
 /***/ },
 
-/***/ 73:
+/***/ 76:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3859,7 +4326,7 @@
 	  value: true
 	});
 
-	var _constants = __webpack_require__(72);
+	var _constants = __webpack_require__(75);
 
 	/**
 	 * Responder for promisified results
@@ -3936,7 +4403,7 @@
 
 /***/ },
 
-/***/ 74:
+/***/ 77:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -3968,7 +4435,7 @@
 
 /***/ },
 
-/***/ 323:
+/***/ 326:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3977,23 +4444,84 @@
 		value: true
 	});
 
-	var _actionTypes = __webpack_require__(324);
+	var _actionTypes = __webpack_require__(20);
 
 	var types = _interopRequireWildcard(_actionTypes);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-	var initalState = 'GENERAL_ELECTION';
+	var initalState = {
+		economy: 0,
+		economy_wall_street_reform: 0,
+		economy_farmers_ranchers: 0,
+
+		education: 0,
+		education_common_core: 0,
+		improving_education: 0,
+
+		environment: 0,
+		environment_our_environment: 0,
+
+		equality: 0,
+		equality_criminal_justice_reform: 0,
+		equality_immigration_reform: 0,
+		equality_lgbt_rights_and_equality: 0,
+		equality_voting_rights: 0,
+		equality_seniors: 0,
+		equality_womens_rights_and_opportunity: 0,
+
+		health: 0,
+		healthcare: 0,
+
+		jobs: 0,
+
+		security: 0,
+		security_national_security: 0
+	};
 
 	var _default = function _default() {
 		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initalState;
-		var action = arguments[1];
+		var aciton = arguments[1];
 
-		switch (action.type) {
-			case types.GENERAL_ELECTION:
-				return state = "GENERAL_ELECTION ";
-			case types.FLORIDA_SENATE:
-				return state = "FLORIDA_SENATE";
+		switch (aciton.type) {
+			case types.ECONOMY:
+				return state.economy++;
+			case types.ECONOMY_WALL_STREET_REFORM:
+				return state.economy_wall_street_reform++;
+			case types.ECONOMY_FARMERS_RANCHERS:
+				return state.economy_farmers_ranchers++;
+			case types.EDUCATION:
+				return state.education++;
+			case types.EDUCATION_COMMON_CORE:
+				return state.education_common_core++;
+			case types.IMPROVING_EDUCATION:
+				return state.improving_education++;
+			case types.ENVIRONMENT:
+				return state.environment++;
+			case types.ENVIRONMENT_OUR_ENVIRONMENT:
+				return state.environment_our_environment++;
+			case types.EQUALITY:
+				return state.equality++;
+			case types.EQUALITY_CRIMINAL_JUSTICE_REFORM:
+				return state.equality_criminal_justice_reform++;
+			case types.EQUALITY_IMMIGRATION_REFORM:
+				return state.equality_immigration_reform++;
+			case types.EQUALITY_LFBT_RIGHTS_AND_EQULITY:
+				return state.equality_lgbt_rights_and_equality++;
+			case types.EQUALITY_VOTING_RIGHTS:
+				return state.equality_voting_rights++;
+			case types.EQUALITY_SENIORS:
+				return state.equality_seniors++;
+			case types.EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY:
+				return state.equality_womens_rights_and_opportunity++;
+			case types.HEALTH:
+				return state.health++;
+			case types.JOBS:
+				return state.jobs++;
+			case types.SECURITY:
+				return state.security++;
+			case types.SECURITY_NATIONAL_SECURITY:
+				return state.security_national_security++;
 			default:
 				return state;
 		}
@@ -4007,214 +4535,9 @@
 			return;
 		}
 
-		__REACT_HOT_LOADER__.register(initalState, 'initalState', '/Users/BernSternWhoEarns/Documents/setgov/background/reducers/Race.js');
+		__REACT_HOT_LOADER__.register(initalState, 'initalState', '/Users/BernSternWhoEarns/Documents/setgov/background/reducers/FloridaSenate.js');
 
-		__REACT_HOT_LOADER__.register(_default, 'default', '/Users/BernSternWhoEarns/Documents/setgov/background/reducers/Race.js');
-	}();
-
-	;
-
-/***/ },
-
-/***/ 324:
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var GENERAL_ELECTION = exports.GENERAL_ELECTION = 'GENERAL_ELECTION';
-	var FLORIDA_SENATE = exports.FLORIDA_SENATE = 'FLORIDA_SENATE';
-
-	// Election Keywords
-	var ECONOMY = exports.ECONOMY = 'ECONOMY';
-	var ECONOMY_A_FAIR_TAX_SYSTEM = exports.ECONOMY_A_FAIR_TAX_SYSTEM = 'ECONOMY_A_FAIR_TAX_SYSTEM';
-	var ECONOMY_FIXING_AMERICAS_INFRASTRUCTURE = exports.ECONOMY_FIXING_AMERICAS_INFRASTRUCTURE = 'ECONOMY_FIXING_AMERICAS_INFRASTRUCTURE';
-	var ECONOMY_MANUFACTURING = exports.ECONOMY_MANUFACTURING = 'ECONOMY_MANUFACTURING';
-	var ECONOMY_SMALL_BUSINESS = exports.ECONOMY_SMALL_BUSINESS = 'ECONOMY_SMALL_BUSINESS';
-	var ECONOMY_SOCIAL_SECURITY_AND_MEDICARE = exports.ECONOMY_SOCIAL_SECURITY_AND_MEDICARE = 'ECONOMY_SOCIAL_SECURITY_AND_MEDICARE';
-	var ECONOMY_WALL_STREET_REFORM = exports.ECONOMY_WALL_STREET_REFORM = 'ECONOMY_WALL_STREET_REFORM';
-	var ECONOMY_WORKS_FOR_EVERYONE = exports.ECONOMY_WORKS_FOR_EVERYONE = 'ECONOMY_WORKS_FOR_EVERYONE';
-	var ECONOMY_REGULATION = exports.ECONOMY_REGULATION = 'ECONOMY_REGULATION';
-	var ECONOMY_TAXPLAN = exports.ECONOMY_TAXPLAN = 'ECONOMY_TAXPLAN';
-	var ECONOMY_TRADE = exports.ECONOMY_TRADE = 'ECONOMY_TRADE';
-
-	var ECONOMY_FARMERS_RANCHERS = exports.ECONOMY_FARMERS_RANCHERS = 'ECONOMY_FARMERS_RANCHERS';
-	var IMPROVING_EDUCATION = exports.IMPROVING_EDUCATION = 'IMPROVING_EDUCATION';
-	var EDUCATION_COMMON_CORE = exports.EDUCATION_COMMON_CORE = 'EDUCATION_COMMON_CORE';
-
-	var EDUCATION = exports.EDUCATION = 'EDUCATION';
-	var EDUCATION_CAMPUS_SEXUAL_ASSULT = exports.EDUCATION_CAMPUS_SEXUAL_ASSULT = 'EDUCATION_CAMPUS_SEXUAL_ASSULT';
-	var EDUCATION_COLLEGE_DEBT = exports.EDUCATION_COLLEGE_DEBT = 'EDUCATION_COLLEGE_DEBT';
-	var EDUCATION_EARLY_CHILDHOOD = exports.EDUCATION_EARLY_CHILDHOOD = 'EDUCATION_EARLY_CHILDHOOD';
-	var EDUCATION_K_12 = exports.EDUCATION_K_12 = 'EDUCATION_K_12';
-	var EDUCATION_TECHNOLOGY_AND_INNOVATION = exports.EDUCATION_TECHNOLOGY_AND_INNOVATION = 'EDUCATION_TECHNOLOGY_AND_INNOVATION';
-
-	var ENVIRONMENT = exports.ENVIRONMENT = 'ENVIRONMENT';
-	var ENVIRONMENT_CLIMATE_CHANGE = exports.ENVIRONMENT_CLIMATE_CHANGE = 'ENVIRONMENT_CLIMATE_CHANGE';
-	var ENVIRONMENT_PROTECTING_ANIMALS_AND_WILDLIFE = exports.ENVIRONMENT_PROTECTING_ANIMALS_AND_WILDLIFE = 'ENVIRONMENT_PROTECTING_ANIMALS_AND_WILDLIFE';
-	var ENVIRONMENT_RURAL_COMMUNITIES = exports.ENVIRONMENT_RURAL_COMMUNITIES = 'ENVIRONMENT_RURAL_COMMUNITIES';
-	var ENVIRONMENT_ENERGY = exports.ENVIRONMENT_ENERGY = 'ENVIRONMENT_ENERGY';
-
-	var ENVIRONMENT_OUR_ENVIRONMENT = exports.ENVIRONMENT_OUR_ENVIRONMENT = 'ENVIRONMENT_OUR_ENVIRONMENT';
-
-	var EQUALITY = exports.EQUALITY = 'EQUALITY';
-	var EQUALITY_CAMPAIGN_FINANCE_REFORM = exports.EQUALITY_CAMPAIGN_FINANCE_REFORM = 'EQUALITY_CAMPAIGN_FINANCE_REFORM';
-	var EQUALITY_CRIMINAL_JUSTICE_REFORM = exports.EQUALITY_CRIMINAL_JUSTICE_REFORM = 'EQUALITY_CRIMINAL_JUSTICE_REFORM';
-	var EQUALITY_IMMIGRATION_REFORM = exports.EQUALITY_IMMIGRATION_REFORM = 'EQUALITY_IMMIGRATION_REFORM';
-	var EQUALITY_LFBT_RIGHTS_AND_EQULITY = exports.EQUALITY_LFBT_RIGHTS_AND_EQULITY = 'EQUALITY_LFBT_RIGHTS_AND_EQULITY';
-	var EQUALITY_RACIAL_JUSTICE = exports.EQUALITY_RACIAL_JUSTICE = 'EQUALITY_RACIAL_JUSTICE';
-	var EQUALITY_VOTING_RIGHTS = exports.EQUALITY_VOTING_RIGHTS = 'EQUALITY_VOTING_RIGHTS';
-	var EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY = exports.EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY = 'EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY';
-	var EQUALITY_GUN_CONTROL = exports.EQUALITY_GUN_CONTROL = 'EQUALITY_GUN_CONTROL';
-
-	var EQUALITY_SENIORS = exports.EQUALITY_SENIORS = 'EQUALITY_SENIORS';
-
-	var HEALTH = exports.HEALTH = 'HEALTH';
-	var HEALTH_ADDICATION_AND_SUBSTANCE_USE = exports.HEALTH_ADDICATION_AND_SUBSTANCE_USE = 'HEALTH_ADDICATION_AND_SUBSTANCE_USE';
-	var HEALTH_AN_END_T0_ALZHEIMERS = exports.HEALTH_AN_END_T0_ALZHEIMERS = 'HEALTH_AN_END_T0_ALZHEIMERS';
-	var HEALTH_AUTISM = exports.HEALTH_AUTISM = 'HEALTH_AUTISM';
-	var HEALTH_DISABILITY_RIGHTS = exports.HEALTH_DISABILITY_RIGHTS = 'HEALTH_DISABILITY_RIGHTS';
-	var HEALTH_HEALTH_CARE = exports.HEALTH_HEALTH_CARE = 'HEALTH_HEALTH_CARE';
-	var HEALTH_HIV_AND_AIDS = exports.HEALTH_HIV_AND_AIDS = 'HEALTH_HIV_AND_AIDS';
-	var HEALTH_CHILD_CARE = exports.HEALTH_CHILD_CARE = 'HEALTH_CHILD_CARE';
-
-	var JOBS = exports.JOBS = 'JOBS';
-	var JOBS_PAID_FAMILY_AND_MEDICAL_LEAVE = exports.JOBS_PAID_FAMILY_AND_MEDICAL_LEAVE = 'JOBS_PAID_FAMILY_AND_MEDICAL_LEAVE';
-	var JOBS_LABOR_AND_WORKERS_RIGHTS = exports.JOBS_LABOR_AND_WORKERS_RIGHTS = 'JOBS_LABOR_AND_WORKERS_RIGHTS';
-	var JOBS_VETERANS_THE_ARMED_FORCES_AND_THEIR_FAMILIES = exports.JOBS_VETERANS_THE_ARMED_FORCES_AND_THEIR_FAMILIES = 'JOBS_VETERANS_THE_ARMED_FORCES_AND_THEIR_FAMILIES';
-	var JOBS_WAGES = exports.JOBS_WAGES = 'JOBS_WAGES';
-	var JOBS_WORKFORCE_SKILLS_AND_JOBS_TRAINING = exports.JOBS_WORKFORCE_SKILLS_AND_JOBS_TRAINING = 'JOBS_WORKFORCE_SKILLS_AND_JOBS_TRAINING';
-
-	var SECURITY = exports.SECURITY = 'SECURITY';
-	var SECURITY_COMBATING_TERRORISM = exports.SECURITY_COMBATING_TERRORISM = 'SECURITY_COMBATING_TERRORISM';
-	var SECUTIRY_GUN_VIOLENCE = exports.SECUTIRY_GUN_VIOLENCE = 'SECUTIRY_GUN_VIOLENCE';
-	var SECURITY_MILITARY_AND_DEFENSE = exports.SECURITY_MILITARY_AND_DEFENSE = 'SECURITY_MILITARY_AND_DEFENSE';
-	var SECURITY_NATIONAL_SECURITY = exports.SECURITY_NATIONAL_SECURITY = 'SECURITY_NATIONAL_SECURITY';
-	var SECURITY_FOREGIN_POLICY = exports.SECURITY_FOREGIN_POLICY = 'SECURITY_FOREGIN_POLICY';
-	;
-
-	var _temp = function () {
-	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	    return;
-	  }
-
-	  __REACT_HOT_LOADER__.register(GENERAL_ELECTION, 'GENERAL_ELECTION', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(FLORIDA_SENATE, 'FLORIDA_SENATE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(ECONOMY, 'ECONOMY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(ECONOMY_A_FAIR_TAX_SYSTEM, 'ECONOMY_A_FAIR_TAX_SYSTEM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(ECONOMY_FIXING_AMERICAS_INFRASTRUCTURE, 'ECONOMY_FIXING_AMERICAS_INFRASTRUCTURE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(ECONOMY_MANUFACTURING, 'ECONOMY_MANUFACTURING', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(ECONOMY_SMALL_BUSINESS, 'ECONOMY_SMALL_BUSINESS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(ECONOMY_SOCIAL_SECURITY_AND_MEDICARE, 'ECONOMY_SOCIAL_SECURITY_AND_MEDICARE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(ECONOMY_WALL_STREET_REFORM, 'ECONOMY_WALL_STREET_REFORM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(ECONOMY_WORKS_FOR_EVERYONE, 'ECONOMY_WORKS_FOR_EVERYONE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(ECONOMY_REGULATION, 'ECONOMY_REGULATION', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(ECONOMY_TAXPLAN, 'ECONOMY_TAXPLAN', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(ECONOMY_TRADE, 'ECONOMY_TRADE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(ECONOMY_FARMERS_RANCHERS, 'ECONOMY_FARMERS_RANCHERS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(IMPROVING_EDUCATION, 'IMPROVING_EDUCATION', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(EDUCATION_COMMON_CORE, 'EDUCATION_COMMON_CORE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(EDUCATION, 'EDUCATION', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(EDUCATION_CAMPUS_SEXUAL_ASSULT, 'EDUCATION_CAMPUS_SEXUAL_ASSULT', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(EDUCATION_COLLEGE_DEBT, 'EDUCATION_COLLEGE_DEBT', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(EDUCATION_EARLY_CHILDHOOD, 'EDUCATION_EARLY_CHILDHOOD', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(EDUCATION_K_12, 'EDUCATION_K_12', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(EDUCATION_TECHNOLOGY_AND_INNOVATION, 'EDUCATION_TECHNOLOGY_AND_INNOVATION', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(ENVIRONMENT, 'ENVIRONMENT', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(ENVIRONMENT_CLIMATE_CHANGE, 'ENVIRONMENT_CLIMATE_CHANGE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(ENVIRONMENT_PROTECTING_ANIMALS_AND_WILDLIFE, 'ENVIRONMENT_PROTECTING_ANIMALS_AND_WILDLIFE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(ENVIRONMENT_RURAL_COMMUNITIES, 'ENVIRONMENT_RURAL_COMMUNITIES', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(ENVIRONMENT_ENERGY, 'ENVIRONMENT_ENERGY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(ENVIRONMENT_OUR_ENVIRONMENT, 'ENVIRONMENT_OUR_ENVIRONMENT', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(EQUALITY, 'EQUALITY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(EQUALITY_CAMPAIGN_FINANCE_REFORM, 'EQUALITY_CAMPAIGN_FINANCE_REFORM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(EQUALITY_CRIMINAL_JUSTICE_REFORM, 'EQUALITY_CRIMINAL_JUSTICE_REFORM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(EQUALITY_IMMIGRATION_REFORM, 'EQUALITY_IMMIGRATION_REFORM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(EQUALITY_LFBT_RIGHTS_AND_EQULITY, 'EQUALITY_LFBT_RIGHTS_AND_EQULITY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(EQUALITY_RACIAL_JUSTICE, 'EQUALITY_RACIAL_JUSTICE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(EQUALITY_VOTING_RIGHTS, 'EQUALITY_VOTING_RIGHTS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY, 'EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(EQUALITY_GUN_CONTROL, 'EQUALITY_GUN_CONTROL', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(EQUALITY_SENIORS, 'EQUALITY_SENIORS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(HEALTH, 'HEALTH', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(HEALTH_ADDICATION_AND_SUBSTANCE_USE, 'HEALTH_ADDICATION_AND_SUBSTANCE_USE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(HEALTH_AN_END_T0_ALZHEIMERS, 'HEALTH_AN_END_T0_ALZHEIMERS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(HEALTH_AUTISM, 'HEALTH_AUTISM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(HEALTH_DISABILITY_RIGHTS, 'HEALTH_DISABILITY_RIGHTS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(HEALTH_HEALTH_CARE, 'HEALTH_HEALTH_CARE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(HEALTH_HIV_AND_AIDS, 'HEALTH_HIV_AND_AIDS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(HEALTH_CHILD_CARE, 'HEALTH_CHILD_CARE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(JOBS, 'JOBS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(JOBS_PAID_FAMILY_AND_MEDICAL_LEAVE, 'JOBS_PAID_FAMILY_AND_MEDICAL_LEAVE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(JOBS_LABOR_AND_WORKERS_RIGHTS, 'JOBS_LABOR_AND_WORKERS_RIGHTS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(JOBS_VETERANS_THE_ARMED_FORCES_AND_THEIR_FAMILIES, 'JOBS_VETERANS_THE_ARMED_FORCES_AND_THEIR_FAMILIES', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(JOBS_WAGES, 'JOBS_WAGES', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(JOBS_WORKFORCE_SKILLS_AND_JOBS_TRAINING, 'JOBS_WORKFORCE_SKILLS_AND_JOBS_TRAINING', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(SECURITY, 'SECURITY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(SECURITY_COMBATING_TERRORISM, 'SECURITY_COMBATING_TERRORISM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(SECUTIRY_GUN_VIOLENCE, 'SECUTIRY_GUN_VIOLENCE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(SECURITY_MILITARY_AND_DEFENSE, 'SECURITY_MILITARY_AND_DEFENSE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(SECURITY_NATIONAL_SECURITY, 'SECURITY_NATIONAL_SECURITY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
-
-	  __REACT_HOT_LOADER__.register(SECURITY_FOREGIN_POLICY, 'SECURITY_FOREGIN_POLICY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+		__REACT_HOT_LOADER__.register(_default, 'default', '/Users/BernSternWhoEarns/Documents/setgov/background/reducers/FloridaSenate.js');
 	}();
 
 	;

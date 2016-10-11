@@ -21,7 +21,9 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     count: state.count,
-    race: state.race
+    race: state.race,
+    generalElection : state.GeneralElection,
+    FloridaSenate: state.FloridaSenate
   };
 };
 

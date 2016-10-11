@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "react-chrome-redux-boilerplate",
+  "name": "Setgov",
   "description": "Bare boiler plate to easily start React with redux chrome extension",
   "version": "1.0",
 
