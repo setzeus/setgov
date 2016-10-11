@@ -1,16 +1,26 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router';
+import {connect} from 'react-redux';
 
-const App = React.createClass({
- 
-  render: function () {
-    return (
-     <div className="scoreboard">
-     	<div className="header">
-      		<Link to="/test">test</Link>
-    	</div>
-     </div>
-    );
+class App extends Component {
+	constructor(props){
+		super(props)
+	}
+	render() {
+		console.log(this.props);
+	    return (
+	      <div>
+	        Click Count: {this.props.count}
+	      </div>
+    	);
   }
-});
-export default App;
+}
+
+
+const mapStateToProps = (state) => {
+  return {
+    count: state.count
+  };
+};
+
+export default connect(mapStateToProps)(App);
