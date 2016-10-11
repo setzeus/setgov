@@ -1,15 +1,15 @@
 module.exports = {
 
 	entry: {
-		popup: './src/index.js',
+		popup: './popup/index.js',
 		background: './background/src/index.js'
 	},
 		 	
 	
 	output: {
-		path: 'bundles',
+		path: 'assets',
 		filename: "[name].js",
-		publicPath: '/bundles'
+		publicPath: '/assets'
 	},
 
 	watch:true,

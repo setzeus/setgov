@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/bundles";
+/******/ 	__webpack_require__.p = "/assets";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -96,7 +96,7 @@
 			return;
 		}
 
-		__REACT_HOT_LOADER__.register(proxyStore, 'proxyStore', '/Users/BernSternWhoEarns/Documents/setgov/src/index.js');
+		__REACT_HOT_LOADER__.register(proxyStore, 'proxyStore', '/Users/BernSternWhoEarns/Documents/setgov/popup/index.js');
 	}();
 
 	;
@@ -24151,9 +24151,9 @@
 	    return;
 	  }
 
-	  __REACT_HOT_LOADER__.register(App, 'App', '/Users/BernSternWhoEarns/Documents/setgov/src/components/App.js');
+	  __REACT_HOT_LOADER__.register(App, 'App', '/Users/BernSternWhoEarns/Documents/setgov/popup/components/App.js');
 
-	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/BernSternWhoEarns/Documents/setgov/src/components/App.js');
+	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/BernSternWhoEarns/Documents/setgov/popup/components/App.js');
 	}();
 
 	;
@@ -29856,9 +29856,9 @@
 	    return;
 	  }
 
-	  __REACT_HOT_LOADER__.register(Test, "Test", "/Users/BernSternWhoEarns/Documents/setgov/src/components/Test.js");
+	  __REACT_HOT_LOADER__.register(Test, "Test", "/Users/BernSternWhoEarns/Documents/setgov/popup/components/Test.js");
 
-	  __REACT_HOT_LOADER__.register(_default, "default", "/Users/BernSternWhoEarns/Documents/setgov/src/components/Test.js");
+	  __REACT_HOT_LOADER__.register(_default, "default", "/Users/BernSternWhoEarns/Documents/setgov/popup/components/Test.js");
 	}();
 
 	;
@@ -29909,7 +29909,7 @@
 			return;
 		}
 
-		__REACT_HOT_LOADER__.register(_default, 'default', '/Users/BernSternWhoEarns/Documents/setgov/src/Routes.js');
+		__REACT_HOT_LOADER__.register(_default, 'default', '/Users/BernSternWhoEarns/Documents/setgov/popup/Routes.js');
 	}();
 
 	;

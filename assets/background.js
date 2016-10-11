@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/bundles";
+/******/ 	__webpack_require__.p = "/assets";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -59,7 +59,7 @@
 	var store = (0, _redux.createStore)(_reducers2.default, {});
 
 	console.log('testing');
-
+	console.log('hot reloding');
 	(0, _reactChromeRedux.wrapStore)(store, {
 	  portName: 'setgov'
 	});
