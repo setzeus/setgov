@@ -11,7 +11,7 @@ import { Router, Route, Link, browserHistory } from 'react-router'
 
 
 const proxyStore = new Store({
-  portName: 'setgov'
+  portName: 'example'
 });
 
 

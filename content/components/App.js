@@ -9,17 +9,16 @@ class App extends Component {
   componentDidMount() {
     //basic clicker to log redux is working across platform
     document.addEventListener('click', () => {
+      console.log('testing')
       this.props.dispatch({
-        type: 'ADD_COUNT'
+        type: 'FLORIDA_SENATE'
       });
     });
   }
 
   render() {
-    return (
-      <div>
-        Count: {this.props.count}
-      </div>
+    return(
+        <div></div>
     );
   }
 }

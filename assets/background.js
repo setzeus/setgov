@@ -40,44 +40,34 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	var _redux = __webpack_require__(1);
 
-	var _reducers = __webpack_require__(16);
+	var _reducers = __webpack_require__(17);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
-	var _reduxLogger = __webpack_require__(18);
+	var _reduxLogger = __webpack_require__(19);
 
 	var _reduxLogger2 = _interopRequireDefault(_reduxLogger);
 
-	var _reduxThunk = __webpack_require__(24);
+	var _reduxThunk = __webpack_require__(25);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-	var _reactChromeRedux = __webpack_require__(25);
+	var _reactChromeRedux = __webpack_require__(26);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// const aliases = {
-	//   // this key is the name of the action to proxy, the value is the action
-	//   // creator that gets executed when the proxied action is received in the
-	//   // background
-	//   'user-clicked-alias': () => {
-	//     // this call can only be made in the background script
-	//     chrome.notifications.create(...);
-
-	//   };
-	// };
-
 	var logger = (0, _reduxLogger2.default)({
-	    level: 'info',
-	    collapsed: true
+	  level: 'info',
+	  collapsed: true
 	});
 
 	var middleware = [_reduxThunk2.default, logger];
@@ -85,26 +75,43 @@
 	var store = (0, _redux.compose)(_redux.applyMiddleware.apply(undefined, middleware))(_redux.createStore)(_reducers2.default);
 
 	(0, _reactChromeRedux.wrapStore)(store, {
-	    portName: 'setgov'
+	  portName: 'example'
+	});
+
+	// ////////////////////////////////////////////
+	// //Inject content Script on each tab change//
+	// ////////////////////////////////////////////
+	// chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+	//   console.log('content script injected')
+	//   chrome.tabs.executeScript(null, {file: "content.js"});
+	// }); 
+
+	/////////////////////////////////////////////////////
+	//Inject content script when first tab is activated//
+	///////////////////////////////////////////////////// 
+	chrome.tabs.onActivated.addListener(function (tabId, changeInfo, tab) {
+	  console.log('content script injected');
+	  chrome.tabs.executeScript(null, { file: "content.js" });
 	});
 	;
 
 	var _temp = function () {
-	    if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	        return;
-	    }
+	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	    return;
+	  }
 
-	    __REACT_HOT_LOADER__.register(logger, 'logger', '/Users/BernSternWhoEarns/Documents/setgov/background/src/index.js');
+	  __REACT_HOT_LOADER__.register(logger, 'logger', '/Users/BernSternWhoEarns/Documents/setgov/background/index.js');
 
-	    __REACT_HOT_LOADER__.register(middleware, 'middleware', '/Users/BernSternWhoEarns/Documents/setgov/background/src/index.js');
+	  __REACT_HOT_LOADER__.register(middleware, 'middleware', '/Users/BernSternWhoEarns/Documents/setgov/background/index.js');
 
-	    __REACT_HOT_LOADER__.register(store, 'store', '/Users/BernSternWhoEarns/Documents/setgov/background/src/index.js');
+	  __REACT_HOT_LOADER__.register(store, 'store', '/Users/BernSternWhoEarns/Documents/setgov/background/index.js');
 	}();
 
 	;
 
 /***/ },
-/* 1 */
+
+/***/ 1:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -116,23 +123,23 @@
 
 	var _createStore2 = _interopRequireDefault(_createStore);
 
-	var _combineReducers = __webpack_require__(11);
+	var _combineReducers = __webpack_require__(12);
 
 	var _combineReducers2 = _interopRequireDefault(_combineReducers);
 
-	var _bindActionCreators = __webpack_require__(13);
+	var _bindActionCreators = __webpack_require__(14);
 
 	var _bindActionCreators2 = _interopRequireDefault(_bindActionCreators);
 
-	var _applyMiddleware = __webpack_require__(14);
+	var _applyMiddleware = __webpack_require__(15);
 
 	var _applyMiddleware2 = _interopRequireDefault(_applyMiddleware);
 
-	var _compose = __webpack_require__(15);
+	var _compose = __webpack_require__(16);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
-	var _warning = __webpack_require__(12);
+	var _warning = __webpack_require__(13);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -156,7 +163,8 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 2 */
+
+/***/ 2:
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -342,7 +350,8 @@
 
 
 /***/ },
-/* 3 */
+
+/***/ 3:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -608,7 +617,8 @@
 	}
 
 /***/ },
-/* 4 */
+
+/***/ 4:
 /***/ function(module, exports, __webpack_require__) {
 
 	var getPrototype = __webpack_require__(5),
@@ -682,7 +692,8 @@
 
 
 /***/ },
-/* 5 */
+
+/***/ 5:
 /***/ function(module, exports, __webpack_require__) {
 
 	var overArg = __webpack_require__(6);
@@ -694,7 +705,8 @@
 
 
 /***/ },
-/* 6 */
+
+/***/ 6:
 /***/ function(module, exports) {
 
 	/**
@@ -715,7 +727,8 @@
 
 
 /***/ },
-/* 7 */
+
+/***/ 7:
 /***/ function(module, exports) {
 
 	/**
@@ -750,42 +763,67 @@
 
 
 /***/ },
-/* 8 */
+
+/***/ 8:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__(9);
 
 
 /***/ },
-/* 9 */
+
+/***/ 9:
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
+	/* WEBPACK VAR INJECTION */(function(module, global) {'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	  value: true
 	});
 
-	var _ponyfill = __webpack_require__(10);
+	var _ponyfill = __webpack_require__(11);
 
 	var _ponyfill2 = _interopRequireDefault(_ponyfill);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var root = undefined; /* global window */
+	var root = module; /* global window */
 
-	if (typeof global !== 'undefined') {
-		root = global;
+
+	if (typeof self !== 'undefined') {
+	  root = self;
 	} else if (typeof window !== 'undefined') {
-		root = window;
+	  root = window;
+	} else if (typeof global !== 'undefined') {
+	  root = global;
+	} else {
+	  root = Function('return this')();
 	}
 
 	var result = (0, _ponyfill2['default'])(root);
 	exports['default'] = result;
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)(module), (function() { return this; }())))
 
 /***/ },
-/* 10 */
+
+/***/ 10:
+/***/ function(module, exports) {
+
+	module.exports = function(module) {
+		if(!module.webpackPolyfill) {
+			module.deprecate = function() {};
+			module.paths = [];
+			// module.parent = undefined by default
+			module.children = [];
+			module.webpackPolyfill = 1;
+		}
+		return module;
+	}
+
+
+/***/ },
+
+/***/ 11:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -813,7 +851,8 @@
 	};
 
 /***/ },
-/* 11 */
+
+/***/ 12:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -827,7 +866,7 @@
 
 	var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-	var _warning = __webpack_require__(12);
+	var _warning = __webpack_require__(13);
 
 	var _warning2 = _interopRequireDefault(_warning);
 
@@ -961,7 +1000,8 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 12 */
+
+/***/ 13:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -991,7 +1031,8 @@
 	}
 
 /***/ },
-/* 13 */
+
+/***/ 14:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1047,7 +1088,8 @@
 	}
 
 /***/ },
-/* 14 */
+
+/***/ 15:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1058,7 +1100,7 @@
 
 	exports['default'] = applyMiddleware;
 
-	var _compose = __webpack_require__(15);
+	var _compose = __webpack_require__(16);
 
 	var _compose2 = _interopRequireDefault(_compose);
 
@@ -1110,7 +1152,8 @@
 	}
 
 /***/ },
-/* 15 */
+
+/***/ 16:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1153,7 +1196,8 @@
 	}
 
 /***/ },
-/* 16 */
+
+/***/ 17:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1164,14 +1208,19 @@
 
 	var _redux = __webpack_require__(1);
 
-	var _start = __webpack_require__(17);
+	var _start = __webpack_require__(18);
 
 	var _start2 = _interopRequireDefault(_start);
+
+	var _Race = __webpack_require__(323);
+
+	var _Race2 = _interopRequireDefault(_Race);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var _default = (0, _redux.combineReducers)({
-	  count: _start2.default
+	  race: _Race2.default
+
 	});
 
 	exports.default = _default;
@@ -1182,13 +1231,14 @@
 	    return;
 	  }
 
-	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/BernSternWhoEarns/Documents/setgov/background/src/reducers/index.js');
+	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/BernSternWhoEarns/Documents/setgov/background/reducers/index.js');
 	}();
 
 	;
 
 /***/ },
-/* 17 */
+
+/***/ 18:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1204,6 +1254,7 @@
 
 	  switch (action.type) {
 	    case 'ADD_COUNT':
+	      console.log('testing background page ');
 	      return state + (action.payload || 1);
 	    default:
 	      return state;
@@ -1218,15 +1269,16 @@
 	    return;
 	  }
 
-	  __REACT_HOT_LOADER__.register(initialState, 'initialState', '/Users/BernSternWhoEarns/Documents/setgov/background/src/reducers/start.js');
+	  __REACT_HOT_LOADER__.register(initialState, 'initialState', '/Users/BernSternWhoEarns/Documents/setgov/background/reducers/start.js');
 
-	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/BernSternWhoEarns/Documents/setgov/background/src/reducers/start.js');
+	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/BernSternWhoEarns/Documents/setgov/background/reducers/start.js');
 	}();
 
 	;
 
 /***/ },
-/* 18 */
+
+/***/ 19:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1237,11 +1289,11 @@
 	  value: true
 	});
 
-	var _core = __webpack_require__(19);
+	var _core = __webpack_require__(20);
 
-	var _helpers = __webpack_require__(20);
+	var _helpers = __webpack_require__(21);
 
-	var _defaults = __webpack_require__(23);
+	var _defaults = __webpack_require__(24);
 
 	var _defaults2 = _interopRequireDefault(_defaults);
 
@@ -1344,7 +1396,8 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 19 */
+
+/***/ 20:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1354,9 +1407,9 @@
 	});
 	exports.printBuffer = printBuffer;
 
-	var _helpers = __webpack_require__(20);
+	var _helpers = __webpack_require__(21);
 
-	var _diff = __webpack_require__(21);
+	var _diff = __webpack_require__(22);
 
 	var _diff2 = _interopRequireDefault(_diff);
 
@@ -1477,7 +1530,8 @@
 	}
 
 /***/ },
-/* 20 */
+
+/***/ 21:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1501,7 +1555,8 @@
 	var timer = exports.timer = typeof performance !== "undefined" && performance !== null && typeof performance.now === "function" ? performance : Date;
 
 /***/ },
-/* 21 */
+
+/***/ 22:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1511,7 +1566,7 @@
 	});
 	exports.default = diffLogger;
 
-	var _deepDiff = __webpack_require__(22);
+	var _deepDiff = __webpack_require__(23);
 
 	var _deepDiff2 = _interopRequireDefault(_deepDiff);
 
@@ -1597,7 +1652,8 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 22 */
+
+/***/ 23:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -2026,7 +2082,8 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 23 */
+
+/***/ 24:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2077,7 +2134,8 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 24 */
+
+/***/ 25:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2105,7 +2163,8 @@
 	exports['default'] = thunk;
 
 /***/ },
-/* 25 */
+
+/***/ 26:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2115,7 +2174,7 @@
 	});
 	exports.alias = exports.wrapStore = exports.Store = undefined;
 
-	var _Store = __webpack_require__(26);
+	var _Store = __webpack_require__(27);
 
 	var _Store2 = _interopRequireDefault(_Store);
 
@@ -2134,7 +2193,8 @@
 	exports.alias = _alias2.default;
 
 /***/ },
-/* 26 */
+
+/***/ 27:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2145,7 +2205,7 @@
 	  value: true
 	});
 
-	var _assignIn = __webpack_require__(27);
+	var _assignIn = __webpack_require__(28);
 
 	var _assignIn2 = _interopRequireDefault(_assignIn);
 
@@ -2264,12 +2324,13 @@
 	exports.default = Store;
 
 /***/ },
-/* 27 */
+
+/***/ 28:
 /***/ function(module, exports, __webpack_require__) {
 
-	var copyObject = __webpack_require__(28),
-	    createAssigner = __webpack_require__(43),
-	    keysIn = __webpack_require__(56);
+	var copyObject = __webpack_require__(29),
+	    createAssigner = __webpack_require__(44),
+	    keysIn = __webpack_require__(57);
 
 	/**
 	 * This method is like `_.assign` except that it iterates over own and
@@ -2310,11 +2371,12 @@
 
 
 /***/ },
-/* 28 */
+
+/***/ 29:
 /***/ function(module, exports, __webpack_require__) {
 
-	var assignValue = __webpack_require__(29),
-	    baseAssignValue = __webpack_require__(30);
+	var assignValue = __webpack_require__(30),
+	    baseAssignValue = __webpack_require__(31);
 
 	/**
 	 * Copies properties of `source` to `object`.
@@ -2356,11 +2418,12 @@
 
 
 /***/ },
-/* 29 */
+
+/***/ 30:
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseAssignValue = __webpack_require__(30),
-	    eq = __webpack_require__(42);
+	var baseAssignValue = __webpack_require__(31),
+	    eq = __webpack_require__(43);
 
 	/** Used for built-in method references. */
 	var objectProto = Object.prototype;
@@ -2390,10 +2453,11 @@
 
 
 /***/ },
-/* 30 */
+
+/***/ 31:
 /***/ function(module, exports, __webpack_require__) {
 
-	var defineProperty = __webpack_require__(31);
+	var defineProperty = __webpack_require__(32);
 
 	/**
 	 * The base implementation of `assignValue` and `assignMergeValue` without
@@ -2421,10 +2485,11 @@
 
 
 /***/ },
-/* 31 */
+
+/***/ 32:
 /***/ function(module, exports, __webpack_require__) {
 
-	var getNative = __webpack_require__(32);
+	var getNative = __webpack_require__(33);
 
 	var defineProperty = (function() {
 	  try {
@@ -2438,11 +2503,12 @@
 
 
 /***/ },
-/* 32 */
+
+/***/ 33:
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseIsNative = __webpack_require__(33),
-	    getValue = __webpack_require__(41);
+	var baseIsNative = __webpack_require__(34),
+	    getValue = __webpack_require__(42);
 
 	/**
 	 * Gets the native function at `key` of `object`.
@@ -2461,13 +2527,14 @@
 
 
 /***/ },
-/* 33 */
+
+/***/ 34:
 /***/ function(module, exports, __webpack_require__) {
 
-	var isFunction = __webpack_require__(34),
-	    isMasked = __webpack_require__(36),
-	    isObject = __webpack_require__(35),
-	    toSource = __webpack_require__(40);
+	var isFunction = __webpack_require__(35),
+	    isMasked = __webpack_require__(37),
+	    isObject = __webpack_require__(36),
+	    toSource = __webpack_require__(41);
 
 	/**
 	 * Used to match `RegExp`
@@ -2514,10 +2581,11 @@
 
 
 /***/ },
-/* 34 */
+
+/***/ 35:
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(35);
+	var isObject = __webpack_require__(36);
 
 	/** `Object#toString` result references. */
 	var funcTag = '[object Function]',
@@ -2562,7 +2630,8 @@
 
 
 /***/ },
-/* 35 */
+
+/***/ 36:
 /***/ function(module, exports) {
 
 	/**
@@ -2599,10 +2668,11 @@
 
 
 /***/ },
-/* 36 */
+
+/***/ 37:
 /***/ function(module, exports, __webpack_require__) {
 
-	var coreJsData = __webpack_require__(37);
+	var coreJsData = __webpack_require__(38);
 
 	/** Used to detect methods masquerading as native. */
 	var maskSrcKey = (function() {
@@ -2625,10 +2695,11 @@
 
 
 /***/ },
-/* 37 */
+
+/***/ 38:
 /***/ function(module, exports, __webpack_require__) {
 
-	var root = __webpack_require__(38);
+	var root = __webpack_require__(39);
 
 	/** Used to detect overreaching core-js shims. */
 	var coreJsData = root['__core-js_shared__'];
@@ -2637,10 +2708,11 @@
 
 
 /***/ },
-/* 38 */
+
+/***/ 39:
 /***/ function(module, exports, __webpack_require__) {
 
-	var freeGlobal = __webpack_require__(39);
+	var freeGlobal = __webpack_require__(40);
 
 	/** Detect free variable `self`. */
 	var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -2652,7 +2724,8 @@
 
 
 /***/ },
-/* 39 */
+
+/***/ 40:
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
@@ -2663,7 +2736,8 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 40 */
+
+/***/ 41:
 /***/ function(module, exports) {
 
 	/** Used for built-in method references. */
@@ -2695,7 +2769,8 @@
 
 
 /***/ },
-/* 41 */
+
+/***/ 42:
 /***/ function(module, exports) {
 
 	/**
@@ -2714,7 +2789,8 @@
 
 
 /***/ },
-/* 42 */
+
+/***/ 43:
 /***/ function(module, exports) {
 
 	/**
@@ -2757,11 +2833,12 @@
 
 
 /***/ },
-/* 43 */
+
+/***/ 44:
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseRest = __webpack_require__(44),
-	    isIterateeCall = __webpack_require__(52);
+	var baseRest = __webpack_require__(45),
+	    isIterateeCall = __webpack_require__(53);
 
 	/**
 	 * Creates a function like `_.assign`.
@@ -2800,12 +2877,13 @@
 
 
 /***/ },
-/* 44 */
+
+/***/ 45:
 /***/ function(module, exports, __webpack_require__) {
 
-	var identity = __webpack_require__(45),
-	    overRest = __webpack_require__(46),
-	    setToString = __webpack_require__(48);
+	var identity = __webpack_require__(46),
+	    overRest = __webpack_require__(47),
+	    setToString = __webpack_require__(49);
 
 	/**
 	 * The base implementation of `_.rest` which doesn't validate or coerce arguments.
@@ -2823,7 +2901,8 @@
 
 
 /***/ },
-/* 45 */
+
+/***/ 46:
 /***/ function(module, exports) {
 
 	/**
@@ -2850,10 +2929,11 @@
 
 
 /***/ },
-/* 46 */
+
+/***/ 47:
 /***/ function(module, exports, __webpack_require__) {
 
-	var apply = __webpack_require__(47);
+	var apply = __webpack_require__(48);
 
 	/* Built-in method references for those with the same name as other `lodash` methods. */
 	var nativeMax = Math.max;
@@ -2892,7 +2972,8 @@
 
 
 /***/ },
-/* 47 */
+
+/***/ 48:
 /***/ function(module, exports) {
 
 	/**
@@ -2919,11 +3000,12 @@
 
 
 /***/ },
-/* 48 */
+
+/***/ 49:
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseSetToString = __webpack_require__(49),
-	    shortOut = __webpack_require__(51);
+	var baseSetToString = __webpack_require__(50),
+	    shortOut = __webpack_require__(52);
 
 	/**
 	 * Sets the `toString` method of `func` to return `string`.
@@ -2939,12 +3021,13 @@
 
 
 /***/ },
-/* 49 */
+
+/***/ 50:
 /***/ function(module, exports, __webpack_require__) {
 
-	var constant = __webpack_require__(50),
-	    defineProperty = __webpack_require__(31),
-	    identity = __webpack_require__(45);
+	var constant = __webpack_require__(51),
+	    defineProperty = __webpack_require__(32),
+	    identity = __webpack_require__(46);
 
 	/**
 	 * The base implementation of `setToString` without support for hot loop shorting.
@@ -2967,7 +3050,8 @@
 
 
 /***/ },
-/* 50 */
+
+/***/ 51:
 /***/ function(module, exports) {
 
 	/**
@@ -2999,7 +3083,8 @@
 
 
 /***/ },
-/* 51 */
+
+/***/ 52:
 /***/ function(module, exports) {
 
 	/** Used to detect hot functions by number of calls within a span of milliseconds. */
@@ -3042,13 +3127,14 @@
 
 
 /***/ },
-/* 52 */
+
+/***/ 53:
 /***/ function(module, exports, __webpack_require__) {
 
-	var eq = __webpack_require__(42),
-	    isArrayLike = __webpack_require__(53),
-	    isIndex = __webpack_require__(55),
-	    isObject = __webpack_require__(35);
+	var eq = __webpack_require__(43),
+	    isArrayLike = __webpack_require__(54),
+	    isIndex = __webpack_require__(56),
+	    isObject = __webpack_require__(36);
 
 	/**
 	 * Checks if the given arguments are from an iteratee call.
@@ -3078,11 +3164,12 @@
 
 
 /***/ },
-/* 53 */
+
+/***/ 54:
 /***/ function(module, exports, __webpack_require__) {
 
-	var isFunction = __webpack_require__(34),
-	    isLength = __webpack_require__(54);
+	var isFunction = __webpack_require__(35),
+	    isLength = __webpack_require__(55);
 
 	/**
 	 * Checks if `value` is array-like. A value is considered array-like if it's
@@ -3117,7 +3204,8 @@
 
 
 /***/ },
-/* 54 */
+
+/***/ 55:
 /***/ function(module, exports) {
 
 	/** Used as references for various `Number` constants. */
@@ -3158,7 +3246,8 @@
 
 
 /***/ },
-/* 55 */
+
+/***/ 56:
 /***/ function(module, exports) {
 
 	/** Used as references for various `Number` constants. */
@@ -3186,12 +3275,13 @@
 
 
 /***/ },
-/* 56 */
+
+/***/ 57:
 /***/ function(module, exports, __webpack_require__) {
 
-	var arrayLikeKeys = __webpack_require__(57),
+	var arrayLikeKeys = __webpack_require__(58),
 	    baseKeysIn = __webpack_require__(69),
-	    isArrayLike = __webpack_require__(53);
+	    isArrayLike = __webpack_require__(54);
 
 	/**
 	 * Creates an array of the own and inherited enumerable property names of `object`.
@@ -3224,14 +3314,15 @@
 
 
 /***/ },
-/* 57 */
+
+/***/ 58:
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseTimes = __webpack_require__(58),
-	    isArguments = __webpack_require__(59),
-	    isArray = __webpack_require__(61),
-	    isBuffer = __webpack_require__(62),
-	    isIndex = __webpack_require__(55),
+	var baseTimes = __webpack_require__(59),
+	    isArguments = __webpack_require__(60),
+	    isArray = __webpack_require__(62),
+	    isBuffer = __webpack_require__(63),
+	    isIndex = __webpack_require__(56),
 	    isTypedArray = __webpack_require__(65);
 
 	/** Used for built-in method references. */
@@ -3279,7 +3370,8 @@
 
 
 /***/ },
-/* 58 */
+
+/***/ 59:
 /***/ function(module, exports) {
 
 	/**
@@ -3305,10 +3397,11 @@
 
 
 /***/ },
-/* 59 */
+
+/***/ 60:
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseIsArguments = __webpack_require__(60),
+	var baseIsArguments = __webpack_require__(61),
 	    isObjectLike = __webpack_require__(7);
 
 	/** Used for built-in method references. */
@@ -3347,7 +3440,8 @@
 
 
 /***/ },
-/* 60 */
+
+/***/ 61:
 /***/ function(module, exports, __webpack_require__) {
 
 	var isObjectLike = __webpack_require__(7);
@@ -3380,7 +3474,8 @@
 
 
 /***/ },
-/* 61 */
+
+/***/ 62:
 /***/ function(module, exports) {
 
 	/**
@@ -3412,10 +3507,11 @@
 
 
 /***/ },
-/* 62 */
+
+/***/ 63:
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(38),
+	/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(39),
 	    stubFalse = __webpack_require__(64);
 
 	/** Detect free variable `exports`. */
@@ -3454,26 +3550,11 @@
 
 	module.exports = isBuffer;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(63)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)(module)))
 
 /***/ },
-/* 63 */
-/***/ function(module, exports) {
 
-	module.exports = function(module) {
-		if(!module.webpackPolyfill) {
-			module.deprecate = function() {};
-			module.paths = [];
-			// module.parent = undefined by default
-			module.children = [];
-			module.webpackPolyfill = 1;
-		}
-		return module;
-	}
-
-
-/***/ },
-/* 64 */
+/***/ 64:
 /***/ function(module, exports) {
 
 	/**
@@ -3497,7 +3578,8 @@
 
 
 /***/ },
-/* 65 */
+
+/***/ 65:
 /***/ function(module, exports, __webpack_require__) {
 
 	var baseIsTypedArray = __webpack_require__(66),
@@ -3530,10 +3612,11 @@
 
 
 /***/ },
-/* 66 */
+
+/***/ 66:
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(54),
+	var isLength = __webpack_require__(55),
 	    isObjectLike = __webpack_require__(7);
 
 	/** `Object#toString` result references. */
@@ -3605,7 +3688,8 @@
 
 
 /***/ },
-/* 67 */
+
+/***/ 67:
 /***/ function(module, exports) {
 
 	/**
@@ -3625,10 +3709,11 @@
 
 
 /***/ },
-/* 68 */
+
+/***/ 68:
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(39);
+	/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(40);
 
 	/** Detect free variable `exports`. */
 	var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
@@ -3651,13 +3736,14 @@
 
 	module.exports = nodeUtil;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(63)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)(module)))
 
 /***/ },
-/* 69 */
+
+/***/ 69:
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(35),
+	var isObject = __webpack_require__(36),
 	    isPrototype = __webpack_require__(70),
 	    nativeKeysIn = __webpack_require__(71);
 
@@ -3693,7 +3779,8 @@
 
 
 /***/ },
-/* 70 */
+
+/***/ 70:
 /***/ function(module, exports) {
 
 	/** Used for built-in method references. */
@@ -3717,7 +3804,8 @@
 
 
 /***/ },
-/* 71 */
+
+/***/ 71:
 /***/ function(module, exports) {
 
 	/**
@@ -3743,7 +3831,8 @@
 
 
 /***/ },
-/* 72 */
+
+/***/ 72:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -3760,7 +3849,8 @@
 	var STATE_TYPE = exports.STATE_TYPE = 'chromex.state';
 
 /***/ },
-/* 73 */
+
+/***/ 73:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3845,7 +3935,8 @@
 	};
 
 /***/ },
-/* 74 */
+
+/***/ 74:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -3875,5 +3966,259 @@
 	  };
 	};
 
+/***/ },
+
+/***/ 323:
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _actionTypes = __webpack_require__(324);
+
+	var types = _interopRequireWildcard(_actionTypes);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	var initalState = 'GENERAL_ELECTION';
+
+	var _default = function _default() {
+		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initalState;
+		var action = arguments[1];
+
+		switch (action.type) {
+			case types.GENERAL_ELECTION:
+				return state = "GENERAL_ELECTION ";
+			case types.FLORIDA_SENATE:
+				return state = "FLORIDA_SENATE";
+			default:
+				return state;
+		}
+	};
+
+	exports.default = _default;
+	;
+
+	var _temp = function () {
+		if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+			return;
+		}
+
+		__REACT_HOT_LOADER__.register(initalState, 'initalState', '/Users/BernSternWhoEarns/Documents/setgov/background/reducers/Race.js');
+
+		__REACT_HOT_LOADER__.register(_default, 'default', '/Users/BernSternWhoEarns/Documents/setgov/background/reducers/Race.js');
+	}();
+
+	;
+
+/***/ },
+
+/***/ 324:
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var GENERAL_ELECTION = exports.GENERAL_ELECTION = 'GENERAL_ELECTION';
+	var FLORIDA_SENATE = exports.FLORIDA_SENATE = 'FLORIDA_SENATE';
+
+	// Election Keywords
+	var ECONOMY = exports.ECONOMY = 'ECONOMY';
+	var ECONOMY_A_FAIR_TAX_SYSTEM = exports.ECONOMY_A_FAIR_TAX_SYSTEM = 'ECONOMY_A_FAIR_TAX_SYSTEM';
+	var ECONOMY_FIXING_AMERICAS_INFRASTRUCTURE = exports.ECONOMY_FIXING_AMERICAS_INFRASTRUCTURE = 'ECONOMY_FIXING_AMERICAS_INFRASTRUCTURE';
+	var ECONOMY_MANUFACTURING = exports.ECONOMY_MANUFACTURING = 'ECONOMY_MANUFACTURING';
+	var ECONOMY_SMALL_BUSINESS = exports.ECONOMY_SMALL_BUSINESS = 'ECONOMY_SMALL_BUSINESS';
+	var ECONOMY_SOCIAL_SECURITY_AND_MEDICARE = exports.ECONOMY_SOCIAL_SECURITY_AND_MEDICARE = 'ECONOMY_SOCIAL_SECURITY_AND_MEDICARE';
+	var ECONOMY_WALL_STREET_REFORM = exports.ECONOMY_WALL_STREET_REFORM = 'ECONOMY_WALL_STREET_REFORM';
+	var ECONOMY_WORKS_FOR_EVERYONE = exports.ECONOMY_WORKS_FOR_EVERYONE = 'ECONOMY_WORKS_FOR_EVERYONE';
+	var ECONOMY_REGULATION = exports.ECONOMY_REGULATION = 'ECONOMY_REGULATION';
+	var ECONOMY_TAXPLAN = exports.ECONOMY_TAXPLAN = 'ECONOMY_TAXPLAN';
+	var ECONOMY_TRADE = exports.ECONOMY_TRADE = 'ECONOMY_TRADE';
+
+	var ECONOMY_FARMERS_RANCHERS = exports.ECONOMY_FARMERS_RANCHERS = 'ECONOMY_FARMERS_RANCHERS';
+	var IMPROVING_EDUCATION = exports.IMPROVING_EDUCATION = 'IMPROVING_EDUCATION';
+	var EDUCATION_COMMON_CORE = exports.EDUCATION_COMMON_CORE = 'EDUCATION_COMMON_CORE';
+
+	var EDUCATION = exports.EDUCATION = 'EDUCATION';
+	var EDUCATION_CAMPUS_SEXUAL_ASSULT = exports.EDUCATION_CAMPUS_SEXUAL_ASSULT = 'EDUCATION_CAMPUS_SEXUAL_ASSULT';
+	var EDUCATION_COLLEGE_DEBT = exports.EDUCATION_COLLEGE_DEBT = 'EDUCATION_COLLEGE_DEBT';
+	var EDUCATION_EARLY_CHILDHOOD = exports.EDUCATION_EARLY_CHILDHOOD = 'EDUCATION_EARLY_CHILDHOOD';
+	var EDUCATION_K_12 = exports.EDUCATION_K_12 = 'EDUCATION_K_12';
+	var EDUCATION_TECHNOLOGY_AND_INNOVATION = exports.EDUCATION_TECHNOLOGY_AND_INNOVATION = 'EDUCATION_TECHNOLOGY_AND_INNOVATION';
+
+	var ENVIRONMENT = exports.ENVIRONMENT = 'ENVIRONMENT';
+	var ENVIRONMENT_CLIMATE_CHANGE = exports.ENVIRONMENT_CLIMATE_CHANGE = 'ENVIRONMENT_CLIMATE_CHANGE';
+	var ENVIRONMENT_PROTECTING_ANIMALS_AND_WILDLIFE = exports.ENVIRONMENT_PROTECTING_ANIMALS_AND_WILDLIFE = 'ENVIRONMENT_PROTECTING_ANIMALS_AND_WILDLIFE';
+	var ENVIRONMENT_RURAL_COMMUNITIES = exports.ENVIRONMENT_RURAL_COMMUNITIES = 'ENVIRONMENT_RURAL_COMMUNITIES';
+	var ENVIRONMENT_ENERGY = exports.ENVIRONMENT_ENERGY = 'ENVIRONMENT_ENERGY';
+
+	var ENVIRONMENT_OUR_ENVIRONMENT = exports.ENVIRONMENT_OUR_ENVIRONMENT = 'ENVIRONMENT_OUR_ENVIRONMENT';
+
+	var EQUALITY = exports.EQUALITY = 'EQUALITY';
+	var EQUALITY_CAMPAIGN_FINANCE_REFORM = exports.EQUALITY_CAMPAIGN_FINANCE_REFORM = 'EQUALITY_CAMPAIGN_FINANCE_REFORM';
+	var EQUALITY_CRIMINAL_JUSTICE_REFORM = exports.EQUALITY_CRIMINAL_JUSTICE_REFORM = 'EQUALITY_CRIMINAL_JUSTICE_REFORM';
+	var EQUALITY_IMMIGRATION_REFORM = exports.EQUALITY_IMMIGRATION_REFORM = 'EQUALITY_IMMIGRATION_REFORM';
+	var EQUALITY_LFBT_RIGHTS_AND_EQULITY = exports.EQUALITY_LFBT_RIGHTS_AND_EQULITY = 'EQUALITY_LFBT_RIGHTS_AND_EQULITY';
+	var EQUALITY_RACIAL_JUSTICE = exports.EQUALITY_RACIAL_JUSTICE = 'EQUALITY_RACIAL_JUSTICE';
+	var EQUALITY_VOTING_RIGHTS = exports.EQUALITY_VOTING_RIGHTS = 'EQUALITY_VOTING_RIGHTS';
+	var EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY = exports.EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY = 'EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY';
+	var EQUALITY_GUN_CONTROL = exports.EQUALITY_GUN_CONTROL = 'EQUALITY_GUN_CONTROL';
+
+	var EQUALITY_SENIORS = exports.EQUALITY_SENIORS = 'EQUALITY_SENIORS';
+
+	var HEALTH = exports.HEALTH = 'HEALTH';
+	var HEALTH_ADDICATION_AND_SUBSTANCE_USE = exports.HEALTH_ADDICATION_AND_SUBSTANCE_USE = 'HEALTH_ADDICATION_AND_SUBSTANCE_USE';
+	var HEALTH_AN_END_T0_ALZHEIMERS = exports.HEALTH_AN_END_T0_ALZHEIMERS = 'HEALTH_AN_END_T0_ALZHEIMERS';
+	var HEALTH_AUTISM = exports.HEALTH_AUTISM = 'HEALTH_AUTISM';
+	var HEALTH_DISABILITY_RIGHTS = exports.HEALTH_DISABILITY_RIGHTS = 'HEALTH_DISABILITY_RIGHTS';
+	var HEALTH_HEALTH_CARE = exports.HEALTH_HEALTH_CARE = 'HEALTH_HEALTH_CARE';
+	var HEALTH_HIV_AND_AIDS = exports.HEALTH_HIV_AND_AIDS = 'HEALTH_HIV_AND_AIDS';
+	var HEALTH_CHILD_CARE = exports.HEALTH_CHILD_CARE = 'HEALTH_CHILD_CARE';
+
+	var JOBS = exports.JOBS = 'JOBS';
+	var JOBS_PAID_FAMILY_AND_MEDICAL_LEAVE = exports.JOBS_PAID_FAMILY_AND_MEDICAL_LEAVE = 'JOBS_PAID_FAMILY_AND_MEDICAL_LEAVE';
+	var JOBS_LABOR_AND_WORKERS_RIGHTS = exports.JOBS_LABOR_AND_WORKERS_RIGHTS = 'JOBS_LABOR_AND_WORKERS_RIGHTS';
+	var JOBS_VETERANS_THE_ARMED_FORCES_AND_THEIR_FAMILIES = exports.JOBS_VETERANS_THE_ARMED_FORCES_AND_THEIR_FAMILIES = 'JOBS_VETERANS_THE_ARMED_FORCES_AND_THEIR_FAMILIES';
+	var JOBS_WAGES = exports.JOBS_WAGES = 'JOBS_WAGES';
+	var JOBS_WORKFORCE_SKILLS_AND_JOBS_TRAINING = exports.JOBS_WORKFORCE_SKILLS_AND_JOBS_TRAINING = 'JOBS_WORKFORCE_SKILLS_AND_JOBS_TRAINING';
+
+	var SECURITY = exports.SECURITY = 'SECURITY';
+	var SECURITY_COMBATING_TERRORISM = exports.SECURITY_COMBATING_TERRORISM = 'SECURITY_COMBATING_TERRORISM';
+	var SECUTIRY_GUN_VIOLENCE = exports.SECUTIRY_GUN_VIOLENCE = 'SECUTIRY_GUN_VIOLENCE';
+	var SECURITY_MILITARY_AND_DEFENSE = exports.SECURITY_MILITARY_AND_DEFENSE = 'SECURITY_MILITARY_AND_DEFENSE';
+	var SECURITY_NATIONAL_SECURITY = exports.SECURITY_NATIONAL_SECURITY = 'SECURITY_NATIONAL_SECURITY';
+	var SECURITY_FOREGIN_POLICY = exports.SECURITY_FOREGIN_POLICY = 'SECURITY_FOREGIN_POLICY';
+	;
+
+	var _temp = function () {
+	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	    return;
+	  }
+
+	  __REACT_HOT_LOADER__.register(GENERAL_ELECTION, 'GENERAL_ELECTION', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(FLORIDA_SENATE, 'FLORIDA_SENATE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY, 'ECONOMY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_A_FAIR_TAX_SYSTEM, 'ECONOMY_A_FAIR_TAX_SYSTEM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_FIXING_AMERICAS_INFRASTRUCTURE, 'ECONOMY_FIXING_AMERICAS_INFRASTRUCTURE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_MANUFACTURING, 'ECONOMY_MANUFACTURING', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_SMALL_BUSINESS, 'ECONOMY_SMALL_BUSINESS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_SOCIAL_SECURITY_AND_MEDICARE, 'ECONOMY_SOCIAL_SECURITY_AND_MEDICARE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_WALL_STREET_REFORM, 'ECONOMY_WALL_STREET_REFORM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_WORKS_FOR_EVERYONE, 'ECONOMY_WORKS_FOR_EVERYONE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_REGULATION, 'ECONOMY_REGULATION', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_TAXPLAN, 'ECONOMY_TAXPLAN', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_TRADE, 'ECONOMY_TRADE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ECONOMY_FARMERS_RANCHERS, 'ECONOMY_FARMERS_RANCHERS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(IMPROVING_EDUCATION, 'IMPROVING_EDUCATION', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EDUCATION_COMMON_CORE, 'EDUCATION_COMMON_CORE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EDUCATION, 'EDUCATION', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EDUCATION_CAMPUS_SEXUAL_ASSULT, 'EDUCATION_CAMPUS_SEXUAL_ASSULT', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EDUCATION_COLLEGE_DEBT, 'EDUCATION_COLLEGE_DEBT', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EDUCATION_EARLY_CHILDHOOD, 'EDUCATION_EARLY_CHILDHOOD', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EDUCATION_K_12, 'EDUCATION_K_12', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EDUCATION_TECHNOLOGY_AND_INNOVATION, 'EDUCATION_TECHNOLOGY_AND_INNOVATION', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ENVIRONMENT, 'ENVIRONMENT', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ENVIRONMENT_CLIMATE_CHANGE, 'ENVIRONMENT_CLIMATE_CHANGE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ENVIRONMENT_PROTECTING_ANIMALS_AND_WILDLIFE, 'ENVIRONMENT_PROTECTING_ANIMALS_AND_WILDLIFE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ENVIRONMENT_RURAL_COMMUNITIES, 'ENVIRONMENT_RURAL_COMMUNITIES', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ENVIRONMENT_ENERGY, 'ENVIRONMENT_ENERGY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(ENVIRONMENT_OUR_ENVIRONMENT, 'ENVIRONMENT_OUR_ENVIRONMENT', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY, 'EQUALITY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY_CAMPAIGN_FINANCE_REFORM, 'EQUALITY_CAMPAIGN_FINANCE_REFORM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY_CRIMINAL_JUSTICE_REFORM, 'EQUALITY_CRIMINAL_JUSTICE_REFORM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY_IMMIGRATION_REFORM, 'EQUALITY_IMMIGRATION_REFORM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY_LFBT_RIGHTS_AND_EQULITY, 'EQUALITY_LFBT_RIGHTS_AND_EQULITY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY_RACIAL_JUSTICE, 'EQUALITY_RACIAL_JUSTICE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY_VOTING_RIGHTS, 'EQUALITY_VOTING_RIGHTS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY, 'EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY_GUN_CONTROL, 'EQUALITY_GUN_CONTROL', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(EQUALITY_SENIORS, 'EQUALITY_SENIORS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(HEALTH, 'HEALTH', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(HEALTH_ADDICATION_AND_SUBSTANCE_USE, 'HEALTH_ADDICATION_AND_SUBSTANCE_USE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(HEALTH_AN_END_T0_ALZHEIMERS, 'HEALTH_AN_END_T0_ALZHEIMERS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(HEALTH_AUTISM, 'HEALTH_AUTISM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(HEALTH_DISABILITY_RIGHTS, 'HEALTH_DISABILITY_RIGHTS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(HEALTH_HEALTH_CARE, 'HEALTH_HEALTH_CARE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(HEALTH_HIV_AND_AIDS, 'HEALTH_HIV_AND_AIDS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(HEALTH_CHILD_CARE, 'HEALTH_CHILD_CARE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(JOBS, 'JOBS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(JOBS_PAID_FAMILY_AND_MEDICAL_LEAVE, 'JOBS_PAID_FAMILY_AND_MEDICAL_LEAVE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(JOBS_LABOR_AND_WORKERS_RIGHTS, 'JOBS_LABOR_AND_WORKERS_RIGHTS', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(JOBS_VETERANS_THE_ARMED_FORCES_AND_THEIR_FAMILIES, 'JOBS_VETERANS_THE_ARMED_FORCES_AND_THEIR_FAMILIES', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(JOBS_WAGES, 'JOBS_WAGES', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(JOBS_WORKFORCE_SKILLS_AND_JOBS_TRAINING, 'JOBS_WORKFORCE_SKILLS_AND_JOBS_TRAINING', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(SECURITY, 'SECURITY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(SECURITY_COMBATING_TERRORISM, 'SECURITY_COMBATING_TERRORISM', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(SECUTIRY_GUN_VIOLENCE, 'SECUTIRY_GUN_VIOLENCE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(SECURITY_MILITARY_AND_DEFENSE, 'SECURITY_MILITARY_AND_DEFENSE', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(SECURITY_NATIONAL_SECURITY, 'SECURITY_NATIONAL_SECURITY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+
+	  __REACT_HOT_LOADER__.register(SECURITY_FOREGIN_POLICY, 'SECURITY_FOREGIN_POLICY', '/Users/BernSternWhoEarns/Documents/setgov/background/actionTypes.js');
+	}();
+
+	;
+
 /***/ }
-/******/ ]);
+
+/******/ });

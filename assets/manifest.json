@@ -1,26 +1,19 @@
 {
   "manifest_version": 2,
-
-  "name": "SetGov - FL Beta",
-  "description": "An extension that keeps you updated with local elections. Subscribe to a race, hear about candidate's platforms & get out to vote!",
+  "name": "react-chrome-redux-boilerplate",
+  "description": "Bare boiler plate to easily start React with redux chrome extension",
   "version": "1.0",
 
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "index.html",
-    "default_title": "SetGov"
+    "default_title": "react-chrome-redux-boilerplate"
 
   },
   "background": {"scripts": ["background.js"]},
-  "content_scripts": [
-    {
-      "matches": ["*://*/*"],
-      "css": [],
-      "js": ["content.js"]
-    }
-  ],
+  
   "permissions": [
-    "activeTab",
-    "https://ajax.googleapis.com/"
+    "tabs","<all_urls>",
+    "storage"
   ]
 }

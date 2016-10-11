@@ -11,6 +11,7 @@ class App extends Component {
 	    return (
 	      <div>
 	        Click Count: {this.props.count}
+	        hello world AWDHJAKIODHAUIWDHAIOUWDHIUAWDHUIh
 	      </div>
     	);
   }
@@ -19,7 +20,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    count: state.count
+    count: state.count,
+    race: state.race
   };
 };
 
