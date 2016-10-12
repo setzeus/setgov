@@ -61,57 +61,55 @@ const initalState = {
 }
 
 export default (state = initalState, action) => {
-	console.log(action.type)
-	console.log(types.ECONOMY)
-	console.log(action.payload)
+	var payload = action.payload
 	switch(action.type){
 		case types.ECONOMY :{
 			return Object.assign({},state, {
-				economy: action.payload
+				economy: payload
 			});
 		}	
 		case types.ECONOMY_A_FAIR_TAX_SYSTEM :
 			return Object.assign({},state, {
-				economy_a_fair_tax_system: action.payload
+				economy_a_fair_tax_system: payload
 			});
 		case types.ECONOMY_FIXING_AMERICAS_INFRASTRUCTURE:{
 			return Object.assign({},state, {
-				economy_fixing_americas_infrastructure: action.payload
+				economy_fixing_americas_infrastructure: payload
 			});
 		}
 		case types.ECONOMY_MANUFACTURING:{
 			return Object.assign({},state, {
-				economy_manufacturing: action.payload
+				economy_manufacturing: payload
 			}); 
 		}			
 		case types.ECONOMY_SMALL_BUSINESS:{
 			return Object.assign({},state, {
-				economy_small_business: action.payload
+				economy_small_business: payload
 			});
 		}	
 		case types.ECONOMY_SOCIAL_SECURITY_AND_MEDICARE:{
 			return Object.assign({},state, {
-				economy_social_security_and_medicare: action.payload
+				economy_social_security_and_medicare: payload
 			});	
 		}
 		case types.ECONOMY_WALL_STREET_REFORM:{
 			return Object.assign({},state, {
-				economy_wall_street_reform: action.payload
+				economy_wall_street_reform: payload
 			});
 		}	
 		case types.ECONOMY_WORKS_FOR_EVERYONE:{
 			return Object.assign({},state, {
-				economy_works_for_everyone: action.payload
+				economy_works_for_everyone: payload
 			});
 		}	
 		case types.ECONOMY_REGULATION:{
 			return Object.assign({},state, {
-				economy_regulation: action.payload
+				economy_regulation: payload
 			});	
 		}			
 		case types.ECONOMY_TAXPLAN:{
 			return Object.assign({},state, {
-				economy_taxplan: action.payload
+				economy_taxplan: payload
 			});	
 		}
 		case types.ECONOMY_TRADE:{
@@ -177,79 +175,79 @@ export default (state = initalState, action) => {
 			});
 		case types.EQUALITY_CAMPAIGN_FINANCE_REFORM:
 			return Object.assign({},state, {
-				equality_campaign_finance_reform: action.payloadaction.payload
+				equality_campaign_finance_reform: payloadaction.payload
 			});
 		case types.EQUALITY_CRIMINAL_JUSTICE_REFORM:
 			return Object.assign({},state, {
-				equality_criminal_justice_reform: action.payload
+				equality_criminal_justice_reform: payload
 			});
 		case types.EQUALITY_LFBT_RIGHTS_AND_EQULITY:
 			return Object.assign({},state, {
-				equality_lgbt_rights_and_equality: action.payload
+				equality_lgbt_rights_and_equality: payload
 			});
 		case types.EQUALITY_RACIAL_JUSTICE:
 			return Object.assign({},state, {
-				equality_racial_justice: action.payload
+				equality_racial_justice: payload
 			});
 		case types.EQUALITY_VOTING_RIGHTS:
 			return Object.assign({},state, {
-				equality_voting_rights: action.payload
+				equality_voting_rights: payload
 			});
 		case types.EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY:
 			return Object.assign({},state, {
-				equality_womens_rights_and_opportunity: action.payload
+				equality_womens_rights_and_opportunity: payload
 			});
 		case types.EQUALITY_GUN_CONTROL:
 			return Object.assign({},state, {
-				equality_gun_control: action.payload
+				equality_gun_control: payload
 			});
 		case types.HEALTH:
 			return Object.assign({},state, {
-				health: action.payload
+				health: payload
 			});
 		case types.HEALTH_ADDICATION_AND_SUBSTANCE_USE:
 			return Object.assign({},state, {
-				health_addiction_and_substance_use: action.payload
+				health_addiction_and_substance_use: payload
 			});
 		case types.HEALTH_AN_END_T0_ALZHEIMERS:
 			return Object.assign({},state, {
-				health_an_end_to_alzheimers: action.payload
+				health_an_end_to_alzheimers: payload
 			});
 		case types.HEALTH_AUTISM:
 			return Object.assign({},state, {
-				health_autism: action.payload
+				health_autism: payload
 			});
 		case types.HEALTH_DISABILITY_RIGHTS:
 			return Object.assign({},state, {
-				health_disability_rights: action.payload
+				health_disability_rights: payload
 			});
 		case types.HEALTH_HEALTH_CARE:
 			return Object.assign({},state, {
-				health_health_care: action.payload
+				health_health_care: payload
 			});
 		case types.HEALTH_HIV_AND_AIDS:
 			return Object.assign({},state, {
-				health_hiv_and_aids: action.payload
+				health_hiv_and_aids: payload
 			}); 
 		case types.HEALTH_CHILD_CARE:
 			return Object.assign({},state, {
-				health_child_care: action.payload
+				health_child_care: payload
 			});
 		case types.JOBS:
 			return Object.assign({},state, {
-				jobs: action.payload
+				jobs: payload
 			});
 		case types.JOBS_PAID_FAMILY_AND_MEDICAL_LEAVE:
 			return Object.assign({},state, {
-				jobs_paid_family_and_medical_leave: action.payload
+				jobs_paid_family_and_medical_leave: payload
 			});
 		case types.JOBS_LABOR_AND_WORKERS_RIGHTS:
 			return Object.assign({},state, {
-				jobs_labor_and_workers_rights: action.payload
+				jobs_labor_and_workers_rights: payload
 			});
 		case types.JOBS_VETERANS_THE_ARMED_FORCES_AND_THEIR_FAMILIES:
 			return Object.assign({},state, {
-				jobs_veterans_the_armed_forces_and_their_families: action.payload
+				jobs_veterans_the_armed_forces_and_their_families: payload
 			});
 		case types.JOBS_WAGES:
 			return Object.assign({},state, {
@@ -257,31 +255,31 @@ export default (state = initalState, action) => {
 			});
 		case types.JOBS_WORKFORCE_SKILLS_AND_JOBS_TRAINING:
 			return Object.assign({},state, {
-				jobs_workforce_skills_and_jobs_training: action.payload
+				jobs_workforce_skills_and_jobs_training: payload
 			});
 		case types.SECUTIRY:
 			return Object.assign({},state, {
-				security: action.payload
+				security: payload
 			});
 		case types.SECURITY_COMBATING_TERRORISM:
 			return Object.assign({},state, {
-				security_combating_terrorism: action.payload
+				security_combating_terrorism: payload
 			});
 		case types.SECUTIRY_GUN_VIOLENCE:
 			return Object.assign({},state, {
-				security_gun_violence: action.payload
+				security_gun_violence: payload
 			});
 		case types.SECURITY_MILITARY_AND_DEFENSE:
 			return Object.assign({},state, {
-				security_miliary_and_defense: action.payload
+				security_miliary_and_defense: payload
 			});
 		case types.SECURITY_NATIONAL_SECURITY:
 			return Object.assign({},state, {
-				security_national_security: action.payload
+				security_national_security: payload
 			});
 		case types.SECURITY_FOREGIN_POLICY:
 			return Object.assign({},state, {
-				security_foreign_policy: action.payload
+				security_foreign_policy: payload
 			});
 		default :
 			return state;

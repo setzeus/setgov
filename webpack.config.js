@@ -5,15 +5,18 @@ module.exports = {
 		background: './background/index.js',
 		content: './content/index.js'
 	},
-		 	
+	devtool: 'source-map', 	
 	output: {
 		path: 'assets',
 		filename: "[name].js",
 		publicPath: '/assets'
 	},
+	resolve: {
+		extensions : ['','.jsx','.es6','.js','.less'],
+		moduleDirectories: ['node_modules']
+	},
 	devServer: {
-		contentBase: ['./popup', './background', './content']
-		
+		contentBase: ['./popup', './background', './content']	
 	},
 	watch:true,
 
