@@ -281,6 +281,8 @@ export default (state = initalState, action) => {
 			return Object.assign({},state, {
 				security_foreign_policy: payload
 			});
+		case types.RESET:
+			return initalState;	
 		default :
 			return state;
 	}

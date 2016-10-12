@@ -1,5 +1,9 @@
 
 export  function setStateFromKeywords(dispatch){
+  dispatch({
+    type:'RESET',
+    action: 0
+  });
   var textArray = [];
 
   var textInHtml = document.body.innerText;
@@ -8,7 +12,8 @@ export  function setStateFromKeywords(dispatch){
   var length = body.length;
 
   var splitText = textInHtml.split(' ');
-  
+ 
+
     var wordCount = {
         economy:0,
         economy_a_fair_tax_system:0,
@@ -342,7 +347,7 @@ export  function setStateFromKeywords(dispatch){
     console.log('testing')
 
     for ( var key in wordCount){
-      
+
       if(wordCount[key] > 0){
         var actionType = key.toUpperCase();
         console.log(actionType)
