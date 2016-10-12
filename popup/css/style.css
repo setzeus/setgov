@@ -7,3 +7,23 @@ body {
   width: 325px;
   background-color: #eee;
 }
+.top_body {
+  height: 150px;
+  display: flex;
+  background-color: #0000ff;
+  flex-direction:column;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+.top_label_container {
+  height: 32px;
+  width: 100px;
+  border-radius: 1px;
+  background-color: #FFFFFF;
+  margin: 17px auto 0 0px;
+  text-align: center;
+  color: #212121;
+  flex-direction: row;
+  border-left: 0px;
+}
