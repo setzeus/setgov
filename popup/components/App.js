@@ -12,6 +12,7 @@ class App extends Component {
 	      <div>
 	        Click Count: {this.props.count}
 	        hello world AWDHJAKIODHAUIWDHAIOUWDHIUAWDHUIh
+	       	<Link to='/candidateView'>Test</Link>
 	      </div>
     	);
   }
