@@ -31,44 +31,84 @@ const initalState = {
 
 export default (state = initalState, aciton) =>{
 	switch (aciton.type){
-		case types.ECONOMY:
-			return state.economy ++;
+		case types.ECONOMY:{
+			return Object.assign({},state, {
+				economy: action.payload
+			});
+		}
+			
 		case types.ECONOMY_WALL_STREET_REFORM:
-			return state.economy_wall_street_reform ++;
+			return Object.assign({},state, {
+				economy_wall_street_reform: action.payload
+			});
 		case types.ECONOMY_FARMERS_RANCHERS:
-			return state.economy_farmers_ranchers ++;
+			return Object.assign({},state, {
+				economy_farmers_ranchers: action.payload
+			});
 		case types.EDUCATION:
-			return state.education ++;
+			return Object.assign({},state, {
+				education: action.payload
+			});
 		case types.EDUCATION_COMMON_CORE:
-			return state.education_common_core ++;
+			return Object.assign({},state, {
+				education_common_core: action.payload
+			});
 		case types.IMPROVING_EDUCATION:
-			return state.improving_education ++;
+			return Object.assign({},state, {
+				improving_education: action.payload
+			});
 		case types.ENVIRONMENT:
-			return state.environment ++;
+			return Object.assign({},state, {
+				environment: action.payload
+			});
 		case types.ENVIRONMENT_OUR_ENVIRONMENT:
-			return state.environment_our_environment ++;
+			return Object.assign({},state, {
+				environment_our_environment: action.payload
+			});
 		case types.EQUALITY:
-			return state.equality ++;
+			return Object.assign({},state, {
+				equality: action.payload
+			});
 		case types.EQUALITY_CRIMINAL_JUSTICE_REFORM:
-			return state.equality_criminal_justice_reform ++;
+			return Object.assign({},state, {
+				equality_criminal_justice_reform: action.payload
+			});
 		case types.EQUALITY_IMMIGRATION_REFORM:
-			return state.equality_immigration_reform ++;
+			return Object.assign({},state, {
+				equality_immigration_reform: action.payload
+			});
 		case types.EQUALITY_LFBT_RIGHTS_AND_EQULITY:
-			return state.equality_lgbt_rights_and_equality ++;
+			return Object.assign({},state, {
+				equality_lgbt_rights_and_equality: action.payload
+			});
 		case types.EQUALITY_VOTING_RIGHTS:
-			return state.equality_voting_rights ++;
+			return Object.assign({},state, {
+				equality_voting_rights: action.payload
+			});
 		case types.EQUALITY_SENIORS:
-			return state.equality_seniors ++;
+			return Object.assign({},state, {
+				equality_seniors: action.payload
+			});
 		case types.EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY:
-			return state.equality_womens_rights_and_opportunity ++;
+			return Object.assign({},state, {
+				equality_womens_rights_and_opportunity: action.payload
+			});
 		case types.HEALTH:
-			return state.health ++;
+			return Object.assign({},state, {
+				health: action.payload
+			});
 		case types.JOBS:
-			return state.jobs ++;
+			return Object.assign({},state, {
+				jobs: action.payload
+			});
 		case types.SECURITY:
-			return state.security ++;
+			return Object.assign({},state, {
+				security: action.payload
+			});
 		case types.SECURITY_NATIONAL_SECURITY:
-			return state.security_national_security ++;
+			return Object.assign({},state, {
+				security_national_security: action.payload
+			});
 		default:
 			return state;
 	}

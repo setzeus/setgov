@@ -40,9 +40,8 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53,15 +52,15 @@
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
-	var _reduxLogger = __webpack_require__(22);
+	var _reduxLogger = __webpack_require__(23);
 
 	var _reduxLogger2 = _interopRequireDefault(_reduxLogger);
 
-	var _reduxThunk = __webpack_require__(28);
+	var _reduxThunk = __webpack_require__(29);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-	var _reactChromeRedux = __webpack_require__(29);
+	var _reactChromeRedux = __webpack_require__(30);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -110,8 +109,7 @@
 	;
 
 /***/ },
-
-/***/ 1:
+/* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -163,8 +161,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-
-/***/ 2:
+/* 2 */
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -350,8 +347,7 @@
 
 
 /***/ },
-
-/***/ 3:
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -617,8 +613,7 @@
 	}
 
 /***/ },
-
-/***/ 4:
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var getPrototype = __webpack_require__(5),
@@ -692,8 +687,7 @@
 
 
 /***/ },
-
-/***/ 5:
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var overArg = __webpack_require__(6);
@@ -705,8 +699,7 @@
 
 
 /***/ },
-
-/***/ 6:
+/* 6 */
 /***/ function(module, exports) {
 
 	/**
@@ -727,8 +720,7 @@
 
 
 /***/ },
-
-/***/ 7:
+/* 7 */
 /***/ function(module, exports) {
 
 	/**
@@ -763,16 +755,14 @@
 
 
 /***/ },
-
-/***/ 8:
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__(9);
 
 
 /***/ },
-
-/***/ 9:
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module, global) {'use strict';
@@ -805,8 +795,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)(module), (function() { return this; }())))
 
 /***/ },
-
-/***/ 10:
+/* 10 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -822,8 +811,7 @@
 
 
 /***/ },
-
-/***/ 11:
+/* 11 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -851,8 +839,7 @@
 	};
 
 /***/ },
-
-/***/ 12:
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -1000,8 +987,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-
-/***/ 13:
+/* 13 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1031,8 +1017,7 @@
 	}
 
 /***/ },
-
-/***/ 14:
+/* 14 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1088,8 +1073,7 @@
 	}
 
 /***/ },
-
-/***/ 15:
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1152,8 +1136,7 @@
 	}
 
 /***/ },
-
-/***/ 16:
+/* 16 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1196,8 +1179,7 @@
 	}
 
 /***/ },
-
-/***/ 17:
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1220,7 +1202,7 @@
 
 	var _GeneralElection2 = _interopRequireDefault(_GeneralElection);
 
-	var _FloridaSenate = __webpack_require__(326);
+	var _FloridaSenate = __webpack_require__(22);
 
 	var _FloridaSenate2 = _interopRequireDefault(_FloridaSenate);
 
@@ -1246,8 +1228,7 @@
 	;
 
 /***/ },
-
-/***/ 18:
+/* 18 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1286,8 +1267,7 @@
 	;
 
 /***/ },
-
-/***/ 19:
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1334,8 +1314,7 @@
 	;
 
 /***/ },
-
-/***/ 20:
+/* 20 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1542,8 +1521,7 @@
 	;
 
 /***/ },
-
-/***/ 21:
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1622,107 +1600,246 @@
 		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initalState;
 		var action = arguments[1];
 
+		console.log(action.type);
+		console.log(types.ECONOMY);
+		console.log(action.payload);
 		switch (action.type) {
 			case types.ECONOMY:
-				return state.economy++;
+				{
+					return Object.assign({}, state, {
+						economy: action.payload
+					});
+				}
 			case types.ECONOMY_A_FAIR_TAX_SYSTEM:
-				return state.economy_a_fair_tax_system++;
+				return Object.assign({}, state, {
+					economy_a_fair_tax_system: action.payload
+				});
 			case types.ECONOMY_FIXING_AMERICAS_INFRASTRUCTURE:
-				return state.economy_fixing_americas_infrastructure++;
+				{
+					return Object.assign({}, state, {
+						economy_fixing_americas_infrastructure: action.payload
+					});
+				}
 			case types.ECONOMY_MANUFACTURING:
-				return state.economy_manufacturing++;
+				{
+					return Object.assign({}, state, {
+						economy_manufacturing: action.payload
+					});
+				}
 			case types.ECONOMY_SMALL_BUSINESS:
-				return state.economy_small_business++;
+				{
+					return Object.assign({}, state, {
+						economy_small_business: action.payload
+					});
+				}
 			case types.ECONOMY_SOCIAL_SECURITY_AND_MEDICARE:
-				return state.economy_social_security_and_medicare++;
+				{
+					return Object.assign({}, state, {
+						economy_social_security_and_medicare: action.payload
+					});
+				}
 			case types.ECONOMY_WALL_STREET_REFORM:
-				return state.economy_wall_street_reform++;
+				{
+					return Object.assign({}, state, {
+						economy_wall_street_reform: action.payload
+					});
+				}
 			case types.ECONOMY_WORKS_FOR_EVERYONE:
-				return state.economy_works_for_everyone++;
+				{
+					return Object.assign({}, state, {
+						economy_works_for_everyone: action.payload
+					});
+				}
 			case types.ECONOMY_REGULATION:
-				return state.economy_regulation++;
+				{
+					return Object.assign({}, state, {
+						economy_regulation: action.payload
+					});
+				}
 			case types.ECONOMY_TAXPLAN:
-				return state.economy_taxplan++;
+				{
+					return Object.assign({}, state, {
+						economy_taxplan: action.payload
+					});
+				}
 			case types.ECONOMY_TRADE:
-				return state.economy_trade++;
+				{
+					return Object.assign({}, state, {
+						economy_trade: action.payload
+					});
+				}
 			case types.EDUCATION:
-				return state.economy++;
+				{
+					return Object.assign({}, state, {
+						education: action.payload
+					});
+				}
 			case types.EDUCATION_CAMPUS_SEXUAL_ASSULT:
-				return state.education_campus_sexual_assault++;
+				{
+					return Object.assign({}, state, {
+						education_campus_sexual_assault: action.payload
+					});
+				}
 			case types.EDUCATION_COLLEGE_DEBT:
-				return education_college_debt++;
+				{
+					return Object.assign({}, state, {
+						education_college_debt: action.payload
+					});
+				}
 			case types.EDUCATION_EARLY_CHILDHOOD:
-				return state.education_early_childhood++;
+				{
+					return Object.assign({}, state, {
+						education_early_childhood: action.payload
+					});
+				}
 			case types.EDUCATION_K_12:
-				return state.education_k_12++;
+				{
+					return Object.assign({}, state, {
+						education_k_12: action.payload
+					});
+				}
 			case types.EDUCATION_TECHNOLOGY_AND_INNOVATION:
-				return state.education_technology_and_innovation++;
+				{
+					return Object.assign({}, state, {
+						education_technology_and_innovation: action.payload
+					});
+				}
 			case types.ENVIRONMENT:
-				return state.environment++;
+				{
+					return Object.assign({}, state, {
+						environment: action.payload
+					});
+				}
 			case types.ENVIRONMENT_CLIMATE_CHANGE:
-				return state.environment_climate_change++;
+				{
+					return Object.assign({}, state, {
+						environment: action.payload
+					});
+				}
 			case types.ENVIRONMENT_PROTECTING_ANIMALS_AND_WILDLIFE:
-				return state.environment_protecting_animals_and_wildlife++;
+				return Object.assign({}, state, {
+					environment_protecting_animals_and_wildlife: action.payload
+				});
 			case types.ENVIRONMENT_RURAL_COMMUNITIES:
-				return state.environment_rural_communities++;
+				return Object.assign({}, state, {
+					environment_rural_communities: action.payload
+				});
 			case types.ENVIRONMENT_ENERGY:
-				return state.environment_energy++;
+				return Object.assign({}, state, {
+					environment_energy: action.payload
+				});
 			case types.EQUALITY:
-				return state.equality++;
+				return Object.assign({}, state, {
+					equality: action.payload
+				});
 			case types.EQUALITY_CAMPAIGN_FINANCE_REFORM:
-				return state.equality_campaign_finance_reform++;
+				return Object.assign({}, state, {
+					equality_campaign_finance_reform: action.payloadaction.payload
+				});
 			case types.EQUALITY_CRIMINAL_JUSTICE_REFORM:
-				return state.equality_criminal_justice_reform++;
+				return Object.assign({}, state, {
+					equality_criminal_justice_reform: action.payload
+				});
 			case types.EQUALITY_LFBT_RIGHTS_AND_EQULITY:
-				return state.equality_lgbt_rights_and_equality++;
+				return Object.assign({}, state, {
+					equality_lgbt_rights_and_equality: action.payload
+				});
 			case types.EQUALITY_RACIAL_JUSTICE:
-				return state.equality_racial_justice++;
+				return Object.assign({}, state, {
+					equality_racial_justice: action.payload
+				});
 			case types.EQUALITY_VOTING_RIGHTS:
-				return state.equality_voting_rights++;
+				return Object.assign({}, state, {
+					equality_voting_rights: action.payload
+				});
 			case types.EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY:
-				return state.equality_womens_rights_and_opportunity++;
+				return Object.assign({}, state, {
+					equality_womens_rights_and_opportunity: action.payload
+				});
 			case types.EQUALITY_GUN_CONTROL:
-				return state.equality_gun_control++;
+				return Object.assign({}, state, {
+					equality_gun_control: action.payload
+				});
 			case types.HEALTH:
-				return state.health++;
+				return Object.assign({}, state, {
+					health: action.payload
+				});
 			case types.HEALTH_ADDICATION_AND_SUBSTANCE_USE:
-				return state.health_addiction_and_substance_use++;
+				return Object.assign({}, state, {
+					health_addiction_and_substance_use: action.payload
+				});
 			case types.HEALTH_AN_END_T0_ALZHEIMERS:
-				return state.health_an_end_to_alzheimers++;
+				return Object.assign({}, state, {
+					health_an_end_to_alzheimers: action.payload
+				});
 			case types.HEALTH_AUTISM:
-				return state.health_autism++;
+				return Object.assign({}, state, {
+					health_autism: action.payload
+				});
 			case types.HEALTH_DISABILITY_RIGHTS:
-				return state.health_disability_rights++;
+				return Object.assign({}, state, {
+					health_disability_rights: action.payload
+				});
 			case types.HEALTH_HEALTH_CARE:
-				return state.health_health_care++;
+				return Object.assign({}, state, {
+					health_health_care: action.payload
+				});
 			case types.HEALTH_HIV_AND_AIDS:
-				return state.health_hiv_and_aids++;
+				return Object.assign({}, state, {
+					health_hiv_and_aids: action.payload
+				});
 			case types.HEALTH_CHILD_CARE:
-				return state.health_child_care++;
+				return Object.assign({}, state, {
+					health_child_care: action.payload
+				});
 			case types.JOBS:
-				return state.jobs++;
+				return Object.assign({}, state, {
+					jobs: action.payload
+				});
 			case types.JOBS_PAID_FAMILY_AND_MEDICAL_LEAVE:
-				return state.jobs_paid_family_and_medical_leave++;
+				return Object.assign({}, state, {
+					jobs_paid_family_and_medical_leave: action.payload
+				});
 			case types.JOBS_LABOR_AND_WORKERS_RIGHTS:
-				return state.jobs_labor_and_workers_rights++;
+				return Object.assign({}, state, {
+					jobs_labor_and_workers_rights: action.payload
+				});
 			case types.JOBS_VETERANS_THE_ARMED_FORCES_AND_THEIR_FAMILIES:
-				return state.jobs_veterans_the_armed_forces_and_their_families++;
+				return Object.assign({}, state, {
+					jobs_veterans_the_armed_forces_and_their_families: action.payload
+				});
 			case types.JOBS_WAGES:
-				return state.jobs++;
+				return Object.assign({}, state, {
+					jobs_wages: action.payload
+				});
 			case types.JOBS_WORKFORCE_SKILLS_AND_JOBS_TRAINING:
-				return state.jobs_workforce_skills_and_jobs_training++;
+				return Object.assign({}, state, {
+					jobs_workforce_skills_and_jobs_training: action.payload
+				});
 			case types.SECUTIRY:
-				return state.security++;
+				return Object.assign({}, state, {
+					security: action.payload
+				});
 			case types.SECURITY_COMBATING_TERRORISM:
-				return state.security_combating_terrorism++;
+				return Object.assign({}, state, {
+					security_combating_terrorism: action.payload
+				});
 			case types.SECUTIRY_GUN_VIOLENCE:
-				return state.security_gun_violence++;
+				return Object.assign({}, state, {
+					security_gun_violence: action.payload
+				});
 			case types.SECURITY_MILITARY_AND_DEFENSE:
-				return state.security_miliary_and_defense++;
+				return Object.assign({}, state, {
+					security_miliary_and_defense: action.payload
+				});
 			case types.SECURITY_NATIONAL_SECURITY:
-				return state.security_national_security++;
+				return Object.assign({}, state, {
+					security_national_security: action.payload
+				});
 			case types.SECURITY_FOREGIN_POLICY:
-				return state.security_foreign_policy++;
+				return Object.assign({}, state, {
+					security_foreign_policy: action.payload
+				});
 			default:
 				return state;
 		}
@@ -1744,8 +1861,156 @@
 	;
 
 /***/ },
+/* 22 */
+/***/ function(module, exports, __webpack_require__) {
 
-/***/ 22:
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _actionTypes = __webpack_require__(20);
+
+	var types = _interopRequireWildcard(_actionTypes);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	var initalState = {
+		economy: 0,
+		economy_wall_street_reform: 0,
+		economy_farmers_ranchers: 0,
+
+		education: 0,
+		education_common_core: 0,
+		improving_education: 0,
+
+		environment: 0,
+		environment_our_environment: 0,
+
+		equality: 0,
+		equality_criminal_justice_reform: 0,
+		equality_immigration_reform: 0,
+		equality_lgbt_rights_and_equality: 0,
+		equality_voting_rights: 0,
+		equality_seniors: 0,
+		equality_womens_rights_and_opportunity: 0,
+
+		health: 0,
+		healthcare: 0,
+
+		jobs: 0,
+
+		security: 0,
+		security_national_security: 0
+	};
+
+	var _default = function _default() {
+		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initalState;
+		var aciton = arguments[1];
+
+		switch (aciton.type) {
+			case types.ECONOMY:
+				{
+					return Object.assign({}, state, {
+						economy: action.payload
+					});
+				}
+
+			case types.ECONOMY_WALL_STREET_REFORM:
+				return Object.assign({}, state, {
+					economy_wall_street_reform: action.payload
+				});
+			case types.ECONOMY_FARMERS_RANCHERS:
+				return Object.assign({}, state, {
+					economy_farmers_ranchers: action.payload
+				});
+			case types.EDUCATION:
+				return Object.assign({}, state, {
+					education: action.payload
+				});
+			case types.EDUCATION_COMMON_CORE:
+				return Object.assign({}, state, {
+					education_common_core: action.payload
+				});
+			case types.IMPROVING_EDUCATION:
+				return Object.assign({}, state, {
+					improving_education: action.payload
+				});
+			case types.ENVIRONMENT:
+				return Object.assign({}, state, {
+					environment: action.payload
+				});
+			case types.ENVIRONMENT_OUR_ENVIRONMENT:
+				return Object.assign({}, state, {
+					environment_our_environment: action.payload
+				});
+			case types.EQUALITY:
+				return Object.assign({}, state, {
+					equality: action.payload
+				});
+			case types.EQUALITY_CRIMINAL_JUSTICE_REFORM:
+				return Object.assign({}, state, {
+					equality_criminal_justice_reform: action.payload
+				});
+			case types.EQUALITY_IMMIGRATION_REFORM:
+				return Object.assign({}, state, {
+					equality_immigration_reform: action.payload
+				});
+			case types.EQUALITY_LFBT_RIGHTS_AND_EQULITY:
+				return Object.assign({}, state, {
+					equality_lgbt_rights_and_equality: action.payload
+				});
+			case types.EQUALITY_VOTING_RIGHTS:
+				return Object.assign({}, state, {
+					equality_voting_rights: action.payload
+				});
+			case types.EQUALITY_SENIORS:
+				return Object.assign({}, state, {
+					equality_seniors: action.payload
+				});
+			case types.EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY:
+				return Object.assign({}, state, {
+					equality_womens_rights_and_opportunity: action.payload
+				});
+			case types.HEALTH:
+				return Object.assign({}, state, {
+					health: action.payload
+				});
+			case types.JOBS:
+				return Object.assign({}, state, {
+					jobs: action.payload
+				});
+			case types.SECURITY:
+				return Object.assign({}, state, {
+					security: action.payload
+				});
+			case types.SECURITY_NATIONAL_SECURITY:
+				return Object.assign({}, state, {
+					security_national_security: action.payload
+				});
+			default:
+				return state;
+		}
+	};
+
+	exports.default = _default;
+	;
+
+	var _temp = function () {
+		if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+			return;
+		}
+
+		__REACT_HOT_LOADER__.register(initalState, 'initalState', '/Users/BernSternWhoEarns/Documents/setgov/background/reducers/FloridaSenate.js');
+
+		__REACT_HOT_LOADER__.register(_default, 'default', '/Users/BernSternWhoEarns/Documents/setgov/background/reducers/FloridaSenate.js');
+	}();
+
+	;
+
+/***/ },
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1756,11 +2021,11 @@
 	  value: true
 	});
 
-	var _core = __webpack_require__(23);
+	var _core = __webpack_require__(24);
 
-	var _helpers = __webpack_require__(24);
+	var _helpers = __webpack_require__(25);
 
-	var _defaults = __webpack_require__(27);
+	var _defaults = __webpack_require__(28);
 
 	var _defaults2 = _interopRequireDefault(_defaults);
 
@@ -1863,8 +2128,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-
-/***/ 23:
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1874,9 +2138,9 @@
 	});
 	exports.printBuffer = printBuffer;
 
-	var _helpers = __webpack_require__(24);
+	var _helpers = __webpack_require__(25);
 
-	var _diff = __webpack_require__(25);
+	var _diff = __webpack_require__(26);
 
 	var _diff2 = _interopRequireDefault(_diff);
 
@@ -1997,8 +2261,7 @@
 	}
 
 /***/ },
-
-/***/ 24:
+/* 25 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2022,8 +2285,7 @@
 	var timer = exports.timer = typeof performance !== "undefined" && performance !== null && typeof performance.now === "function" ? performance : Date;
 
 /***/ },
-
-/***/ 25:
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2033,7 +2295,7 @@
 	});
 	exports.default = diffLogger;
 
-	var _deepDiff = __webpack_require__(26);
+	var _deepDiff = __webpack_require__(27);
 
 	var _deepDiff2 = _interopRequireDefault(_deepDiff);
 
@@ -2119,8 +2381,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-
-/***/ 26:
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -2549,8 +2810,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-
-/***/ 27:
+/* 28 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2601,8 +2861,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-
-/***/ 28:
+/* 29 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -2630,8 +2889,7 @@
 	exports['default'] = thunk;
 
 /***/ },
-
-/***/ 29:
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2641,15 +2899,15 @@
 	});
 	exports.alias = exports.wrapStore = exports.Store = undefined;
 
-	var _Store = __webpack_require__(30);
+	var _Store = __webpack_require__(31);
 
 	var _Store2 = _interopRequireDefault(_Store);
 
-	var _wrapStore = __webpack_require__(76);
+	var _wrapStore = __webpack_require__(77);
 
 	var _wrapStore2 = _interopRequireDefault(_wrapStore);
 
-	var _alias = __webpack_require__(77);
+	var _alias = __webpack_require__(78);
 
 	var _alias2 = _interopRequireDefault(_alias);
 
@@ -2660,8 +2918,7 @@
 	exports.alias = _alias2.default;
 
 /***/ },
-
-/***/ 30:
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2672,11 +2929,11 @@
 	  value: true
 	});
 
-	var _assignIn = __webpack_require__(31);
+	var _assignIn = __webpack_require__(32);
 
 	var _assignIn2 = _interopRequireDefault(_assignIn);
 
-	var _constants = __webpack_require__(75);
+	var _constants = __webpack_require__(76);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2791,13 +3048,12 @@
 	exports.default = Store;
 
 /***/ },
-
-/***/ 31:
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var copyObject = __webpack_require__(32),
-	    createAssigner = __webpack_require__(47),
-	    keysIn = __webpack_require__(60);
+	var copyObject = __webpack_require__(33),
+	    createAssigner = __webpack_require__(48),
+	    keysIn = __webpack_require__(61);
 
 	/**
 	 * This method is like `_.assign` except that it iterates over own and
@@ -2838,12 +3094,11 @@
 
 
 /***/ },
-
-/***/ 32:
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var assignValue = __webpack_require__(33),
-	    baseAssignValue = __webpack_require__(34);
+	var assignValue = __webpack_require__(34),
+	    baseAssignValue = __webpack_require__(35);
 
 	/**
 	 * Copies properties of `source` to `object`.
@@ -2885,12 +3140,11 @@
 
 
 /***/ },
-
-/***/ 33:
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseAssignValue = __webpack_require__(34),
-	    eq = __webpack_require__(46);
+	var baseAssignValue = __webpack_require__(35),
+	    eq = __webpack_require__(47);
 
 	/** Used for built-in method references. */
 	var objectProto = Object.prototype;
@@ -2920,11 +3174,10 @@
 
 
 /***/ },
-
-/***/ 34:
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var defineProperty = __webpack_require__(35);
+	var defineProperty = __webpack_require__(36);
 
 	/**
 	 * The base implementation of `assignValue` and `assignMergeValue` without
@@ -2952,11 +3205,10 @@
 
 
 /***/ },
-
-/***/ 35:
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var getNative = __webpack_require__(36);
+	var getNative = __webpack_require__(37);
 
 	var defineProperty = (function() {
 	  try {
@@ -2970,12 +3222,11 @@
 
 
 /***/ },
-
-/***/ 36:
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseIsNative = __webpack_require__(37),
-	    getValue = __webpack_require__(45);
+	var baseIsNative = __webpack_require__(38),
+	    getValue = __webpack_require__(46);
 
 	/**
 	 * Gets the native function at `key` of `object`.
@@ -2994,14 +3245,13 @@
 
 
 /***/ },
-
-/***/ 37:
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isFunction = __webpack_require__(38),
-	    isMasked = __webpack_require__(40),
-	    isObject = __webpack_require__(39),
-	    toSource = __webpack_require__(44);
+	var isFunction = __webpack_require__(39),
+	    isMasked = __webpack_require__(41),
+	    isObject = __webpack_require__(40),
+	    toSource = __webpack_require__(45);
 
 	/**
 	 * Used to match `RegExp`
@@ -3048,11 +3298,10 @@
 
 
 /***/ },
-
-/***/ 38:
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(39);
+	var isObject = __webpack_require__(40);
 
 	/** `Object#toString` result references. */
 	var funcTag = '[object Function]',
@@ -3097,8 +3346,7 @@
 
 
 /***/ },
-
-/***/ 39:
+/* 40 */
 /***/ function(module, exports) {
 
 	/**
@@ -3135,11 +3383,10 @@
 
 
 /***/ },
-
-/***/ 40:
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var coreJsData = __webpack_require__(41);
+	var coreJsData = __webpack_require__(42);
 
 	/** Used to detect methods masquerading as native. */
 	var maskSrcKey = (function() {
@@ -3162,11 +3409,10 @@
 
 
 /***/ },
-
-/***/ 41:
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var root = __webpack_require__(42);
+	var root = __webpack_require__(43);
 
 	/** Used to detect overreaching core-js shims. */
 	var coreJsData = root['__core-js_shared__'];
@@ -3175,11 +3421,10 @@
 
 
 /***/ },
-
-/***/ 42:
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var freeGlobal = __webpack_require__(43);
+	var freeGlobal = __webpack_require__(44);
 
 	/** Detect free variable `self`. */
 	var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -3191,8 +3436,7 @@
 
 
 /***/ },
-
-/***/ 43:
+/* 44 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
@@ -3203,8 +3447,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-
-/***/ 44:
+/* 45 */
 /***/ function(module, exports) {
 
 	/** Used for built-in method references. */
@@ -3236,8 +3479,7 @@
 
 
 /***/ },
-
-/***/ 45:
+/* 46 */
 /***/ function(module, exports) {
 
 	/**
@@ -3256,8 +3498,7 @@
 
 
 /***/ },
-
-/***/ 46:
+/* 47 */
 /***/ function(module, exports) {
 
 	/**
@@ -3300,12 +3541,11 @@
 
 
 /***/ },
-
-/***/ 47:
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseRest = __webpack_require__(48),
-	    isIterateeCall = __webpack_require__(56);
+	var baseRest = __webpack_require__(49),
+	    isIterateeCall = __webpack_require__(57);
 
 	/**
 	 * Creates a function like `_.assign`.
@@ -3344,13 +3584,12 @@
 
 
 /***/ },
-
-/***/ 48:
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var identity = __webpack_require__(49),
-	    overRest = __webpack_require__(50),
-	    setToString = __webpack_require__(52);
+	var identity = __webpack_require__(50),
+	    overRest = __webpack_require__(51),
+	    setToString = __webpack_require__(53);
 
 	/**
 	 * The base implementation of `_.rest` which doesn't validate or coerce arguments.
@@ -3368,8 +3607,7 @@
 
 
 /***/ },
-
-/***/ 49:
+/* 50 */
 /***/ function(module, exports) {
 
 	/**
@@ -3396,11 +3634,10 @@
 
 
 /***/ },
-
-/***/ 50:
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var apply = __webpack_require__(51);
+	var apply = __webpack_require__(52);
 
 	/* Built-in method references for those with the same name as other `lodash` methods. */
 	var nativeMax = Math.max;
@@ -3439,8 +3676,7 @@
 
 
 /***/ },
-
-/***/ 51:
+/* 52 */
 /***/ function(module, exports) {
 
 	/**
@@ -3467,12 +3703,11 @@
 
 
 /***/ },
-
-/***/ 52:
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseSetToString = __webpack_require__(53),
-	    shortOut = __webpack_require__(55);
+	var baseSetToString = __webpack_require__(54),
+	    shortOut = __webpack_require__(56);
 
 	/**
 	 * Sets the `toString` method of `func` to return `string`.
@@ -3488,13 +3723,12 @@
 
 
 /***/ },
-
-/***/ 53:
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var constant = __webpack_require__(54),
-	    defineProperty = __webpack_require__(35),
-	    identity = __webpack_require__(49);
+	var constant = __webpack_require__(55),
+	    defineProperty = __webpack_require__(36),
+	    identity = __webpack_require__(50);
 
 	/**
 	 * The base implementation of `setToString` without support for hot loop shorting.
@@ -3517,8 +3751,7 @@
 
 
 /***/ },
-
-/***/ 54:
+/* 55 */
 /***/ function(module, exports) {
 
 	/**
@@ -3550,8 +3783,7 @@
 
 
 /***/ },
-
-/***/ 55:
+/* 56 */
 /***/ function(module, exports) {
 
 	/** Used to detect hot functions by number of calls within a span of milliseconds. */
@@ -3594,14 +3826,13 @@
 
 
 /***/ },
-
-/***/ 56:
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var eq = __webpack_require__(46),
-	    isArrayLike = __webpack_require__(57),
-	    isIndex = __webpack_require__(59),
-	    isObject = __webpack_require__(39);
+	var eq = __webpack_require__(47),
+	    isArrayLike = __webpack_require__(58),
+	    isIndex = __webpack_require__(60),
+	    isObject = __webpack_require__(40);
 
 	/**
 	 * Checks if the given arguments are from an iteratee call.
@@ -3631,12 +3862,11 @@
 
 
 /***/ },
-
-/***/ 57:
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isFunction = __webpack_require__(38),
-	    isLength = __webpack_require__(58);
+	var isFunction = __webpack_require__(39),
+	    isLength = __webpack_require__(59);
 
 	/**
 	 * Checks if `value` is array-like. A value is considered array-like if it's
@@ -3671,8 +3901,7 @@
 
 
 /***/ },
-
-/***/ 58:
+/* 59 */
 /***/ function(module, exports) {
 
 	/** Used as references for various `Number` constants. */
@@ -3713,8 +3942,7 @@
 
 
 /***/ },
-
-/***/ 59:
+/* 60 */
 /***/ function(module, exports) {
 
 	/** Used as references for various `Number` constants. */
@@ -3742,13 +3970,12 @@
 
 
 /***/ },
-
-/***/ 60:
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var arrayLikeKeys = __webpack_require__(61),
-	    baseKeysIn = __webpack_require__(72),
-	    isArrayLike = __webpack_require__(57);
+	var arrayLikeKeys = __webpack_require__(62),
+	    baseKeysIn = __webpack_require__(73),
+	    isArrayLike = __webpack_require__(58);
 
 	/**
 	 * Creates an array of the own and inherited enumerable property names of `object`.
@@ -3781,16 +4008,15 @@
 
 
 /***/ },
-
-/***/ 61:
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseTimes = __webpack_require__(62),
-	    isArguments = __webpack_require__(63),
-	    isArray = __webpack_require__(65),
-	    isBuffer = __webpack_require__(66),
-	    isIndex = __webpack_require__(59),
-	    isTypedArray = __webpack_require__(68);
+	var baseTimes = __webpack_require__(63),
+	    isArguments = __webpack_require__(64),
+	    isArray = __webpack_require__(66),
+	    isBuffer = __webpack_require__(67),
+	    isIndex = __webpack_require__(60),
+	    isTypedArray = __webpack_require__(69);
 
 	/** Used for built-in method references. */
 	var objectProto = Object.prototype;
@@ -3837,8 +4063,7 @@
 
 
 /***/ },
-
-/***/ 62:
+/* 63 */
 /***/ function(module, exports) {
 
 	/**
@@ -3864,11 +4089,10 @@
 
 
 /***/ },
-
-/***/ 63:
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseIsArguments = __webpack_require__(64),
+	var baseIsArguments = __webpack_require__(65),
 	    isObjectLike = __webpack_require__(7);
 
 	/** Used for built-in method references. */
@@ -3907,8 +4131,7 @@
 
 
 /***/ },
-
-/***/ 64:
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var isObjectLike = __webpack_require__(7);
@@ -3941,8 +4164,7 @@
 
 
 /***/ },
-
-/***/ 65:
+/* 66 */
 /***/ function(module, exports) {
 
 	/**
@@ -3974,12 +4196,11 @@
 
 
 /***/ },
-
-/***/ 66:
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(42),
-	    stubFalse = __webpack_require__(67);
+	/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(43),
+	    stubFalse = __webpack_require__(68);
 
 	/** Detect free variable `exports`. */
 	var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
@@ -4020,8 +4241,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)(module)))
 
 /***/ },
-
-/***/ 67:
+/* 68 */
 /***/ function(module, exports) {
 
 	/**
@@ -4045,13 +4265,12 @@
 
 
 /***/ },
-
-/***/ 68:
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseIsTypedArray = __webpack_require__(69),
-	    baseUnary = __webpack_require__(70),
-	    nodeUtil = __webpack_require__(71);
+	var baseIsTypedArray = __webpack_require__(70),
+	    baseUnary = __webpack_require__(71),
+	    nodeUtil = __webpack_require__(72);
 
 	/* Node.js helper references. */
 	var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
@@ -4079,11 +4298,10 @@
 
 
 /***/ },
-
-/***/ 69:
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isLength = __webpack_require__(58),
+	var isLength = __webpack_require__(59),
 	    isObjectLike = __webpack_require__(7);
 
 	/** `Object#toString` result references. */
@@ -4155,8 +4373,7 @@
 
 
 /***/ },
-
-/***/ 70:
+/* 71 */
 /***/ function(module, exports) {
 
 	/**
@@ -4176,11 +4393,10 @@
 
 
 /***/ },
-
-/***/ 71:
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(43);
+	/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(44);
 
 	/** Detect free variable `exports`. */
 	var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
@@ -4206,13 +4422,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)(module)))
 
 /***/ },
-
-/***/ 72:
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isObject = __webpack_require__(39),
-	    isPrototype = __webpack_require__(73),
-	    nativeKeysIn = __webpack_require__(74);
+	var isObject = __webpack_require__(40),
+	    isPrototype = __webpack_require__(74),
+	    nativeKeysIn = __webpack_require__(75);
 
 	/** Used for built-in method references. */
 	var objectProto = Object.prototype;
@@ -4246,8 +4461,7 @@
 
 
 /***/ },
-
-/***/ 73:
+/* 74 */
 /***/ function(module, exports) {
 
 	/** Used for built-in method references. */
@@ -4271,8 +4485,7 @@
 
 
 /***/ },
-
-/***/ 74:
+/* 75 */
 /***/ function(module, exports) {
 
 	/**
@@ -4298,8 +4511,7 @@
 
 
 /***/ },
-
-/***/ 75:
+/* 76 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -4316,8 +4528,7 @@
 	var STATE_TYPE = exports.STATE_TYPE = 'chromex.state';
 
 /***/ },
-
-/***/ 76:
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4326,7 +4537,7 @@
 	  value: true
 	});
 
-	var _constants = __webpack_require__(75);
+	var _constants = __webpack_require__(76);
 
 	/**
 	 * Responder for promisified results
@@ -4402,8 +4613,7 @@
 	};
 
 /***/ },
-
-/***/ 77:
+/* 78 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -4433,115 +4643,5 @@
 	  };
 	};
 
-/***/ },
-
-/***/ 326:
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _actionTypes = __webpack_require__(20);
-
-	var types = _interopRequireWildcard(_actionTypes);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-	var initalState = {
-		economy: 0,
-		economy_wall_street_reform: 0,
-		economy_farmers_ranchers: 0,
-
-		education: 0,
-		education_common_core: 0,
-		improving_education: 0,
-
-		environment: 0,
-		environment_our_environment: 0,
-
-		equality: 0,
-		equality_criminal_justice_reform: 0,
-		equality_immigration_reform: 0,
-		equality_lgbt_rights_and_equality: 0,
-		equality_voting_rights: 0,
-		equality_seniors: 0,
-		equality_womens_rights_and_opportunity: 0,
-
-		health: 0,
-		healthcare: 0,
-
-		jobs: 0,
-
-		security: 0,
-		security_national_security: 0
-	};
-
-	var _default = function _default() {
-		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initalState;
-		var aciton = arguments[1];
-
-		switch (aciton.type) {
-			case types.ECONOMY:
-				return state.economy++;
-			case types.ECONOMY_WALL_STREET_REFORM:
-				return state.economy_wall_street_reform++;
-			case types.ECONOMY_FARMERS_RANCHERS:
-				return state.economy_farmers_ranchers++;
-			case types.EDUCATION:
-				return state.education++;
-			case types.EDUCATION_COMMON_CORE:
-				return state.education_common_core++;
-			case types.IMPROVING_EDUCATION:
-				return state.improving_education++;
-			case types.ENVIRONMENT:
-				return state.environment++;
-			case types.ENVIRONMENT_OUR_ENVIRONMENT:
-				return state.environment_our_environment++;
-			case types.EQUALITY:
-				return state.equality++;
-			case types.EQUALITY_CRIMINAL_JUSTICE_REFORM:
-				return state.equality_criminal_justice_reform++;
-			case types.EQUALITY_IMMIGRATION_REFORM:
-				return state.equality_immigration_reform++;
-			case types.EQUALITY_LFBT_RIGHTS_AND_EQULITY:
-				return state.equality_lgbt_rights_and_equality++;
-			case types.EQUALITY_VOTING_RIGHTS:
-				return state.equality_voting_rights++;
-			case types.EQUALITY_SENIORS:
-				return state.equality_seniors++;
-			case types.EQUALITY_WOMENS_RIGHTS_AND_OPPORTUNITY:
-				return state.equality_womens_rights_and_opportunity++;
-			case types.HEALTH:
-				return state.health++;
-			case types.JOBS:
-				return state.jobs++;
-			case types.SECURITY:
-				return state.security++;
-			case types.SECURITY_NATIONAL_SECURITY:
-				return state.security_national_security++;
-			default:
-				return state;
-		}
-	};
-
-	exports.default = _default;
-	;
-
-	var _temp = function () {
-		if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-			return;
-		}
-
-		__REACT_HOT_LOADER__.register(initalState, 'initalState', '/Users/BernSternWhoEarns/Documents/setgov/background/reducers/FloridaSenate.js');
-
-		__REACT_HOT_LOADER__.register(_default, 'default', '/Users/BernSternWhoEarns/Documents/setgov/background/reducers/FloridaSenate.js');
-	}();
-
-	;
-
 /***/ }
-
-/******/ });
+/******/ ]);
