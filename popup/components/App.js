@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router';
 import {connect} from 'react-redux';
+import RootHeader from './RootHeader';
+import CandidateView from './CandidateView';
+
 
 class App extends Component {
 	constructor(props){
@@ -9,16 +12,14 @@ class App extends Component {
 	render() {
 		console.log(this.props);
 	    return (
-	      <div>
-	        Click Count: {this.props.count}
-	        hello world AWDHJAKIODHAUIWDHAIOUWDHIUAWDHUIh
-	       	<Link to='/candidateView'>Test</Link>
-	      </div>
+          <div>
+            <RootHeader />
+            <CandidateView />
+          </div>
+                  
     	);
   }
 }
-
-
 const mapStateToProps = (state) => {
   return {
     count: state.count,
