@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Routes from './Routes.js';
-import './css/style.css';
+import './styles/index.less';
 
 import {Provider} from 'react-redux';
 import {Store} from 'react-chrome-redux';

@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router';
 import {connect} from 'react-redux';
+import RootHeader from './RootHeader';
+
 
 import Base from './Base';
 import CandidateView from './CandidateView';
 
-export default class App extends Base{
+class App extends Base{
 	
 
  
@@ -13,12 +15,24 @@ export default class App extends Base{
 	render() {
 		console.log(this.props)
 	    return (
-	      <div>
-	      	{this.props.children}
-	      	<CandidateView/>
-	      </div>
+
+          <div>
+            <RootHeader />
+            <CandidateView />
+          </div>
+                  
     	);
   	}
 }
 
+const mapStateToProps = (state) => {
+	console.log(state)
+  return {
+    count: state.count,
+    race: state.race,
+    generalElection : state.GeneralElection,
+    FloridaSenate: state.FloridaSenate
+  };
+};
 
+export default connect(mapStateToProps)(App);

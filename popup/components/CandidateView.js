@@ -1,43 +1,75 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
 
+import React from 'react';
 import Base from './Base';
+import { Link } from 'react-router';
+import { Button, Icon } from 'semantic-ui-react';
 
-import { hiliarySetup } from '../scripts/canidateSetup';
+import CandidateBillVotingHistory from './CandidateBillVotingHistory';
 
+export default class CandidateView extends Base{
 
-class CandidateView extends Base{
-	constructor(props) {
-	   super(props);
-	   console.log(this.props)
-	    var test = hiliarySetup(this.props.generalElection);
-	    console.log(test);
-	}
-	
+  constructor(props){
+    super(props);
+    this.autoBind("handleSegmentedSelection");
+    this.state= {
+      activeSegment: "history"
+    }
+  }
 
-	render(){
-		return (
-			<div className="top_body">
-     			<div className="top_label_container">
-     			</div>
-    		</div>
-			)
-	}
+  handleSegmentedSelection(selection){
+    this.setState({
+      activeSegment: selection
+    });
+  }
+
+  render() {
+    let activeComponent;
+    switch(this.state.activeSegment){
+      case "finances":
+        activeComponent = <CandidateFinances />;
+        break;
+      case "finances":
+        activeComponent = <CandidateInformation />;
+        break;
+      case "history": 
+        activeComponent = <CandidateBillVotingHistory />;
+        break;
+
+    }
+    return (
+      <div className="CandidateView">
+       	<div className="photo_container">
+  	     	<div className="name_container">
+            Latest: 47.3%
+  	     	</div>
+       	</div>
+        <div className="segmented_controller_container">
+          <Button.Group>
+            <Button 
+              onClick={this.handleSegmentedSelection.bind(this,"money")} 
+              inverted={true} 
+              color="red" 
+              active={this.state.activeSegment == "money"}>
+                <Icon name="money" size="large" />
+            </Button>
+            <Button 
+              onClick={this.handleSegmentedSelection.bind(this,"info")} 
+              inverted={true} 
+              color="red" 
+              active={this.state.activeSegment == "info"}>
+                <Icon name="info" size="large" />
+            </Button>
+            <Button 
+            onClick={this.handleSegmentedSelection.bind(this,"history")}
+            inverted={true} 
+            color="red" 
+            active={this.state.activeSegment == "history"}>
+              <Icon name="history" size="large" />
+            </Button>
+          </Button.Group>
+        </div>
+        {activeComponent}
+     </div>
+    );
+  }
 }
-
-// const mapStateToProps = (state) => {
-//   return {
-//     race: state.race,
-//     generalElection : state.GeneralElection,
-//     FloridaSenate: state.FloridaSenate
-//   };
-// };
-
-const mapStateToProps = (state) => {
-  return {
-   
-    GeneralElection: state.GeneralElection
-  };
-};
-
-export default connect(mapStateToProps)(CandidateView);
