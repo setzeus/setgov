@@ -37,5 +37,8 @@ jspm_packages
 .node_repl_history
 
 assets/background.js
+assets/background.js.map
 assets/content.js
+assets/content.js.map
 assets/popup.js
+assets/popup.js.map
