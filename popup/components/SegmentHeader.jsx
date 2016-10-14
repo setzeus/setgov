@@ -2,7 +2,7 @@ import React from 'react';
 import Base from './Base';
 
 export default class SegmentHeader extends Base {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
   render() {
