@@ -48,10 +48,10 @@ Additionally, you'll need to manually duplicate index.html from `~/popup/index.h
 
 (Instructions for Sublime Text only)
 
-1. Install SublimeLinter by following instructions here: http://sublimelinter.readthedocs.io/en/latest/installation.html
+1. Install SublimeLinter by following instructions here: http://sublimelinter.readthedocs.io/en/latest/installation.html (Just use Sublime Package Control)
 2. Install eslint globally by typing the following in a terminal: `npm install eslint`
 3. Restart Sublime Text
-4. Install the SublimeLinter-eslint plugin by following instructions here: https://github.com/roadhump/SublimeLinter-eslint#plugin-installation
+4. Install the SublimeLinter-eslint plugin by following instructions here: https://github.com/roadhump/SublimeLinter-eslint#plugin-installation (Just use Sublime Package Control)
 5. If you have any issues with the installation check: https://github.com/roadhump/SublimeLinter-eslint#faq-and-troubleshooting
 
 
