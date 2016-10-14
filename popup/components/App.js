@@ -1,38 +1,35 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router';
 import {connect} from 'react-redux';
-import RootHeader from './RootHeader';
-
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import Base from './Base';
 import CandidateView from './CandidateView';
+import CandidateListPage from './CandidateListPage';
 
-class App extends Base{
+injectTapEventPlugin();
+
+export default class App extends Base{
 	
 
  
 
 	render() {
-		console.log(this.props)
 	    return (
 
-          <div>
-            <RootHeader />
-            <CandidateView />
+          <div className='App'>
+            
+              <CandidateListPage/>
+            
+          	{
+          	// <RootHeader />
+           //  <CandidateView />
+          	}
+            
           </div>
                   
     	);
   	}
 }
 
-const mapStateToProps = (state) => {
-	console.log(state)
-  return {
-    count: state.count,
-    race: state.race,
-    generalElection : state.GeneralElection,
-    FloridaSenate: state.FloridaSenate
-  };
-};
 
-export default connect(mapStateToProps)(App);
