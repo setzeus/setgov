@@ -44,6 +44,17 @@ Additionally, you'll need to manually duplicate index.html from `~/popup/index.h
 
 ##Begin development
 
+### Setting up code linting
+
+(Instructions for Sublime Text only)
+
+1. Install SublimeLinter by following instructions here: http://sublimelinter.readthedocs.io/en/latest/installation.html
+2. Install eslint globally by typing the following in a terminal: `npm install eslint`
+3. Restart Sublime Text
+4. Install the SublimeLinter-eslint plugin by following instructions here: https://github.com/roadhump/SublimeLinter-eslint#plugin-installation
+5. If you have any issues with the installation check: https://github.com/roadhump/SublimeLinter-eslint#faq-and-troubleshooting
+
+
 Open up the terminal and navigate to the root of the repo
 
 First we'll need to create the basic bundle and output to the assets folder in the root directory
