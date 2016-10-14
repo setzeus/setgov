@@ -1,4 +1,4 @@
-export function hiliarySetup(wordCount){
+export function hiliarySetup(wordCount) {
 	console.log(wordCount)
   if(wordCount == undefined){
     console.log('shit hit the fan')
@@ -316,5 +316,3 @@ function checkSubtagCount(value){
 	  }
 	}
 }
-
-
