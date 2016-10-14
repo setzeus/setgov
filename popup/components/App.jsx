@@ -1,11 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import RootHeader from './RootHeader';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import Base from './Base';
+import CandidateListPage from './CandidateListPage';
 import CandidateView from './CandidateView';
+import RootHeader from './RootHeader';
 
-class App extends Base {
+injectTapEventPlugin();
+
+export default class App extends Base {
 
     render() {
         console.log(this.props);
