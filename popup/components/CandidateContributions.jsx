@@ -15,7 +15,6 @@ export default class CandidateContributions extends Base{
 						<div className='div_text'>
 							$12 N
 						</div>
-						
 					</div>
 					<div className='data_box'>
 						<div className='div_text'>
