@@ -9,7 +9,7 @@ import RootHeader from './RootHeader';
 
 injectTapEventPlugin();
 
-export default class App extends Base {
+class App extends Base {
 
     render() {
         console.log(this.props);

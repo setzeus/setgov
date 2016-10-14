@@ -17,7 +17,7 @@ class CandidateListPage extends Base {
   	//custom styles for party_selection
    
     return (
-			<div className="CandidateListPage">
+			<div className='CandidateListPage'>
 				<div className='party_selection'>
 					<div className=' button raised dem'
 						onClick={ () => this.props.dispatch({ type :'DEMOCRAT'})}>
