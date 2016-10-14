@@ -295,9 +295,9 @@ export  function setStateFromKeywords(dispatch){
         wordCount.security_foreign_policy++
       }
       //tbd
-      if(currentText.match(/^(tech|startup|internet|online)$/)){
-        wordCount.tech++
-      }
+      // if(currentText.match(/^(tech|startup|internet|online)$/)){
+      //   wordCount.tech++
+      // }
 
       if(currentText.match(/^(state|green|Everglades|Florida|climate)$/)){
         wordCount.environment++
@@ -340,9 +340,9 @@ export  function setStateFromKeywords(dispatch){
         wordCount.security_national_security++
       }
       //tbd
-      if(currentText.match(/^(tech|startup|internet|online)$/)){
-        wordCount.tech++
-      } 
+      // if(currentText.match(/^(tech|startup|internet|online)$/)){
+      //   wordCount.tech++
+      // } 
     }
     console.log('testing')
 

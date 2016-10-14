@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Base from './Base';
 import { Link } from 'react-router';
@@ -26,7 +27,6 @@ export default class CandidateView extends Base{
   }
 
   render() {
-    console.log(this.state);
     let activeComponent;
     switch(this.state.activeSegment){
       case "contributions":

@@ -8,6 +8,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props.GeneralElection)
     setStateFromKeywords(this.props.dispatch)
     //basic clicker to log redux is working across platform
     // document.addEventListener('click', () => {
@@ -27,7 +28,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    count: state.count
+    GeneralElection: state.GeneralElection
   };
 };
 
