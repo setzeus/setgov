@@ -4,7 +4,11 @@ import Base from './Base';
 import { Link } from 'react-router';
 import { Button, Icon } from 'semantic-ui-react';
 
+import CandidateHeader from './CandidateHeader';
+import CandidateContributions from './CandidateContributions';
 import CandidateBillVotingHistory from './CandidateBillVotingHistory';
+
+
 
 export default class CandidateView extends Base{
 
@@ -25,11 +29,11 @@ export default class CandidateView extends Base{
   render() {
     let activeComponent;
     switch(this.state.activeSegment){
-      case "finances":
-        activeComponent = <CandidateFinances />;
+      case "contributions":
+        activeComponent = <CandidateContributions />;
         break;
-      case "finances":
-        activeComponent = <CandidateInformation />;
+      case "info":
+        //activeComponent = <CandidateInformation />;
         break;
       case "history": 
         activeComponent = <CandidateBillVotingHistory />;
@@ -38,35 +42,31 @@ export default class CandidateView extends Base{
     }
     return (
       <div className="CandidateView">
-       	<div className="photo_container">
-  	     	<div className="name_container">
-            Latest: 47.3%
-  	     	</div>
-       	</div>
+       	<CandidateHeader />
         <div className="segmented_controller_container">
-          <Button.Group>
-            <Button 
-              onClick={this.handleSegmentedSelection.bind(this,"money")} 
-              inverted={true} 
-              color="red" 
-              active={this.state.activeSegment == "money"}>
-                <Icon name="money" size="large" />
-            </Button>
-            <Button 
-              onClick={this.handleSegmentedSelection.bind(this,"info")} 
-              inverted={true} 
-              color="red" 
-              active={this.state.activeSegment == "info"}>
-                <Icon name="info" size="large" />
-            </Button>
-            <Button 
-            onClick={this.handleSegmentedSelection.bind(this,"history")}
-            inverted={true} 
-            color="red" 
-            active={this.state.activeSegment == "history"}>
-              <Icon name="history" size="large" />
-            </Button>
-          </Button.Group>
+            <Button.Group>
+                <Button 
+                    onClick={this.handleSegmentedSelection.bind(this,"contributions")} 
+                    inverted={true} 
+                    color="red" 
+                    active={this.state.activeSegment == "money"}>
+                    <Icon name="money" size="large" />
+                </Button>
+                <Button 
+                    onClick={this.handleSegmentedSelection.bind(this,"info")} 
+                    inverted={true} 
+                    color="red" 
+                    active={this.state.activeSegment == "info"}>
+                    <Icon name="info" size="large" />
+                </Button>
+                <Button 
+                    onClick={this.handleSegmentedSelection.bind(this,"history")}
+                    inverted={true} 
+                    color="red" 
+                    active={this.state.activeSegment == "history"}>
+                    <Icon name="history" size="large" />
+                </Button>
+            </Button.Group>
         </div>
         {activeComponent}
      </div>
