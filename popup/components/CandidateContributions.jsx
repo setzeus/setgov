@@ -4,13 +4,13 @@ import Base from './Base';
 import SegmentHeader from './SegmentHeader';
 
 
-export default class CandidateContributions extends Base{
+export default class CandidateContributions extends Base {
 	render() {
 		return (
-			<div className="CandidateContributions">
-				<SegmentHeader title="Campaign Contributions"/>
-				<div className="chart_container"/>
-				<div className="row">
+			<div className='CandidateContributions'>
+				<SegmentHeader title='Campaign Contribution'/>
+				<div className='chart_container'/>
+				<div className='row'>
 					<div className='data_box right'>
 						<div className='div_text'>
 							$12 N

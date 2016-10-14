@@ -29,7 +29,7 @@ export default class CandidateView extends Base {
       activeComponent = <CandidateContributions/>;
       break;
     case 'info':
-      activeComponent = <CandidateInformation/>;
+      // activeComponent = <CandidateInformation/>;
       break;
     case 'history':
       activeComponent = <CandidateBillVotingHistory/>;
