@@ -15,8 +15,8 @@ class App extends Base {
         console.log(this.props);
         return (
             <div>
-                <RootHeader/>
-                <CandidateView/>
+               <CandidateListPage />
+
             </div>
         );
     }
