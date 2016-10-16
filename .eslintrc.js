@@ -19,6 +19,5 @@ module.exports = {
         "react/jsx-space-before-closing": ["error", "never"],
         "react/jsx-indent": ["error", 4],
         "semi": ["error", "always"]
-        
     }
 };
