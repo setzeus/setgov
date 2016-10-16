@@ -12,8 +12,9 @@ export function hiliarySetup(wordCount) {
           {
             text:"AFairTaxSystem",
             tag:"Economy",
+            count: wordCount.economy_a_fair_tax_system,
             link:"https://www.hillaryclinton.com/issues/a-fair-tax-system/",
-            count: wordCount.economy_a_fair_tax_system
+            count: wordCount.economy_a_fair_tax_system,
           },
           {
             text:"FixingInfrastructure",
