@@ -34,7 +34,6 @@ class CandidateView extends Base {
         return (
             <div className='CandidateView'>
                 <CandidateHeader />
-
                 <div className='segmented_controller_container'>
                     <Button.Group>
                         <CandidateSegmentButton name='contributions'/>

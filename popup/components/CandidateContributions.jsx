@@ -5,29 +5,38 @@ import SegmentHeader from './SegmentHeader';
 
 
 export default class CandidateContributions extends Base {
-    render() {
-        return (
-            <div className='CandidateContributions'>
-                <SegmentHeader title='Campaign Contributions'/>
-                <div className='chart_container'/>
-                <div className='row'>
-                    <div className='data_box right'>
-                        <div className='div_text'>
-                            $12 N
+	render() {
+		return (
+			<div className='CandidateContributions'>
+				<SegmentHeader title='Campaign Contributions'/>
+				<div className='chart_container'/>
+				<div className='row'>
+					<div className='data_box column right'>
+						<div className='data_box_value'>
+							$12 M
+						</div>
+                        <div className='data_box_label'>
+                            Total Raised
                         </div>
-                    </div>
-                    <div className='data_box'>
-                        <div className='div_text'>
-                            Test123
+					</div>
+					<div className='data_box column'>
+						<div className='data_box_value'>
+							$16 M
+						</div>
+                        <div className='data_box_label'>
+                            Total Spent
                         </div>
-                    </div>
-                    <div className='data_box left'>
-                        <div className='div_text'>
-                            as
+					</div>
+					<div className='data_box column left'>
+						<div className='data_box_value'>
+							$8 M
+						</div>
+                        <div className='data_box_label'>
+                            On Hand
                         </div>
-                    </div>
-                </div>
-            </div>
-        );
-    }
+					</div>
+				</div>
+			</div>
+		);
+	}
 }
