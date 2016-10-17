@@ -1,32 +1,44 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import Base from './Base';
 import CandidateListPage from './CandidateListPage';
 import CandidateView from './CandidateView';
 import RootHeader from './RootHeader';
 
-injectTapEventPlugin();
-
 class App extends Base {
+    constructor(props) {
+        super(props);
+    }
 
     render() {
-        console.log(this.props);
+        console.log('App render');
+        let activeComponent = <CandidateView/>;
+
+        // switch (this.props.activeComponent) {
+        // case 'CandidateView':
+        //     activeComponent = <CandidateView/>;
+        //     break;
+        // default:
+        //     break;
+        // }
         return (
             <div>
                 <RootHeader/>
-                <CandidateView/>
+                {activeComponent}
             </div>
         );
     }
 }
 
 const mapStateToProps = (state) => {
+    console.log('App mapStateToProps');
+
     console.log(state);
+
     return {
-        count: state.count,
-        race: state.race,
+        environment: state.environment,
+        Candidate: state.Candidate,
         generalElection: state.GeneralElection,
         FloridaSenate: state.FloridaSenate
     };
