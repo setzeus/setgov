@@ -2,8 +2,9 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { Store } from 'react-chrome-redux';
+import { Router, browserHistory } from 'react-router';
 
-import App from './components/App';
+import Routes from './Routes';
 import './styles/index.less';
 
 const proxyStore = new Store({
@@ -12,7 +13,9 @@ const proxyStore = new Store({
 
 render(
     <Provider store={proxyStore}>
-        <App/>
+        <Router history={browserHistory}>
+            {Routes}
+        </Router>
     </Provider>,
     document.getElementById('container')
 );

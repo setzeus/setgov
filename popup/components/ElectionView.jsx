@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import { Button } from 'semantic-ui-react';
 
 import Base from './Base';
-import CandidateBillVotingHistory from './CandidateBillVotingHistory';
-import CandidateContributions from './CandidateContributions';
-import CandidateHeader from './CandidateHeader';
 import CandidateSegmentButton from './CandidateSegmentButton';
+import ElectionGenInfoPanel from './ElectionGenInfoPanel';
+import ElectionLivePollPanel from './ElectionLivePollPanel';
+import ElectionHeader from './ElectionHeader';
+import ElectionPlatformPanel from './ElectionPlatformPanel';
 import RootHeader from './RootHeader';
 
-class CandidateView extends Base {
+class ElectionView extends Base {
 
     constructor(props) {
         super(props);
@@ -17,30 +18,30 @@ class CandidateView extends Base {
     }
 
     render() {
-        const activeComponent = <CandidateContributions />;
+        const activeComponent = <ElectionPlatformPanel />;
         // switch (this.props.activeSegment) {
-        // case 'contributions':
-        //     activeComponent = <CandidateContributions/>;
+        // case 'livepolls':
+        //     activeComponent = <ElectionLivePollPanel/>;
         //     break;
         // case 'info':
-        //     // activeComponent = <CandidateInformation/>;
+        //     // activeComponent = <ElectionGenInfoPanel/>;
         //     break;
-        // case 'history':
-        //     activeComponent = <CandidateBillVotingHistory/>;
+        // case 'platform':
+        //     activeComponent = <ElectionPlatformPanel/>;
         //     break;
         // default:
         //     break;
         // }
 
         return (
-            <div className='CandidateView'>
-                <RootHeader to='/home' title='Marco Rubio'/>
-                <CandidateHeader name='Marco Rubio'/>
+            <div className='ElectionView'>
+                <RootHeader to='/home' title='Presidential Election'/>
+                <ElectionHeader />
                 <div className='segmented_controller_container'>
                     <Button.Group>
-                        <CandidateSegmentButton name='contributions'/>
+                        <CandidateSegmentButton name='livepolls'/>
                         <CandidateSegmentButton name='info'/>
-                        <CandidateSegmentButton name='history'/>
+                        <CandidateSegmentButton name='platform'/>
                     </Button.Group>
                 </div>
                 {activeComponent}
@@ -50,7 +51,7 @@ class CandidateView extends Base {
 }
 
 const mapStateToProps = (state) => {
-    console.log('CandidateView mapStateToProps');
+    console.log('ElectionView mapStateToProps');
 
     console.log(state);
     return {
@@ -58,4 +59,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(CandidateView);
+export default connect(mapStateToProps)(ElectionView);

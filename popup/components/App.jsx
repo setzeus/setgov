@@ -2,9 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Base from './Base';
-import CandidateListPage from './CandidateListPage';
-import CandidateView from './CandidateView';
-import RootHeader from './RootHeader';
 
 class App extends Base {
     constructor(props) {
@@ -13,7 +10,6 @@ class App extends Base {
 
     render() {
         console.log('App render');
-        let activeComponent = <CandidateView/>;
 
         // switch (this.props.activeComponent) {
         // case 'CandidateView':
@@ -24,8 +20,7 @@ class App extends Base {
         // }
         return (
             <div>
-                <RootHeader/>
-                {activeComponent}
+                {this.props.children}
             </div>
         );
     }
@@ -37,10 +32,9 @@ const mapStateToProps = (state) => {
     console.log(state);
 
     return {
-        environment: state.environment,
+        Environment: state.Environment,
         Candidate: state.Candidate,
-        generalElection: state.GeneralElection,
-        FloridaSenate: state.FloridaSenate
+        PlatformCounts: state.PlatformCounts
     };
 };
 
