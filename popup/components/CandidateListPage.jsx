@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router/lib';
+import { Button } from 'semantic-ui-react';
 
 import Base from './Base';
 
@@ -18,14 +20,22 @@ class CandidateListPage extends Base {
         return (
             <div className='CandidateListPage'>
                 <div className='party_selection'>
-                    <div className='button raised dem' onClick={() => this.props.dispatch({ type: 'DEMOCRAT' })}/>
-
-                    <div
-                        className='button raised rep'
-                        onClick={() => this.props.dispatch({ type: 'REPUBLICAN' })}
-                    >
-
-                    </div>
+                    <Link to='/candidate'>
+                        <Button
+                            inverted
+                            color='red'
+                        >
+                            Candidates
+                        </Button>
+                    </Link>
+                    <Link to='/home'>
+                        <Button
+                            inverted
+                            color='red'
+                        >
+                            Elections
+                        </Button>
+                    </Link>
                 </div>
 
                 <div className='party_candidates'>
@@ -43,6 +53,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)(CandidateListPage);
-
-
-

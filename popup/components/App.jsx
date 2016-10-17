@@ -24,8 +24,7 @@ class App extends Base {
         // }
         return (
             <div>
-                <RootHeader/>
-                {activeComponent}
+                {this.props.children}
             </div>
         );
     }

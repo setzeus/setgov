@@ -10,7 +10,9 @@ export default class RootHeader extends Base {
             <div className='RootHeader'>
                 <div className='header row'>
                     <div className='back_button_container'>
-                        <Icon name='arrow circle outline left' size='big'/>
+                        <Link to='/home'>
+                            <Icon name='arrow circle outline left' size='big'/>
+                        </Link>
                     </div>
                     <div className='header_title'>
                         Marco Rubio (R)

@@ -7,6 +7,7 @@ import CandidateBillVotingHistory from './CandidateBillVotingHistory';
 import CandidateContributions from './CandidateContributions';
 import CandidateHeader from './CandidateHeader';
 import CandidateSegmentButton from './CandidateSegmentButton';
+import RootHeader from './RootHeader';
 
 class CandidateView extends Base {
 
@@ -33,6 +34,7 @@ class CandidateView extends Base {
 
         return (
             <div className='CandidateView'>
+                <RootHeader to='/home'/>
                 <CandidateHeader />
                 <div className='segmented_controller_container'>
                     <Button.Group>
