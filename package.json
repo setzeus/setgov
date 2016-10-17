@@ -10,8 +10,11 @@
   "author": "Bernardo Garciarivas",
   "license": "ISC",
   "dependencies": {
+    "chart.js": "^2.3.0",
     "material-ui": "^0.16.0",
+    "moment": "^2.15.1",
     "react": "^15.3.2",
+    "react-chartjs-2": "^1.4.0",
     "react-chrome-redux": "0.0.8",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",

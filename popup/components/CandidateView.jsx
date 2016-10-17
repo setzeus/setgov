@@ -16,7 +16,7 @@ class CandidateView extends Base {
     }
 
     render() {
-        let activeComponent = <CandidateBillVotingHistory/>;
+        const activeComponent = <CandidateContributions />;
         // switch (this.props.activeSegment) {
         // case 'contributions':
         //     activeComponent = <CandidateContributions/>;
