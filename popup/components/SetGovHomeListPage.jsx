@@ -5,7 +5,7 @@ import { Button } from 'semantic-ui-react';
 
 import Base from './Base';
 
-class CandidateListPage extends Base {
+class SetGovHomeListPage extends Base {
     constructor(props) {
         super(props);
     }
@@ -18,7 +18,7 @@ class CandidateListPage extends Base {
         console.log(this.props);
         // custom styles for party_selection
         return (
-            <div className='CandidateListPage'>
+            <div className='SetGovHomeListPage'>
                 <div className='row'>
                     <Link to='/candidate'>
                         <Button
@@ -28,7 +28,7 @@ class CandidateListPage extends Base {
                             Candidates
                         </Button>
                     </Link>
-                    <Link to='/home'>
+                    <Link to='/election'>
                         <Button
                             inverted
                             color='red'
@@ -51,4 +51,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(CandidateListPage);
+export default connect(mapStateToProps)(SetGovHomeListPage);

@@ -10,12 +10,12 @@ export default class RootHeader extends Base {
             <div className='RootHeader'>
                 <div className='header row'>
                     <div className='back_button_container'>
-                        <Link to='/home'>
+                        <Link to={this.props.to}>
                             <Icon name='arrow circle outline left' size='big'/>
                         </Link>
                     </div>
                     <div className='header_title'>
-                        Marco Rubio (R)
+                        {this.props.title}
                     </div>
                     <div className='back_button_container'>
                         <Icon name='arrow circle outline left' style={{ color: 'white' }} size='big'/>

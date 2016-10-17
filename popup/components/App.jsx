@@ -2,9 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Base from './Base';
-import CandidateListPage from './CandidateListPage';
-import CandidateView from './CandidateView';
-import RootHeader from './RootHeader';
 
 class App extends Base {
     constructor(props) {
@@ -13,7 +10,6 @@ class App extends Base {
 
     render() {
         console.log('App render');
-        let activeComponent = <CandidateView/>;
 
         // switch (this.props.activeComponent) {
         // case 'CandidateView':
