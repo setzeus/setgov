@@ -353,8 +353,11 @@ export  function setStateFromKeywords(dispatch){
         console.log(actionType)
         console.log(wordCount[key])
         dispatch({
-           type: actionType,
-           payload: wordCount[key]
+           type: 'CHANGE_SUBTAG',
+           payload: {
+            subtag_name: key,
+            subtag_count: wordCount[key]
+          }
         });
       }
     }

@@ -32,10 +32,9 @@ const mapStateToProps = (state) => {
     console.log(state);
 
     return {
-        environment: state.environment,
+        Environment: state.Environment,
         Candidate: state.Candidate,
-        generalElection: state.GeneralElection,
-        FloridaSenate: state.FloridaSenate
+        PlatformCounts: state.PlatformCounts
     };
 };
 
