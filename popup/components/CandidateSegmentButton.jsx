@@ -43,8 +43,8 @@ class CandidateSegmentButton extends Base {
 }
 
 const mapStateToProps = (state) => {
-    console.log('CandidateSegmentButton mapStateToProps');
-    console.log(state);
+    //console.log('CandidateSegmentButton mapStateToProps');
+    //console.log(state);
 
     return {
         Candidate: state.Candidate

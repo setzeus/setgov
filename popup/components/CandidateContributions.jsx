@@ -1,28 +1,32 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Doughnut } from 'react-chartjs-2';
 
 import Base from './Base';
 import SegmentHeader from './SegmentHeader';
+import { fetchCandidateContributions } from '../actions/Candidate';
 
 
-export default class CandidateContributions extends Base {
+class CandidateContributions extends Base {
     constructor(props) {
         super(props);
+    }
+    componentWillMount() {
     }
     render() {
         const data = {
             labels: [
                 'Red',
-                'Blue',
-                'Yellow'
+                'Green',
+                'Blue'
             ],
             datasets: [
                 {
                     data: [300, 50, 100],
                     backgroundColor: [
-                        '#FF6384',
-                        '#36A2EB',
-                        '#FFCE56'
+                        '#FF0000',
+                        '#00FF00',
+                        '#0000FF'
                     ],
                     hoverBackgroundColor: [
                         '#FF6384',
@@ -49,13 +53,13 @@ export default class CandidateContributions extends Base {
                 <div className='row'>
                     <div className='data_box column right'>
                         <div className='data_box_value'>
-                             $12 M
+                            $24 M
                         </div>
                         <div className='data_box_label'>
                             Total Raised
                         </div>
                     </div>
-                    <div className='data_box column'>
+                    <div className='data_box column' onClick={this.props.fetchCandidateContributions.bind(this, 'N00030612')}>
                         <div className='data_box_value'>
                             $16 M
                         </div>
@@ -76,3 +80,20 @@ export default class CandidateContributions extends Base {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    //console.log('CandidateContributions mapStateToProps');
+    //console.log(state);
+
+    return {
+        CandidateContributions: state.CandidateContributions
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchCandidateContributions: id => dispatch(fetchCandidateContributions(id))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CandidateContributions);
