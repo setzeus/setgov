@@ -19,7 +19,7 @@ class CandidateListPage extends Base {
         // custom styles for party_selection
         return (
             <div className='CandidateListPage'>
-                <div className='party_selection'>
+                <div className='row'>
                     <Link to='/candidate'>
                         <Button
                             inverted
@@ -37,9 +37,8 @@ class CandidateListPage extends Base {
                         </Button>
                     </Link>
                 </div>
-
-                <div className='party_candidates'>
-
+                <div className='listContainer column'>
+                    <p>ListViews go here</p>
                 </div>
             </div>
         );
