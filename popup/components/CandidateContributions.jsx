@@ -3,8 +3,8 @@ import Base from './Base';
 
 import SegmentHeader from './SegmentHeader';
 
-
-export default class CandidateContributions extends Base{
+//Make sure to have one space before opening brace
+export default class CandidateContributions extends Base {
 	render() {
 		return (
 			<div className="CandidateContributions">
