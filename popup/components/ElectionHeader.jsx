@@ -1,6 +1,7 @@
 import React from 'react';
 import Base from './Base';
 
+
 export default class ElectionHeader extends Base {
 
     constructor(props) {
@@ -10,7 +11,7 @@ export default class ElectionHeader extends Base {
     render() {
         return (
             <div className='ElectionHeader'>
-                ElectionHeader
+                <div className='photo_container' />
             </div>
         );
     }

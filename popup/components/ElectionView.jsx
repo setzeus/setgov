@@ -18,8 +18,8 @@ class ElectionView extends Base {
     }
 
     render() {
-        const activeComponent = <ElectionPlatformPanel />;
-        // switch (this.props.activeSegment) {
+        const activeComponent = <ElectionLivePollPanel />;
+        // switch (this.props.Election.activeSegment) {
         // case 'livepolls':
         //     activeComponent = <ElectionLivePollPanel/>;
         //     break;
@@ -55,7 +55,7 @@ const mapStateToProps = (state) => {
 
     console.log(state);
     return {
-        Candidate: state.Candidate
+        Election: state.Election
     };
 };
 

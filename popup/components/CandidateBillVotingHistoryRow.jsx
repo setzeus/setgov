@@ -3,10 +3,10 @@ import { Label, Icon } from 'semantic-ui-react';
 
 import Base from './Base';
 
-export default class BillVotingHistoryRow extends Base {
+export default class CandidateBillVotingHistoryRow extends Base {
     render() {
         return (
-            <div className='BillVotingHistoryRow'>
+            <div className='CandidateBillVotingHistoryRow'>
                 <div className='column' >
                     <div className='circle_divider flex-center'/>
                     <div className='circle column'>

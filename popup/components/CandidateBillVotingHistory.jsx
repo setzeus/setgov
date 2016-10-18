@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Base from './Base';
-import BillVotingHistoryRow from './BillVotingHistoryRow';
+import CandidateBillVotingHistoryRow from './CandidateBillVotingHistoryRow';
 import SegmentHeader from './SegmentHeader';
 
 export default class CandidateBillVotingHistory extends Base {
@@ -10,7 +10,7 @@ export default class CandidateBillVotingHistory extends Base {
       <div className='CandidateBillVotingHistory'>
         <SegmentHeader title='Bill Voting History'/>
         <div className='data_container'>
-          <BillVotingHistoryRow/>
+          <CandidateBillVotingHistoryRow/>
         </div>
       </div>
     );

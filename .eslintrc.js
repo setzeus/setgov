@@ -13,6 +13,7 @@ module.exports = {
         'eol-last': ['off'],
         'eqeqeq': 'off',
         'import/prefer-default-export': ['off'],
+        'class-methods-use-this': ['off'],
         'indent': ['error', 4],
         'jsx-quotes': ['error', 'prefer-single'],
         'keyword-spacing': ['error', { 'after': true }],

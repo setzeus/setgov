@@ -28,6 +28,12 @@ class CandidateSegmentButton extends Base {
         case 'history':
             icon = 'history';
             break;
+        case 'platform':
+            icon = 'unordered list';
+            break;
+        case 'livepolls':
+            icon = 'line chart';
+            break;
         }
         return (
             <Button
