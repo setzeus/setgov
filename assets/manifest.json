@@ -5,7 +5,7 @@
   "version": "1.0",
 
   "browser_action": {
-    "default_icon": "icon.png",
+    "default_icon": "./images/logo_no_circle.png",
     "default_popup": "index.html",
     "default_title": "react-chrome-redux-boilerplate"
 

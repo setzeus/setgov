@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setStateFromKeywords } from '../scripts/getKeyWordsFromPage';
-
+import { highlightWords } from '../scripts/highlight';
 class App extends Component {
     constructor(props) {
         super(props);
+         
     }
 
     componentDidMount() {
         console.log(this.props.GeneralElection);
         setStateFromKeywords(this.props.dispatch);
+
         //basic clicker to log redux is working across platform
         // document.addEventListener('click', () => {
         //   console.log('testing')
