@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 import { Button, Icon } from 'semantic-ui-react';
 
 import Base from './Base';
+import { changeActiveSegment } from '../actions/Election';
 
-import { changeActiveSegment } from '../actions/Candidate';
-
-class CandidateSegmentButton extends Base {
+class ElectionSegmentButton extends Base {
     constructor(props) {
         super(props);
         this.autoBind('handleSegmentedSelection');
@@ -17,17 +16,17 @@ class CandidateSegmentButton extends Base {
     }
 
     render() {
-        console.log(this.props.Candidate.activeSegment)
+        console.log(this.props.Election.activeElectionSegment)
         let icon;
         switch (this.props.name) {
-        case 'contributions':
-            icon = 'money';
+        case 'platform':
+            icon = 'unordered list';
             break;
         case 'info':
             icon = 'info';
             break;
-        case 'history':
-            icon = 'history';
+        case 'livepolls':
+            icon = 'line chart';
             break;
         }
         return (
@@ -35,7 +34,7 @@ class CandidateSegmentButton extends Base {
                 inverted
                 onClick={this.handleSegmentedSelection}
                 color='red'
-                active={this.props.Candidate.activeSegment == this.props.name}
+                active={this.props.Election.activeElectionSegment == this.props.name}
             >
                 <Icon name={icon} size='large'/>
             </Button>
@@ -44,8 +43,11 @@ class CandidateSegmentButton extends Base {
 }
 
 const mapStateToProps = (state) => {
+    console.log('mapStateToProps')
+
+    console.log(state.Election)
     return {
-        Candidate: state.Candidate
+        Election: state.Election
     };
 };
 
@@ -55,4 +57,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CandidateSegmentButton);
+export default connect(mapStateToProps, mapDispatchToProps)(ElectionSegmentButton);

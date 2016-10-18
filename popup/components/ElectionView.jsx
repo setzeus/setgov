@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Button } from 'semantic-ui-react';
 
 import Base from './Base';
-import CandidateSegmentButton from './CandidateSegmentButton';
+import ElectionSegmentButton from './ElectionSegmentButton';
 import ElectionGenInfoPanel from './ElectionGenInfoPanel';
 import ElectionLivePollPanel from './ElectionLivePollPanel';
 import ElectionHeader from './ElectionHeader';
@@ -18,20 +18,20 @@ class ElectionView extends Base {
     }
 
     render() {
-        const activeComponent = <ElectionLivePollPanel />;
-        // switch (this.props.Election.activeSegment) {
-        // case 'livepolls':
-        //     activeComponent = <ElectionLivePollPanel/>;
-        //     break;
-        // case 'info':
-        //     // activeComponent = <ElectionGenInfoPanel/>;
-        //     break;
-        // case 'platform':
-        //     activeComponent = <ElectionPlatformPanel/>;
-        //     break;
-        // default:
-        //     break;
-        // }
+        let activeComponent = <ElectionPlatformPanel/>;
+        switch (this.props.Election.activeElectionSegment) {
+        case 'livepolls':
+            activeComponent = <ElectionLivePollPanel/>;
+            break;
+        case 'info':
+            activeComponent = <ElectionGenInfoPanel/>;
+            break;
+        case 'platform':
+            activeComponent = <ElectionPlatformPanel/>;
+            break;
+        default:
+            break;
+        }
 
         return (
             <div className='ElectionView'>
@@ -39,9 +39,9 @@ class ElectionView extends Base {
                 <ElectionHeader />
                 <div className='segmented_controller_container'>
                     <Button.Group>
-                        <CandidateSegmentButton name='livepolls'/>
-                        <CandidateSegmentButton name='info'/>
-                        <CandidateSegmentButton name='platform'/>
+                        <ElectionSegmentButton name='livepolls'/>
+                        <ElectionSegmentButton name='info'/>
+                        <ElectionSegmentButton name='platform'/>
                     </Button.Group>
                 </div>
                 {activeComponent}
@@ -51,9 +51,6 @@ class ElectionView extends Base {
 }
 
 const mapStateToProps = (state) => {
-    console.log('ElectionView mapStateToProps');
-
-    console.log(state);
     return {
         Election: state.Election
     };

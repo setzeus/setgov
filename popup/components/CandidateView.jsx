@@ -5,6 +5,7 @@ import { Button } from 'semantic-ui-react';
 import Base from './Base';
 import CandidateBillVotingHistory from './CandidateBillVotingHistory';
 import CandidateContributions from './CandidateContributions';
+import CandidateInfoPanel from './CandidateInfoPanel';
 import CandidateHeader from './CandidateHeader';
 import CandidateSegmentButton from './CandidateSegmentButton';
 import RootHeader from './RootHeader';
@@ -17,20 +18,20 @@ class CandidateView extends Base {
     }
 
     render() {
-        const activeComponent = <CandidateContributions />;
-        // switch (this.props.Candidate.activeSegment) {
-        // case 'contributions':
-        //     activeComponent = <CandidateContributions/>;
-        //     break;
-        // case 'info':
-        //     // activeComponent = <CandidateInformation/>;
-        //     break;
-        // case 'history':
-        //     activeComponent = <CandidateBillVotingHistory/>;
-        //     break;
-        // default:
-        //     break;
-        // }
+        let activeComponent = <CandidateContributions />;
+        switch (this.props.Candidate.activeSegment) {
+        case 'contributions':
+            activeComponent = <CandidateContributions/>;
+            break;
+        case 'info':
+            activeComponent = <CandidateInfoPanel/>;
+            break;
+        case 'history':
+            activeComponent = <CandidateBillVotingHistory/>;
+            break;
+        default:
+            break;
+        }
 
         return (
             <div className='CandidateView'>
@@ -50,9 +51,6 @@ class CandidateView extends Base {
 }
 
 const mapStateToProps = (state) => {
-    console.log('CandidateView mapStateToProps');
-
-    console.log(state);
     return {
         Candidate: state.Candidate
     };

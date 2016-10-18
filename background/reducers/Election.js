@@ -1,6 +1,7 @@
 import * as types from '../actionTypes';
 
 const initalState = {
+    activeElectionSegment: 'platform',
     electionName: '',
     candidates: [],
     electionDate: '2016-11-08T00:00:00.000Z',
@@ -10,6 +11,10 @@ const initalState = {
 
 export default (state = initalState, action) => {
     switch (action.type) {
+    case types.CHANGE_ELECTION_SEGMENT:
+        return Object.assign({}, state, {
+            activeElectionSegment: action.segment
+        });
     case types.GENERAL_ELECTION:
         return Object.assign({}, state, {
             race: action.type

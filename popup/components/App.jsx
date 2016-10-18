@@ -27,10 +27,6 @@ class App extends Base {
 }
 
 const mapStateToProps = (state) => {
-    console.log('App mapStateToProps');
-
-    console.log(state);
-
     return {
         Environment: state.Environment,
         Candidate: state.Candidate,
