@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router/lib';
 import { Button } from 'semantic-ui-react';
 
-import RaceList from './RaceList';
+import ElectionList from './ElectionList';
 import CandidateList from './CandidateList';
 import Base from './Base';
 
@@ -33,14 +33,14 @@ class SetGovHomeListPage extends Base {
             <div className='SetGovHomeListPage'>
                
                     <Button.Group  size='huge'>
-                        <Button onClick={ () => this.handleClick(0)} className='race_button'>Race</Button>
+                        <Button onClick={ () => this.handleClick(0)} className='race_button'>Election</Button>
                         <Button.Or />
                         <Button onClick={ () => this.handleClick(1)} className='candidate_button'>Candidate</Button>
                     </Button.Group>
                
                 <div className='result_container'>
                     { this.state.selection == 1 &&  <CandidateList/> }
-                    { this.state.selection == 0 && <RaceList/> }
+                    { this.state.selection == 0 && <ElectionList/> }
                 </div>
             </div>
         );

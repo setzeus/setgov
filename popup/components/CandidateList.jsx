@@ -54,7 +54,7 @@ class CandidateList extends Base {
                 		</div>
                 		<div className='text_info'>
                 			<p className='name rep'>Marco Rubio</p>
-                			<p className='race'>Presidential Election</p>
+                			<p className='race'>Florida Senate Election</p>
                 		</div>
                 	</Link>
                 </div>
