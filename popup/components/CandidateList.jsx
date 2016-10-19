@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router/lib';
 import { Button } from 'semantic-ui-react';
 import CandidateListTile from './CandidateListTile';
+
 import Base from './Base';
 
 class CandidateList extends Base {
@@ -16,14 +17,13 @@ class CandidateList extends Base {
     handleCandidateTiles(data){
         
       return data.map( (tile,index) => {
-           
-            return <CandidateListTile
-                        key={index}
-                        name={tile.name} 
-                        party={tile.party}
-                        race={tile.race}
-                        image={tile.image}
-                    />
+        return <CandidateListTile
+                    key={index}
+                    name={tile.name} 
+                    party={tile.party}
+                    race={tile.race}
+                    image={tile.image}
+                />
         })
     }
 
@@ -31,6 +31,7 @@ class CandidateList extends Base {
         return (
             <div className='CandidateList'>
                 <div className='candidate_list_container'>
+
                     {
                     this.props.environment == undefined ? 
                     console.log('props came back undefined') : 
@@ -38,8 +39,6 @@ class CandidateList extends Base {
                     
                     }
             	
-                	
-                	
                 </div>
             </div>
         );
