@@ -10,19 +10,22 @@ export default class ElectionPlatformPanelCategory extends Base {
         super(props);
         this.autoBind('onMouseOver', 'onMouseOut');
         this.state = {
-            activeSubType: null
+            categoryMouseOver: false,
+            subTypeMouseOver: false,
+            activeSubType: false
         };
     }
 
     onMouseOver() {
-        console.log('got here');
+        //console.log('got here');
         this.setState({
-            activeSubType: <ElectionPlatformPanelSubType />
+            activeSubType: true
         });
     }
     onMouseOut() {
+        console.log('got here');
         this.setState({
-            activeSubType: null
+            activeSubType: false
         });
     }
     render() {
@@ -38,7 +41,11 @@ export default class ElectionPlatformPanelCategory extends Base {
                     </div>
                     <Icon name='level down' size='big'/>
                 </div>
-                {this.state.activeSubType}
+                {this.state.activeSubType ?
+                    <ElectionPlatformPanelSubType />
+                    :
+                    null
+                }
             </div>
         );
     }
