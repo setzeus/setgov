@@ -1,19 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router/lib';
 import { Button } from 'semantic-ui-react';
 
 import ElectionList from './ElectionList';
 import CandidateList from './CandidateList';
 import Base from './Base';
+import { changeActiveComponent } from '../actions/SetGovHome';
+
 
 class SetGovHomeListPage extends Base {
     constructor(props) {
         super(props);
-        this.autoBind('handleClick');
-        this.state = {
-            selection: 1
-        };
+        this.autoBind('handleClick', 'displayActiveSegment');
+        // this.state = {
+        //     selection: 1
+        // };
     }
 
     dispatchRace(msg) {
@@ -21,10 +22,18 @@ class SetGovHomeListPage extends Base {
     }
     handleClick(state) {
         console.log(state);
-        this.setState({
-            selection: state
-        });
+        this.props.changeActiveComponent(state);
     }
+    displayActiveSegment() {
+        if (this.props.environment != null) {
+            if (this.props.environment.activeComponent == 'CandidateView') {
+                return <CandidateList />;
+            }
+            return <ElectionList />;
+        }
+        return null;
+    }
+
     render() {
         console.log(this.state);
         // custom styles for party_selection
@@ -32,24 +41,23 @@ class SetGovHomeListPage extends Base {
             <div className='SetGovHomeListPage'>
                 <Button.Group size='huge'>
                     <Button
-                        onClick={() => this.handleClick(0)}
+                        onClick={() => this.handleClick('')}
                         className='race_button'
-                        active={this.state.selection == 0}
+                        active={this.displayActiveSegment() ? this.props.environment.activeComponent != 'CandidateView' : console.log('error')}
                     >
                         Election
                     </Button>
                     <Button.Or />
                     <Button
-                        onClick={() => this.handleClick(1)}
+                        onClick={() => this.handleClick('CandidateView')}
                         className='candidate_button'
-                        active={this.state.selection == 1}
+                        active={this.displayActiveSegment() ? this.props.environment.activeComponent == 'CandidateView' : console.log('error')}
                     >
                         Candidate
                     </Button>
                 </Button.Group>
                 <div className='result_container'>
-                    {this.state.selection == 1 && <CandidateList/>}
-                    {this.state.selection == 0 && <ElectionList/>}
+                    {this.displayActiveSegment()}
                 </div>
             </div>
         );
@@ -58,8 +66,15 @@ class SetGovHomeListPage extends Base {
 
 const mapStateToProps = (state) => {
     return {
-        ElectionInfo: state.ElectionInfo
+        ElectionInfo: state.ElectionInfo,
+        environment: state.environment
     };
 };
 
-export default connect(mapStateToProps)(SetGovHomeListPage);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changeActiveComponent: component => dispatch(changeActiveComponent(component))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SetGovHomeListPage);
