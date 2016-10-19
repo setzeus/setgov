@@ -57,6 +57,7 @@ class SetGovHomeListPage extends Base {
                     </Button>
                 </Button.Group>
                 <div className='result_container'>
+
                     {this.displayActiveSegment()}
                 </div>
             </div>
@@ -67,6 +68,7 @@ class SetGovHomeListPage extends Base {
 const mapStateToProps = (state) => {
     return {
         ElectionInfo: state.ElectionInfo,
+
         environment: state.environment
     };
 };
