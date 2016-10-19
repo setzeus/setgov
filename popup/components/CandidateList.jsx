@@ -19,19 +19,19 @@ class CandidateList extends Base {
         return (
             <div className='CandidateList'>
                 <div className='candidate_list_container'>
-                	
-                		<Link  to='/candidate' className='candidate_tile raised'>
-                		
-	                		<div className='avatar hilliary'>
-	                		</div>
-	                		<div className='text_info'>
-	                			<p className='name dem'>Hilliary Clinton</p>
-	                			<p className='race'>Presidential Election</p>
+            	
+            		<Link  to='/candidate' className='candidate_tile raised'>
+            		
+                		<div className='avatar hilliary'>
+                		</div>
+                		<div className='text_info'>
+                			<p className='name dem'>Hilliary Clinton</p>
+                			<p className='race'>Presidential Election</p>
 
-	                		</div>
-	             
-                		</Link>
-                	
+                		</div>
+             
+            		</Link>
+            	
                 	
                 	<Link to='/candidate' className='candidate_tile raised'>
                 		<div className='avatar donald'>
