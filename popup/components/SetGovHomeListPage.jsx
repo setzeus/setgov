@@ -39,7 +39,7 @@ class SetGovHomeListPage extends Base {
                     </Button.Group>
                
                 <div className='result_container'>
-                    { this.state.selection == 1 &&  <CandidateList/> }
+                    { this.state.selection == 1 &&  <CandidateList environment={this.props.environment}/> }
                     { this.state.selection == 0 && <RaceList/> }
                 </div>
             </div>
@@ -49,7 +49,7 @@ class SetGovHomeListPage extends Base {
 
 const mapStateToProps = (state) => {
     return {
-        ElectionInfo: state.ElectionInfo
+        ElectionInfo: state.ElectionInfo,
     };
 };
 

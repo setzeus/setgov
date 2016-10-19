@@ -9,8 +9,9 @@ class App extends Base {
     }
 
     render() {
-        console.log('App render');
 
+        console.log('App render');
+       
         // switch (this.props.activeComponent) {
         // case 'CandidateView':
         //     activeComponent = <CandidateView/>;
@@ -21,6 +22,7 @@ class App extends Base {
         return (
             <div>
                 {this.props.children}
+
             </div>
         );
     }
@@ -28,7 +30,7 @@ class App extends Base {
 
 const mapStateToProps = (state) => {
     return {
-        Environment: state.Environment,
+        environment: state.environment,
         Candidate: state.Candidate,
         PlatformCounts: state.PlatformCounts
     };
