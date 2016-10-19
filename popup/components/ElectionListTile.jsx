@@ -1,33 +1,42 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router/lib';
-import { Button } from 'semantic-ui-react';
+import { Link } from 'react-router';
 
 import Base from './Base';
+
 
 export default class ElectionListTile extends Base {
     constructor(props) {
         super(props);
     }
     render() {
+        let path;
+        if (this.props.title.includes('Florida')) {
+            path = '/images/Florida-icon.png';
+        } else if (this.props.title.includes('Presidential')) {
+            path = '/images/USA-icon.png';
+        }
+
+        const imageStyle = {
+            backgroundImage: `url('${path}')`
+        };
+
         return (
-            <div className='ElectionListTile column'>
+            <Link to='/election' className='ElectionListTile column'>
                 <div className='election_title'>
-                    Presidential Election
+                    {this.props.title}
                 </div>
                 <div className='row justify-space-between flex'>
                     <div className='column candidate_container'>
                         <div className='democrat'>
-                            Hillary Clinton
+                            {this.props.democrat}
                         </div>
                         <div className='republican'>
-                            Donald Trump
+                            {this.props.republican}
                         </div>
                     </div>
-                    <div className='state_container'>
-                    </div>
+                    <div className='state_container' style={imageStyle} />
                 </div>
-            </div>
+            </Link>
         );
     }
 }

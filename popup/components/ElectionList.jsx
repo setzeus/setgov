@@ -13,7 +13,16 @@ export default class ElectionList extends Base {
     render() {
         return (
             <div className='ElectionList'>
-                <ElectionListTile />
+                <ElectionListTile
+                    title='Presidential Election'
+                    democrat='Hillary Clinton'
+                    republican='Donald Trump'
+                />
+                <ElectionListTile
+                    title='Florida Senate Election'
+                    democrat='Patrick Murphy'
+                    republican='Marco Rubio'
+                />
             </div>
         );
     }

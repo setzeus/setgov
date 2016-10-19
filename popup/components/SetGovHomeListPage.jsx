@@ -11,7 +11,6 @@ class SetGovHomeListPage extends Base {
     constructor(props) {
         super(props);
         this.autoBind('handleClick');
-
         this.state = {
             selection: 1
         };
@@ -20,27 +19,37 @@ class SetGovHomeListPage extends Base {
     dispatchRace(msg) {
         console.log(msg);
     }
-    handleClick(state){
-        console.log(state)
+    handleClick(state) {
+        console.log(state);
         this.setState({
             selection: state
-        })
+        });
     }
     render() {
         console.log(this.state);
         // custom styles for party_selection
         return (
             <div className='SetGovHomeListPage'>
-               
-                    <Button.Group  size='huge'>
-                        <Button onClick={ () => this.handleClick(0)} className='race_button'>Election</Button>
-                        <Button.Or />
-                        <Button onClick={ () => this.handleClick(1)} className='candidate_button'>Candidate</Button>
-                    </Button.Group>
-               
+                <Button.Group size='huge'>
+                    <Button
+                        onClick={() => this.handleClick(0)}
+                        className='race_button'
+                        active={this.state.selection == 0}
+                    >
+                        Election
+                    </Button>
+                    <Button.Or />
+                    <Button
+                        onClick={() => this.handleClick(1)}
+                        className='candidate_button'
+                        active={this.state.selection == 1}
+                    >
+                        Candidate
+                    </Button>
+                </Button.Group>
                 <div className='result_container'>
-                    { this.state.selection == 1 &&  <CandidateList/> }
-                    { this.state.selection == 0 && <ElectionList/> }
+                    {this.state.selection == 1 && <CandidateList/>}
+                    {this.state.selection == 0 && <ElectionList/>}
                 </div>
             </div>
         );
