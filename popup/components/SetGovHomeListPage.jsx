@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router/lib';
 import { Button } from 'semantic-ui-react';
 
+import CandidateList from './CandidateList';
 import Base from './Base';
 
 class SetGovHomeListPage extends Base {
@@ -19,26 +20,15 @@ class SetGovHomeListPage extends Base {
         // custom styles for party_selection
         return (
             <div className='SetGovHomeListPage'>
-                <div className='row'>
-                    <Link to='/candidate'>
-                        <Button
-                            inverted
-                            color='red'
-                        >
-                            Candidates
-                        </Button>
-                    </Link>
-                    <Link to='/election'>
-                        <Button
-                            inverted
-                            color='red'
-                        >
-                            Elections
-                        </Button>
-                    </Link>
-                </div>
-                <div className='listContainer column'>
-                    <p>ListViews go here</p>
+               
+                    <Button.Group  size='huge'>
+                        <Button className='race_button'>Race</Button>
+                        <Button.Or />
+                        <Button className='candidate_button'>Candidate</Button>
+                    </Button.Group>
+               
+                <div className='result_container'>
+                    <CandidateList/>
                 </div>
             </div>
         );
