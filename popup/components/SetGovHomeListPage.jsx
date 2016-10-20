@@ -68,7 +68,6 @@ class SetGovHomeListPage extends Base {
 const mapStateToProps = (state) => {
     return {
         ElectionInfo: state.ElectionInfo,
-
         environment: state.environment
     };
 };

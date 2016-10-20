@@ -2,7 +2,7 @@ import * as types from '../actionTypes';
 
 const initalState = {
     activeElectionSegment: 'platform',
-    electionName: '',
+    name: '',
     candidates: [],
     electionDate: '2016-11-08T00:00:00.000Z',
     livePolling: {},

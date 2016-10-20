@@ -2,8 +2,6 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router/lib';
-import { Button } from 'semantic-ui-react';
 import CandidateListTile from './CandidateListTile';
 
 import Base from './Base';
@@ -12,33 +10,31 @@ class CandidateList extends Base {
     constructor(props) {
         super(props);
         this.autoBind();
-
     }
-    handleCandidateTiles(data){
-        
-      return data.map( (tile,index) => {
-        return <CandidateListTile
+    handleCandidateTiles(data) {
+        return data.map((tile, index) => {
+            return (
+                <CandidateListTile
                     key={index}
-                    name={tile.name} 
+                    name={tile.name}
                     party={tile.party}
                     race={tile.race}
                     image={tile.image}
+                    index={index}
                 />
-        })
+            );
+        });
     }
 
     render() {
         return (
             <div className='CandidateList'>
                 <div className='candidate_list_container'>
-
                     {
-                    this.props.environment == undefined ? 
-                    console.log('props came back undefined') : 
+                    this.props.environment == undefined ?
+                    console.log('props came back undefined') :
                     this.handleCandidateTiles(this.props.environment.candidates)
-                    
                     }
-            	
                 </div>
             </div>
         );
@@ -46,8 +42,8 @@ class CandidateList extends Base {
 }
 
 const mapStateToProps = (state) => {
-     return {
-         environment: state.environment
+    return {
+        environment: state.environment
     };
 };
 
