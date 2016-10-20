@@ -24,6 +24,8 @@ module.exports = {
         'quotes': ['error', 'single'],
         'react/jsx-filename-extension': ['off'],
         'react/jsx-space-before-closing': ['off'],
+        'prefer-template': ['off'],
+        'react/prop-types': ['off'],
         'react/jsx-indent': ['error', 4],
         'react/jsx-indent-props': ['error', 4],
         'react/self-closing-comp': ['warn'],

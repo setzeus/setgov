@@ -9,5 +9,5 @@ export default combineReducers({
     Candidate,
     environment,
     Election,
-    PlatformCounts
+    PlatformCounts,
 });

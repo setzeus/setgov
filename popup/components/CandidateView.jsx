@@ -10,25 +10,30 @@ import CandidateHeader from './CandidateHeader';
 import CandidateSegmentButton from './CandidateSegmentButton';
 import RootHeader from './RootHeader';
 
+import { changeActiveCandidate } from '../actions/Candidate';
+
 class CandidateView extends Base {
 
     constructor(props) {
         super(props);
         this.autoBind();
     }
+    componentWillMount() {
+        const activeCandidate = this.props.environment.candidates[this.props.params.candidateIndex];
+        this.props.changeActiveCandidate(activeCandidate);
+    }
 
     render() {
-        console.log(this.props)
-        let activeComponent = <CandidateContributions />;
+        let activeSegment;
         switch (this.props.Candidate.activeSegment) {
         case 'contributions':
-            activeComponent = <CandidateContributions/>;
+            activeSegment = <CandidateContributions />;
             break;
         case 'info':
-            activeComponent = <CandidateInfoPanel/>;
+            activeSegment = <CandidateInfoPanel/>;
             break;
         case 'history':
-            activeComponent = <CandidateBillVotingHistory/>;
+            activeSegment = <CandidateBillVotingHistory/>;
             break;
         default:
             break;
@@ -36,8 +41,8 @@ class CandidateView extends Base {
 
         return (
             <div className='CandidateView'>
-                <RootHeader to='/home' title='Marco Rubio'/>
-                <CandidateHeader name='Marco Rubio'/>
+                <RootHeader to='/home' />
+                <CandidateHeader />
                 <div className='segmented_controller_container'>
                     <Button.Group>
                         <CandidateSegmentButton name='contributions'/>
@@ -45,7 +50,7 @@ class CandidateView extends Base {
                         <CandidateSegmentButton name='history'/>
                     </Button.Group>
                 </div>
-                {activeComponent}
+                {activeSegment}
             </div>
         );
     }
@@ -53,8 +58,16 @@ class CandidateView extends Base {
 
 const mapStateToProps = (state) => {
     return {
+        environment: state.environment,
         Candidate: state.Candidate
     };
 };
 
-export default connect(mapStateToProps)(CandidateView);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changeActiveCandidate: candidate => dispatch(changeActiveCandidate(candidate))
+    };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(CandidateView);

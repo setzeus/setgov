@@ -17,7 +17,6 @@ class CandidateSegmentButton extends Base {
     }
 
     render() {
-        console.log(this.props.Candidate.activeSegment);
         let icon;
         switch (this.props.name) {
         case 'contributions':

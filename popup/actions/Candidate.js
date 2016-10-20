@@ -7,6 +7,15 @@ export function changeActiveSegment(segment) {
         segment
     };
 }
+
+export function changeActiveCandidate(candidate) {
+    return {
+        type: 'CHANGE_ACTIVE_CANDIDATE',
+        candidate
+    };
+}
+
+
 export function fetchCandidateContributions(id) {
     console.log('fetchCandidateContributions');
     return dispatch => {
