@@ -8,7 +8,7 @@ const initalState = {
             race: 'Presidential Election',
             party: 'democrat',
             image: 'hillary',
-            bannerImageUrl: '',
+            bannerImageUrl: 'https://s3-us-west-2.amazonaws.com/setgov/Hillary.jpg',
             contributions: {
                 chartData: {},
                 totalRaised: '$530 M',
@@ -37,7 +37,7 @@ const initalState = {
             race: 'Presidential Election',
             party: 'republican',
             image: 'donald',
-            bannerImageUrl: '',
+            bannerImageUrl: 'https://s3-us-west-2.amazonaws.com/setgov/Trump.jpg',
             contributions: {
                 chartData: {},
                 totalRaised: '$209 M',
