@@ -43,9 +43,7 @@ class ElectionSegmentButton extends Base {
 }
 
 const mapStateToProps = (state) => {
-    console.log('mapStateToProps')
-
-    console.log(state.Election)
+    
     return {
         Election: state.Election
     };
