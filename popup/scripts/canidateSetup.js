@@ -1,3 +1,27 @@
+  function count( map ) {
+    if(map.count > 0){
+      return map
+    }
+  }
+
+  function sortInt(a, b) {
+      return  b.count - a.count;
+  }
+     
+  function checkSubtag( value ) {
+      if(value.subTags.length > 0){
+          return value
+      }
+  }
+
+  function checkSubtagCount(value) {
+      for (var q=0;q< value.subTags.length; q++){
+          if( value.subTags[q].count !== 0){
+             return value
+          }
+      }
+  }
+
 export function hiliarySetup(wordCount) {
 	console.log(wordCount)
   if(wordCount == undefined){
@@ -10,22 +34,22 @@ export function hiliarySetup(wordCount) {
         count: wordCount.economy,
         subTags:[
           {
-            text:"AFairTaxSystem",
-            tag:"Economy",
+            text: "AFairTaxSystem",
+            tag: "Economy",
             count: wordCount.economy_a_fair_tax_system,
-            link:"https://www.hillaryclinton.com/issues/a-fair-tax-system/",
+            link: "https://www.hillaryclinton.com/issues/a-fair-tax-system/",
             count: wordCount.economy_a_fair_tax_system,
           },
           {
-            text:"FixingInfrastructure",
-            tag:"Economy",
-            link:"https://www.hillaryclinton.com/issues/fixing-americas-infrastructure/",
+            text: "FixingInfrastructure",
+            tag: "Economy",
+            link: "https://www.hillaryclinton.com/issues/fixing-americas-infrastructure/",
             count: wordCount.economy_fixing_americas_infrastructure
           },
           {
-            text:"Manufacturing",
-            tag:"Economy",
-            link:"https://www.hillaryclinton.com/issues/manufacturing/",
+            text: "Manufacturing",
+            tag: "Economy",
+            link: "https://www.hillaryclinton.com/issues/manufacturing/",
             count: wordCount.economy_manufacturing
           },
           {
@@ -292,28 +316,120 @@ export function hiliarySetup(wordCount) {
 	
 }
 
+export function hiliarySetup(wordCount) {
+  console.log(wordCount)
+  if(wordCount == undefined){
+    console.log('shit hit the fan')
+  }else{
+    var trumpTags = [
+      {
+        text: 'Equality',
+        link: 'https://www.donaldjtrump.com/policies/immigration/',
+        count: wordCount.equality,
+        subTags:[
+          {
+            text: 'Veterans Affaris Reform',
+            tag: 'equality',
+            link: 'https://www.donaldjtrump.com/policies/veterans-affairs-reform/',
+            count: wordCount.jobs_veterans_the_armed_forces_and_their_families
+          },
+          {
+            text: 'Consititution and Second Amendment',
+            tag: 'Equality',
+            link: 'https://www.donaldjtrump.com/policies/constitution-and-second-amendment/',
+            count: wordCount.equality_gun_contrl
+          }
+        ]
+      },
 
-function count (map){
-	if(map.count > 0){
-	  return map
-	}
+      {
+        text: 'Economy',
+        link: 'https://www.donaldjtrump.com/policies/economy/',
+        count: wordCount.economy,
+        subTags: [
+          {
+            text: 'Regulations',
+            tag: 'Economy',
+            link: 'https://www.donaldjtrump.com/policies/regulations/',
+            count: wordCount.economy_regulation
+          },
+          {
+            text: 'Tax Plan',
+            tag: 'Economy',
+            link: 'https://www.donaldjtrump.com/policies/tax-plan/',
+            count: wordCount.economy_taxplan
+          },
+          {
+            text: 'Trade',
+            tag: 'Economy',
+            link: 'https://www.donaldjtrump.com/policies/tax-plan/',
+            count: wordCount.economy_trade
+          }
+        ]
+      },
+      {
+        text: 'Security',
+        link: 'https://www.donaldjtrump.com/policies/national-defense/',
+        count: wordCount.security,
+        subTags: [
+          {
+            text: 'Foreign Policy and Defeating ISIS',
+            tag: 'Security',
+            link: 'https://www.donaldjtrump.com/policies/foreign-policy-and-defeating-isis/',
+            count: wordCount.security_foreign_policy
+          }
+        ]
+      },
+      {
+        text: 'Enviroment',
+        link: 'https://www.donaldjtrump.com/policies/energy/',
+        count: wordCount.environment,
+        subTags: [
+          {
+            text: 'Energy',
+            tag: 'Enviroment',
+            link: 'https://www.donaldjtrump.com/policies/energy/',
+            count:  wordCount.environment_energy
+          }
+        ]
+      },
+      {
+        text: 'Education',
+        link: 'https://www.donaldjtrump.com/policies/education/',
+        count: wordCount.education,
+        subTags: [
+          {
+            text: 'Education',
+            tag: 'Education',
+            link: 'https://www.donaldjtrump.com/policies/education/',
+            count: wordCount.education
+          }
+        ]
+      },
+      {
+        text: 'Health',
+        link : 'https://www.donaldjtrump.com/policies/child-care/',
+        count: wordCount.health,
+        subTags: [
+          {
+            text: 'Child Care',
+            tag: 'Health',
+            link : 'https://www.donaldjtrump.com/policies/child-care/',
+            count: wordCount.health_child_care
+          }
+        ]
+      }
+    ]
+    var countFilter = trumpTags.filter(count).sort(sortInt).filter(checkSubtag).filter(checkSubtagCount);
+    var trump = countFilter.unshift({ name: 'D.Trump'});
+    return trump
+  }
+  
+
+    
+  }
+  
 }
 
-function sortInt(a,b) {
-    return  b.count - a.count;
-}
-   
-function checkSubtag(value){
-	if(value.subTags.length > 0){
-	  return value 
-	}
-}
 
 
-function checkSubtagCount(value){
-	for(var q=0;q< value.subTags.length; q++){
-	  if( value.subTags[q].count !== 0){
-	    return value
-	  }
-	}
-}

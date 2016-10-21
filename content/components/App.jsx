@@ -8,7 +8,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.GeneralElection);
+        
         setStateFromKeywords(this.props.dispatch);
       
     }
@@ -22,7 +22,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        GeneralElection: state.GeneralElection
+        PlatformCounts: state.PlatformCounts
     };
 };
 
