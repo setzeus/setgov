@@ -7,7 +7,7 @@ const initalState = {
             name: 'Hillary Clinton',
             race: 'Presidential Election',
             party: 'democrat',
-            image: 'hillary',
+            image: '/images/clinton.jpg',
             bannerImageUrl: 'https://s3-us-west-2.amazonaws.com/setgov/Hillary.jpg',
             contributions: {
                 chartData: {},
@@ -36,7 +36,7 @@ const initalState = {
             name: 'Donald Trump',
             race: 'Presidential Election',
             party: 'republican',
-            image: 'donald',
+            image: '/images/donald.jpg',
             bannerImageUrl: 'https://s3-us-west-2.amazonaws.com/setgov/Trump.jpg',
             contributions: {
                 chartData: {},
@@ -65,7 +65,7 @@ const initalState = {
             name: 'Patrick Murphy',
             race: 'Florida Senate Election',
             party: 'democrat',
-            image: 'murphy',
+            image: '/images/murphy.jpeg',
             bannerImageUrl: 'https://s3-us-west-2.amazonaws.com/setgov/patrick+murphy+resized.jpg',
             contributions: {
                 chartData: {},
@@ -94,7 +94,7 @@ const initalState = {
             name: 'Marco Rubio',
             race: 'Florida Senate Election',
             party: 'republican',
-            image: 'rubio',
+            image: '/images/rubio.png',
             bannerImageUrl: 'https://s3-us-west-2.amazonaws.com/setgov/Marco-Rubio.jpg',
             contributions: {
                 chartData: {},
@@ -118,6 +118,90 @@ const initalState = {
                 }
             ],
             latestPollResult: '48.5%'
+        },
+        {
+            name: 'Debbie Lieberman',
+            race: 'Montgomory County Commissioner',
+            party: 'democrat',
+            image: '/images/lieberman.jpg',
+            bannerImageUrl: 'https://s3-us-west-2.amazonaws.com/setgov/Debbie+Lieberman.jpg',
+            contributions: {
+                chartData: {},
+                totalRaised: '',
+                totalSpent: '',
+                onHand: ''
+            },
+            generalInfo: {
+                dateOfBirth: '',
+                donateLink: 'https://debbielieberman.nationbuilder.com/donate',
+                education: 'University of Dayton',
+                placeOfBirth: '',
+                politicalExperience: 'City Council (Clay, OH), County Commisioner (Montgomery, OH)'
+            },
+            votingHistory: [
+                {
+                    date: '',
+                    name: '',
+                    status: '',
+                    vote: ''
+                }
+            ],
+            latestPollResult: ''
+        },
+        {
+            name: 'Gary Leitzell',
+            race: 'Montgomory County Commissioner',
+            party: 'republican',
+            image: '/images/leitzell.jpg',
+            bannerImageUrl: 'https://s3-us-west-2.amazonaws.com/setgov/Gary+Leitzell.jpg',
+            contributions: {
+                chartData: {},
+                totalRaised: '',
+                totalSpent: '',
+                onHand: ''
+            },
+            generalInfo: {
+                dateOfBirth: '',
+                donateLink: 'http://gogarygo.com/',
+                education: 'University of London',
+                placeOfBirth: '',
+                politicalExperience: 'Mayor (Dayton, OH), County Commisioner (Montgomery, OH)'
+            },
+            votingHistory: [
+                {
+                    date: '',
+                    name: '',
+                    status: '',
+                    vote: ''
+                }
+            ],
+            latestPollResult: ''
+        }
+    ],
+    elections: [
+        {
+            title: 'Presidential Election',
+            democrat: 'Hillary Clinton',
+            republican: 'Donald Trump',
+            list_image: '/images/USA-icon.png',
+            d_image: '/images/clinton.jpg',
+            r_image: '/images/donald.jpg'
+        },
+        {
+            title: 'Florida Senate',
+            democrat: 'Patrick Murphy',
+            republican: 'Marco Rubio',
+            list_image: '/images/Florida-icon.png',
+            d_image: '/images/rubio.png',
+            r_image: '/images/murphy.jpeg'
+        },
+        {
+            title: 'County Commissioner',
+            democrat: 'Debbie Lieberman',
+            republican: 'Gary Leitzell',
+            list_image: '/images/ohio.png',
+            d_image: '/images/lieberman.png',
+            r_image: '/images/leitzell.jpg'
         }
     ]
 };

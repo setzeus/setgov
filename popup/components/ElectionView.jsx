@@ -10,6 +10,8 @@ import ElectionHeader from './ElectionHeader';
 import ElectionPlatformPanel from './ElectionPlatformPanel';
 import RootHeader from './RootHeader';
 
+import { changeActiveElection } from '../actions/Election';
+
 class ElectionView extends Base {
 
     constructor(props) {
@@ -17,9 +19,15 @@ class ElectionView extends Base {
         this.autoBind();
     }
 
+    componentWillMount() {
+        const activeElection = this.props.environment.elections[this.props.params.electionIndex];
+        this.props.changeActiveElection(activeElection);
+    }
+
     render() {
+        console.log("got to election view");
         let activeComponent = <ElectionPlatformPanel/>;
-        switch (this.props.Election.activeElectionSegment) {
+        switch (this.props.Election.activeSegment) {
         case 'livepolls':
             activeComponent = <ElectionLivePollPanel/>;
             break;
@@ -52,8 +60,28 @@ class ElectionView extends Base {
 
 const mapStateToProps = (state) => {
     return {
+        environment: state.environment,
         Election: state.Election
     };
 };
 
-export default connect(mapStateToProps)(ElectionView);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changeActiveElection: election => dispatch(changeActiveElection(election))
+    };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ElectionView);
+
+
+
+
+
+
+
+
+
+
+
+

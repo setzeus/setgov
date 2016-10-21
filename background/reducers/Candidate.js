@@ -3,7 +3,7 @@ import * as types from '../actionTypes';
 const initalState = {
     activeSegment: 'history',
     name: '',
-    party: 'democrat',
+    party: '',
     bannerImageUrl: '',
     contributions: {
         chartData: {},

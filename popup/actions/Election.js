@@ -4,3 +4,10 @@ export function changeActiveSegment(segment) {
         segment
     };
 }
+
+export function changeActiveElection(election) {
+    return {
+        type: 'CHANGE_ACTIVE_ELECTION',
+        election
+    };
+}
