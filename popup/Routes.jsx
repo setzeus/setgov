@@ -11,7 +11,7 @@ export default(
     <Route path='/index.html' component={App}>
         <IndexRoute component={SetGovHomeListPage}/>
         <Route path='/candidate/:candidateIndex' component={CandidateView}/>
-        <Route path='/election' component={ElectionView}/>
+        <Route path='/election/:electionIndex' component={ElectionView}/>
         <Route path='/home' component={SetGovHomeListPage}/>
     </Route>
 

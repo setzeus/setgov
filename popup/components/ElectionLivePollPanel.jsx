@@ -1,11 +1,12 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
+import { connect } from 'react-redux';
 
 import Base from './Base';
 import SegmentHeader from './SegmentHeader';
 
 
-export default class ElectionLivePollPanel extends Base {
+class ElectionLivePollPanel extends Base {
 
     constructor(props) {
         super(props);
@@ -29,7 +30,7 @@ export default class ElectionLivePollPanel extends Base {
                     ],
                     datasets: [
                         {
-                            label: 'D.Trump',
+                            label: this.props.Election.republican,
                             fill: false,
                             lineTension: 0.1,
                             backgroundColor: "rgba(239,83,80,.5)",
@@ -51,7 +52,7 @@ export default class ElectionLivePollPanel extends Base {
                             spanGaps: false,
                         },
                         {   
-                            label: "H.Clinton",
+                            label: this.props.Election.democrat,
                             fill: false,
                             lineTension: 0.1,
                             backgroundColor: "rgba(0,164,228,0.5)",
@@ -125,3 +126,12 @@ export default class ElectionLivePollPanel extends Base {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        Election: state.Election
+    };
+};
+
+export default connect(mapStateToProps)(ElectionLivePollPanel);
+

@@ -11,7 +11,7 @@ class RootHeader extends Base {
         if (this.props.environment.activeComponent == 'CandidateView') {
             title = this.props.Candidate.name;
         } else {
-            title = this.props.Election.name;
+            title = this.props.Election.title;
         }
         return (
             <div className='RootHeader'>

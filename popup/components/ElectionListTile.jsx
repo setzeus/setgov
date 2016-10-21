@@ -9,19 +9,18 @@ export default class ElectionListTile extends Base {
         super(props);
     }
     render() {
-        let path;
-        if (this.props.title.includes('Florida')) {
-            path = '/images/Florida-icon.png';
-        } else if (this.props.title.includes('Presidential')) {
-            path = '/images/USA-icon.png';
-        }
+        // let path;
+        // if (this.props.title.includes('Florida')) {
+        //     path = '/images/Florida-icon.png';
+        // } else if (this.props.title.includes('Presidential')) {
+        //     path = '/images/USA-icon.png';
+        // }
 
         const imageStyle = {
-            backgroundImage: `url('${path}')`
+            backgroundImage: `url('${this.props.image}')`
         };
-
         return (
-            <Link to='/election' className='ElectionListTile column'>
+            <Link to={'/election/' + this.props.index} className='ElectionListTile column'>
                 <div className='election_title'>
                     {this.props.title}
                 </div>
