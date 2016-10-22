@@ -20,21 +20,9 @@ export default class ElectionPlatformPanelCategory extends Base {
    
     render() {
         return (
-            <div
-                className='ElectionPlatformPanelCategory'
+            <div className='ElectionPlatformPanelCategory' >
               
-            >
-                <div className='category_container'>
-                    <div className='category'>
-                        #Economy (7)
-                    </div>
-                    <Icon name='level down' size='big'/>
-                </div>
-                {this.state.activeSubType ?
-                    <ElectionPlatformPanelSubType />
-                    :
-                    null
-                }
+           
             </div>
         );
     }

@@ -5,13 +5,13 @@ import SegmentHeader from './SegmentHeader';
 import ElectionPlatformPanelCategory from './ElectionPlatformPanelCategory';
 import { connect } from 'react-redux';
 
-import { tagSetup , trumpSetup } from '../scripts/canidateSetup';
+import { tagSetup  } from '../scripts/canidateSetup';
 
 class ElectionPlatformPanel extends Base {
 
     constructor(props) {
         super(props);
-        console.log(tagSetup(this.props.PlatformCounts, 'H.Clinton'));
+        var tags = tagSetup(this.props.PlatformCounts);
     }
    
     render() {
@@ -20,7 +20,7 @@ class ElectionPlatformPanel extends Base {
                 <SegmentHeader title='Election Platform'/>
 
                 <div className='data_container'>
-                    <ElectionPlatformPanelCategory />
+                    <ElectionPlatformPanelCategory tags={tags}  />
                 </div>
             </div>
         );
