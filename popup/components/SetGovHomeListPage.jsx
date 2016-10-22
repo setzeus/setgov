@@ -31,11 +31,10 @@ class SetGovHomeListPage extends Base {
             }
             return <ElectionList />;
         }
-        return null;
+        return false;
     }
 
     render() {
-      
         // custom styles for party_selection
         return (
             <div className='SetGovHomeListPage'>
