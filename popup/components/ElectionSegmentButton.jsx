@@ -16,7 +16,6 @@ class ElectionSegmentButton extends Base {
     }
 
     render() {
-        console.log(this.props.Election.activeElectionSegment)
         let icon;
         switch (this.props.name) {
         case 'platform':

@@ -13,6 +13,7 @@ const initalState = {
         economy_regulation: 0,
         economy_taxplan: 0,
         economy_trade: 0,
+        economy: 0,
     },
     education: {
         education_campus_sexual_assault: 0,
@@ -22,6 +23,7 @@ const initalState = {
         education_k_12: 0,
         education_technology_and_innovation: 0,
         improving_education: 0,
+        education: 0,
     },
     environment: {
         environment_climate_change: 0,
@@ -29,6 +31,7 @@ const initalState = {
         environment_rural_communities: 0,
         environment_our_environment: 0,
         environment_energy: 0,
+        environment: 0,
     },
     equality: {
         equality_campaign_finance_reform: 0,
@@ -40,6 +43,7 @@ const initalState = {
         equality_seniors: 0,
         equality_womens_rights_and_opportunity: 0,
         equality_gun_control: 0,
+        equality: 0,
     },
     health: {
         health_addiction_and_substance_use: 0,
@@ -50,6 +54,7 @@ const initalState = {
         health_hiv_and_aids: 0,
         health_child_care: 0,
         healthcare: 0,
+        health: 0,
     },
     jobs: {
         jobs_paid_family_and_medical_leave: 0,
@@ -57,13 +62,15 @@ const initalState = {
         jobs_veterans_the_armed_forces_and_their_families: 0,
         jobs_wages: 0,
         jobs_workforce_skills_and_jobs_training: 0,
+        jobs: 0,
     },
     security: {
         security_combating_terrorism: 0,
         security_gun_violence: 0,
         security_miliary_and_defense: 0,
         security_national_security: 0,
-        security_foreign_policy: 0
+        security_foreign_policy: 0,
+        security: 0,
     }
 };
 
@@ -73,36 +80,43 @@ export default (state = initalState, action) => {
     switch (action.type) {
         
         case types.ECONOMY:
+            state.economy.economy += 1
             obj[payload.subtag_name] = payload.subtag_count;
             return Object.assign({}, state , {
                 economy: Object.assign({}, state.economy, obj)
             });
         case types.EDUCATION:
+            state.education.education += 1
             obj[payload.subtag_name] = payload.subtag_count;
             return Object.assign({}, state , {
                 education: Object.assign({}, state.education, obj)
             });
         case types.ENVIRONMENT:
+            state.environment.environment += 1
             obj[payload.subtag_name] = payload.subtag_count;
             return Object.assign({}, state , {
                 environment: Object.assign({}, state.environment, obj)
             });
         case types.EQUALITY:
+            state.equality.equality += 1 
             obj[payload.subtag_name] = payload.subtag_count;
             return Object.assign({}, state , {
                 equality: Object.assign({}, state.equality, obj)
             });
         case types.HEALTH:
+            state.health.health += 1
             obj[payload.subtag_name] = payload.subtag_count;
             return Object.assign({}, state , {
                 health: Object.assign({}, state.health, obj)
             });
         case types.JOBS:
+            state.jobs.jobs += 1
             obj[payload.subtag_name] = payload.subtag_count;
             return Object.assign({}, state , {
                 jobs: Object.assign({}, state.jobs, obj)
             });
         case types.SECURITY:
+            state.security.security += 1
             obj[payload.subtag_name] = payload.subtag_count;
             return Object.assign({}, state , {
                 security: Object.assign({}, state.security, obj)
