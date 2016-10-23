@@ -26,6 +26,7 @@ export  function setStateFromKeywords(dispatch){
             economy_taxplan: 0,
             economy_trade: 0,
             economy_farmers_ranchers: 0,
+            economy_diversity: 0,
         },
         education: {
             education_campus_sexual_assault:0,
@@ -36,6 +37,7 @@ export  function setStateFromKeywords(dispatch){
             education_common_core: 0,
             improving_education: 0,
             environment_our_environment: 0,
+            education_attainment: 0,
         },
         environment: {
             environment_climate_change: 0,
@@ -53,6 +55,7 @@ export  function setStateFromKeywords(dispatch){
             equality_womens_rights_and_opportunity: 0,
             equality_gun_control: 0,
             equality_seniors: 0,
+            equality_coordinate_collaborate: 0,
         },
       
 
@@ -73,7 +76,8 @@ export  function setStateFromKeywords(dispatch){
             jobs_labor_and_workers_rights:0,  
             jobs_veterans_the_armed_forces_and_their_families:0, 
             jobs_wages:0,
-            jobs_workforce_skills_and_jobs_training:0,          
+            jobs_workforce_skills_and_jobs_training:0,  
+            jobs_measure_market: 0,        
         },
          
 
@@ -82,7 +86,7 @@ export  function setStateFromKeywords(dispatch){
             security_gun_violence:0,
             security_miliary_and_defense:0,
             security_national_security:0,
-            security_foreign_policy: 0,    
+            security_foreign_policy: 0,   
         },
        
     }
@@ -130,6 +134,9 @@ export  function setStateFromKeywords(dispatch){
        
         wordCount.economy.economy_trade++
       }
+      if( currentText.match(/^(county|business|Montgomery|economy|diversify)$/)){
+          wordCount.economy.economy_diversity++
+      }
 
 
       if(currentText.match(/^(campaign\sfinance|campaign\sfinancing|Campaign\sFinancing|Campaign\sFinance|donation|donations)$/)){
@@ -163,7 +170,10 @@ export  function setStateFromKeywords(dispatch){
        
         wordCount.education.education_technology_and_innovation++
       }
-       //start environment
+      if(currentText.match(/^(adults|college|highschool|school|learn)$/)){
+        wordCount.education.education_attainment++
+      }
+
       if(currentText.match(/^(climate|Climate|climate\schange|Climate\sChange)$/)){
        
         wordCount.environment.environment_climate_change++
@@ -203,6 +213,9 @@ export  function setStateFromKeywords(dispatch){
       if(currentText.match(/^(Guns|guns|arms|Arms|right|constitution|war|weapons)$/)){
         wordCount.equality.equality_gun_contrl
       }
+      if(currentText.match(/^(coordinate|collabrate|cooperate|people|city|county|solutions)$/)){
+        wordCount.equality.equality_coordinate_collaborate++
+      }
       //start Health
       if(currentText.match(/^(addiction|substance\sabuse|Addiction|substance\suse|Substance\suse)$/)){
         wordCount.health.health_addiction_and_substance_use++
@@ -240,6 +253,9 @@ export  function setStateFromKeywords(dispatch){
       }
       if(currentText.match(/^(workforce|Workforce|skills|Skills|training|skills\straining)$/)){
         wordCount.jobs.jobs_workforce_skills_and_jobs_training++
+      }
+      if(currentText.match(/^(goal|solid|metrics|market|market|develop|business)$/)){
+        wordCount.jobs.jobs_measure_market++
       }
           //start Security
       if(currentText.match(/^(terrorist|Terrorist|isis|Isis|ISIS|terrorism)$/)){

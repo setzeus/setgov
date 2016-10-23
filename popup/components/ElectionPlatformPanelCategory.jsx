@@ -5,11 +5,12 @@ import { connect } from 'react-redux';
 import Base from './Base';
 import ElectionCategoryTile from './ElectionCategoryTile';
 
-export default class ElectionPlatformPanelCategory extends Base {
+class ElectionPlatformPanelCategory extends Base {
 
     constructor(props) {
         super(props);
         console.log(this.props.tags)
+        console.log(this.props)
     }
     handleSubTags(data){
         
@@ -40,3 +41,11 @@ export default class ElectionPlatformPanelCategory extends Base {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        Election: state.Election
+    };
+};
+
+export default connect(mapStateToProps)(ElectionPlatformPanelCategory);

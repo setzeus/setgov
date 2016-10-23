@@ -21,7 +21,7 @@ class ElectionPlatformPanel extends Base {
                 <SegmentHeader title='Election Platform'/>
 
                 <div className='data_container'>
-                    <ElectionPlatformPanelCategory tags={ tagSetup(this.props.PlatformCounts)}  />
+                    <ElectionPlatformPanelCategory tags={ tagSetup(this.props.PlatformCounts,this.props.Election.title)}  />
                 </div>
             </div>
         );
@@ -31,7 +31,8 @@ class ElectionPlatformPanel extends Base {
 
 const mapStateToProps = (state) => {
     return {
-        PlatformCounts: state.PlatformCounts
+        PlatformCounts: state.PlatformCounts,
+        Election: state.Election
     };
 };
 

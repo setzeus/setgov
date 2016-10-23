@@ -11,7 +11,7 @@ export default class ElectionCategorySubTile extends Base {
         return (
             <div className='ElectionCategorySubTile' >
                 <div className="text_results">
-                    <p className={"amp " + this.props.name}>#</p>
+                    <p className={"amp_" + this.props.name}>#</p>
                     <p className="title">{this.props.text}</p>
                     <i className='count'>({this.props.count})</i>
                 </div>

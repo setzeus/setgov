@@ -1,30 +1,78 @@
-  function removeZero(value){
-      if ( value.count > 0) {
+function removeZero(value){
+    if ( value.count > 0) {
         return value
-      }
-  }
+    }
+}
 
-  function removeZeroSub(value){
+function removeZeroSub(value){
     if( value.subTags.length > 0){
       return value
     }
-  }
+}
 
-  function sortInt(a, b) {
+function sortInt(a, b) {
     return  b.count - a.count;
-  }
-
-  
+}
 
 
-export function tagSetup(wordCount) {
+
+export function tagSetup(wordCount, race) {
 	console.log(wordCount)
   
   if(wordCount == undefined){
     console.log('shit hit the fan')
   }else{
-   
-    let tags = [
+    let ohio = [
+      {
+        text: 'Education',
+        count: wordCount.education.education,
+        subTags:[
+          {
+            text: 'AttainmnetOfEducation',
+            link: 'http://www.debbielieberman.com/attainment_of_education',
+            count: wordCount.education.education_attainment,
+            name: 'liberman',
+          }
+        ]
+      },
+      {
+        text: 'Economy',
+        count: wordCount.economy.economy,
+        subTags:[
+          {
+            text: 'DiversifyTheEconomy',
+            link: 'http://www.debbielieberman.com/diversify_the_economy',
+            count: wordCount.economy.economy_diversity,
+            name: 'liberman'
+          }
+        ]
+      },
+      {
+        text: 'Equality',
+        count: wordCount.equality.equality,
+        subTags: [
+          {
+            text: 'CoordinateCollaborateCooperate',
+            link : 'http://www.debbielieberman.com/coordinate_collaborate_cooperate',
+            count: wordCount.equality.equality_coordinate_collaborate,
+            name: 'liberman'
+          }
+        ]
+      },
+      {
+        text: 'Jobs',
+        count: wordCount.jobs.jobs,
+        subTags: [
+          {
+            text: 'MeasureMarket',
+            link: 'http://www.debbielieberman.com/measure_and_market',
+            count: wordCount.jobs.jobs_measure_market,
+            name: 'liberman',
+          }
+        ]
+      }
+    ]
+    let presidentail = [
           {
             text:"Economy",
             count: wordCount.economy.economy, 
@@ -503,6 +551,8 @@ export function tagSetup(wordCount) {
             ]
           }
     ]
+
+    var tags = race == "County Commissioner" ? ohio : presidentail;
     var tempTags = tags.filter(removeZero)
 
     for( var x = 0; x< tempTags.length; x++) {
@@ -524,7 +574,7 @@ export function tagSetup(wordCount) {
 
 
 
-  
+
 
 
 

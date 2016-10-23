@@ -14,6 +14,7 @@ const initalState = {
         economy_taxplan: 0,
         economy_trade: 0,
         economy: 0,
+        economy_diversity: 0,
     },
     education: {
         education_campus_sexual_assault: 0,
@@ -24,6 +25,7 @@ const initalState = {
         education_technology_and_innovation: 0,
         improving_education: 0,
         education: 0,
+        education_attainment: 0,
     },
     environment: {
         environment_climate_change: 0,
@@ -44,6 +46,7 @@ const initalState = {
         equality_womens_rights_and_opportunity: 0,
         equality_gun_control: 0,
         equality: 0,
+        equality_coordinate_collaborate: 0
     },
     health: {
         health_addiction_and_substance_use: 0,
@@ -63,6 +66,7 @@ const initalState = {
         jobs_wages: 0,
         jobs_workforce_skills_and_jobs_training: 0,
         jobs: 0,
+        jobs_measure_market: 0,
     },
     security: {
         security_combating_terrorism: 0,
