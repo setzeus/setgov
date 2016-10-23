@@ -20,6 +20,7 @@ class CandidateView extends Base {
     }
     componentWillMount() {
         const activeCandidate = this.props.environment.candidates[this.props.params.candidateIndex];
+        console.log('candidateIndex = ' + this.props.params.candidateIndex);
         this.props.changeActiveCandidate(activeCandidate);
     }
 
