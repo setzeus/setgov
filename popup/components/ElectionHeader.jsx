@@ -4,12 +4,16 @@ import { Link } from 'react-router/lib';
 import { Icon } from 'semantic-ui-react';
 
 import Base from './Base';
+import { changeActiveComponent } from '../actions/SetGovHome';
 
 
 class ElectionHeader extends Base {
 
     constructor(props) {
         super(props);
+    }
+    handleClick() {
+        this.props.changeActiveComponent('CandidateView');
     }
 
     render() {
@@ -25,10 +29,11 @@ class ElectionHeader extends Base {
                 <Link 
                     to={'/candidate/' + this.props.Election.d_index} 
                     className='photo_container_top row'
+                    onClick={() => this.handleClick()}
                 >
                     <div className='flex justify-space-between row'>
                         <div className='arrow_container'>
-                            <Icon name='chevron left' size='big' color='white'/>
+                            <Icon name='chevron left' size='big'/>
                         </div>
                         <div className='avatar_container'>
                             <div className='avatar' style={democrat_image_style} />
@@ -42,6 +47,7 @@ class ElectionHeader extends Base {
                 </Link>
                 <Link to={'/candidate/' + this.props.Election.r_index}
                     className='photo_container_bottom row'
+                    onClick={() => this.handleClick()}
                 >
                     <div className='flex justify-space-between row'>
                         <div className='data_container column'>
@@ -53,7 +59,7 @@ class ElectionHeader extends Base {
                             <div className='avatar' style={republican_image_style} />
                         </div>
                         <div className='arrow_container'>
-                            <Icon name='chevron right' size='big' color='white'/>
+                            <Icon name='chevron right' size='big'/>
                         </div>
                     </div>
                 </Link>
@@ -68,4 +74,11 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(ElectionHeader);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changeActiveComponent: component => dispatch(changeActiveComponent(component))
+    };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ElectionHeader);

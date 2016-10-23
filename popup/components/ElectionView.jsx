@@ -68,7 +68,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        changeActiveElection: election => dispatch(changeActiveElection(election))
+        changeActiveElection: election => dispatch(changeActiveElection(election)),
     };
 };
 
