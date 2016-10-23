@@ -22,13 +22,13 @@ export default class ElectionCategoryTile extends Base {
     render() {
        
         return (
-            <div className="ElectionCategoryTile" >
+            <div className="ElectionCategoryTile" id={this.props.text+'Result'} >
             	<div className='row'>
-            		<p>{this.props.text + this.props.count}</p>
-            	
+            		<p className='cat_title'> {this.props.text} </p>
+                    <p>({this.props.count})</p>
             	</div>
             	<div className='row_status'></div>
-				<div className='sub_row_container'>
+				<div className='sub_row_container' id={this.props.text+'_sub_container'}>
 					{
 						this.handleSubTags(this.props.subTags)
 					}

@@ -4,5 +4,53 @@
     align-items: center;
     justify-content: space-between;
     transition: opacity 1s ease-in-out;
+    background-color: #ffffff;
     opacity: 0;
+    height: 55px;
+    width: 100%;
+    border-bottom: 2px solid #d4d4d5;
+
+    .text_results{
+    	display: flex;
+    	flex-direction: row;
+    	width: 50%;
+    	align-items: center;
+    	justify-content: flex-start;
+    	margin-left: 15px;
+    }
+    .sub_button{
+	    height: 27px;
+	    width: 27px; 
+	    border-radius: 50%; 
+	    margin-left: 10px;
+	    margin: auto 11px auto auto;
+	    background-size: 100%;
+	}
+
+	
+	.button_trump{
+    	background-image:url("/images/arrow-red.png");
+    	background-size: 100%;
+    	background-repeat: no-repeat;
+    	background-position: center;
+    	transition: background-image .5s ease-out;
+  	}
+
+    .button_clinton{
+       background-image:url("/images/arrow.png");
+       background-size: 100%;
+       background-repeat: no-repeat;
+       background-position: center;
+       transition: background-image .5s ease-out;
+    }
+
+    .button_trump:hover {
+        background-image:url("/images/arrow2-no-circle-red.png");
+    }
+
+    .button_clinton:hover{
+    	background-image:url("/images/arrow2-no-circle.png");
+    }
+
+
 }
