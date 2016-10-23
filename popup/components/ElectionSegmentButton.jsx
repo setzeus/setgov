@@ -34,7 +34,7 @@ class ElectionSegmentButton extends Base {
                 inverted
                 onClick={this.handleSegmentedSelection}
                 color='red'
-                active={this.props.Election.activeElectionSegment == this.props.name}
+                active={this.props.Election.activeSegment == this.props.name}
             >
                 <Icon name={icon} size='large'/>
             </Button>

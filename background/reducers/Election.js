@@ -5,6 +5,10 @@ const initalState = {
     title: '',
     democrat: '',
     republican: '',
+    d_image: '',
+    r_image: '',
+    d_index: 0,
+    r_index: 0,
     electionDate: '2016-11-08T00:00:00.000Z',
     livePolling: {},
     summary: ''
@@ -23,6 +27,8 @@ export default (state = initalState, action) => {
             republican: action.election.republican,
             d_image: action.election.d_image,
             r_image: action.election.r_image,
+            d_index: action.election.d_index,
+            r_index: action.election.r_index,
             electionDate: action.election.electionDate,
             livePolling: action.election.livePolling
 

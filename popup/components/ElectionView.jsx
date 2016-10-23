@@ -26,6 +26,7 @@ class ElectionView extends Base {
 
     render() {
         console.log("got to election view");
+        
         let activeComponent = <ElectionPlatformPanel/>;
         switch (this.props.Election.activeSegment) {
         case 'livepolls':

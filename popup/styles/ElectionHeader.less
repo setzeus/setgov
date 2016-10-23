@@ -1,10 +1,43 @@
-.ElectionHeader{
-	.photo_container {
-		height: 150px;
+.ElectionHeader {
+	.photo_container_top {
+	 	height: 90px;
+	 	display: flex;
+	 	align-items: center;
+	 	background-color: #2582B5;
+	}
+	.photo_container_bottom {
+	 	height: 90px;
+	 	display: flex;
+	 	align-items: center;
+	 	background-color: #FF5252;
+	}
+
+	.data_container {
+		flex: 2 1 0;
+		align-items: center;
+		justify-content: center;
+	}
+	.arrow_container {
 		display: flex;
-		background-color: #0000ff;
-		border-top: 2px solid #ff0000;
-		border-bottom: 2px solid #ff0000;
-		background-size: cover;
- 	 }
+		align-items: center;
+		justify-content: center;
+		color: white;
+	}
+	.avatar_container{
+		flex: 1 1 0;
+	}
+	.candidate_name{
+		font-size: 1.2em;
+		color: white;
+	}
+ 	.avatar{
+		height: 60px;
+		width: 60px;
+		border-radius: 50%;
+		margin: auto;
+		background-color: red;
+		background: no-repeat;
+		background-position: center/50%;
+	}
+
 }

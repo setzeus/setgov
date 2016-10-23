@@ -185,23 +185,29 @@ const initalState = {
             republican: 'Donald Trump',
             list_image: '/images/USA-icon.png',
             d_image: '/images/clinton.jpg',
-            r_image: '/images/donald.jpg'
+            r_image: '/images/donald.jpg',
+            d_index: 0,
+            r_index: 1
         },
         {
             title: 'Florida Senate',
             democrat: 'Patrick Murphy',
             republican: 'Marco Rubio',
             list_image: '/images/Florida-icon.png',
-            d_image: '/images/rubio.png',
-            r_image: '/images/murphy.jpeg'
+            d_image: '/images/murphy.jpeg',
+            r_image: '/images/rubio.png',
+            d_index: 2,
+            r_index: 3
         },
         {
             title: 'County Commissioner',
             democrat: 'Debbie Lieberman',
             republican: 'Gary Leitzell',
             list_image: '/images/ohio.png',
-            d_image: '/images/lieberman.png',
-            r_image: '/images/leitzell.jpg'
+            d_image: '/images/lieberman.jpg',
+            r_image: '/images/leitzell.jpg',
+            d_index: 4,
+            r_index: 5
         }
     ]
 };
