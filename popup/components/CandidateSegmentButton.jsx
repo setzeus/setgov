@@ -32,11 +32,11 @@ class CandidateSegmentButton extends Base {
         return (
             <Button
                 inverted
+                color='grey'
                 onClick={this.handleSegmentedSelection}
-                color='red'
                 active={this.props.Candidate.activeSegment == this.props.name}
             >
-                <Icon name={icon} size='large'/>
+                <Icon color='grey' name={icon} size='large'/>
             </Button>
         );
     }

@@ -121,7 +121,7 @@ const initalState = {
         },
         {
             name: 'Debbie Lieberman',
-            race: 'Montgomory County Commissioner',
+            race: 'Montgomery County Commissioner',
             party: 'democrat',
             image: '/images/lieberman.jpg',
             bannerImageUrl: 'https://s3-us-west-2.amazonaws.com/setgov/Debbie+Lieberman.jpg',
@@ -150,7 +150,7 @@ const initalState = {
         },
         {
             name: 'Gary Leitzell',
-            race: 'Montgomory County Commissioner',
+            race: 'Montgomery County Commissioner',
             party: 'republican',
             image: '/images/leitzell.jpg',
             bannerImageUrl: 'https://s3-us-west-2.amazonaws.com/setgov/Gary+Leitzell.jpg',

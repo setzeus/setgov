@@ -16,7 +16,6 @@ class ElectionSegmentButton extends Base {
     }
 
     render() {
-        console.log(this.props.Election.activeElectionSegment)
         let icon;
         switch (this.props.name) {
         case 'platform':
@@ -32,20 +31,19 @@ class ElectionSegmentButton extends Base {
         return (
             <Button
                 inverted
+                color='grey'
                 onClick={this.handleSegmentedSelection}
                 color='red'
                 active={this.props.Election.activeSegment == this.props.name}
             >
-                <Icon name={icon} size='large'/>
+                <Icon color='grey' name={icon} size='large'/>
             </Button>
         );
     }
 }
 
 const mapStateToProps = (state) => {
-    console.log('mapStateToProps')
-
-    console.log(state.Election)
+    
     return {
         Election: state.Election
     };

@@ -1,51 +1,41 @@
 import React from 'react';
 import { Icon } from 'semantic-ui-react';
+import { connect } from 'react-redux';
 
 import Base from './Base';
-import ElectionPlatformPanelSubType from './ElectionPlatformPanelSubType';
+import ElectionCategoryTile from './ElectionCategoryTile';
 
 export default class ElectionPlatformPanelCategory extends Base {
 
     constructor(props) {
         super(props);
-        this.autoBind('onMouseOver', 'onMouseOut');
-        this.state = {
-            categoryMouseOver: false,
-            subTypeMouseOver: false,
-            activeSubType: false
-        };
+        console.log(this.props.tags)
+    }
+    handleSubTags(data){
+        
+            return data.map( (tile, index) => {
+                console.log(tile)
+                return(
+                    <ElectionCategoryTile 
+                        key={index}
+                        text={tile.text}
+                        count={tile.count}
+                        subTags={tile.subTags}
+                    />    
+
+                ); 
+            });
+       
     }
 
-    onMouseOver() {
-        //console.log('got here');
-        this.setState({
-            activeSubType: true
-        });
-    }
-    onMouseOut() {
-        console.log('got here');
-        this.setState({
-            activeSubType: false
-        });
-    }
+   
     render() {
         return (
-            <div
-                className='ElectionPlatformPanelCategory'
-                onMouseOver={this.onMouseOver}
-                onMouseOut={this.onMouseOut}
-            >
-                <div className='category_container'>
-                    <div className='category'>
-                        #Economy (7)
-                    </div>
-                    <Icon name='level down' size='big'/>
-                </div>
-                {this.state.activeSubType ?
-                    <ElectionPlatformPanelSubType />
-                    :
-                    null
-                }
+            <div className='ElectionPlatformPanelCategory' >
+              {
+                this.handleSubTags(this.props.tags)
+              }
+           
             </div>
         );
     }

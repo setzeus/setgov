@@ -21,7 +21,7 @@ class SetGovHomeListPage extends Base {
         console.log(msg);
     }
     handleClick(state) {
-        console.log(state);
+       
         this.props.changeActiveComponent(state);
     }
     displayActiveSegment() {
@@ -31,11 +31,10 @@ class SetGovHomeListPage extends Base {
             }
             return <ElectionList />;
         }
-        return null;
+        return false;
     }
 
     render() {
-        console.log(this.state);
         // custom styles for party_selection
         return (
             <div className='SetGovHomeListPage'>

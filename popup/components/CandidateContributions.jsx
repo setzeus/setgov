@@ -6,6 +6,7 @@ import Base from './Base';
 import SegmentHeader from './SegmentHeader';
 import { fetchCandidateContributions } from '../actions/Candidate';
 
+import { red, green, blue } from '../constants/colors';
 
 class CandidateContributions extends Base {
     constructor(props) {
@@ -24,9 +25,9 @@ class CandidateContributions extends Base {
                 {
                     data: [300, 50, 100],
                     backgroundColor: [
-                        '#FF0000',
-                        '#00FF00',
-                        '#0000FF'
+                        red,
+                        green,
+                        blue
                     ],
                     hoverBackgroundColor: [
                         '#FF6384',
