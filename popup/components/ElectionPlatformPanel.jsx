@@ -11,16 +11,17 @@ class ElectionPlatformPanel extends Base {
 
     constructor(props) {
         super(props);
-        var tags = tagSetup(this.props.PlatformCounts);
+        
     }
    
     render() {
+
         return (
             <div className='ElectionPlatformPanel'>
                 <SegmentHeader title='Election Platform'/>
 
                 <div className='data_container'>
-                    <ElectionPlatformPanelCategory tags={tags}  />
+                    <ElectionPlatformPanelCategory tags={ tagSetup(this.props.PlatformCounts)}  />
                 </div>
             </div>
         );
