@@ -1,24 +1,21 @@
+var nodeList = ['p','span','ui', 'li','ol', 'title']
 
-export  function highlightWords(){
-
-	const nodeList = ['p', 'span', 'ui', 'li', 'ol', 'title'];
-
-for (let i = 0; i < nodeList.length; i++) {
-   	const body = document.getElementsByTagName(nodeList[i]);
-    console.log(nodeList[i])
-    const keyItems = [ 
-                'campaign',
-                'finance',
-                'campaign',
-                'financing',
-                'Campaign',
-                'donation',
-                'Finance',
-                'donation',
-                'donations',
-                'food',
-                'water',
-                'Water',
+    for(var i=0; i<nodeList.length; i++){
+        var body = document.getElementsByTagName(nodeList[i]);
+        console.log(nodeList[i])
+        var keyItems = [ 
+                "campaign",
+                "finance",
+                "campaign",
+                "financing",
+                "Campaign",
+                "donation",
+                "Finance",
+                "donation",
+                "donations",
+                "food",
+                "water",
+                "Water",
                 'rain',
                 'Rain',
                 'state',
@@ -68,13 +65,13 @@ for (let i = 0; i < nodeList.length; i++) {
                 'national'
         ]
 
-        let length = body.length;
-        let count = 0
+        var length = body.length;
+        var count = 0
 
-        for(let t=0;t<length ; t++){
-            let currentDiv = body[t].innerHTML;
-            let currentText = body[t].innerText;
-             for(let z=0;z<keyItems.length;z++){
+        for(var t=0;t<length ; t++){
+            var currentDiv = body[t].innerHTML;
+            var currentText = body[t].innerText;
+             for(var z=0;z<keyItems.length;z++){
 
                 if( currentText.search(keyItems[z]) > 0 ){
                     
@@ -95,4 +92,7 @@ for (let i = 0; i < nodeList.length; i++) {
         }
     }
 
-}
+	
+
+
+

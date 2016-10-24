@@ -11,6 +11,10 @@ const proxyStore = new Store({
     portName: 'setgov'
 });
 
+
+chrome.tabs.executeScript(null, {file: "highlight.js"});
+
+
 render(
     <Provider store={proxyStore}>
         <Router history={browserHistory}>
