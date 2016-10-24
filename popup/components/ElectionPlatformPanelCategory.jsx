@@ -12,7 +12,7 @@ class ElectionPlatformPanelCategory extends Base {
         console.log(this.props.tags)
         console.log(this.props)
     }
-    handleSubTags(data){
+    handleTags(data){
         
             return data.map( (tile, index) => {
                 console.log(tile)
@@ -34,7 +34,7 @@ class ElectionPlatformPanelCategory extends Base {
         return (
             <div className='ElectionPlatformPanelCategory' >
               {
-                this.handleSubTags(this.props.tags)
+                this.handleTags(this.props.tags)
               }
            
             </div>

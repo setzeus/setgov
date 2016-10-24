@@ -13,7 +13,7 @@ export default class ElectionCategoryTile extends Base {
     				key={index}
     				text={tile.text}
     				link={tile.link}
-    				name={tile.name}
+    				party={tile.party}
     				count={tile.count}
     			/>
     		);

@@ -16,7 +16,7 @@ export default class ElectionCategorySubTile extends Base {
                     <i className='count'>({this.props.count})</i>
                 </div>
                 <a href={this.props.link} target='_blank'>
-                    <div className={' sub_button button_' + this.props.name}></div>
+                    <div className={' sub_button button_' + this.props.party}></div>
                 </a>
             </div>
         );
