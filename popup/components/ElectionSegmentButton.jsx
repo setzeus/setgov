@@ -33,18 +33,15 @@ class ElectionSegmentButton extends Base {
                 inverted
                 color='grey'
                 onClick={this.handleSegmentedSelection}
-                color='red'
                 active={this.props.Election.activeSegment == this.props.name}
             >
                 <Icon color='grey' name={icon} size='large'/>
-                
             </Button>
         );
     }
 }
 
 const mapStateToProps = (state) => {
-    
     return {
         Election: state.Election
     };

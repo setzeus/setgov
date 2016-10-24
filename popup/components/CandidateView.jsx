@@ -25,6 +25,7 @@ class CandidateView extends Base {
     }
 
     render() {
+        console.log(this.props);
         let activeSegment;
         switch (this.props.Candidate.activeSegment) {
         case 'contributions':

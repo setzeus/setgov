@@ -9,7 +9,7 @@ export default class CandidateListTile extends Base {
     }
     render() {
         const imageStyle = {
-        backgroundImage: `url('${this.props.image}')`
+            backgroundImage: `url('${this.props.image}')`
         };
         return (
             <Link to={'/candidate/' + this.props.index} className='candidate_tile raised'>

@@ -23,7 +23,9 @@ class CandidateInfoPanel extends Base {
                         </div>
                         <div className='row'>
                             <p>{this.props.Candidate.generalInfo.dateOfBirth}</p>
-                            <p className='flex right'>{this.props.Candidate.generalInfo.placeOfBirth}</p>
+                            <p className='flex right'>
+                                {this.props.Candidate.generalInfo.placeOfBirth}
+                            </p>
                         </div>
                     </div>
                     <div className='column'>
@@ -31,14 +33,18 @@ class CandidateInfoPanel extends Base {
                             <Icon size='big' name='student'/>
                             <div className='label'>Education</div>
                         </div>
-                        <p className='value_container'>{this.props.Candidate.generalInfo.education}</p>
+                        <p className='value_container'>
+                            {this.props.Candidate.generalInfo.education}
+                        </p>
                     </div>
                     <div className='column'>
                         <div className='row'>
                             <Icon size='big' name='university'/>
                             <div className='label'>Political Experience</div>
                         </div>
-                        <p className='value_container'>{this.props.Candidate.generalInfo.politicalExperience}</p>
+                        <p className='value_container'>
+                            {this.props.Candidate.generalInfo.politicalExperience}
+                        </p>
                     </div>
                 </div>
             </div>

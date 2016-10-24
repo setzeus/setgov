@@ -21,7 +21,6 @@ class SetGovHomeListPage extends Base {
         console.log(msg);
     }
     handleClick(state) {
-       
         this.props.changeActiveComponent(state);
     }
     displayActiveSegment() {

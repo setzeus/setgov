@@ -83,9 +83,6 @@ class CandidateContributions extends Base {
 }
 
 const mapStateToProps = (state) => {
-    //console.log('CandidateContributions mapStateToProps');
-    //console.log(state);
-
     return {
         CandidateContributions: state.CandidateContributions
     };

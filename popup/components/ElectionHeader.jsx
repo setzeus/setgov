@@ -17,7 +17,6 @@ class ElectionHeader extends Base {
     }
 
     render() {
-
         const democrat_image_style = {
             backgroundImage: `url('${this.props.Election.d_image}')`
         };
@@ -26,8 +25,8 @@ class ElectionHeader extends Base {
         };
         return (
             <div className='ElectionHeader column'>
-                <Link 
-                    to={'/candidate/' + this.props.Election.d_index} 
+                <Link
+                    to={'/candidate/' + this.props.Election.d_index}
                     className='photo_container_top row'
                     onClick={() => this.handleClick()}
                 >
@@ -45,7 +44,8 @@ class ElectionHeader extends Base {
                         </div>
                     </div>
                 </Link>
-                <Link to={'/candidate/' + this.props.Election.r_index}
+                <Link
+                    to={'/candidate/' + this.props.Election.r_index}
                     className='photo_container_bottom row'
                     onClick={() => this.handleClick()}
                 >
